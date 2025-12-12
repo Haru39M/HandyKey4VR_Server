@@ -1,0 +1,198 @@
+/* static/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- テストモード用エリア --- */
+.test-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #eef;
+    border-radius: 8px;
+    border: 1px solid #ccd;
+}
+
+.reference-box {
+    margin-bottom: 15px;
+}
+
+.reference-box .label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.reference-box .text-content {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.progress-box .label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.progress-box .text-content {
+    font-size: 1.4em;
+    color: #007bff;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 1.5em;
+    /* 空でも高さ確保 */
+}
+
+/* 誤答表示用のスタイル (追加) */
+.wrong-word {
+    color: #dc3545;
+    /* 赤色 */
+    text-decoration: underline;
+    text-decoration-color: #dc3545;
+}
+
+.current-selection {
+    color: #d9534f;
+    /* 赤系で強調 */
+    font-weight: bold;
+}
+
+/* --- 入力周り --- */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* margin-bottomはwrapperで調整 */
+}
+
+.selection-controls button {
+    width: 50px;
+    /* 小さめボタン */
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+#btn-confirm {
+    width: 70px;
+    background-color: #28a745;
+}
+
+/* --- 候補リスト --- */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 選択中の候補ハイライト */
+li.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+    font-weight: bold;
+}
+
+.no-results {
+    color: #777;
+}
+
+/* --- キーボードUI (既存維持) --- */
+#keyboard-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 8px;
+}
+
+.key {
+    background-color: #ffffff;
+    border: 1px solid #c0c0c0;
+    border-radius: 6px;
+    padding: 12px 18px;
+    margin: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    cursor: default;
+    box-shadow: 0 3px 0 #a0a0a0;
+    transition: all 0.08s ease-out;
+    position: relative;
+    min-width: 30px;
+}
+
+.keyboard-row:nth-child(2) {
+    margin-left: 30px;
+}
+
+.keyboard-row:nth-child(3) {
+    margin-left: 50px;
+}
+
+.key.active {
+    background-color: #4CAF50;
+    color: #fff;
+    box-shadow: 0 1px 0 #3a8a3d;
+    transform: translateY(2px);
+}
+
+.index-label {
+    position: absolute;
+    bottom: 2px;
+    right: 3px;
+    font-size: 0.7em;
+    color: #999;
+    font-weight: normal;
+}
+
+.key.active .index-label {
+    color: #fff;
+}
+
+.info-small {
+    font-size: 0.8em;
+    color: #666;
+}

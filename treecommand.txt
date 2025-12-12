@@ -1,0 +1,1 @@
+tree -I "__pycache__|kenlm|venv" > tree.txt

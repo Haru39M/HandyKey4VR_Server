@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単語予測 (QWERTYタイポ)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>単語予測 (QWERTYタイポ)</h1>
+
+        <!-- タイピングテスト用エリア -->
+        <div id="test-section" class="test-container">
+            <div class="test-controls">
+                <button id="start-test-btn">テスト開始</button>
+                <button id="next-phrase-btn" style="display:none;">次の文章へ</button>
+            </div>
+
+            <div id="reference-display" class="reference-box" style="display:none;">
+                <div class="label">Reference Text:</div>
+                <div id="reference-text-content" class="text-content"></div>
+            </div>
+
+            <div id="progress-display" class="progress-box" style="display:none;">
+                <div class="label">Your Input:</div>
+                <div id="progress-text-content" class="text-content"></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <form id="predict-form">
+            <label for="word-input">入力:</label>
+            <div class="input-wrapper">
+                <input type="text" id="word-input" name="prefix" autocomplete="off" placeholder="英単語を入力...">
+                <div class="selection-controls">
+                    <button type="button" id="btn-up" tabindex="-1">↑</button>
+                    <button type="button" id="btn-down" tabindex="-1">↓</button>
+                    <button type="button" id="btn-confirm" tabindex="-1">決定</button>
+                </div>
+            </div>
+            <!-- 通常の予測ボタンはEnterキー等の動作と被るため、テストモードでは補佐的な役割になります -->
+            <!-- <button type="submit">予測更新</button> -->
+        </form>
+
+        <div id="keyboard-container">
+            <div class="keyboard-row">
+                <div class="key key-q" data-key="q">Q <span class="index-label" data-char="q"></span></div>
+                <div class="key key-w" data-key="w">W <span class="index-label" data-char="w"></span></div>
+                <div class="key key-e" data-key="e">E <span class="index-label" data-char="e"></span></div>
+                <div class="key key-r" data-key="r">R <span class="index-label" data-char="r"></span></div>
+                <div class="key key-t" data-key="t">T <span class="index-label" data-char="t"></span></div>
+                <div class="key key-y" data-key="y">Y <span class="index-label" data-char="y"></span></div>
+                <div class="key key-u" data-key="u">U <span class="index-label" data-char="u"></span></div>
+                <div class="key key-i" data-key="i">I <span class="index-label" data-char="i"></span></div>
+                <div class="key key-o" data-key="o">O <span class="index-label" data-char="o"></span></div>
+                <div class="key key-p" data-key="p">P <span class="index-label" data-char="p"></span></div>
+            </div>
+            <div class="keyboard-row">
+                <div class="key key-a" data-key="a">A <span class="index-label" data-char="a"></span></div>
+                <div class="key key-s" data-key="s">S <span class="index-label" data-char="s"></span></div>
+                <div class="key key-d" data-key="d">D <span class="index-label" data-char="d"></span></div>
+                <div class="key key-f" data-key="f">F <span class="index-label" data-char="f"></span></div>
+                <div class="key key-g" data-key="g">G <span class="index-label" data-char="g"></span></div>
+                <div class="key key-h" data-key="h">H <span class="index-label" data-char="h"></span></div>
+                <div class="key key-j" data-key="j">J <span class="index-label" data-char="j"></span></div>
+                <div class="key key-k" data-key="k">K <span class="index-label" data-char="k"></span></div>
+                <div class="key key-l" data-key="l">L <span class="index-label" data-char="l"></span></div>
+            </div>
+            <div class="keyboard-row">
+                <div class="key key-z" data-key="z">Z <span class="index-label" data-char="z"></span></div>
+                <div class="key key-x" data-key="x">X <span class="index-label" data-char="x"></span></div>
+                <div class="key key-c" data-key="c">C <span class="index-label" data-char="c"></span></div>
+                <div class="key key-v" data-key="v">V <span class="index-label" data-char="v"></span></div>
+                <div class="key key-b" data-key="b">B <span class="index-label" data-char="b"></span></div>
+                <div class="key key-n" data-key="n">N <span class="index-label" data-char="n"></span></div>
+                <div class="key key-m" data-key="m">M <span class="index-label" data-char="m"></span></div>
+            </div>
+        </div>
+
+        <h2>予測候補 (↑↓キーで選択、Enterで確定)</h2>
+        <div id="results-container">
+            <p class="no-results">...</p>
+        </div>
+
+        <div id="info-container"></div>
+
+    </div>
+
+    <script>
+        // PythonからREVERSE_QWERTY_MAPを受け取る
+        const REVERSE_QWERTY_MAP = {{ js_reverse_map| safe }};
+    </script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>
