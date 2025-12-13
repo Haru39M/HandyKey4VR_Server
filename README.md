@@ -4,6 +4,10 @@
 - 指のシーケンスで入力された符号列から全通りの文字列を生成して、N-gram(KenLM)でスコアリングする。
 ## 環境
 - WSL
+
+```bash
+$ pip install flask python-osc
+```
 ## KenLMのインストール方法
 - https://github.com/kpu/kenlm のREADMEを参照
 ## N-gramモデルの入手
