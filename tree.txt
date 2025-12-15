@@ -1,12 +1,16 @@
 .
+├── README.md
 ├── app.py
 ├── app2.py
+├── app3.py
+├── app4.py
 ├── botsu
 │   ├── main.py
 │   ├── main2.py
 │   ├── main3.py
 │   └── main_old.py
 ├── config.json
+├── export_tree.sh
 ├── phrases2.txt
 ├── static
 │   ├── app.js
@@ -22,8 +26,9 @@
 ├── tree.txt
 ├── treecommand.txt
 ├── typing_test.py
+├── typing_test_v1.py
 ├── wiki_en_token.arpa.bin
 ├── word_predictor.py
 └── words.json
 
-5 directories, 22 files
+5 directories, 27 files
