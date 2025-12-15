@@ -8,13 +8,9 @@ class WordPredictor:
         初期化
         :param model_path: KenLMのモデルファイルパス
         """
-        # ビームサーチ導入により、組み合わせ数の上限チェックは不要化
-        # self.max_candidates_num = 50000000 
         self.qwerty_combinations = 0
 
         if not os.path.exists(model_path):
-            # モデルがない場合のダミー処理(テスト実行用)回避のため、実際はエラーかパス確認が必要
-            # ここでは例外を投げる元の動作を維持
             raise FileNotFoundError(f"モデルファイルが見つかりません: {model_path}")
         
         print(f"[Predictor] Loading model: {model_path} ...")
@@ -25,16 +21,6 @@ class WordPredictor:
         self.current_index_sequence = ""
 
         # マッピング定義
-        # self.QWERTY_MAP = {
-        #     '0': "tgbrfv",
-        #     '1': "yhnujm",
-        #     '2': "edc",
-        #     '3': "ik",
-        #     '4': "wsx",
-        #     '5': "ol",
-        #     '6': "qaz",
-        #     '7': "p",
-        # }
         self.QWERTY_MAP = {
             '1': "qaz",# 左小指
             '2': "wsx",# 左薬指
@@ -53,9 +39,11 @@ class WordPredictor:
     # =========================================================
 
     def handle_index_input(self, index_val: int):
-        if 0 <= index_val <= 7:
+        if 0 <= index_val <= 7: # キーマップに合わせて適宜調整
+             # 注意: 上記QWERTY_MAPのキーは文字列の '0'~'9' ですが、
+             # handle_index_inputの引数がintの場合の変換はシステム全体で整合性をとってください。
+             # ここでは簡易的にstr変換して追加します
             self.current_index_sequence += str(index_val)
-            # 組み合わせ数は参考用として残すが、判定には使わない
             self.qwerty_combinations = self.count_qwerty_combinations(self.current_index_sequence)
             print(f"[Predictor] updated index seq: {self.current_index_sequence}")
         else:
@@ -82,95 +70,61 @@ class WordPredictor:
         return self.current_index_sequence
 
     # =========================================================
-    #  予測ロジック (Beam Searchに変更)
+    #  予測ロジック
     # =========================================================
 
     def predict_top_words(self, limit=6, beam_width=10000):
         """
-        ビームサーチを用いて、現在のインデックス列から尤もらしい単語候補を探索する
+        VRChat用など、文字列リストだけ欲しい場合に使用
         """
-        print(f"[Predictor] predicting with Beam Search (K={beam_width})...")
-        
         if not self.current_index_sequence:
             return []
+        top_candidates = self._beam_search(self.current_index_sequence, beam_width)
+        return [word for score, word in top_candidates[:limit]]
 
-        # ビームサーチの実行
+    def predict_top_words_with_scores(self, limit=6, beam_width=10000):
+        """
+        WEB UI用。スコア情報も含めて返す。
+        :return: [{"word": str, "score": float}, ...]
+        """
+        if not self.current_index_sequence:
+            return []
+        
         top_candidates = self._beam_search(self.current_index_sequence, beam_width)
         
-        print(f"[Predictor] predict DONE")
-        # 上位limit件の単語のみを返す
-        return [word for score, word in top_candidates[:limit]]
+        # UI表示用に整形して返す
+        return [{"word": word, "score": score} for score, word in top_candidates[:limit]]
 
     def _beam_search(self, index_seq, width):
         """
         ビームサーチ本体
         :return: (score, word) のリスト (スコア降順)
         """
-        # 初期状態: (スコア, 単語文字列)
-        # KenLMのscoreは対数確率(log10)なので、初期値は0.0
         current_hypotheses = [(0.0, "")]
 
-        # 入力された数字列を1つずつ処理
         for i_char in index_seq:
-            next_hypotheses = []
-            
-            # マッピングが存在しない文字が来た場合はスキップ(あるいは中断)
+            # マッピングになければスキップ
             if i_char not in self.QWERTY_MAP:
-                return []
+                continue # あるいは return []
 
-            possible_chars = self.QWERTY_MAP[i_char] # 例: "tgbrfv"
+            possible_chars = self.QWERTY_MAP[i_char]
+            next_hypotheses = []
 
-            # 現在の候補(ビーム幅分)に対して、次の文字を総当たりで付与
             for score, word in current_hypotheses:
                 for char in possible_chars:
                     new_word = word + char
-                    # KenLMでスコアリング (ここでは簡易的に毎回全文スコア計算)
-                    # 文字レベルモデルなら eos=False の方が途中経過として自然だが、
-                    # 最終的な単語としての尤度を見るためデフォルト設定で計算して比較する
                     new_score = self.model.score(new_word)
-                    
                     next_hypotheses.append((new_score, new_word))
             
-            # スコアが高い順にソートして、上位 width 件だけを残す (枝刈り)
+            # ソートして上位width件を残す
             next_hypotheses.sort(key=lambda x: x[0], reverse=True)
             current_hypotheses = next_hypotheses[:width]
 
         return current_hypotheses
 
     def count_qwerty_combinations(self, index_seq: str) -> int:
-        """組み合わせ総数計算（デバッグ・統計用）"""
         total_combinations = 1
         for index_char in index_seq:
             if index_char in self.QWERTY_MAP:
                 total_combinations *= len(self.QWERTY_MAP[index_char])
         return total_combinations
-
-# 単体テスト用
-if __name__ == "__main__":
-    try:
-        # モデルパスは環境に合わせて変更してください
-        predictor = WordPredictor('wiki_en_token.arpa.bin') 
-        
-        # テスト: 長い単語 "circumstances" (13文字)
-        # 従来の全探索では 6^13 ≒ 130億通りでメモリ溢れ・タイムアウトするケース
-        target_word = "circumstances"
-        print(f"\n--- Test: Long Word Input '{target_word}' ---")
-        
-        predictor.set_text_input(target_word)
-        seq = predictor.get_current_sequence()
-        comb = predictor.count_qwerty_combinations(seq)
-        
-        print(f"Index Sequence: {seq}")
-        print(f"Theoretical Combinations: {comb:,}") # 巨大な数字になる
-        
-        # ビームサーチなら一瞬で終わるはず
-        import time
-        start = time.time()
-        candidates = predictor.predict_top_words(limit=10)
-        elapsed = time.time() - start
-        
-        print(f"Time: {elapsed:.4f} sec")
-        print(f"Candidates: {candidates}")
-
-    except Exception as e:
-        print(e)

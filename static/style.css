@@ -1,4 +1,6 @@
 /* static/style.css */
+
+/* --- 1. Base Styles (From original) --- */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -14,67 +16,99 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* --- テストモード用エリア --- */
+/* --- 2. Configuration Area (New) --- */
+.config-box {
+    background-color: #eef;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccd;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.config-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#start-test-btn {
+    background-color: #d9534f;
+    /* Red for Start Action */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+    /* Push to right */
+}
+
+#start-test-btn:hover {
+    background-color: #c9302c;
+}
+
+/* --- 3. Test Area Styles --- */
 .test-container {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #eef;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    /* Active test border */
     border-radius: 8px;
-    border: 1px solid #ccd;
 }
 
 .reference-box {
     margin-bottom: 15px;
 }
 
-.reference-box .label {
-    font-weight: bold;
-    color: #555;
-    font-size: 0.9em;
-}
-
-.reference-box .text-content {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #333;
-    padding: 10px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
+.reference-box .label,
 .progress-box .label {
     font-weight: bold;
     color: #555;
     font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.reference-box .text-content {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    padding: 15px;
+    background: #f9f9f9;
+    border-left: 5px solid #007bff;
+    border-radius: 4px;
 }
 
 .progress-box .text-content {
-    font-size: 1.4em;
-    color: #007bff;
-    padding: 10px;
+    font-size: 1.5em;
+    color: #333;
+    padding: 15px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
     min-height: 1.5em;
-    /* 空でも高さ確保 */
 }
 
-/* 誤答表示用のスタイル (追加) */
 .wrong-word {
     color: #dc3545;
-    /* 赤色 */
     text-decoration: underline;
     text-decoration-color: #dc3545;
 }
 
 .current-selection {
-    color: #d9534f;
-    /* 赤系で強調 */
+    color: #007bff;
     font-weight: bold;
+    background-color: #e6f0ff;
+    padding: 0 4px;
+    border-radius: 2px;
 }
 
-/* --- 入力周り --- */
+/* --- 4. Input Area Styles --- */
 .input-wrapper {
     display: flex;
     align-items: center;
@@ -83,55 +117,92 @@ body {
 
 input[type="text"] {
     flex-grow: 1;
-    padding: 10px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    /* margin-bottomはwrapperで調整 */
+    /* margin-bottom removal to fit new layout */
 }
 
+/* Small control buttons */
 .selection-controls button {
-    width: 50px;
-    /* 小さめボタン */
+    width: 60px;
     padding: 10px 0;
     font-size: 14px;
-}
-
-#btn-confirm {
-    width: 70px;
-    background-color: #28a745;
-}
-
-/* --- 候補リスト --- */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 10px;
-}
-
-li {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    margin-bottom: 5px;
-    padding: 8px 12px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-/* 選択中の候補ハイライト */
-li.selected {
-    background-color: #007bff;
-    color: white;
-    border-color: #0056b3;
+#btn-confirm {
+    background-color: #28a745;
+}
+
+/* --- 5. Horizontal Candidates (New) --- */
+.candidates-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    min-height: 60px;
+    /* Ensure space is reserved */
+}
+
+.candidate-item {
+    flex: 1;
+    min-width: 80px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.candidate-item:hover {
+    background-color: #e2e6ea;
+}
+
+.candidate-item.selected {
+    background-color: #cce5ff;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.candidate-word {
     font-weight: bold;
+    font-size: 1.1em;
+    position: relative;
+    z-index: 2;
 }
 
-.no-results {
-    color: #777;
+.candidate-score {
+    font-size: 0.75em;
+    color: #666;
+    position: relative;
+    z-index: 2;
 }
 
-/* --- キーボードUI (既存維持) --- */
+.score-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #28a745;
+    /* Green bar */
+    z-index: 1;
+    transition: width 0.3s;
+}
+
+/* --- 6. Keyboard Styles (Preserved from original) --- */
 #keyboard-container {
     margin-top: 20px;
     padding: 15px;
@@ -164,6 +235,7 @@ li.selected {
     min-width: 30px;
 }
 
+/* Offsets for QWERTY layout */
 .keyboard-row:nth-child(2) {
     margin-left: 30px;
 }
@@ -192,7 +264,11 @@ li.selected {
     color: #fff;
 }
 
-.info-small {
-    font-size: 0.8em;
-    color: #666;
+/* Completion Screen */
+.finished-screen {
+    text-align: center;
+    padding: 40px;
+    color: #28a745;
+    font-size: 2em;
+    font-weight: bold;
 }

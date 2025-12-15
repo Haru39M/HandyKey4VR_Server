@@ -4,48 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HandyKey4VR WEB UI</title>
+    <title>HandyKey4VR Evaluation</title>
+    <!-- CSS読み込み -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
     <div class="container">
-        <h1>HandyKey4VR WEB UI</h1>
+        <h1>HandyKey4VR Evaluation</h1>
 
-        <!-- タイピングテスト用エリア -->
-        <div id="test-section" class="test-container">
-            <div class="test-controls">
-                <button id="start-test-btn">テスト開始</button>
-                <button id="next-phrase-btn" style="display:none;">次の文章へ</button>
+        <!-- ==========================================
+             実験設定エリア (新規追加)
+             ========================================== -->
+        <div id="config-section" class="config-box">
+            <div class="config-item">
+                <label for="participant-id">ID:</label>
+                <input type="text" id="participant-id" value="p01" size="8">
+            </div>
+            <div class="config-item">
+                <label for="condition">Cond:</label>
+                <select id="condition">
+                    <option value="Proposed">Proposed</option>
+                    <option value="Controller">Controller</option>
+                    <option value="Keyboard">Keyboard</option>
+                </select>
+            </div>
+            <div class="config-item">
+                <label for="max-sentences">Sentences:</label>
+                <input type="number" id="max-sentences" value="5" size="5">
+            </div>
+            <button id="start-test-btn" type="button">START TEST</button>
+        </div>
+
+        <!-- ==========================================
+             タイピングテスト進行エリア (初期は非表示)
+             ========================================== -->
+        <div id="test-section" class="test-container" style="display:none;">
+            <!-- 次へボタン (完了時に表示) -->
+            <div class="test-controls" style="text-align: right; margin-bottom: 10px;">
+                <button id="next-phrase-btn" style="display:none;">Next Phrase &gt;</button>
             </div>
 
-            <div id="reference-display" class="reference-box" style="display:none;">
+            <!-- 正解文表示 -->
+            <div id="reference-display" class="reference-box">
                 <div class="label">Reference Text:</div>
                 <div id="reference-text-content" class="text-content"></div>
             </div>
 
-            <div id="progress-display" class="progress-box" style="display:none;">
+            <!-- ユーザー入力状況表示 -->
+            <div id="progress-display" class="progress-box">
                 <div class="label">Your Input:</div>
                 <div id="progress-text-content" class="text-content"></div>
+            </div>
+
+            <!-- 完了メッセージ -->
+            <div id="completion-message"
+                style="display:none; color: green; font-weight: bold; margin-top: 10px; text-align: center;">
+                Perfect! Loading next...
             </div>
         </div>
 
         <hr>
 
-        <form id="predict-form">
-            <label for="word-input">入力:</label>
+        <!-- ==========================================
+             入力フォーム & 候補表示
+             ========================================== -->
+        <form id="predict-form" onsubmit="return false;">
+            <label for="word-input">Input:</label>
             <div class="input-wrapper">
-                <input type="text" id="word-input" name="prefix" autocomplete="off" placeholder="英単語を入力...">
+                <!-- 入力欄 -->
+                <input type="text" id="word-input" name="prefix" autocomplete="off" placeholder="Type here..." disabled>
+
+                <!-- 補助ボタン (スマホ用等) -->
                 <div class="selection-controls">
-                    <button type="button" id="btn-up" tabindex="-1">↑</button>
-                    <button type="button" id="btn-down" tabindex="-1">↓</button>
-                    <button type="button" id="btn-confirm" tabindex="-1">決定</button>
+                    <button type="button" id="btn-up" tabindex="-1">←</button>
+                    <button type="button" id="btn-down" tabindex="-1">→</button>
+                    <button type="button" id="btn-confirm" tabindex="-1">Enter</button>
                 </div>
             </div>
-            <!-- 通常の予測ボタンはEnterキー等の動作と被るため、テストモードでは補佐的な役割になります -->
-            <!-- <button type="submit">予測更新</button> -->
+
+            <!-- ★変更点: 候補をここ（入力欄の下）に横並びで表示 -->
+            <div id="horizontal-candidates" class="candidates-row">
+                <!-- JSで候補アイテム(div)が挿入されます -->
+            </div>
         </form>
 
+        <!-- ==========================================
+             キーボード表示 (既存のデザインを維持)
+             ========================================== -->
         <div id="keyboard-container">
             <div class="keyboard-row">
                 <div class="key key-q" data-key="q">Q <span class="index-label" data-char="q"></span></div>
@@ -81,17 +127,11 @@
             </div>
         </div>
 
-        <h2>予測候補 (↑↓キーで選択、Enterで確定)</h2>
-        <div id="results-container">
-            <p class="no-results">...</p>
-        </div>
-
         <div id="info-container"></div>
-
     </div>
 
+    <!-- Pythonから渡される変数の定義 -->
     <script>
-        // PythonからREVERSE_QWERTY_MAPを受け取る
         const REVERSE_QWERTY_MAP = {{ js_reverse_map| safe }};
     </script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>

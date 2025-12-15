@@ -1,316 +1,373 @@
-// static/app.js
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- DOM要素 ---
+    // --- DOM Elements ---
     const input = document.getElementById('word-input');
-    const resultsContainer = document.getElementById('results-container');
-    const infoContainer = document.getElementById('info-container');
+    const candidatesRow = document.getElementById('horizontal-candidates');
     const keyboardKeys = document.querySelectorAll('#keyboard-container .key');
 
-    // Test Mode Elements
+    // UI Sections
     const startTestBtn = document.getElementById('start-test-btn');
     const nextPhraseBtn = document.getElementById('next-phrase-btn');
-    const referenceDisplay = document.getElementById('reference-display');
-    const referenceTextContent = document.getElementById('reference-text-content');
-    const progressDisplay = document.getElementById('progress-display');
-    const progressTextContent = document.getElementById('progress-text-content');
+    const configSection = document.getElementById('config-section');
+    const testSection = document.getElementById('test-section');
+    const completionMessage = document.getElementById('completion-message');
 
-    const btnUp = document.getElementById('btn-up');
-    const btnDown = document.getElementById('btn-down');
+    // Config Inputs
+    const idInput = document.getElementById('participant-id');
+    const conditionInput = document.getElementById('condition');
+    const maxSentencesInput = document.getElementById('max-sentences');
+
+    // Controls
+    const btnUp = document.getElementById('btn-up'); // 画面上の矢印(←)
+    const btnDown = document.getElementById('btn-down'); // 画面上の矢印(→)
     const btnConfirm = document.getElementById('btn-confirm');
 
-    // --- State Variables ---
-    let isTestMode = false;
-    let committedWords = []; // 入力確定した単語リスト
-    let currentPredictions = [];
+    // --- State ---
+    let isTestRunning = false;
+    let committedWords = [];
+    let currentPredictions = []; // Array of {word, score}
     let selectedIndex = -1;
+    let autoNextTimer = null;
 
-    // バックエンドから受け取る状態
-    let validatedResults = []; // {word: "...", is_correct: true/false} のリスト
-    let isCompleted = false;
-
-    // --- 初期化 ---
-    keyboardKeys.forEach(keyElement => {
-        const char = keyElement.dataset.key;
-        if (char && typeof REVERSE_QWERTY_MAP !== 'undefined' && REVERSE_QWERTY_MAP[char]) {
-            const indexLabel = keyElement.querySelector('.index-label');
-            if (indexLabel) indexLabel.textContent = REVERSE_QWERTY_MAP[char];
-        }
-    });
-
-    // ==========================================
-    // タイピングテスト操作
-    // ==========================================
-
-    startTestBtn.addEventListener('click', startTest);
-    nextPhraseBtn.addEventListener('click', nextPhrase);
-
-    async function startTest() {
-        isTestMode = true;
-        resetSession();
-
-        // UI表示切り替え
-        referenceDisplay.style.display = 'block';
-        progressDisplay.style.display = 'block';
-        startTestBtn.style.display = 'none';
-        nextPhraseBtn.style.display = 'none';
-
-        try {
-            const response = await fetch('/test/start', { method: 'POST' });
-            const data = await response.json();
-            referenceTextContent.textContent = data.reference_text;
-            input.focus();
-        } catch (e) {
-            console.error(e);
-            alert("Connection Error");
-        }
-    }
-
-    async function nextPhrase() {
-        resetSession();
-        nextPhraseBtn.style.display = 'none';
-        resultsContainer.innerHTML = '<p class="no-results">...</p>';
-
-        try {
-            const response = await fetch('/test/next', { method: 'POST' });
-            const data = await response.json();
-            referenceTextContent.textContent = data.reference_text;
-            input.focus();
-        } catch (e) {
-            console.error(e);
-        }
-    }
-
-    function resetSession() {
-        committedWords = [];
-        validatedResults = [];
-        isCompleted = false;
-        resetInput();
-        updateDisplay();
-    }
-
-    // ==========================================
-    // バックエンド同期 & 描画
-    // ==========================================
-
-    /**
-     * バックエンドに入力状態を送信し、正誤判定を受け取る
-     */
-    async function validateInputOnServer() {
-        try {
-            const response = await fetch('/test/check', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ committed_words: committedWords })
-            });
-            const data = await response.json();
-
-            // サーバーからの評価結果で状態を更新
-            validatedResults = data.results;
-            isCompleted = data.is_completed;
-
-            updateDisplay();
-
-            if (isCompleted) {
-                nextPhraseBtn.style.display = 'inline-block';
-                resultsContainer.innerHTML = '<p class="info">正解！次の文章に進んでください。</p>';
-                input.value = ''; // 入力をクリア
-                input.blur();
-            }
-
-        } catch (e) {
-            console.error("Validation API Error:", e);
-        }
-    }
-
-    /**
-     * 現在の状態に基づいて表示を更新する
-     * ロジック（判定）は含まず、状態の描画のみ行う
-     */
-    function updateDisplay() {
-        // 確定済み単語の表示（サーバーの判定結果に基づく）
-        let htmlParts = validatedResults.map(res => {
-            const escapedWord = escapeHTML(res.word);
-            if (!res.is_correct) {
-                return `<span class="wrong-word">${escapedWord}</span>`;
-            } else {
-                return escapedWord;
+    // --- Keyboard Index Initialization ---
+    // REVERSE_QWERTY_MAPはHTML内のScriptタグで定義済み
+    if (typeof REVERSE_QWERTY_MAP !== 'undefined') {
+        keyboardKeys.forEach(keyElement => {
+            const char = keyElement.dataset.key;
+            if (char && REVERSE_QWERTY_MAP[char]) {
+                const indexLabel = keyElement.querySelector('.index-label');
+                if (indexLabel) {
+                    indexLabel.textContent = REVERSE_QWERTY_MAP[char];
+                }
             }
         });
-
-        // 現在選択中の予測候補（プレビュー）
-        if (!isCompleted && selectedIndex >= 0 && currentPredictions[selectedIndex]) {
-            const currentWord = currentPredictions[selectedIndex];
-            htmlParts.push(`<span class="current-selection">[${escapeHTML(currentWord)}]</span>`);
-        }
-
-        progressTextContent.innerHTML = htmlParts.join(" ");
     }
 
-    // ==========================================
-    // 入力・予測・操作
-    // ==========================================
+    // ============================================
+    //  TEST LOGIC
+    // ============================================
 
-    input.addEventListener('keydown', (e) => {
-        if (isCompleted) return; // 完了してたら入力させない
+    // 1. Start Test
+    if (startTestBtn) {
+        startTestBtn.addEventListener('click', async () => {
+            console.log("Start button clicked");
 
-        // Space: 候補ループ選択 (下へ)
-        if (e.key === ' ') {
-            e.preventDefault();
-            moveSelection(1);
-            return;
-        }
+            const params = {
+                participant_id: idInput.value,
+                condition: conditionInput.value,
+                max_sentences: maxSentencesInput.value
+            };
 
-        // Backspace: 空欄時に確定単語を戻す
-        if (e.key === 'Backspace') {
-            if (input.value === '' && committedWords.length > 0) {
-                e.preventDefault();
-                const lastWord = committedWords.pop();
-                input.value = lastWord; // 入力欄に戻す
+            try {
+                const res = await fetch('/test/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(params)
+                });
 
-                // 変更をサーバーに通知（同期）
-                validateInputOnServer();
+                if (!res.ok) throw new Error("API Response not ok");
 
-                // 予測も再開
-                input.dispatchEvent(new Event('input'));
-                return;
+                const data = await res.json();
+
+                // Switch UI
+                isTestRunning = true;
+                configSection.style.display = 'none';
+                testSection.style.display = 'block';
+                input.disabled = false;
+                input.value = '';
+                input.focus();
+
+                // Initialize Session
+                committedWords = [];
+                currentPredictions = [];
+                updateReference(data.reference_text);
+                updateProgressDisplay([]);
+                renderCandidates();
+
+            } catch (e) {
+                console.error("Start Test Error:", e);
+                alert("テストの開始に失敗しました。サーバーを確認してください。");
             }
-        }
+        });
+    }
 
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            moveSelection(1);
-        } else if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            moveSelection(-1);
-        } else if (e.key === 'Enter') {
-            e.preventDefault();
-            confirmSelection();
-        }
-    });
+    // 2. Next Phrase (Manual or Auto)
+    async function goToNextPhrase() {
+        if (autoNextTimer) clearTimeout(autoNextTimer);
+        autoNextTimer = null;
+        completionMessage.style.display = 'none';
+        nextPhraseBtn.style.display = 'none';
 
+        try {
+            const res = await fetch('/test/next', { method: 'POST' });
+            const data = await res.json();
+
+            updateReference(data.reference_text);
+
+            if (data.reference_text !== "TEST_FINISHED") {
+                committedWords = [];
+                input.value = '';
+                input.disabled = false;
+                input.focus();
+                updateProgressDisplay([]);
+                renderCandidates();
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    if (nextPhraseBtn) {
+        nextPhraseBtn.addEventListener('click', goToNextPhrase);
+    }
+
+    function updateReference(text) {
+        const refContent = document.getElementById('reference-text-content');
+        if (text === "TEST_FINISHED") {
+            testSection.innerHTML = '<div class="finished-screen">TEST FINISHED<br><small>Thank you!</small></div>';
+            input.disabled = true;
+            isTestRunning = false;
+        } else {
+            refContent.textContent = text;
+        }
+    }
+
+    // ============================================
+    //  INPUT & PREDICTION LOGIC
+    // ============================================
+
+    // Input Event
     input.addEventListener('input', async () => {
         const word = input.value.trim();
+
         if (!word) {
             currentPredictions = [];
             selectedIndex = -1;
             renderCandidates();
-            updateDisplay();
+            updateProgressDisplay(); // clear preview
             return;
         }
 
-        // 予測API
         try {
-            const response = await fetch('/predict', {
+            // Call Predict API
+            const res = await fetch('/predict', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ word: word }),
+                body: JSON.stringify({ word: word })
             });
-            const data = await response.json();
+            const data = await res.json();
 
-            if (data.predictions) {
-                currentPredictions = data.predictions;
-                selectedIndex = currentPredictions.length > 0 ? 0 : -1;
-            } else {
-                currentPredictions = [];
-                selectedIndex = -1;
-            }
+            // data.predictions contains [{word: "...", score: -1.2}, ...]
+            currentPredictions = data.predictions || [];
+
+            // Auto-select first candidate if available
+            selectedIndex = currentPredictions.length > 0 ? 0 : -1;
 
             renderCandidates();
-            updateDisplay();
+            updateProgressDisplay();
 
-            if (data.converted_index) {
-                infoContainer.innerHTML = `<span class="info-small">Index: ${data.converted_index}</span>`;
-            }
-
-        } catch (error) {
-            console.error(error);
+        } catch (e) {
+            console.error("Prediction Error:", e);
         }
     });
 
-    // キーボードハイライト
+    // KeyDown Handling
     input.addEventListener('keydown', (e) => {
-        const char = e.key.toLowerCase();
-        if (e.repeat) return;
-        keyboardKeys.forEach(key => key.classList.remove('active'));
-        if (char.length === 1 && char >= 'a' && char <= 'z') {
-            const targetKey = document.querySelector(`.key[data-key="${char}"]`);
-            if (targetKey) targetKey.classList.add('active');
+        if (!isTestRunning) return;
+
+        // Navigation: Right Arrow or Space -> Next Candidate
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault(); // Prevent space typing
+            moveSelection(1);
+        }
+        // Navigation: Left Arrow -> Prev Candidate
+        else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            moveSelection(-1);
+        }
+        // Confirm: Enter
+        else if (e.key === 'Enter') {
+            e.preventDefault();
+            // If waiting for auto-next, skip wait
+            if (autoNextTimer) {
+                goToNextPhrase();
+            } else {
+                confirmSelection();
+            }
+        }
+        // Undo: Backspace (only if input is empty)
+        else if (e.key === 'Backspace') {
+            if (input.value === '' && committedWords.length > 0) {
+                e.preventDefault();
+                undoLastWord();
+            }
         }
     });
-    input.addEventListener('blur', () => {
-        keyboardKeys.forEach(key => key.classList.remove('active'));
-    });
 
-    // --- 補助関数 ---
+    // ============================================
+    //  RENDERING & HELPERS
+    // ============================================
 
-    function moveSelection(direction) {
+    function renderCandidates() {
+        candidatesRow.innerHTML = '';
         if (currentPredictions.length === 0) return;
-        selectedIndex += direction;
-        // ループ処理
+
+        // Determine min/max for score bar
+        // KenLM scores are log10 probabilities (usually negative, closer to 0 is better)
+        // e.g., -0.5 (good) to -6.0 (bad)
+        const maxScore = currentPredictions[0].score;
+        // Use a fixed floor for visualization or dynamic range
+        const minScoreBound = -15.0;
+
+        currentPredictions.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'candidate-item';
+            if (index === selectedIndex) div.classList.add('selected');
+
+            // Calculate bar width (0% to 100%)
+            let barPercent = 0;
+            if (item.score > minScoreBound) {
+                // Linear interpolation: (score - min) / (max - min) roughly?
+                // Actually, just mapping score to percentage against a floor works visually
+                // 0 (top) -> 100%, -15 (floor) -> 0%
+                barPercent = Math.max(0, (1 - (item.score / minScoreBound)) * 100);
+                // Since scores are negative: item.score / minScoreBound is positive (e.g., -3 / -15 = 0.2)
+                // 1 - 0.2 = 0.8 (80%) -> Logic check:
+                // If score is -3 (high), -3/-15 = 0.2. We want high bar.
+                // If score is -15 (low), -15/-15 = 1. We want low bar.
+                // Formula: (1 - (item.score / minScoreBound)) * 100 IS correct if we want higher score = larger bar.
+            }
+            // Better visual formula: 
+            // Percentage = 100 - ( (maxScore - item.score) / range * 100 ) ?
+            // Let's stick to simple relative check against specific floor.
+
+            div.innerHTML = `
+                <div class="candidate-word">${item.word}</div>
+                <div class="candidate-score">${item.score.toFixed(2)}</div>
+                <div class="score-bar" style="width: ${barPercent}%;"></div>
+            `;
+
+            // Mouse click support
+            div.addEventListener('click', () => {
+                selectedIndex = index;
+                confirmSelection();
+            });
+
+            candidatesRow.appendChild(div);
+        });
+
+        // Update preview to show selection
+        updateProgressDisplay();
+    }
+
+    function moveSelection(dir) {
+        if (currentPredictions.length === 0) return;
+        selectedIndex += dir;
+
+        // Loop around
         if (selectedIndex >= currentPredictions.length) selectedIndex = 0;
         if (selectedIndex < 0) selectedIndex = currentPredictions.length - 1;
 
         renderCandidates();
-        updateDisplay();
     }
 
     function confirmSelection() {
         if (selectedIndex < 0 || !currentPredictions[selectedIndex]) return;
 
-        const selectedWord = currentPredictions[selectedIndex];
-        committedWords.push(selectedWord);
+        const word = currentPredictions[selectedIndex].word;
+        committedWords.push(word);
 
-        // 入力をリセットして、サーバーへ同期
+        // Reset input state
         input.value = '';
         currentPredictions = [];
         selectedIndex = -1;
-        infoContainer.innerHTML = '';
         renderCandidates();
 
-        validateInputOnServer();
+        // Sync with server
+        validateOnServer();
     }
 
-    function resetInput() {
-        input.value = '';
-        currentPredictions = [];
-        selectedIndex = -1;
-        infoContainer.innerHTML = '';
-        renderCandidates();
+    async function undoLastWord() {
+        committedWords.pop();
+
+        // Notify server for logging
+        await fetch('/test/backspace', { method: 'POST' });
+
+        validateOnServer();
     }
 
-    function renderCandidates() {
-        resultsContainer.innerHTML = '';
-        if (currentPredictions.length === 0) {
-            resultsContainer.innerHTML = '<p class="no-results">候補なし</p>';
-            return;
+    async function validateOnServer() {
+        try {
+            const res = await fetch('/test/check', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ committed_words: committedWords })
+            });
+            const data = await res.json();
+
+            // Update UI with server validation (red/black text)
+            updateProgressDisplay(data.results);
+
+            if (data.is_completed) {
+                handlePhraseCompletion();
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    function updateProgressDisplay(validatedResults = []) {
+        const displayDiv = document.getElementById('progress-text-content');
+
+        // If we have validation results, use them. Otherwise use local committedWords (all assumed correct temporarily)
+        const sourceData = (validatedResults.length > 0 || committedWords.length === 0)
+            ? validatedResults
+            : committedWords.map(w => ({ word: w, is_correct: true })); // fallback
+
+        let html = sourceData.map(res => {
+            return res.is_correct
+                ? `<span>${res.word}</span>`
+                : `<span class="wrong-word">${res.word}</span>`;
+        }).join(" ");
+
+        // Append current selection preview
+        if (selectedIndex >= 0 && currentPredictions[selectedIndex]) {
+            html += ` <span class="current-selection">[${currentPredictions[selectedIndex].word}]</span>`;
         }
 
-        const ul = document.createElement('ul');
-        currentPredictions.forEach((pred, index) => {
-            const li = document.createElement('li');
-            li.textContent = pred;
-            if (index === selectedIndex) li.classList.add('selected');
-
-            li.addEventListener('click', () => {
-                selectedIndex = index;
-                confirmSelection();
-            });
-            ul.appendChild(li);
-        });
-        resultsContainer.appendChild(ul);
+        displayDiv.innerHTML = html;
     }
 
-    // ボタンUI
-    btnUp.addEventListener('click', () => moveSelection(-1));
-    btnDown.addEventListener('click', () => moveSelection(1));
-    btnConfirm.addEventListener('click', confirmSelection);
-});
+    function handlePhraseCompletion() {
+        completionMessage.style.display = 'block';
+        input.disabled = true;
+        // Show manual next button as well
+        nextPhraseBtn.style.display = 'inline-block';
 
-function escapeHTML(str) {
-    if (typeof str !== 'string') return str;
-    return str.replace(/[&<>"']/g, match => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    })[match]);
-}
+        // Auto next in 2 seconds
+        autoNextTimer = setTimeout(goToNextPhrase, 2000);
+    }
+
+    // --- Keyboard Visual Feedback (Preserved) ---
+    input.addEventListener('keydown', (e) => {
+        const char = e.key.toLowerCase();
+        if (e.repeat) return;
+        keyboardKeys.forEach(key => key.classList.remove('active'));
+        if (char.length === 1 && char >= 'a' && char <= 'z') {
+            const el = document.querySelector(`.key[data-key="${char}"]`);
+            if (el) el.classList.add('active');
+        }
+    });
+    input.addEventListener('keyup', () => {
+        keyboardKeys.forEach(key => key.classList.remove('active'));
+    });
+    input.addEventListener('blur', () => {
+        keyboardKeys.forEach(key => key.classList.remove('active'));
+    });
+
+    // --- On-Screen Buttons ---
+    if (btnUp) btnUp.addEventListener('click', () => moveSelection(-1));
+    if (btnDown) btnDown.addEventListener('click', () => moveSelection(1));
+    if (btnConfirm) btnConfirm.addEventListener('click', confirmSelection);
+
+});
