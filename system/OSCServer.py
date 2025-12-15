@@ -1,3 +1,7 @@
+'''
+bridge.pyからOSCで入力を受け取り，vrc_typing_display.pyへテキストを渡す．
+'''
+
 import sys
 import os
 import time
