@@ -27,7 +27,7 @@ def load_and_process_logs(log_dir="logs"):
 
     # --- WPMの再計算 (バグ修正用) ---
     # WPM = (文字数 / 5) / (秒数 / 60)
-    df['WPM_Corrected'] = (df['CharCount'] / 5) / (df['CompletionTime'] / 60)
+    df['WPM'] = (df['CharCount'] / 5) / (df['CompletionTime'] / 60)
     
     return df
 
@@ -44,7 +44,7 @@ def plot_results(df):
     sns.lineplot(
         data=df, 
         x="TrialID", 
-        y="WPM_Corrected", 
+        y="WPM", 
         hue="Condition", 
         style="Condition", 
         markers=True, 
@@ -55,8 +55,8 @@ def plot_results(df):
 
     plt.title("Learning Curve: WPM by Trial & Condition", fontsize=16)
     plt.xlabel("Trial ID (Sentence Count)", fontsize=12)
-    plt.ylabel("WPM (Corrected)", fontsize=12)
-    plt.ylim(0, df['WPM_Corrected'].max() + 10)
+    plt.ylabel("WPM", fontsize=12)
+    plt.ylim(0, df['WPM'].max() + 10)
     plt.legend(title="Condition", fontsize=10, title_fontsize=12)
     
     # グラフを保存または表示
@@ -67,7 +67,7 @@ def plot_results(df):
 
     # 2. 統計量の表示
     print("\n--- Statistics (WPM) ---")
-    stats = df.groupby("Condition")["WPM_Corrected"].agg(['mean', 'std', 'min', 'max', 'count'])
+    stats = df.groupby("Condition")["WPM"].agg(['mean', 'std', 'min', 'max', 'count'])
     print(stats)
 
 if __name__ == "__main__":

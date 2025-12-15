@@ -1,0 +1,98 @@
+{
+    "ImagesPath": "../gesture_images",
+    "Gestures": {
+        "0": {
+            "GestureName": "Thumbs",
+            "State": {
+                "T": [
+                    "OPEN"
+                ],
+                "I": [
+                    "CLOSE"
+                ],
+                "M": [
+                    "CLOSE"
+                ],
+                "R": [
+                    "CLOSE"
+                ],
+                "P": [
+                    "CLOSE"
+                ]
+            },
+            "Image": "Thumbs.jpg"
+        },
+        "1": {
+            "GestureName": "Fist",
+            "State": {
+                "T": "CLOSE",
+                "I": "CLOSE",
+                "M": "CLOSE",
+                "R": "CLOSE",
+                "P": "CLOSE"
+            }
+        },
+        "2": {
+            "GestureName": "Rock",
+            "State": {
+                "T": "CLOSE",
+                "I": "CLOSE",
+                "M": "OPEN",
+                "R": "OPEN",
+                "P": "OPEN"
+            }
+        },
+        "3": {
+            "GestureName": "Peace",
+            "State": {
+                "T": [
+                    "TOUCH"
+                ],
+                "I": "OPEN",
+                "M": "OPEN",
+                "R": "CLOSE",
+                "P": "CLOSE"
+            }
+        },
+        "4": {
+            "GestureName": "Point",
+            "State": {
+                "T": "OPEN",
+                "I": "CLOSE",
+                "M": "CLOSE",
+                "R": "CLOSE",
+                "P": "CLOSE"
+            }
+        },
+        "5": {
+            "GestureName": "Gun",
+            "State": {
+                "T": "OPEN",
+                "I": "CLOSE",
+                "M": "CLOSE",
+                "R": "CLOSE",
+                "P": "CLOSE"
+            }
+        },
+        "6": {
+            "GestureName": "Neutral",
+            "State": {
+                "T": "OPEN",
+                "I": "CLOSE",
+                "M": "CLOSE",
+                "R": "CLOSE",
+                "P": "CLOSE"
+            }
+        },
+        "7": {
+            "GestureName": "Open",
+            "State": {
+                "T": "OPEN",
+                "I": "CLOSE",
+                "M": "CLOSE",
+                "R": "CLOSE",
+                "P": "CLOSE"
+            }
+        }
+    }
+}

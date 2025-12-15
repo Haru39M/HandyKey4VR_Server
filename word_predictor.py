@@ -82,7 +82,7 @@ class WordPredictor:
         top_candidates = self._beam_search(self.current_index_sequence, beam_width)
         return [word for score, word in top_candidates[:limit]]
 
-    def predict_top_words_with_scores(self, limit=6, beam_width=10000):
+    def predict_top_words_with_scores(self, limit=6, beam_width=100000):
         """
         WEB UI用。スコア情報も含めて返す。
         :return: [{"word": str, "score": float}, ...]
