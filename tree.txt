@@ -1,17 +1,43 @@
 .
 ├── README.md
+├── analysis.py
 ├── app.py
-├── app2.py
-├── app3.py
-├── app4.py
 ├── botsu
 │   ├── main.py
 │   ├── main2.py
 │   ├── main3.py
-│   └── main_old.py
+│   ├── main_old.py
+│   ├── test.py
+│   ├── test2.py
+│   ├── test3.py
+│   └── typing_test_v1.py
+├── combined_analysis_data.csv
 ├── config.json
 ├── export_tree.sh
+├── gestures
+│   ├── gesture_images
+│   │   ├── gesture_fist.png
+│   │   ├── gesture_gun.png
+│   │   ├── gesture_neutral.png
+│   │   ├── gesture_open.png
+│   │   ├── gesture_peace.png
+│   │   ├── gesture_point.png
+│   │   ├── gesture_rock.png
+│   │   ├── gesture_thumbs.png
+│   │   └── gestures_all.png
+│   └── gestures.json
+├── logs
+│   ├── log_p01.csv
+│   ├── log_p01_2025-12-16-01-53-05_raw.csv
+│   ├── log_p01_2025-12-16-01-53-05_summary.csv
+│   ├── log_p01_2025-12-16-01-58-51_raw.csv
+│   ├── log_p01_2025-12-16-01-58-51_summary.csv
+│   ├── log_p01_2025-12-16-02-01-30_raw.csv
+│   ├── log_p01_2025-12-16-02-01-30_summary.csv
+│   ├── log_p01_2025-12-16-04-22-11_raw.csv
+│   └── log_p01_2025-12-16-04-22-11_summary.csv
 ├── phrases2.txt
+├── requirements.txt
 ├── static
 │   ├── app.js
 │   └── style.css
@@ -20,15 +46,12 @@
 │   └── vrc_typing_display.py
 ├── templates
 │   └── index.html
-├── test.py
-├── test2.py
-├── test3.py
 ├── tree.txt
 ├── treecommand.txt
 ├── typing_test.py
-├── typing_test_v1.py
 ├── wiki_en_token.arpa.bin
 ├── word_predictor.py
-└── words.json
+├── words.json
+└── wpm_analysis.png
 
-5 directories, 27 files
+8 directories, 47 files

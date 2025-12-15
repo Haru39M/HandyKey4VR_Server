@@ -1,11 +1,37 @@
 {
-    "ImagesPath": "../gesture_images",
+    "ImagesPath": "./gesture_images",
     "Gestures": {
         "0": {
-            "GestureName": "Thumbs",
+            "GestureName": "Neutral",
             "State": {
                 "T": [
-                    "OPEN"
+                    "OPEN",
+                    "TOUCH"
+                ],
+                "I": [
+                    "OPEN",
+                    "TOUCH"
+                ],
+                "M": [
+                    "OPEN",
+                    "TOUCH"
+                ],
+                "R": [
+                    "OPEN",
+                    "TOUCH"
+                ],
+                "P": [
+                    "OPEN",
+                    "TOUCH"
+                ]
+            },
+            "Description": "指を離している、または軽く触れている状態（待機状態）"
+        },
+        "1": {
+            "GestureName": "Fist",
+            "State": {
+                "T": [
+                    "CLOSE"
                 ],
                 "I": [
                     "CLOSE"
@@ -20,79 +46,138 @@
                     "CLOSE"
                 ]
             },
-            "Image": "Thumbs.jpg"
-        },
-        "1": {
-            "GestureName": "Fist",
-            "State": {
-                "T": "CLOSE",
-                "I": "CLOSE",
-                "M": "CLOSE",
-                "R": "CLOSE",
-                "P": "CLOSE"
-            }
+            "Description": "すべての指を握り込む"
         },
         "2": {
-            "GestureName": "Rock",
-            "State": {
-                "T": "CLOSE",
-                "I": "CLOSE",
-                "M": "OPEN",
-                "R": "OPEN",
-                "P": "OPEN"
-            }
-        },
-        "3": {
-            "GestureName": "Peace",
+            "GestureName": "HandOpen",
             "State": {
                 "T": [
-                    "TOUCH"
+                    "OPEN"
                 ],
-                "I": "OPEN",
-                "M": "OPEN",
-                "R": "CLOSE",
-                "P": "CLOSE"
-            }
+                "I": [
+                    "OPEN"
+                ],
+                "M": [
+                    "OPEN"
+                ],
+                "R": [
+                    "OPEN"
+                ],
+                "P": [
+                    "OPEN"
+                ]
+            },
+            "Description": "すべての指を開く（パー）"
+        },
+        "3": {
+            "GestureName": "FingerPoint",
+            "State": {
+                "T": [
+                    "TOUCH",
+                    "CLOSE"
+                ],
+                "I": [
+                    "OPEN"
+                ],
+                "M": [
+                    "CLOSE"
+                ],
+                "R": [
+                    "CLOSE"
+                ],
+                "P": [
+                    "CLOSE"
+                ]
+            },
+            "Description": "人差し指のみ立てる（他は握る）"
         },
         "4": {
-            "GestureName": "Point",
+            "GestureName": "Victory",
             "State": {
-                "T": "OPEN",
-                "I": "CLOSE",
-                "M": "CLOSE",
-                "R": "CLOSE",
-                "P": "CLOSE"
-            }
+                "T": [
+                    "TOUCH",
+                    "CLOSE"
+                ],
+                "I": [
+                    "OPEN"
+                ],
+                "M": [
+                    "OPEN"
+                ],
+                "R": [
+                    "CLOSE"
+                ],
+                "P": [
+                    "CLOSE"
+                ]
+            },
+            "Description": "ピースサイン（人差し指と中指を立てる）"
         },
         "5": {
-            "GestureName": "Gun",
+            "GestureName": "RockNRoll",
             "State": {
-                "T": "OPEN",
-                "I": "CLOSE",
-                "M": "CLOSE",
-                "R": "CLOSE",
-                "P": "CLOSE"
-            }
+                "T": [
+                    "TOUCH",
+                    "CLOSE"
+                ],
+                "I": [
+                    "OPEN"
+                ],
+                "M": [
+                    "CLOSE"
+                ],
+                "R": [
+                    "CLOSE"
+                ],
+                "P": [
+                    "OPEN"
+                ]
+            },
+            "Description": "メロイックサイン（人差し指と小指を立てる）"
         },
         "6": {
-            "GestureName": "Neutral",
+            "GestureName": "Gun",
             "State": {
-                "T": "OPEN",
-                "I": "CLOSE",
-                "M": "CLOSE",
-                "R": "CLOSE",
-                "P": "CLOSE"
-            }
+                "T": [
+                    "OPEN"
+                ],
+                "I": [
+                    "OPEN"
+                ],
+                "M": [
+                    "CLOSE"
+                ],
+                "R": [
+                    "CLOSE"
+                ],
+                "P": [
+                    "CLOSE"
+                ]
+            },
+            "Description": "親指と人差し指を立てる"
         },
         "7": {
-            "GestureName": "Open",
+            "GestureName": "ThumbsUp",
             "State": {
-                "T": "OPEN",
-                "I": "CLOSE",
-                "M": "CLOSE",
-                "R": "CLOSE",
-                "P": "CLOSE"
-            }
+                "T": [
+                    "OPEN"
+                ],
+                "I": [
+                    "CLOSE",
+                    "TOUCH"
+                ],
+                "M": [
+                    "CLOSE"
+                ],
+                "R": [
+                    "CLOSE"
+                ],
+                "P": [
+                    "CLOSE"
+                ]
+            },
+            "Image": "Thumbs.jpg",
+            "Description": "親指を立てる（サムズアップ）"
         }
     }
 }
