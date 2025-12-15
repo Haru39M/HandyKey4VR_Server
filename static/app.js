@@ -5,53 +5,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const candidatesRow = document.getElementById('horizontal-candidates');
     const keyboardKeys = document.querySelectorAll('#keyboard-container .key');
 
-    // UI Sections
     const startTestBtn = document.getElementById('start-test-btn');
     const nextPhraseBtn = document.getElementById('next-phrase-btn');
     const configSection = document.getElementById('config-section');
     const testSection = document.getElementById('test-section');
     const completionMessage = document.getElementById('completion-message');
 
-    // Config Inputs
     const idInput = document.getElementById('participant-id');
     const conditionInput = document.getElementById('condition');
     const maxSentencesInput = document.getElementById('max-sentences');
 
-    // Controls
-    const btnUp = document.getElementById('btn-up'); // 画面上の矢印(←)
-    const btnDown = document.getElementById('btn-down'); // 画面上の矢印(→)
+    const btnUp = document.getElementById('btn-up');
+    const btnDown = document.getElementById('btn-down');
     const btnConfirm = document.getElementById('btn-confirm');
 
     // --- State ---
     let isTestRunning = false;
     let committedWords = [];
-    let currentPredictions = []; // Array of {word, score}
+    let currentPredictions = [];
     let selectedIndex = -1;
     let autoNextTimer = null;
 
+    // Logging Buffer
+    let eventLogBuffer = [];
+
     // --- Keyboard Index Initialization ---
-    // REVERSE_QWERTY_MAPはHTML内のScriptタグで定義済み
     if (typeof REVERSE_QWERTY_MAP !== 'undefined') {
         keyboardKeys.forEach(keyElement => {
             const char = keyElement.dataset.key;
             if (char && REVERSE_QWERTY_MAP[char]) {
                 const indexLabel = keyElement.querySelector('.index-label');
-                if (indexLabel) {
-                    indexLabel.textContent = REVERSE_QWERTY_MAP[char];
-                }
+                if (indexLabel) indexLabel.textContent = REVERSE_QWERTY_MAP[char];
             }
         });
+    }
+
+    // ============================================
+    //  LOGGING HELPER
+    // ============================================
+    function logEvent(type, data) {
+        if (!isTestRunning) return;
+        eventLogBuffer.push({
+            type: type,
+            data: data,
+            timestamp: Date.now() // Client side timestamp (ms)
+        });
+    }
+
+    function flushLogs() {
+        const logsToSend = [...eventLogBuffer];
+        eventLogBuffer = [];
+        return logsToSend;
     }
 
     // ============================================
     //  TEST LOGIC
     // ============================================
 
-    // 1. Start Test
     if (startTestBtn) {
         startTestBtn.addEventListener('click', async () => {
-            console.log("Start button clicked");
-
             const params = {
                 participant_id: idInput.value,
                 condition: conditionInput.value,
@@ -66,10 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (!res.ok) throw new Error("API Response not ok");
-
                 const data = await res.json();
 
-                // Switch UI
                 isTestRunning = true;
                 configSection.style.display = 'none';
                 testSection.style.display = 'block';
@@ -77,29 +87,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.value = '';
                 input.focus();
 
-                // Initialize Session
                 committedWords = [];
                 currentPredictions = [];
+                eventLogBuffer = []; // Reset log buffer
+
                 updateReference(data.reference_text);
                 updateProgressDisplay([]);
                 renderCandidates();
 
+                logEvent('system', 'test_started');
+
             } catch (e) {
                 console.error("Start Test Error:", e);
-                alert("テストの開始に失敗しました。サーバーを確認してください。");
+                alert("テストの開始に失敗しました。");
             }
         });
     }
 
-    // 2. Next Phrase (Manual or Auto)
     async function goToNextPhrase() {
         if (autoNextTimer) clearTimeout(autoNextTimer);
         autoNextTimer = null;
         completionMessage.style.display = 'none';
         nextPhraseBtn.style.display = 'none';
 
+        logEvent('system', 'next_phrase_clicked');
+
         try {
-            const res = await fetch('/test/next', { method: 'POST' });
+            // Send remaining logs with next request
+            const logs = flushLogs();
+            const res = await fetch('/test/next', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ events: logs })
+            });
             const data = await res.json();
 
             updateReference(data.reference_text);
@@ -136,20 +156,21 @@ document.addEventListener('DOMContentLoaded', () => {
     //  INPUT & PREDICTION LOGIC
     // ============================================
 
-    // Input Event
     input.addEventListener('input', async () => {
         const word = input.value.trim();
+
+        // Log input state (Note: 'input' event doesn't tell which key, keydown does that)
+        // logEvent('input_value', word); 
 
         if (!word) {
             currentPredictions = [];
             selectedIndex = -1;
             renderCandidates();
-            updateProgressDisplay(); // clear preview
+            updateProgressDisplay();
             return;
         }
 
         try {
-            // Call Predict API
             const res = await fetch('/predict', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -157,11 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             const data = await res.json();
 
-            // data.predictions contains [{word: "...", score: -1.2}, ...]
             currentPredictions = data.predictions || [];
-
-            // Auto-select first candidate if available
             selectedIndex = currentPredictions.length > 0 ? 0 : -1;
+
+            logEvent('prediction_update', { count: currentPredictions.length, top: currentPredictions[0]?.word });
 
             renderCandidates();
             updateProgressDisplay();
@@ -171,37 +191,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // KeyDown Handling
     input.addEventListener('keydown', (e) => {
         if (!isTestRunning) return;
 
-        // Navigation: Right Arrow or Space -> Next Candidate
+        // Log every physical keydown for analysis
+        // Exclude repeats to avoid log spam if desired, but raw data usually keeps them
+        logEvent('keydown', { key: e.key, code: e.code });
+
         if (e.key === 'ArrowRight' || e.key === ' ') {
-            e.preventDefault(); // Prevent space typing
+            e.preventDefault();
             moveSelection(1);
         }
-        // Navigation: Left Arrow -> Prev Candidate
         else if (e.key === 'ArrowLeft') {
             e.preventDefault();
             moveSelection(-1);
         }
-        // Confirm: Enter
         else if (e.key === 'Enter') {
             e.preventDefault();
-            // If waiting for auto-next, skip wait
             if (autoNextTimer) {
                 goToNextPhrase();
             } else {
                 confirmSelection();
             }
         }
-        // Undo: Backspace (only if input is empty)
         else if (e.key === 'Backspace') {
             if (input.value === '' && committedWords.length > 0) {
                 e.preventDefault();
                 undoLastWord();
             }
         }
+
+        // Keyboard Visual Feedback
+        highlightKey(e.key);
     });
 
     // ============================================
@@ -212,11 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         candidatesRow.innerHTML = '';
         if (currentPredictions.length === 0) return;
 
-        // Determine min/max for score bar
-        // KenLM scores are log10 probabilities (usually negative, closer to 0 is better)
-        // e.g., -0.5 (good) to -6.0 (bad)
         const maxScore = currentPredictions[0].score;
-        // Use a fixed floor for visualization or dynamic range
         const minScoreBound = -15.0;
 
         currentPredictions.forEach((item, index) => {
@@ -224,22 +241,10 @@ document.addEventListener('DOMContentLoaded', () => {
             div.className = 'candidate-item';
             if (index === selectedIndex) div.classList.add('selected');
 
-            // Calculate bar width (0% to 100%)
             let barPercent = 0;
             if (item.score > minScoreBound) {
-                // Linear interpolation: (score - min) / (max - min) roughly?
-                // Actually, just mapping score to percentage against a floor works visually
-                // 0 (top) -> 100%, -15 (floor) -> 0%
                 barPercent = Math.max(0, (1 - (item.score / minScoreBound)) * 100);
-                // Since scores are negative: item.score / minScoreBound is positive (e.g., -3 / -15 = 0.2)
-                // 1 - 0.2 = 0.8 (80%) -> Logic check:
-                // If score is -3 (high), -3/-15 = 0.2. We want high bar.
-                // If score is -15 (low), -15/-15 = 1. We want low bar.
-                // Formula: (1 - (item.score / minScoreBound)) * 100 IS correct if we want higher score = larger bar.
             }
-            // Better visual formula: 
-            // Percentage = 100 - ( (maxScore - item.score) / range * 100 ) ?
-            // Let's stick to simple relative check against specific floor.
 
             div.innerHTML = `
                 <div class="candidate-word">${item.word}</div>
@@ -247,27 +252,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="score-bar" style="width: ${barPercent}%;"></div>
             `;
 
-            // Mouse click support
             div.addEventListener('click', () => {
+                // Log mouse selection
+                logEvent('mouse_select', { index: index, word: item.word });
                 selectedIndex = index;
                 confirmSelection();
             });
 
             candidatesRow.appendChild(div);
         });
-
-        // Update preview to show selection
         updateProgressDisplay();
     }
 
     function moveSelection(dir) {
         if (currentPredictions.length === 0) return;
         selectedIndex += dir;
-
-        // Loop around
         if (selectedIndex >= currentPredictions.length) selectedIndex = 0;
         if (selectedIndex < 0) selectedIndex = currentPredictions.length - 1;
 
+        // Log nav
+        logEvent('nav', { direction: dir, new_index: selectedIndex });
         renderCandidates();
     }
 
@@ -277,35 +281,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const word = currentPredictions[selectedIndex].word;
         committedWords.push(word);
 
-        // Reset input state
+        logEvent('confirm', { word: word });
+
         input.value = '';
         currentPredictions = [];
         selectedIndex = -1;
         renderCandidates();
-
-        // Sync with server
         validateOnServer();
     }
 
     async function undoLastWord() {
-        committedWords.pop();
-
-        // Notify server for logging
-        await fetch('/test/backspace', { method: 'POST' });
-
+        const removed = committedWords.pop();
+        logEvent('undo', { removed_word: removed });
         validateOnServer();
     }
 
     async function validateOnServer() {
         try {
+            // Send logs along with validation request
+            const logs = flushLogs();
+
             const res = await fetch('/test/check', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ committed_words: committedWords })
+                body: JSON.stringify({
+                    committed_words: committedWords,
+                    events: logs
+                })
             });
             const data = await res.json();
 
-            // Update UI with server validation (red/black text)
             updateProgressDisplay(data.results);
 
             if (data.is_completed) {
@@ -318,11 +323,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateProgressDisplay(validatedResults = []) {
         const displayDiv = document.getElementById('progress-text-content');
-
-        // If we have validation results, use them. Otherwise use local committedWords (all assumed correct temporarily)
         const sourceData = (validatedResults.length > 0 || committedWords.length === 0)
             ? validatedResults
-            : committedWords.map(w => ({ word: w, is_correct: true })); // fallback
+            : committedWords.map(w => ({ word: w, is_correct: true }));
 
         let html = sourceData.map(res => {
             return res.is_correct
@@ -330,7 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 : `<span class="wrong-word">${res.word}</span>`;
         }).join(" ");
 
-        // Append current selection preview
         if (selectedIndex >= 0 && currentPredictions[selectedIndex]) {
             html += ` <span class="current-selection">[${currentPredictions[selectedIndex].word}]</span>`;
         }
@@ -339,35 +341,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handlePhraseCompletion() {
+        logEvent('system', 'phrase_completed');
         completionMessage.style.display = 'block';
         input.disabled = true;
-        // Show manual next button as well
         nextPhraseBtn.style.display = 'inline-block';
-
-        // Auto next in 2 seconds
         autoNextTimer = setTimeout(goToNextPhrase, 2000);
     }
 
-    // --- Keyboard Visual Feedback (Preserved) ---
-    input.addEventListener('keydown', (e) => {
-        const char = e.key.toLowerCase();
-        if (e.repeat) return;
+    // Visual Helpers
+    function highlightKey(keyChar) {
+        const char = keyChar.toLowerCase();
         keyboardKeys.forEach(key => key.classList.remove('active'));
         if (char.length === 1 && char >= 'a' && char <= 'z') {
             const el = document.querySelector(`.key[data-key="${char}"]`);
             if (el) el.classList.add('active');
         }
-    });
-    input.addEventListener('keyup', () => {
-        keyboardKeys.forEach(key => key.classList.remove('active'));
-    });
-    input.addEventListener('blur', () => {
-        keyboardKeys.forEach(key => key.classList.remove('active'));
-    });
+    }
+    input.addEventListener('keyup', () => keyboardKeys.forEach(k => k.classList.remove('active')));
+    input.addEventListener('blur', () => keyboardKeys.forEach(k => k.classList.remove('active')));
 
-    // --- On-Screen Buttons ---
-    if (btnUp) btnUp.addEventListener('click', () => moveSelection(-1));
-    if (btnDown) btnDown.addEventListener('click', () => moveSelection(1));
-    if (btnConfirm) btnConfirm.addEventListener('click', confirmSelection);
-
+    // Button Listeners
+    if (btnUp) btnUp.addEventListener('click', () => {
+        logEvent('button_click', 'up');
+        moveSelection(-1);
+    });
+    if (btnDown) btnDown.addEventListener('click', () => {
+        logEvent('button_click', 'down');
+        moveSelection(1);
+    });
+    if (btnConfirm) btnConfirm.addEventListener('click', () => {
+        logEvent('button_click', 'confirm');
+        confirmSelection();
+    });
 });
