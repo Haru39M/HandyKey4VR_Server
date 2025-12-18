@@ -1,6 +1,7 @@
 import kenlm
 import os
 import json
+import subprocess
 
 class WordPredictor:
     def __init__(self, model_path='wiki_en_token.arpa.bin'):
@@ -9,7 +10,20 @@ class WordPredictor:
         :param model_path: KenLMのモデルファイルパス
         """
         self.qwerty_combinations = 0
+        if not os.path.exists(model_path):
+            print(f"[Predictor] モデルが見つかりません: {model_path}")
+            print("[Predictor] get_model.sh を実行してモデルを取得します...")
+            try:
+                # シェルスクリプトを実行してモデルをダウンロード
+                subprocess.run(["sh", "get_model.sh"], check=True)
+            except subprocess.CalledProcessError as e:
+                raise RuntimeError(f"モデルのダウンロードに失敗しました。終了コード: {e.returncode}")
+            except Exception as e:
+                raise RuntimeError(f"予期せぬエラーが発生しました: {e}")
 
+            # ダウンロード後に再確認
+            if not os.path.exists(model_path):
+                raise FileNotFoundError(f"ダウンロード処理は完了しましたが、ファイルが見つかりません: {model_path}")
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"モデルファイルが見つかりません: {model_path}")
         

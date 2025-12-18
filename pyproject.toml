@@ -6,5 +6,10 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.2",
+    "kenlm",
     "python-osc>=1.9.3",
+    "requests>=2.32.5",
 ]
+
+[tool.uv.sources]
+kenlm = { url = "https://github.com/kpu/kenlm/archive/master.zip" }

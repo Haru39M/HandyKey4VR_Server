@@ -9,8 +9,9 @@ from typing_test import TypingTest
 model_path = 'wiki_en_token.arpa.bin'
 predictor = WordPredictor(model_path)
 
+phrase_path = 'phrases2.txt'
 tester = TypingTest()
-tester.loadPhraseSet('phrases2.txt')
+tester.loadPhraseSet(phrase_path)
 
 app = Flask(__name__)
 

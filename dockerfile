@@ -1,39 +1,40 @@
-# ベースイメージ: Python 3.11 (Slim版)
+# ベースイメージ: Python 3.12 (Bookworm)
 FROM python:3.12-slim-bookworm
 
-# --- 変更点: uv のインストール方法 ---
-# 公式のDockerイメージから uv のバイナリだけをコピーします
-# これにより pip install uv よりも高速かつ確実に導入できます
+# uv のバイナリを公式イメージからコピー
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # 必要なシステムパッケージのインストール
-# kenlmのビルドには build-essential と cmake が必要
-# wget はモデルのダウンロードに使用
+# kenlmのビルドに build-essential, cmake が必要
+# モデル取得用スクリプトのために wget が必要
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
+    git \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
 # 作業ディレクトリの設定
 WORKDIR /app
 
-# 依存関係ファイルのコピー
-COPY requirements.txt .
+# uvの管理ファイルのみを先にコピー
+COPY pyproject.toml uv.lock ./
 
-# --- 変更なし: uv を使ったインストール ---
-# uv pip install --system を使用して、仮想環境を作らずシステムに入れます
-# --system オプションはコンテナ内では一般的です
-RUN uv pip install --system -r requirements.txt
-
-# N-gramモデルのダウンロード
-# RUN wget https://huggingface.co/BramVanroy/kenlm_wikipedia_en/resolve/main/wiki_en_token.arpa.bin -O wiki_en_token.arpa.bin
+# 依存関係のインストール
+# --frozen: ロックファイルの内容を厳密に再現
+# --no-cache: キャッシュを残さずイメージサイズ削減
+RUN uv sync --frozen --no-cache
 
 # ソースコード一式をコピー
+# (.dockerignore で不要なものは除外されている前提)
 COPY . .
 
 # ポートの公開
 EXPOSE 5000 8000
+
+# 環境変数の設定
+# uv は仮想環境(.venv)を作成するため、パスを通す
+ENV PATH="/app/.venv/bin:$PATH"
 
 # 起動スクリプトの作成
 RUN echo '#!/bin/bash\n\
