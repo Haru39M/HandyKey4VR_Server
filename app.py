@@ -5,18 +5,33 @@ from flask import Flask, render_template, request, jsonify
 from word_predictor import WordPredictor
 from typing_test import TypingTest
 
-# モデルとロジックの初期化
-model_path = 'wiki_en_token.arpa.bin'
-predictor = WordPredictor(model_path)
-
-phrase_path = 'phrases2.txt'
-tester = TypingTest()
-tester.loadPhraseSet(phrase_path)
-
 app = Flask(__name__)
+
+# --- 変更点: グローバルでの初期化をやめて、遅延ロード用の変数を定義 ---
+model_path = 'wiki_en_token.arpa.bin'
+_predictor = None  # 内部保持用変数
+
+def get_predictor():
+    """
+    必要になったタイミングで初めてモデルをロードする関数
+    """
+    global _predictor
+    if _predictor is None:
+        print("[App] モデルのロードを開始します（初回アクセス）...")
+        # ここで WordPredictor を初期化（ダウンロード処理も走る）
+        _predictor = WordPredictor(model_path)
+        print("[App] モデルのロードが完了しました。")
+    return _predictor
+# -------------------------------------------------------------
+
+tester = TypingTest()
+tester.loadPhraseSet('phrases2.txt')
 
 @app.route('/', methods=['GET'])
 def index():
+    # ここで初めてロードが走る
+    predictor = get_predictor()
+    
     return render_template('index.html', 
                            js_reverse_map=json.dumps(predictor.REVERSE_QWERTY_MAP))
 
@@ -25,6 +40,9 @@ def predict():
     """予測API"""
     data = request.json
     input_word = data.get('word', '').strip()
+    
+    # ここでも取得関数経由でアクセス
+    predictor = get_predictor()
 
     if not input_word:
         predictor.clear()
@@ -59,7 +77,6 @@ def start_test():
 @app.route('/test/next', methods=['POST'])
 def next_phrase():
     """次のフレーズへ"""
-    # 画面遷移時のタイミングで残っているログがあれば保存させる
     events = request.json.get('events', [])
     if events:
         tester.log_client_events(events)
@@ -73,7 +90,6 @@ def check_input():
     data = request.json
     committed_words = data.get('committed_words', [])
     
-    # フロントエンドから送られてきた操作ログを保存
     events = data.get('events', [])
     if events:
         tester.log_client_events(events)
