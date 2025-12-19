@@ -7,8 +7,11 @@ requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.2",
     "kenlm",
+    "matplotlib>=3.10.8",
+    "pandas>=2.3.3",
     "python-osc>=1.9.3",
     "requests>=2.32.5",
+    "seaborn>=0.13.2",
 ]
 
 [tool.uv.sources]
