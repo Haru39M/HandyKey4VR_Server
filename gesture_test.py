@@ -65,8 +65,7 @@ class GestureTest:
             self.target_gesture = None
             return
 
-        # ランダムに選択（直前と同じでもOKとするか、避けるかは要件次第）
-        # ここでは単純ランダム
+        # ランダムに選択
         self.current_gesture_id = random.choice(self.gesture_list)
         self.target_gesture = self.gestures_data[self.current_gesture_id]
         
@@ -83,6 +82,9 @@ class GestureTest:
         for key, val in input_state.items():
             if key in self.current_device_state:
                 self.current_device_state[key] = val
+        
+        # デバッグ: 入力更新時に内容を表示（必要に応じてコメントアウト）
+        # print(f"[GestureInput] Updated: {input_state}")
 
     def check_state(self):
         """現在の状態を判定し、結果を返す（APIレスポンス用）"""
@@ -122,15 +124,33 @@ class GestureTest:
 
     def _is_matching(self):
         """現在の入力がターゲットの定義を満たしているか"""
+        if not self.target_gesture:
+            return False
+
         target_state = self.target_gesture["State"]
+        gesture_name = self.target_gesture.get("GestureName", "")
         
+        # 1. 各指の状態が許可リストに含まれているかチェック
         for finger in ["T", "I", "M", "R", "P"]:
             current_val = self.current_device_state.get(finger, "UNKNOWN")
             allowed_vals = target_state.get(finger, [])
             
             # 定義されている状態リストに含まれていなければ不一致
-            # 例: target "I": ["OPEN", "TOUCH"] に対し、current "I" が "CLOSE" ならFalse
             if current_val not in allowed_vals:
+                # デバッグ用: 不一致の原因を表示（開発中のみ有効にすると便利）
+                # print(f"[Mismatch] Finger: {finger}, Current: {current_val} (Type: {type(current_val)}), Allowed: {allowed_vals}")
+                return False
+        
+        # 2. 特例判定: Neutralの場合、すべてが"OPEN"の状態（＝HandOpen）は除外する
+        if gesture_name == "Neutral":
+            all_open = True
+            for finger in ["T", "I", "M", "R", "P"]:
+                if self.current_device_state.get(finger) != "OPEN":
+                    all_open = False
+                    break
+            
+            # すべてOPENならNeutralとしては不一致とする
+            if all_open:
                 return False
                 
         return True
