@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandyKey4VR Gesture Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gesture.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gesture Copy Task</h1>
+        
+        <!-- 設定エリア -->
+        <div id="config-section" class="config-box">
+            <div class="config-item">
+                <label>ID: <input type="text" id="participant-id" value="p01"></label>
+            </div>
+            <div class="config-item">
+                <label>Cond: 
+                    <select id="condition">
+                        <option value="Proposed">Proposed</option>
+                        <option value="Controller">Controller</option>
+                    </select>
+                </label>
+            </div>
+            <div class="config-item">
+                <label>Trials: <input type="number" id="max-trials" value="10"></label>
+            </div>
+            <button id="start-btn">START TEST</button>
+            <a href="/" style="margin-left: auto;">Text Task &gt;</a>
+        </div>
+
+        <!-- テストエリア -->
+        <div id="test-section" style="display:none;">
+            <div class="status-bar">
+                Progress: <span id="progress-text">0 / 10</span>
+            </div>
+
+            <div class="main-display">
+                <!-- ターゲット表示 -->
+                <div class="target-box">
+                    <h2>Target</h2>
+                    <div class="img-wrapper">
+                        <img id="target-img" src="" alt="Target Gesture">
+                    </div>
+                    <div id="target-name" class="gesture-name">---</div>
+                    <div id="target-desc" class="gesture-desc">---</div>
+                </div>
+
+                <!-- 判定結果 -->
+                <div class="result-box">
+                    <div id="match-indicator" class="indicator mismatch">MISMATCH</div>
+                </div>
+
+                <!-- 現在の入力状態可視化 -->
+                <div class="current-box">
+                    <h2>Your Hand</h2>
+                    <div class="fingers-container">
+                        <div class="finger" id="f-T">
+                            <div class="f-name">Thumb</div>
+                            <div class="f-val">---</div>
+                        </div>
+                        <div class="finger" id="f-I">
+                            <div class="f-name">Index</div>
+                            <div class="f-val">---</div>
+                        </div>
+                        <div class="finger" id="f-M">
+                            <div class="f-name">Middle</div>
+                            <div class="f-val">---</div>
+                        </div>
+                        <div class="finger" id="f-R">
+                            <div class="f-name">Ring</div>
+                            <div class="f-val">---</div>
+                        </div>
+                        <div class="finger" id="f-P">
+                            <div class="f-name">Pinky</div>
+                            <div class="f-val">---</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="finished-screen" style="display:none;">
+            <h2>TEST COMPLETED</h2>
+            <button onclick="location.reload()">Return</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='gesture.js') }}"></script>
+</body>
+</html>

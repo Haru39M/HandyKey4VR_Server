@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222;
+    color: #eee;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+h1 { text-align: center; margin-bottom: 20px; }
+
+/* Config */
+.config-box {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.config-item { display: flex; align-items: center; gap: 5px; }
+input, select {
+    padding: 5px; background: #555; border: 1px solid #666; color: #fff;
+    border-radius: 4px;
+}
+button {
+    background-color: #007bff; color: white; border: none;
+    padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;
+}
+button:hover { background-color: #0056b3; }
+a { color: #aaa; text-decoration: none; }
+
+/* Main Display */
+.main-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.target-box, .current-box {
+    flex: 1;
+    background: #444;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Target Image */
+.img-wrapper {
+    width: 100%;
+    height: 250px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.gesture-name { font-size: 1.5em; font-weight: bold; margin-bottom: 5px; }
+.gesture-desc { font-size: 0.9em; color: #bbb; }
+
+/* Result Indicator */
+.result-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+.indicator {
+    padding: 20px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+.match { background-color: #28a745; color: white; box-shadow: 0 0 15px #28a745; }
+.mismatch { background-color: #d9534f; color: white; opacity: 0.5; }
+
+/* Finger Status */
+.fingers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.finger {
+    display: flex;
+    justify-content: space-between;
+    background: #555;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+.f-name { font-weight: bold; color: #aaa; }
+.f-val { font-family: monospace; color: #fff; }
+
+.status-bar {
+    font-size: 1.2em; margin-bottom: 10px; text-align: right;
+}
+
+#finished-screen {
+    text-align: center; padding: 50px; color: #28a745;
+}

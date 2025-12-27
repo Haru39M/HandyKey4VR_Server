@@ -1,9 +1,10 @@
 import kenlm
 import os
 import json
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify,send_from_directory
 from word_predictor import WordPredictor
 from typing_test import TypingTest
+from gesture_test import GestureTest
 
 app = Flask(__name__)
 
@@ -26,6 +27,8 @@ def get_predictor():
 
 tester = TypingTest()
 tester.loadPhraseSet('phrases2.txt')
+
+gesture_tester = GestureTest('gestures/gestures.json')
 
 @app.route('/', methods=['GET'])
 def index():
@@ -96,6 +99,49 @@ def check_input():
     
     result = tester.check_input(committed_words)
     return jsonify(result)
+
+# =================================================
+#  ジェスチャーテスト関連 (新規追加)
+# =================================================
+
+@app.route('/gesture', methods=['GET'])
+def gesture_page():
+    """ジェスチャーテスト画面"""
+    return render_template('gesture.html')
+
+@app.route('/gesture_images/<path:filename>')
+def serve_gesture_image(filename):
+    """ジェスチャー画像を配信する"""
+    # gestures/gesture_images フォルダから配信
+    return send_from_directory('gestures/gesture_images', filename)
+
+@app.route('/gesture/start', methods=['POST'])
+def start_gesture_test():
+    """ジェスチャーテスト開始"""
+    data = request.json
+    gesture_tester.configure_test(
+        data.get('participant_id', 'test'),
+        data.get('condition', 'default'),
+        data.get('max_trials', 10)
+    )
+    return jsonify({"status": "started"})
+
+@app.route('/gesture/input', methods=['POST'])
+def update_gesture_input():
+    """
+    デバイス(Bridge)からの入力データ受信
+    期待フォーマット: {"T": "OPEN", "I": "CLOSE", ...}
+    """
+    data = request.json
+    if data:
+        gesture_tester.update_input(data)
+    return jsonify({"status": "updated"})
+
+@app.route('/gesture/state', methods=['GET'])
+def get_gesture_state():
+    """現在のステータス（判定結果含む）を取得"""
+    state = gesture_tester.check_state()
+    return jsonify(state)
 
 if __name__ == '__main__':
     app.config['TEMPLATES_AUTO_RELOAD'] = True

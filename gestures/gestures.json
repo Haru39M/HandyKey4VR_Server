@@ -25,6 +25,7 @@
                     "TOUCH"
                 ]
             },
+            "Image": "gesture_neutral.png",
             "Description": "指を離している、または軽く触れている状態（待機状態）"
         },
         "1": {
@@ -46,6 +47,7 @@
                     "CLOSE"
                 ]
             },
+            "Image": "gesture_fist.png",
             "Description": "すべての指を握り込む"
         },
         "2": {
@@ -67,6 +69,7 @@
                     "OPEN"
                 ]
             },
+            "Image": "gesture_handopen.png",
             "Description": "すべての指を開く（パー）"
         },
         "3": {
@@ -89,6 +92,7 @@
                     "CLOSE"
                 ]
             },
+            "Image": "gesture_fingerpoint.png",
             "Description": "人差し指のみ立てる（他は握る）"
         },
         "4": {
@@ -111,6 +115,7 @@
                     "CLOSE"
                 ]
             },
+            "Image": "gesture_victory.png",
             "Description": "ピースサイン（人差し指と中指を立てる）"
         },
         "5": {
@@ -133,6 +138,7 @@
                     "OPEN"
                 ]
             },
+            "Image": "gesture_rocknroll.png",
             "Description": "メロイックサイン（人差し指と小指を立てる）"
         },
         "6": {
@@ -154,6 +160,7 @@
                     "CLOSE"
                 ]
             },
+            "Image": "gesture_gun.png",
             "Description": "親指と人差し指を立てる"
         },
         "7": {
@@ -176,7 +183,7 @@
                     "CLOSE"
                 ]
             },
-            "Image": "Thumbs.jpg",
+            "Image": "gesture_thumbsup.png",
             "Description": "親指を立てる（サムズアップ）"
         }
     }
