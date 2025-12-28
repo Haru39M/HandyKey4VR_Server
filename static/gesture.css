@@ -13,6 +13,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    position: relative; /* オーバーレイのため */
 }
 
 h1 { text-align: center; margin-bottom: 20px; }
@@ -38,6 +39,24 @@ button {
 }
 button:hover { background-color: #0056b3; }
 a { color: #aaa; text-decoration: none; }
+
+/* Overlay (Countdown / Instruction) */
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+#overlay-text {
+    font-size: 4em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 20px #007bff;
+}
 
 /* Main Display */
 .main-display {

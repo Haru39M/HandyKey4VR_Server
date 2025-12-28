@@ -5,174 +5,190 @@ import csv
 import random
 from datetime import datetime
 
+# 状態定義
+STATE_IDLE = "IDLE"
+STATE_WAIT_HAND_OPEN = "WAIT_HAND_OPEN" # HandOpen待機中
+STATE_COUNTDOWN = "COUNTDOWN"           # 3秒カウントダウン中
+STATE_MEASURING = "MEASURING"           # ジェスチャー計測中
+STATE_COMPLETED = "COMPLETED"           # 全試行完了
+
 class GestureTest:
     def __init__(self, gestures_path='gestures/gestures.json'):
         self.gestures_data = {}
         self.gesture_list = []
-        self.current_gesture_id = None
         self.target_gesture = None
+        self.current_gesture_id = None
         
-        # デバイスからの現在の入力状態
-        # 初期状態は全てOPENとしておく
         self.current_device_state = {
             "T": "OPEN", "I": "OPEN", "M": "OPEN", "R": "OPEN", "P": "OPEN"
         }
         
-        # テスト進行管理
+        # テスト設定
         self.participant_id = "test"
         self.condition = "default"
         self.max_trials = 10
         self.completed_trials = 0
-        self.is_running = False
+        self.state = STATE_IDLE
         
-        # 計測用
-        self.trial_start_time = 0.0
-        self.match_start_time = None # 一致し始めた時刻（チャタリング防止用）
-        self.match_duration_threshold = 0.5 # 0.5秒間一致し続けたら完了とする
+        # タイマー管理
+        self.countdown_start_time = 0.0
+        self.measure_start_time = 0.0
+        self.match_start_time = None
+        self.match_duration_threshold = 0.5 # チャタリング防止時間
         
         # ログ用
-        self.log_dir = "logs"
+        self.log_dir = "logs_gesture"
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
+        self.log_filepath = ""
             
-        # データ読み込み
         self.load_gestures(gestures_path)
 
     def load_gestures(self, path):
         if not os.path.exists(path):
             print(f"[GestureTest] Error: {path} not found.")
             return
-
         with open(path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             self.gestures_data = data.get("Gestures", {})
-            # IDのリストを作成 (例: ["0", "1", ...])
             self.gesture_list = list(self.gestures_data.keys())
-            print(f"[GestureTest] Loaded {len(self.gesture_list)} gestures.")
+            # HandOpen自体はターゲットにしないため除外リストに入れるなどが本来必要ですが、
+            # 今回はランダム選択時に HandOpen ("2") が選ばれる可能性があります。
+            # 要件に「HandOpenから各ジェスチャーへ遷移」とあるので、ターゲットがHandOpenになるのは避けるべきかもしれません。
+            # いったんそのままにします。
 
     def configure_test(self, participant_id, condition, max_trials):
         self.participant_id = participant_id
         self.condition = condition
         self.max_trials = int(max_trials)
         self.completed_trials = 0
-        self.is_running = True
-        self.next_trial()
-
-    def next_trial(self):
-        """次のターゲットをランダムに設定"""
-        if self.completed_trials >= self.max_trials:
-            self.is_running = False
-            self.target_gesture = None
-            return
-
-        # ランダムに選択
-        self.current_gesture_id = random.choice(self.gesture_list)
-        self.target_gesture = self.gestures_data[self.current_gesture_id]
         
-        self.trial_start_time = time.time()
-        self.match_start_time = None
-        print(f"[GestureTest] Next Target: {self.target_gesture['GestureName']}")
+        # ログファイル作成: log_<id>_YYYY-MM-DD-hh-mm-ss_gesture.csv
+        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+        self.log_filepath = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_gesture.csv")
+        self._init_log()
+        
+        # 最初の状態へ
+        self._start_wait_hand_open()
 
     def update_input(self, input_state):
-        """
-        デバイスからの入力を更新する
-        input_state: {"T": "CLOSE", "I": "OPEN", ...} のような辞書
-        """
-        # 部分的な更新も許容する
         for key, val in input_state.items():
             if key in self.current_device_state:
                 self.current_device_state[key] = val
-        
-        # デバッグ: 入力更新時に内容を表示（必要に応じてコメントアウト）
-        # print(f"[GestureInput] Updated: {input_state}")
 
     def check_state(self):
-        """現在の状態を判定し、結果を返す（APIレスポンス用）"""
-        if not self.is_running or not self.target_gesture:
-            return {
-                "is_running": False,
-                "is_completed": True
-            }
-
-        # 1. 一致判定
-        is_match = self._is_matching()
+        """現在の状態を確認し、ステート遷移を行う"""
         
-        # 2. 完了判定（一定時間一致が継続したか）
-        is_trial_completed = False
+        if self.state == STATE_IDLE or self.state == STATE_COMPLETED:
+            return self._build_status_response()
+
+        # 1. HandOpen待機
+        if self.state == STATE_WAIT_HAND_OPEN:
+            if self._is_hand_open():
+                # HandOpen検知 -> カウントダウンへ
+                self.state = STATE_COUNTDOWN
+                self.countdown_start_time = time.time()
+                # 次のターゲットをここで決めておく（まだ見せない）
+                self._pick_next_target()
+
+        # 2. カウントダウン (3秒)
+        elif self.state == STATE_COUNTDOWN:
+            elapsed = time.time() - self.countdown_start_time
+            if elapsed >= 3.0:
+                # カウントダウン終了 -> 計測開始
+                self.state = STATE_MEASURING
+                self.measure_start_time = time.time()
+                self.match_start_time = None
+
+        # 3. 計測中
+        elif self.state == STATE_MEASURING:
+            if self._is_matching_target():
+                if self.match_start_time is None:
+                    self.match_start_time = time.time()
+                elif time.time() - self.match_start_time >= self.match_duration_threshold:
+                    # 完了 -> ログ保存 -> 次へ
+                    self._save_log()
+                    self.completed_trials += 1
+                    
+                    if self.completed_trials >= self.max_trials:
+                        self.state = STATE_COMPLETED
+                    else:
+                        self._start_wait_hand_open()
+            else:
+                self.match_start_time = None
+
+        return self._build_status_response()
+
+    def _start_wait_hand_open(self):
+        self.state = STATE_WAIT_HAND_OPEN
+        self.target_gesture = None # 待機中はターゲット無し
+
+    def _pick_next_target(self):
+        """次のターゲットをランダム選択（HandOpen以外）"""
+        candidates = [gid for gid in self.gesture_list if self.gestures_data[gid]['GestureName'] != "HandOpen"]
+        if not candidates: candidates = self.gesture_list # fallback
         
-        if is_match:
-            if self.match_start_time is None:
-                self.match_start_time = time.time()
-            elif time.time() - self.match_start_time >= self.match_duration_threshold:
-                # 完了！
-                self._save_log()
-                self.completed_trials += 1
-                is_trial_completed = True
-                # 次のトライアルへ（自動遷移）
-                self.next_trial()
-        else:
-            self.match_start_time = None
+        self.current_gesture_id = random.choice(candidates)
+        self.target_gesture = self.gestures_data[self.current_gesture_id]
+        print(f"[GestureTest] Next Target Selected: {self.target_gesture['GestureName']}")
 
-        return {
-            "is_running": self.is_running,
-            "target": self.target_gesture,
-            "current_input": self.current_device_state,
-            "is_match": is_match,
-            "progress": f"{self.completed_trials} / {self.max_trials}",
-            "trial_completed_just_now": is_trial_completed
-        }
-
-    def _is_matching(self):
-        """現在の入力がターゲットの定義を満たしているか"""
-        if not self.target_gesture:
-            return False
-
-        target_state = self.target_gesture["State"]
-        gesture_name = self.target_gesture.get("GestureName", "")
-        
-        # 1. 各指の状態が許可リストに含まれているかチェック
-        for finger in ["T", "I", "M", "R", "P"]:
-            current_val = self.current_device_state.get(finger, "UNKNOWN")
-            allowed_vals = target_state.get(finger, [])
-            
-            # 定義されている状態リストに含まれていなければ不一致
-            if current_val not in allowed_vals:
-                # デバッグ用: 不一致の原因を表示（開発中のみ有効にすると便利）
-                # print(f"[Mismatch] Finger: {finger}, Current: {current_val} (Type: {type(current_val)}), Allowed: {allowed_vals}")
+    def _is_hand_open(self):
+        """すべての指がOPENか"""
+        for f in ["T", "I", "M", "R", "P"]:
+            if self.current_device_state[f] != "OPEN":
                 return False
-        
-        # 2. 特例判定: Neutralの場合、すべてが"OPEN"の状態（＝HandOpen）は除外する
-        if gesture_name == "Neutral":
-            all_open = True
-            for finger in ["T", "I", "M", "R", "P"]:
-                if self.current_device_state.get(finger) != "OPEN":
-                    all_open = False
-                    break
-            
-            # すべてOPENならNeutralとしては不一致とする
-            if all_open:
-                return False
-                
         return True
 
-    def _save_log(self):
-        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-        filename = os.path.join(self.log_dir, f"gesture_log_{self.participant_id}.csv")
+    def _is_matching_target(self):
+        """現在のターゲットと一致しているか"""
+        if not self.target_gesture: return False
         
-        duration = time.time() - self.trial_start_time
-        # マッチ判定時間を引く（純粋な反応時間にするため）
-        reaction_time = max(0, duration - self.match_duration_threshold)
+        target_state = self.target_gesture["State"]
+        # Neutral特例: すべてOPENならNeutralとは認めない（HandOpen扱い）
+        if self.target_gesture['GestureName'] == "Neutral":
+            if self._is_hand_open(): return False
 
-        file_exists = os.path.isfile(filename)
+        for f in ["T", "I", "M", "R", "P"]:
+            current_val = self.current_device_state.get(f)
+            allowed = target_state.get(f, [])
+            if current_val not in allowed:
+                return False
+        return True
+
+    def _build_status_response(self):
+        response = {
+            "state": self.state,
+            "current_input": self.current_device_state,
+            "progress": f"{self.completed_trials} / {self.max_trials}",
+            "is_running": self.state != STATE_COMPLETED and self.state != STATE_IDLE
+        }
         
-        with open(filename, 'a', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            if not file_exists:
-                writer.writerow([
-                    "Timestamp", "ParticipantID", "Condition", "TrialNum", 
-                    "TargetGesture", "TargetID", "ReactionTime", "TotalTime"
-                ])
+        if self.state == STATE_COUNTDOWN:
+            # クライアント同期用
+            response["countdown_start"] = self.countdown_start_time
             
+        if self.state == STATE_MEASURING:
+            response["target"] = self.target_gesture
+            # 一致中かどうか
+            response["is_match"] = (self.match_start_time is not None)
+            
+        return response
+
+    def _init_log(self):
+        with open(self.log_filepath, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow([
+                "Timestamp", "ParticipantID", "Condition", "TrialNum", 
+                "TargetGesture", "TargetID", "ReactionTime", "TotalTime"
+            ])
+
+    def _save_log(self):
+        duration = time.time() - self.measure_start_time
+        # マッチ判定時間を引く
+        reaction_time = max(0, duration - self.match_duration_threshold)
+        
+        with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
             writer.writerow([
                 datetime.now().isoformat(),
                 self.participant_id,
@@ -183,4 +199,4 @@ class GestureTest:
                 f"{reaction_time:.3f}",
                 f"{duration:.3f}"
             ])
-        print(f"[GestureTest] Log saved: {self.target_gesture['GestureName']} in {reaction_time:.3f}s")
+        print(f"[GestureTest] Log saved: {reaction_time:.3f}s")

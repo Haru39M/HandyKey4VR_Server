@@ -11,24 +11,23 @@ class Logger:
         self.participant_id = participant_id
         self.condition = condition
         
-        # タイムスタンプ生成 (YYYY-MM-DD-hh-mm-ss)
+        # タイムスタンプ生成
         now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-        self.log_dir = "logs"
         
+        # ディレクトリ設定 (typing用)
+        self.log_dir = "logs_typing"
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
 
-        # ファイルパス設定
-        # 1. サマリーログ (文単位)
-        self.summary_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_summary.csv")
-        # 2. Rawログ (操作単位)
-        self.raw_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_raw.csv")
+        # ファイルパス設定: log_<id>_YYYY-MM-DD-hh-mm-ss_typing.csv
+        self.summary_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_typing.csv")
+        # Rawログは同一ディレクトリに _raw を付けて保存するか、リクエストにはありませんでしたが念のため残します
+        self.raw_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_typing_raw.csv")
 
-        # ヘッダー書き込み
         self._init_csv(self.summary_path, [
             "Timestamp", "ParticipantID", "Condition", "TrialID", 
             "TargetPhrase", "InputPhrase", 
-            "CompletionTime", "CharCount", "ErrorDist", "BackspaceCount"
+            "CompletionTime", "CharCount", "WPM", "ErrorDist", "BackspaceCount"
         ])
         
         self._init_csv(self.raw_path, [
@@ -54,14 +53,13 @@ class Logger:
                 data.get('input'),
                 data.get('time'),
                 data.get('char_count'),
+                data.get('wpm'),
                 data.get('error_dist'),
                 data.get('backspace_count')
             ])
 
     def log_raw(self, trial_id, events):
-        """フロントエンドから送られてきたイベントリストを一括書き込み"""
         if not events: return
-        
         with open(self.raw_path, 'a', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             for e in events:
@@ -70,9 +68,9 @@ class Logger:
                     self.participant_id,
                     self.condition,
                     trial_id,
-                    e.get('type'),      # keydown, predict, select...
-                    e.get('data'),      # key='a', word='apple'...
-                    e.get('timestamp')  # client side timestamp
+                    e.get('type'),
+                    e.get('data'),
+                    e.get('timestamp')
                 ])
 
 class TypingTest:
@@ -83,16 +81,14 @@ class TypingTest:
         self.reference_text = "ReferenceText"
         self.reference_words = []
         
-        # 設定 & ロガー
         self.logger = None
         self.participant_id = "test"
         self.condition = "default"
         self.max_sentences = 5
         self.completed_sentences_count = 0
         
-        # 状態
         self.phrase_start_time = 0.0
-        self.backspace_count_phrase = 0 # フレーズ内のBS回数
+        self.backspace_count_phrase = 0
 
     def loadPhraseSet(self, dataset_path: str):
         try:
@@ -113,8 +109,6 @@ class TypingTest:
         self.max_sentences = int(max_sentences)
         self.completed_sentences_count = 0
         self.current_sentence_index = 0
-        
-        # ロガーの初期化 (ここでファイルが作成されます)
         self.logger = Logger(participant_id, condition)
 
     def loadReferenceText(self):
@@ -135,7 +129,6 @@ class TypingTest:
         self.reference_words = self.reference_text.split()
         self.current_sentence_index += 1
         
-        # 計測リセット
         self.phrase_start_time = time.time()
         self.backspace_count_phrase = 0
 
@@ -143,13 +136,9 @@ class TypingTest:
         return self.reference_text
 
     def log_client_events(self, events):
-        """フロントエンドからのRawログを保存"""
         if self.logger:
-            # 現在挑戦中のTrial ID (完了数 + 1) を紐付ける
             current_trial_id = self.completed_sentences_count + 1
             self.logger.log_raw(current_trial_id, events)
-            
-            # サーバー側で検知すべきイベント(Backspace等)をここでカウントしてもよい
             for e in events:
                 if e.get('type') == 'keydown' and e.get('data') == 'Backspace':
                     self.backspace_count_phrase += 1
@@ -184,6 +173,12 @@ class TypingTest:
         
         input_phrase = " ".join(input_words)
         duration = time.time() - self.phrase_start_time
+        
+        char_count = len(input_phrase)
+        wpm = 0.0
+        if duration > 0:
+            wpm = (char_count / 5.0) / (duration / 60.0)
+            
         dist = self._levenshtein_distance(self.reference_text, input_phrase)
         
         self.logger.log_summary({
@@ -191,11 +186,12 @@ class TypingTest:
             'target': self.reference_text,
             'input': input_phrase,
             'time': f"{duration:.3f}",
-            'char_count': len(input_phrase),
+            'char_count': char_count,
+            'wpm': f"{wpm:.2f}",
             'error_dist': dist,
             'backspace_count': self.backspace_count_phrase
         })
-        print(f"[TypingTest] Trial {self.completed_sentences_count + 1} Logged.")
+        print(f"[TypingTest] Logged: WPM={wpm:.2f}")
 
     def _levenshtein_distance(self, s1, s2):
         if len(s1) < len(s2): return self._levenshtein_distance(s2, s1)

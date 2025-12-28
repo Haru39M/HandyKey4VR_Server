@@ -31,9 +31,14 @@
         </div>
 
         <!-- テストエリア -->
-        <div id="test-section" style="display:none;">
+        <div id="test-section" style="display:none; position: relative;">
             <div class="status-bar">
                 Progress: <span id="progress-text">0 / 10</span>
+            </div>
+
+            <!-- カウントダウン・待機用オーバーレイ -->
+            <div id="overlay-message" class="overlay">
+                <div id="overlay-text">Please Open Hand</div>
             </div>
 
             <div class="main-display">
@@ -41,7 +46,7 @@
                 <div class="target-box">
                     <h2>Target</h2>
                     <div class="img-wrapper">
-                        <img id="target-img" src="" alt="Target Gesture">
+                        <img id="target-img" src="" alt="Target Gesture" style="display:none;">
                     </div>
                     <div id="target-name" class="gesture-name">---</div>
                     <div id="target-desc" class="gesture-desc">---</div>
@@ -49,7 +54,7 @@
 
                 <!-- 判定結果 -->
                 <div class="result-box">
-                    <div id="match-indicator" class="indicator mismatch">MISMATCH</div>
+                    <div id="match-indicator" class="indicator mismatch">...</div>
                 </div>
 
                 <!-- 現在の入力状態可視化 -->
