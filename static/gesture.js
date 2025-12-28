@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const fingerIds = ['T', 'I', 'M', 'R', 'P'];
     let pollingInterval = null;
 
-    // テスト開始
     startBtn.addEventListener('click', async () => {
         const pid = document.getElementById('participant-id').value;
         const cond = document.getElementById('condition').value;
@@ -50,49 +49,42 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch('/gesture/state');
             const data = await res.json();
 
-            // 終了判定
             if (!data.is_running && data.state === "COMPLETED") {
                 finishTest();
                 return;
             }
 
-            // 進捗
             if (data.progress) progressText.textContent = data.progress;
 
-            // 現在の手の状態更新 (常に行う)
             if (data.current_input) {
                 fingerIds.forEach(fid => {
                     const el = document.querySelector(`#f-${fid} .f-val`);
                     const val = data.current_input[fid];
                     el.textContent = val;
-                    // HandOpen待機中のヒント色付けなどがあればここ
                 });
             }
 
             // --- ステートごとの表示制御 ---
             if (data.state === "WAIT_HAND_OPEN") {
-                // HandOpen待機中
                 overlay.style.display = "flex";
                 overlayText.textContent = "Please Open Hand";
-                targetImg.style.display = "none"; // ターゲットは隠す
+                targetImg.style.display = "none";
                 targetName.textContent = "???";
                 targetDesc.textContent = "Waiting...";
                 matchIndicator.textContent = "WAIT";
                 matchIndicator.className = "indicator mismatch";
 
             } else if (data.state === "COUNTDOWN") {
-                // カウントダウン中
                 overlay.style.display = "flex";
                 targetImg.style.display = "none";
                 
-                // 残り時間計算 (サーバーから開始時刻が来る前提)
-                const now = Date.now() / 1000;
-                const remaining = Math.ceil(3.0 - (now - data.countdown_start));
+                // サーバーから送られてきた残り時間を使用 (小数点切り上げ)
+                // data.countdown_remaining は float (例: 2.34...)
+                const remaining = Math.ceil(data.countdown_remaining);
                 overlayText.textContent = remaining > 0 ? remaining : "START!";
                 
             } else if (data.state === "MEASURING") {
-                // 計測中
-                overlay.style.display = "none"; // オーバーレイ消去
+                overlay.style.display = "none";
                 targetImg.style.display = "inline";
 
                 if (data.target) {

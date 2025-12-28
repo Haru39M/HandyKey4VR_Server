@@ -19,6 +19,8 @@ class GestureTest:
         self.target_gesture = None
         self.current_gesture_id = None
         
+        # デバイスからの現在の入力状態
+        # 初期状態は全てOPENとしておく
         self.current_device_state = {
             "T": "OPEN", "I": "OPEN", "M": "OPEN", "R": "OPEN", "P": "OPEN"
         }
@@ -52,10 +54,6 @@ class GestureTest:
             data = json.load(f)
             self.gestures_data = data.get("Gestures", {})
             self.gesture_list = list(self.gestures_data.keys())
-            # HandOpen自体はターゲットにしないため除外リストに入れるなどが本来必要ですが、
-            # 今回はランダム選択時に HandOpen ("2") が選ばれる可能性があります。
-            # 要件に「HandOpenから各ジェスチャーへ遷移」とあるので、ターゲットがHandOpenになるのは避けるべきかもしれません。
-            # いったんそのままにします。
 
     def configure_test(self, participant_id, condition, max_trials):
         self.participant_id = participant_id
@@ -72,6 +70,10 @@ class GestureTest:
         self._start_wait_hand_open()
 
     def update_input(self, input_state):
+        # 入力状態を更新
+        # bridge.py からは常に全指の状態が送られてくると想定されるが、
+        # もし部分的な更新であっても、送られてきたキーのみを更新する。
+        # bridge.pyが正しく「離した（OPEN）」を送ってきているならこれで問題ないはず。
         for key, val in input_state.items():
             if key in self.current_device_state:
                 self.current_device_state[key] = val
@@ -164,12 +166,13 @@ class GestureTest:
         }
         
         if self.state == STATE_COUNTDOWN:
-            # クライアント同期用
-            response["countdown_start"] = self.countdown_start_time
+            # サーバー側で計算した「残り秒数」を送ることで、クライアントの時刻ズレ問題を解消
+            elapsed = time.time() - self.countdown_start_time
+            remaining = max(0, 3.0 - elapsed)
+            response["countdown_remaining"] = remaining
             
         if self.state == STATE_MEASURING:
             response["target"] = self.target_gesture
-            # 一致中かどうか
             response["is_match"] = (self.match_start_time is not None)
             
         return response
