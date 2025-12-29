@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const testSection = document.getElementById('test-section');
     const finishedScreen = document.getElementById('finished-screen');
     
+    // Config Inputs
+    const idInput = document.getElementById('participant-id');
+    const debugMode = document.getElementById('debug-mode');
+    const handInput = document.getElementById('handedness');
+    const condInput = document.getElementById('condition');
+    const trialsInput = document.getElementById('max-trials');
+
     const targetImg = document.getElementById('target-img');
     const targetName = document.getElementById('target-name');
     const targetDesc = document.getElementById('target-desc');
@@ -16,10 +23,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const fingerIds = ['T', 'I', 'M', 'R', 'P'];
     let pollingInterval = null;
 
+    // --- Validation Logic ---
+    function checkValidation() {
+        // DebugモードならID入力は必須としない（内部でdebugに固定するため）
+        const isIdValid = debugMode.checked || idInput.value.trim() !== "";
+        const isHandSelected = handInput.value !== "";
+        const isCondSelected = condInput.value !== "";
+        const isTrialsValid = trialsInput.value > 0;
+
+        if (isIdValid && isHandSelected && isCondSelected && isTrialsValid) {
+            startBtn.disabled = false;
+            startBtn.style.backgroundColor = "#007bff";
+            startBtn.style.cursor = "pointer";
+        } else {
+            startBtn.disabled = true;
+            startBtn.style.backgroundColor = "#ccc";
+            startBtn.style.cursor = "not-allowed";
+        }
+    }
+
+    // Add listeners
+    [idInput, debugMode, handInput, condInput, trialsInput].forEach(el => {
+        el.addEventListener('input', checkValidation);
+        el.addEventListener('change', checkValidation);
+    });
+
+    // テスト開始
     startBtn.addEventListener('click', async () => {
-        const pid = document.getElementById('participant-id').value;
-        const cond = document.getElementById('condition').value;
-        const maxTrials = document.getElementById('max-trials').value;
+        // DebugモードならIDを強制的に"debug"にする
+        const pid = debugMode.checked ? "debug" : idInput.value;
+        const hand = handInput.value;
+        const cond = condInput.value;
+        const maxTrials = trialsInput.value;
 
         try {
             await fetch('/gesture/start', {
@@ -28,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({
                     participant_id: pid,
                     condition: cond,
-                    max_trials: maxTrials
+                    max_trials: maxTrials,
+                    handedness: hand // 利き手を追加
                 })
             });
 
@@ -79,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetImg.style.display = "none";
                 
                 // サーバーから送られてきた残り時間を使用 (小数点切り上げ)
-                // data.countdown_remaining は float (例: 2.34...)
                 const remaining = Math.ceil(data.countdown_remaining);
                 overlayText.textContent = remaining > 0 ? remaining : "START!";
                 

@@ -20,7 +20,6 @@ class GestureTest:
         self.current_gesture_id = None
         
         # デバイスからの現在の入力状態
-        # 初期状態は全てOPENとしておく
         self.current_device_state = {
             "T": "OPEN", "I": "OPEN", "M": "OPEN", "R": "OPEN", "P": "OPEN"
         }
@@ -28,6 +27,7 @@ class GestureTest:
         # テスト設定
         self.participant_id = "test"
         self.condition = "default"
+        self.handedness = "R" # デフォルト
         self.max_trials = 10
         self.completed_trials = 0
         self.state = STATE_IDLE
@@ -39,9 +39,7 @@ class GestureTest:
         self.match_duration_threshold = 0.5 # チャタリング防止時間
         
         # ログ用
-        self.log_dir = "logs_gesture"
-        if not os.path.exists(self.log_dir):
-            os.makedirs(self.log_dir)
+        self.base_log_dir = "logs_gesture"
         self.log_filepath = ""
             
         self.load_gestures(gestures_path)
@@ -55,25 +53,29 @@ class GestureTest:
             self.gestures_data = data.get("Gestures", {})
             self.gesture_list = list(self.gestures_data.keys())
 
-    def configure_test(self, participant_id, condition, max_trials):
+    def configure_test(self, participant_id, condition, max_trials, handedness="R"):
         self.participant_id = participant_id
         self.condition = condition
         self.max_trials = int(max_trials)
+        self.handedness = handedness
         self.completed_trials = 0
         
-        # ログファイル作成: log_<id>_YYYY-MM-DD-hh-mm-ss_gesture.csv
+        # ログ保存先の決定
+        if self.participant_id == "debug":
+            current_log_dir = os.path.join(self.base_log_dir, "debug")
+        else:
+            current_log_dir = self.base_log_dir
+            
+        if not os.path.exists(current_log_dir):
+            os.makedirs(current_log_dir)
+
         now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-        self.log_filepath = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_gesture.csv")
+        self.log_filepath = os.path.join(current_log_dir, f"log_{participant_id}_{now_str}_gesture.csv")
         self._init_log()
         
-        # 最初の状態へ
         self._start_wait_hand_open()
 
     def update_input(self, input_state):
-        # 入力状態を更新
-        # bridge.py からは常に全指の状態が送られてくると想定されるが、
-        # もし部分的な更新であっても、送られてきたキーのみを更新する。
-        # bridge.pyが正しく「離した（OPEN）」を送ってきているならこれで問題ないはず。
         for key, val in input_state.items():
             if key in self.current_device_state:
                 self.current_device_state[key] = val
@@ -90,7 +92,6 @@ class GestureTest:
                 # HandOpen検知 -> カウントダウンへ
                 self.state = STATE_COUNTDOWN
                 self.countdown_start_time = time.time()
-                # 次のターゲットをここで決めておく（まだ見せない）
                 self._pick_next_target()
 
         # 2. カウントダウン (3秒)
@@ -123,30 +124,26 @@ class GestureTest:
 
     def _start_wait_hand_open(self):
         self.state = STATE_WAIT_HAND_OPEN
-        self.target_gesture = None # 待機中はターゲット無し
+        self.target_gesture = None 
 
     def _pick_next_target(self):
-        """次のターゲットをランダム選択（HandOpen以外）"""
         candidates = [gid for gid in self.gesture_list if self.gestures_data[gid]['GestureName'] != "HandOpen"]
-        if not candidates: candidates = self.gesture_list # fallback
+        if not candidates: candidates = self.gesture_list 
         
         self.current_gesture_id = random.choice(candidates)
         self.target_gesture = self.gestures_data[self.current_gesture_id]
         print(f"[GestureTest] Next Target Selected: {self.target_gesture['GestureName']}")
 
     def _is_hand_open(self):
-        """すべての指がOPENか"""
         for f in ["T", "I", "M", "R", "P"]:
             if self.current_device_state[f] != "OPEN":
                 return False
         return True
 
     def _is_matching_target(self):
-        """現在のターゲットと一致しているか"""
         if not self.target_gesture: return False
         
         target_state = self.target_gesture["State"]
-        # Neutral特例: すべてOPENならNeutralとは認めない（HandOpen扱い）
         if self.target_gesture['GestureName'] == "Neutral":
             if self._is_hand_open(): return False
 
@@ -166,7 +163,6 @@ class GestureTest:
         }
         
         if self.state == STATE_COUNTDOWN:
-            # サーバー側で計算した「残り秒数」を送ることで、クライアントの時刻ズレ問題を解消
             elapsed = time.time() - self.countdown_start_time
             remaining = max(0, 3.0 - elapsed)
             response["countdown_remaining"] = remaining
@@ -181,13 +177,12 @@ class GestureTest:
         with open(self.log_filepath, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow([
-                "Timestamp", "ParticipantID", "Condition", "TrialNum", 
+                "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialNum", 
                 "TargetGesture", "TargetID", "ReactionTime", "TotalTime"
             ])
 
     def _save_log(self):
         duration = time.time() - self.measure_start_time
-        # マッチ判定時間を引く
         reaction_time = max(0, duration - self.match_duration_threshold)
         
         with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
@@ -196,6 +191,7 @@ class GestureTest:
                 datetime.now().isoformat(),
                 self.participant_id,
                 self.condition,
+                self.handedness,
                 self.completed_trials + 1,
                 self.target_gesture['GestureName'],
                 self.current_gesture_id,

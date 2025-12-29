@@ -15,18 +15,33 @@
             <div class="config-item">
                 <label>ID: <input type="text" id="participant-id" value="p01"></label>
             </div>
+            <!-- Debug Mode 追加 -->
+            <div class="config-item">
+                <label><input type="checkbox" id="debug-mode"> Debug</label>
+            </div>
+            <div class="config-item">
+                <label>Hand: 
+                    <select id="handedness">
+                        <option value="" disabled selected>Select</option>
+                        <option value="R">Right</option>
+                        <option value="L">Left</option>
+                    </select>
+                </label>
+            </div>
             <div class="config-item">
                 <label>Cond: 
                     <select id="condition">
-                        <option value="Proposed">Proposed</option>
+                        <option value="" disabled selected>Select</option>
                         <option value="Controller">Controller</option>
+                        <option value="Proposed">Proposed</option>
                     </select>
                 </label>
             </div>
             <div class="config-item">
                 <label>Trials: <input type="number" id="max-trials" value="10"></label>
             </div>
-            <button id="start-btn">START TEST</button>
+            <!-- 初期状態は disabled -->
+            <button id="start-btn" disabled style="background-color: #ccc; cursor: not-allowed;">START TEST</button>
             <a href="/" style="margin-left: auto;">Text Task &gt;</a>
         </div>
 

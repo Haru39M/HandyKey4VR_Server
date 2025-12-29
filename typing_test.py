@@ -7,31 +7,35 @@ from datetime import datetime
 from collections import defaultdict
 
 class Logger:
-    def __init__(self, participant_id, condition):
+    def __init__(self, participant_id, condition, handedness="R"):
         self.participant_id = participant_id
         self.condition = condition
+        self.handedness = handedness
         
-        # タイムスタンプ生成
         now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         
-        # ディレクトリ設定 (typing用)
-        self.log_dir = "logs_typing"
+        self.base_log_dir = "logs_typing"
+        
+        # Debugモード判定
+        if participant_id == "debug":
+            self.log_dir = os.path.join(self.base_log_dir, "debug")
+        else:
+            self.log_dir = self.base_log_dir
+            
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
 
-        # ファイルパス設定: log_<id>_YYYY-MM-DD-hh-mm-ss_typing.csv
         self.summary_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_typing.csv")
-        # Rawログは同一ディレクトリに _raw を付けて保存するか、リクエストにはありませんでしたが念のため残します
         self.raw_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_typing_raw.csv")
 
         self._init_csv(self.summary_path, [
-            "Timestamp", "ParticipantID", "Condition", "TrialID", 
+            "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialID", 
             "TargetPhrase", "InputPhrase", 
             "CompletionTime", "CharCount", "WPM", "ErrorDist", "BackspaceCount"
         ])
         
         self._init_csv(self.raw_path, [
-            "Timestamp", "ParticipantID", "Condition", "TrialID",
+            "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialID",
             "EventType", "EventData", "ClientTimestamp"
         ])
 
@@ -41,13 +45,13 @@ class Logger:
             writer.writerow(header)
 
     def log_summary(self, data):
-        """文単位の完了ログ"""
         with open(self.summary_path, 'a', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow([
                 datetime.now().isoformat(),
                 self.participant_id,
                 self.condition,
+                self.handedness,
                 data.get('trial_id'),
                 data.get('target'),
                 data.get('input'),
@@ -67,6 +71,7 @@ class Logger:
                     datetime.now().isoformat(),
                     self.participant_id,
                     self.condition,
+                    self.handedness,
                     trial_id,
                     e.get('type'),
                     e.get('data'),
@@ -84,6 +89,7 @@ class TypingTest:
         self.logger = None
         self.participant_id = "test"
         self.condition = "default"
+        self.handedness = "R"
         self.max_sentences = 5
         self.completed_sentences_count = 0
         
@@ -103,13 +109,14 @@ class TypingTest:
             self.phrases = ["Error loading phrases"]
             self.total_sentence = 1
 
-    def configure_test(self, participant_id, condition, max_sentences):
+    def configure_test(self, participant_id, condition, max_sentences, handedness="R"):
         self.participant_id = participant_id
         self.condition = condition
         self.max_sentences = int(max_sentences)
+        self.handedness = handedness
         self.completed_sentences_count = 0
         self.current_sentence_index = 0
-        self.logger = Logger(participant_id, condition)
+        self.logger = Logger(participant_id, condition, handedness)
 
     def loadReferenceText(self):
         if not self.phrases:

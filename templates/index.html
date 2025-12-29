@@ -14,26 +14,42 @@
         <h1>HandyKey4VR Evaluation</h1>
 
         <!-- ==========================================
-             実験設定エリア (新規追加)
+             実験設定エリア (更新)
              ========================================== -->
         <div id="config-section" class="config-box">
             <div class="config-item">
                 <label for="participant-id">ID:</label>
                 <input type="text" id="participant-id" value="p01" size="8">
             </div>
+            <!-- Debug Mode 追加 -->
+            <div class="config-item">
+                <label><input type="checkbox" id="debug-mode"> Debug</label>
+            </div>
+            <!-- Handedness 追加 -->
+            <div class="config-item">
+                <label>Hand: 
+                    <select id="handedness">
+                        <option value="" disabled selected>Select</option>
+                        <option value="R">Right</option>
+                        <option value="L">Left</option>
+                    </select>
+                </label>
+            </div>
             <div class="config-item">
                 <label for="condition">Cond:</label>
                 <select id="condition">
-                    <option value="Proposed">Proposed</option>
-                    <option value="Controller">Controller</option>
+                    <option value="" disabled selected>Select</option>
                     <option value="Keyboard">Keyboard</option>
+                    <option value="Controller">Controller</option>
+                    <option value="Proposed">Proposed</option>
                 </select>
             </div>
             <div class="config-item">
                 <label for="max-sentences">Sentences:</label>
                 <input type="number" id="max-sentences" value="5" size="5">
             </div>
-            <button id="start-test-btn" type="button">START TEST</button>
+            <!-- 初期状態は disabled -->
+            <button id="start-test-btn" type="button" disabled style="background-color: #ccc; cursor: not-allowed;">START TEST</button>
         </div>
 
         <!-- ==========================================
@@ -58,8 +74,7 @@
             </div>
 
             <!-- 完了メッセージ -->
-            <div id="completion-message"
-                style="display:none; color: green; font-weight: bold; margin-top: 10px; text-align: center;">
+            <div id="completion-message" style="display:none; color: green; font-weight: bold; margin-top: 10px; text-align: center;">
                 Perfect! Loading next...
             </div>
         </div>
@@ -74,7 +89,7 @@
             <div class="input-wrapper">
                 <!-- 入力欄 -->
                 <input type="text" id="word-input" name="prefix" autocomplete="off" placeholder="Type here..." disabled>
-
+                
                 <!-- 補助ボタン (スマホ用等) -->
                 <div class="selection-controls">
                     <button type="button" id="btn-up" tabindex="-1">←</button>
@@ -83,7 +98,7 @@
                 </div>
             </div>
 
-            <!-- ★変更点: 候補をここ（入力欄の下）に横並びで表示 -->
+            <!-- 候補をここ（入力欄の下）に横並びで表示 -->
             <div id="horizontal-candidates" class="candidates-row">
                 <!-- JSで候補アイテム(div)が挿入されます -->
             </div>
@@ -126,7 +141,7 @@
                 <div class="key key-m" data-key="m">M <span class="index-label" data-char="m"></span></div>
             </div>
         </div>
-
+        
         <div id="info-container"></div>
     </div>
 
@@ -136,5 +151,4 @@
     </script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
-
 </html>
