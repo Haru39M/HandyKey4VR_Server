@@ -48,7 +48,7 @@ def predict():
         return jsonify({"predictions": [], "converted_index": "", "total_combinations": 0})
 
     predictor.set_text_input(input_word)
-    ranked_predictions = predictor.predict_top_words_with_scores(limit=10)
+    ranked_predictions = predictor.predict_top_words_with_scores(limit=10,beam_width=10000)
 
     return jsonify({
         "predictions": ranked_predictions,

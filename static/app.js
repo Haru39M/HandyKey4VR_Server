@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Start Test
     if (startTestBtn) {
         startTestBtn.addEventListener('click', async () => {
-            const pid = debugMode.checked ? "debug" : idInput.value;
+            const pid = debugMode.checked ? "debug-"+idInput.value : idInput.value;
             const hand = handInput.value;
             const params = {
                 participant_id: pid,

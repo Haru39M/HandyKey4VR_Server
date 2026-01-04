@@ -17,7 +17,8 @@ class Logger:
         self.base_log_dir = "logs_typing"
         
         # Debugモード判定
-        if participant_id == "debug":
+        # if participant_id == "debug":
+        if "debug" in participant_id:
             self.log_dir = os.path.join(self.base_log_dir, "debug")
         else:
             self.log_dir = self.base_log_dir
