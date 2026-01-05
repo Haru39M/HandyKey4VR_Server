@@ -1,0 +1,751 @@
+Timestamp,ParticipantID,Condition,Handedness,TrialID,EventType,EventData,ClientTimestamp
+2026-01-05T11:47:44.956994,debug-p01,Keyboard,R,1,system,test_started,1767613186083
+2026-01-05T11:47:44.957107,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613201674
+2026-01-05T11:47:44.957204,debug-p01,Keyboard,R,1,prediction_update,"{'count': 6, 'top': 'm'}",1767613201700
+2026-01-05T11:47:44.957214,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613201776
+2026-01-05T11:47:44.957219,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'mm'}",1767613201802
+2026-01-05T11:47:44.957224,debug-p01,Keyboard,R,1,keydown,"{'key': 's', 'code': 'KeyS'}",1767613201991
+2026-01-05T11:47:44.957228,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'uns'}",1767613202193
+2026-01-05T11:47:44.957231,debug-p01,Keyboard,R,1,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613203460
+2026-01-05T11:47:44.957235,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'husa'}",1767613203552
+2026-01-05T11:47:44.957239,debug-p01,Keyboard,R,1,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613206808
+2026-01-05T11:47:44.957243,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musar'}",1767613206985
+2026-01-05T11:47:44.957247,debug-p01,Keyboard,R,1,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613210063
+2026-01-05T11:47:44.957251,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613210207
+2026-01-05T11:47:44.957255,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'unsafe'}",1767613210411
+2026-01-05T11:47:44.957258,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'muwaten'}",1767613211161
+2026-01-05T11:47:44.957263,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613213688
+2026-01-05T11:47:44.957267,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613213688
+2026-01-05T11:47:44.957278,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613213821
+2026-01-05T11:47:44.957282,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 2}",1767613213821
+2026-01-05T11:47:44.957285,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613214002
+2026-01-05T11:47:44.957289,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 3}",1767613214002
+2026-01-05T11:47:44.957293,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613214196
+2026-01-05T11:47:44.957296,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 4}",1767613214196
+2026-01-05T11:47:44.957300,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613214346
+2026-01-05T11:47:44.957303,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 5}",1767613214346
+2026-01-05T11:47:44.957307,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613214511
+2026-01-05T11:47:44.957311,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 6}",1767613214511
+2026-01-05T11:47:44.957314,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613215952
+2026-01-05T11:47:44.957318,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'unsafe'}",1767613215980
+2026-01-05T11:47:44.957323,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613216132
+2026-01-05T11:47:44.957327,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musar'}",1767613216155
+2026-01-05T11:47:44.957331,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613216311
+2026-01-05T11:47:44.957335,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'husa'}",1767613216334
+2026-01-05T11:47:44.957339,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613216507
+2026-01-05T11:47:44.957343,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'uns'}",1767613216529
+2026-01-05T11:47:44.957348,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613216657
+2026-01-05T11:47:44.957351,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'mm'}",1767613216680
+2026-01-05T11:47:44.957355,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613216836
+2026-01-05T11:47:44.957359,debug-p01,Keyboard,R,1,prediction_update,"{'count': 6, 'top': 'm'}",1767613216862
+2026-01-05T11:47:44.957363,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613217003
+2026-01-05T11:47:44.957367,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613219764
+2026-01-05T11:47:44.957371,debug-p01,Keyboard,R,1,prediction_update,"{'count': 6, 'top': 'm'}",1767613219785
+2026-01-05T11:47:44.957375,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613219853
+2026-01-05T11:47:44.957379,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'mm'}",1767613219875
+2026-01-05T11:47:44.957382,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613221696
+2026-01-05T11:47:44.957386,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613221696
+2026-01-05T11:47:44.957390,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613221862
+2026-01-05T11:47:44.957393,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 2}",1767613221862
+2026-01-05T11:47:44.957397,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613222041
+2026-01-05T11:47:44.957401,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 3}",1767613222041
+2026-01-05T11:47:44.957404,debug-p01,Keyboard,R,1,keydown,"{'key': 's', 'code': 'KeyS'}",1767613224493
+2026-01-05T11:47:44.957408,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'uns'}",1767613224509
+2026-01-05T11:47:44.957412,debug-p01,Keyboard,R,1,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613224566
+2026-01-05T11:47:44.957416,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'husa'}",1767613224585
+2026-01-05T11:47:44.957420,debug-p01,Keyboard,R,1,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613226335
+2026-01-05T11:47:44.957423,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musae'}",1767613226406
+2026-01-05T11:47:44.957427,debug-p01,Keyboard,R,1,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613232922
+2026-01-05T11:47:44.957431,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musaet'}",1767613233017
+2026-01-05T11:47:44.957435,debug-p01,Keyboard,R,1,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613235112
+2026-01-05T11:47:44.957438,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musaete'}",1767613235315
+2026-01-05T11:47:44.957442,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613235993
+2026-01-05T11:47:44.957445,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musaetey'}",1767613236419
+2026-01-05T11:47:44.957449,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613241048
+2026-01-05T11:47:44.957453,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613241048
+2026-01-05T11:47:44.957456,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613241212
+2026-01-05T11:47:44.957461,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 2}",1767613241212
+2026-01-05T11:47:44.957465,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613241556
+2026-01-05T11:47:44.957469,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musaete'}",1767613241599
+2026-01-05T11:47:44.957473,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613241857
+2026-01-05T11:47:44.957477,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musaet'}",1767613241886
+2026-01-05T11:47:44.957481,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613242051
+2026-01-05T11:47:44.957484,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'musae'}",1767613242075
+2026-01-05T11:47:44.957488,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613242231
+2026-01-05T11:47:44.957492,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'husa'}",1767613242254
+2026-01-05T11:47:44.957496,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613242381
+2026-01-05T11:47:44.958237,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'uns'}",1767613242403
+2026-01-05T11:47:44.958264,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613242532
+2026-01-05T11:47:44.958271,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'mm'}",1767613242557
+2026-01-05T11:47:44.958275,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613242666
+2026-01-05T11:47:44.958279,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613242666
+2026-01-05T11:47:44.958284,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613242772
+2026-01-05T11:47:44.958288,debug-p01,Keyboard,R,1,prediction_update,"{'count': 6, 'top': 'm'}",1767613242792
+2026-01-05T11:47:44.958292,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613242952
+2026-01-05T11:47:44.958296,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613245759
+2026-01-05T11:47:44.958300,debug-p01,Keyboard,R,1,prediction_update,"{'count': 6, 'top': 'm'}",1767613245780
+2026-01-05T11:47:44.958304,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613245831
+2026-01-05T11:47:44.958308,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'mm'}",1767613245850
+2026-01-05T11:47:44.958311,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613248490
+2026-01-05T11:47:44.958315,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613248490
+2026-01-05T11:47:44.958319,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613248772
+2026-01-05T11:47:44.958322,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 2}",1767613248772
+2026-01-05T11:47:44.958326,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613248982
+2026-01-05T11:47:44.958329,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 3}",1767613248982
+2026-01-05T11:47:44.958333,debug-p01,Keyboard,R,1,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613251818
+2026-01-05T11:47:44.958336,debug-p01,Keyboard,R,1,confirm,{'word': 'my'},1767613251818
+2026-01-05T11:47:59.035082,debug-p01,Keyboard,R,1,keydown,"{'key': 's', 'code': 'KeyS'}",1767613254598
+2026-01-05T11:47:59.035101,debug-p01,Keyboard,R,1,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613254599
+2026-01-05T11:47:59.035106,debug-p01,Keyboard,R,1,prediction_update,"{'count': 3, 'top': 's'}",1767613254633
+2026-01-05T11:47:59.035112,debug-p01,Keyboard,R,1,prediction_update,"{'count': 9, 'top': 'wa'}",1767613254634
+2026-01-05T11:47:59.035117,debug-p01,Keyboard,R,1,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613256290
+2026-01-05T11:47:59.035121,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'war'}",1767613256307
+2026-01-05T11:47:59.035125,debug-p01,Keyboard,R,1,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613257880
+2026-01-05T11:47:59.035129,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'ward'}",1767613257901
+2026-01-05T11:47:59.035133,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613258026
+2026-01-05T11:47:59.035137,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'watch'}",1767613258047
+2026-01-05T11:47:59.035141,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613260563
+2026-01-05T11:47:59.035144,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613260563
+2026-01-05T11:47:59.035149,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613262708
+2026-01-05T11:47:59.035152,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 2}",1767613262708
+2026-01-05T11:47:59.035156,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613262886
+2026-01-05T11:47:59.035160,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 3}",1767613262886
+2026-01-05T11:47:59.035163,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613263067
+2026-01-05T11:47:59.035167,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 4}",1767613263067
+2026-01-05T11:47:59.035170,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613263247
+2026-01-05T11:47:59.035174,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 5}",1767613263247
+2026-01-05T11:47:59.035177,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613263412
+2026-01-05T11:47:59.035180,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 6}",1767613263412
+2026-01-05T11:47:59.035184,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613263577
+2026-01-05T11:47:59.035187,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 7}",1767613263577
+2026-01-05T11:47:59.035191,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613263742
+2026-01-05T11:47:59.035194,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 8}",1767613263742
+2026-01-05T11:47:59.035198,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613263937
+2026-01-05T11:47:59.035201,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 9}",1767613263937
+2026-01-05T11:47:59.035205,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613264116
+2026-01-05T11:47:59.035208,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 0}",1767613264116
+2026-01-05T11:47:59.035212,debug-p01,Keyboard,R,1,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613267164
+2026-01-05T11:47:59.035216,debug-p01,Keyboard,R,1,confirm,{'word': 'watch'},1767613267164
+2026-01-05T11:48:23.615692,debug-p01,Keyboard,R,1,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613270407
+2026-01-05T11:48:23.615715,debug-p01,Keyboard,R,1,prediction_update,"{'count': 6, 'top': 'g'}",1767613270431
+2026-01-05T11:48:23.615721,debug-p01,Keyboard,R,1,keydown,"{'key': 's', 'code': 'KeyS'}",1767613270480
+2026-01-05T11:48:23.615725,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'vs'}",1767613270500
+2026-01-05T11:48:23.615730,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613272834
+2026-01-05T11:48:23.615734,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613272834
+2026-01-05T11:48:23.615739,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613272983
+2026-01-05T11:48:23.615742,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 2}",1767613272983
+2026-01-05T11:48:23.615746,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613273596
+2026-01-05T11:48:23.615751,debug-p01,Keyboard,R,1,prediction_update,"{'count': 6, 'top': 'g'}",1767613273617
+2026-01-05T11:48:23.615755,debug-p01,Keyboard,R,1,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613276574
+2026-01-05T11:48:23.615759,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'te'}",1767613276591
+2026-01-05T11:48:23.615763,debug-p01,Keyboard,R,1,keydown,"{'key': 'p', 'code': 'KeyP'}",1767613279328
+2026-01-05T11:48:23.615767,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'rep'}",1767613279617
+2026-01-05T11:48:23.615771,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613281804
+2026-01-05T11:48:23.615775,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'te'}",1767613281826
+2026-01-05T11:48:23.615779,debug-p01,Keyboard,R,1,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613282537
+2026-01-05T11:48:23.615783,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'fel'}",1767613282557
+2026-01-05T11:48:23.615787,debug-p01,Keyboard,R,1,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613282854
+2026-01-05T11:48:23.615790,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'bell'}",1767613282873
+2026-01-05T11:48:23.615794,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613286140
+2026-01-05T11:48:23.615798,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613286140
+2026-01-05T11:48:23.615802,debug-p01,Keyboard,R,1,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613290999
+2026-01-05T11:48:23.615805,debug-p01,Keyboard,R,1,confirm,{'word': 'fell'},1767613290999
+2026-01-05T11:48:31.107561,debug-p01,Keyboard,R,1,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613295395
+2026-01-05T11:48:31.107584,debug-p01,Keyboard,R,1,prediction_update,"{'count': 2, 'top': 'i'}",1767613295418
+2026-01-05T11:48:31.107590,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613295511
+2026-01-05T11:48:31.107595,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'in'}",1767613295531
+2026-01-05T11:48:31.107599,debug-p01,Keyboard,R,1,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613299189
+2026-01-05T11:48:31.107603,debug-p01,Keyboard,R,1,confirm,{'word': 'in'},1767613299189
+2026-01-05T11:48:42.948298,debug-p01,Keyboard,R,1,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613301638
+2026-01-05T11:48:42.948321,debug-p01,Keyboard,R,1,prediction_update,"{'count': 6, 'top': 'g'}",1767613301660
+2026-01-05T11:48:42.948327,debug-p01,Keyboard,R,1,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613301691
+2026-01-05T11:48:42.948331,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'by'}",1767613301713
+2026-01-05T11:48:42.948335,debug-p01,Keyboard,R,1,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613302866
+2026-01-05T11:48:42.948339,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'the'}",1767613302889
+2026-01-05T11:48:42.948343,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613304647
+2026-01-05T11:48:42.948349,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613304647
+2026-01-05T11:48:42.948354,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613306161
+2026-01-05T11:48:42.948357,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 2}",1767613306161
+2026-01-05T11:48:42.948361,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613306401
+2026-01-05T11:48:42.948364,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 3}",1767613306401
+2026-01-05T11:48:42.948368,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613306581
+2026-01-05T11:48:42.948371,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 4}",1767613306581
+2026-01-05T11:48:42.948375,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613306746
+2026-01-05T11:48:42.948378,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 5}",1767613306746
+2026-01-05T11:48:42.948381,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613307062
+2026-01-05T11:48:42.948385,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 6}",1767613307062
+2026-01-05T11:48:42.948388,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613307242
+2026-01-05T11:48:42.948392,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 7}",1767613307242
+2026-01-05T11:48:42.948395,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613307406
+2026-01-05T11:48:42.948399,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 8}",1767613307406
+2026-01-05T11:48:42.948402,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613307860
+2026-01-05T11:48:42.948406,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 9}",1767613307860
+2026-01-05T11:48:42.948409,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613308217
+2026-01-05T11:48:42.948413,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 0}",1767613308217
+2026-01-05T11:48:42.948417,debug-p01,Keyboard,R,1,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613309116
+2026-01-05T11:48:42.948421,debug-p01,Keyboard,R,1,confirm,{'word': 'the'},1767613309116
+2026-01-05T11:48:51.721495,debug-p01,Keyboard,R,1,keydown,"{'key': 's', 'code': 'KeyS'}",1767613311403
+2026-01-05T11:48:51.721514,debug-p01,Keyboard,R,1,prediction_update,"{'count': 3, 'top': 's'}",1767613311424
+2026-01-05T11:48:51.721520,debug-p01,Keyboard,R,1,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613311445
+2026-01-05T11:48:51.721524,debug-p01,Keyboard,R,1,prediction_update,"{'count': 9, 'top': 'wa'}",1767613311468
+2026-01-05T11:48:51.721528,debug-p01,Keyboard,R,1,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613312751
+2026-01-05T11:48:51.721532,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'war'}",1767613312767
+2026-01-05T11:48:51.721536,debug-p01,Keyboard,R,1,keydown,"{'key': 's', 'code': 'KeyS'}",1767613312901
+2026-01-05T11:48:51.721540,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'wars'}",1767613312923
+2026-01-05T11:48:51.721544,debug-p01,Keyboard,R,1,keydown,"{'key': ' ', 'code': 'Space'}",1767613314411
+2026-01-05T11:48:51.721548,debug-p01,Keyboard,R,1,nav,"{'direction': 1, 'new_index': 1}",1767613314411
+2026-01-05T11:48:51.721552,debug-p01,Keyboard,R,1,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613315102
+2026-01-05T11:48:51.721556,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'war'}",1767613315124
+2026-01-05T11:48:51.721560,debug-p01,Keyboard,R,1,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613315826
+2026-01-05T11:48:51.721563,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'ward'}",1767613315842
+2026-01-05T11:48:51.721567,debug-p01,Keyboard,R,1,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613316006
+2026-01-05T11:48:51.721570,debug-p01,Keyboard,R,1,prediction_update,"{'count': 10, 'top': 'water'}",1767613316036
+2026-01-05T11:48:51.721574,debug-p01,Keyboard,R,1,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613318689
+2026-01-05T11:48:51.721578,debug-p01,Keyboard,R,1,confirm,{'word': 'water'},1767613318689
+2026-01-05T11:48:53.569826,debug-p01,Keyboard,R,2,system,phrase_completed,1767613318718
+2026-01-05T11:48:53.569845,debug-p01,Keyboard,R,2,system,next_phrase_clicked,1767613320723
+2026-01-05T11:50:30.333087,debug-p01,Keyboard,R,2,keydown,"{'key': 'p', 'code': 'KeyP'}",1767613324914
+2026-01-05T11:50:30.333111,debug-p01,Keyboard,R,2,prediction_update,"{'count': 1, 'top': 'p'}",1767613324939
+2026-01-05T11:50:30.333118,debug-p01,Keyboard,R,2,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613324961
+2026-01-05T11:50:30.333122,debug-p01,Keyboard,R,2,prediction_update,"{'count': 3, 'top': 'pc'}",1767613325047
+2026-01-05T11:50:30.333128,debug-p01,Keyboard,R,2,keydown,"{'key': 's', 'code': 'KeyS'}",1767613325140
+2026-01-05T11:50:30.333132,debug-p01,Keyboard,R,2,prediction_update,"{'count': 9, 'top': 'pcs'}",1767613325267
+2026-01-05T11:50:30.333136,debug-p01,Keyboard,R,2,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613325364
+2026-01-05T11:50:30.333141,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pesa'}",1767613325434
+2026-01-05T11:50:30.333145,debug-p01,Keyboard,R,2,keydown,"{'key': ' ', 'code': 'Space'}",1767613326712
+2026-01-05T11:50:30.333149,debug-p01,Keyboard,R,2,nav,"{'direction': 1, 'new_index': 1}",1767613326712
+2026-01-05T11:50:30.333154,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613328001
+2026-01-05T11:50:30.333158,debug-p01,Keyboard,R,2,prediction_update,"{'count': 9, 'top': 'pcs'}",1767613328024
+2026-01-05T11:50:30.333163,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613329520
+2026-01-05T11:50:30.333167,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pest'}",1767613329537
+2026-01-05T11:50:30.333171,debug-p01,Keyboard,R,2,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613329895
+2026-01-05T11:50:30.333175,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pesta'}",1767613329913
+2026-01-05T11:50:30.333179,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613333119
+2026-01-05T11:50:30.333183,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestai'}",1767613333168
+2026-01-05T11:50:30.333188,debug-p01,Keyboard,R,2,keydown,"{'key': 'p', 'code': 'KeyP'}",1767613333267
+2026-01-05T11:50:30.333192,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaip'}",1767613333286
+2026-01-05T11:50:30.333196,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613333581
+2026-01-05T11:50:30.333200,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipi'}",1767613333604
+2026-01-05T11:50:30.333204,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613335113
+2026-01-05T11:50:30.333209,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaip'}",1767613335137
+2026-01-05T11:50:30.333213,debug-p01,Keyboard,R,2,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613335786
+2026-01-05T11:50:30.333217,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipo'}",1767613335809
+2026-01-05T11:50:30.333221,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613335907
+2026-01-05T11:50:30.333225,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipoi'}",1767613335947
+2026-01-05T11:50:30.333229,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613337557
+2026-01-05T11:50:30.333233,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipoiy'}",1767613337645
+2026-01-05T11:50:30.333237,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613339087
+2026-01-05T11:50:30.333241,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipoiyy'}",1767613339410
+2026-01-05T11:50:30.333245,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613347176
+2026-01-05T11:50:30.333250,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipoiy'}",1767613347208
+2026-01-05T11:50:30.333255,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613347986
+2026-01-05T11:50:30.333259,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipoiyt'}",1767613348161
+2026-01-05T11:50:30.333264,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613354764
+2026-01-05T11:50:30.333268,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipoiy'}",1767613354795
+2026-01-05T11:50:30.333272,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613354942
+2026-01-05T11:50:30.333277,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipoi'}",1767613354965
+2026-01-05T11:50:30.333281,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613355124
+2026-01-05T11:50:30.333286,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaipo'}",1767613355147
+2026-01-05T11:50:30.333290,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613355623
+2026-01-05T11:50:30.333294,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestaip'}",1767613355644
+2026-01-05T11:50:30.333298,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613355668
+2026-01-05T11:50:30.333302,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pestai'}",1767613355693
+2026-01-05T11:50:30.333306,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613355698
+2026-01-05T11:50:30.333310,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pesta'}",1767613355721
+2026-01-05T11:50:30.333314,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613355728
+2026-01-05T11:50:30.333319,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pest'}",1767613355753
+2026-01-05T11:50:30.333322,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613355759
+2026-01-05T11:50:30.333326,debug-p01,Keyboard,R,2,prediction_update,"{'count': 9, 'top': 'pcs'}",1767613355784
+2026-01-05T11:50:30.333331,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613357116
+2026-01-05T11:50:30.333336,debug-p01,Keyboard,R,2,prediction_update,"{'count': 3, 'top': 'pc'}",1767613357137
+2026-01-05T11:50:30.333339,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613357912
+2026-01-05T11:50:30.333344,debug-p01,Keyboard,R,2,prediction_update,"{'count': 1, 'top': 'p'}",1767613357932
+2026-01-05T11:50:30.333348,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613359760
+2026-01-05T11:50:30.333351,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'pg'}",1767613359777
+2026-01-05T11:50:30.333355,debug-p01,Keyboard,R,2,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613359896
+2026-01-05T11:50:30.333359,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pre'}",1767613359915
+2026-01-05T11:50:30.333363,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613363198
+2026-01-05T11:50:30.333366,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prev'}",1767613363215
+2026-01-05T11:50:30.333370,debug-p01,Keyboard,R,2,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613363225
+2026-01-05T11:50:30.333374,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'preta'}",1767613363249
+2026-01-05T11:50:30.333378,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613365021
+2026-01-05T11:50:30.333382,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerak'}",1767613365044
+2026-01-05T11:50:30.333386,debug-p01,Keyboard,R,2,keydown,"{'key': 'p', 'code': 'KeyP'}",1767613365622
+2026-01-05T11:50:30.333390,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakp'}",1767613365640
+2026-01-05T11:50:30.333394,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613365757
+2026-01-05T11:50:30.333397,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakpi'}",1767613365778
+2026-01-05T11:50:30.333401,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613366972
+2026-01-05T11:50:30.333406,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakp'}",1767613366996
+2026-01-05T11:50:30.333409,debug-p01,Keyboard,R,2,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613367646
+2026-01-05T11:50:30.333413,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakpo'}",1767613367665
+2026-01-05T11:50:30.333743,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613367766
+2026-01-05T11:50:30.333756,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakpoi'}",1767613367798
+2026-01-05T11:50:30.333761,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613369192
+2026-01-05T11:50:30.333765,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakpoiy'}",1767613369249
+2026-01-05T11:50:30.333769,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613370875
+2026-01-05T11:50:30.333774,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakpoiyt'}",1767613371018
+2026-01-05T11:50:30.333778,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613376395
+2026-01-05T11:50:30.333782,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakpoiy'}",1767613376435
+2026-01-05T11:50:30.333786,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613379860
+2026-01-05T11:50:30.333790,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakpoi'}",1767613379891
+2026-01-05T11:50:30.333795,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613380082
+2026-01-05T11:50:30.333799,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakpo'}",1767613380109
+2026-01-05T11:50:30.333803,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613380396
+2026-01-05T11:50:30.333808,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakp'}",1767613380418
+2026-01-05T11:50:30.333812,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613380578
+2026-01-05T11:50:30.333816,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerak'}",1767613380601
+2026-01-05T11:50:30.333820,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613380772
+2026-01-05T11:50:30.333824,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'preta'}",1767613380794
+2026-01-05T11:50:30.333828,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613381087
+2026-01-05T11:50:30.333832,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prev'}",1767613381119
+2026-01-05T11:50:30.333836,debug-p01,Keyboard,R,2,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613388787
+2026-01-05T11:50:30.333840,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'preta'}",1767613388808
+2026-01-05T11:50:30.333843,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613393779
+2026-01-05T11:50:30.333847,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerak'}",1767613393796
+2026-01-05T11:50:30.333851,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613396209
+2026-01-05T11:50:30.333855,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'preraki'}",1767613396227
+2026-01-05T11:50:30.333859,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613397497
+2026-01-05T11:50:30.333863,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakiy'}",1767613397523
+2026-01-05T11:50:30.333867,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613401943
+2026-01-05T11:50:30.333870,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakiyt'}",1767613402033
+2026-01-05T11:50:30.333874,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613408090
+2026-01-05T11:50:30.333878,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerakiyti'}",1767613408177
+2026-01-05T11:50:30.333882,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613416354
+2026-01-05T11:50:30.333887,debug-p01,Keyboard,R,2,confirm,{'word': 'prerakiyti'},1767613416354
+2026-01-05T11:50:41.036384,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613420809
+2026-01-05T11:50:41.036412,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'm'}",1767613420833
+2026-01-05T11:50:41.036418,debug-p01,Keyboard,R,2,keydown,"{'key': 's', 'code': 'KeyS'}",1767613420871
+2026-01-05T11:50:41.036423,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'ms'}",1767613421239
+2026-01-05T11:50:41.036427,debug-p01,Keyboard,R,2,keydown,"{'key': 'p', 'code': 'KeyP'}",1767613421616
+2026-01-05T11:50:41.036431,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'usp'}",1767613421761
+2026-01-05T11:50:41.036435,debug-p01,Keyboard,R,2,keydown,"{'key': ' ', 'code': 'Space'}",1767613426944
+2026-01-05T11:50:41.036439,debug-p01,Keyboard,R,2,nav,"{'direction': 1, 'new_index': 1}",1767613426944
+2026-01-05T11:50:41.036443,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613427738
+2026-01-05T11:50:41.036448,debug-p01,Keyboard,R,2,confirm,{'word': 'hsp'},1767613427738
+2026-01-05T11:51:20.187522,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613431519
+2026-01-05T11:51:20.187623,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'm'}",1767613431541
+2026-01-05T11:51:20.187632,debug-p01,Keyboard,R,2,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613431566
+2026-01-05T11:51:20.187636,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613431586
+2026-01-05T11:51:20.187641,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613457208
+2026-01-05T11:51:20.187646,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'm'}",1767613457231
+2026-01-05T11:51:20.187650,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613457357
+2026-01-05T11:51:20.187654,debug-p01,Keyboard,R,2,keydown,"{'key': 'h', 'code': 'KeyH'}",1767613463268
+2026-01-05T11:51:20.187658,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'm'}",1767613463291
+2026-01-05T11:51:20.187662,debug-p01,Keyboard,R,2,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613463420
+2026-01-05T11:51:20.187666,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613463436
+2026-01-05T11:51:20.187670,debug-p01,Keyboard,R,2,keydown,"{'key': 'l', 'code': 'KeyL'}",1767613464399
+2026-01-05T11:51:20.187674,debug-p01,Keyboard,R,2,keydown,"{'key': 'l', 'code': 'KeyL'}",1767613464540
+2026-01-05T11:51:20.187678,debug-p01,Keyboard,R,2,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613464706
+2026-01-05T11:51:20.187681,debug-p01,Keyboard,R,2,keydown,"{'key': 'p', 'code': 'KeyP'}",1767613464707
+2026-01-05T11:51:20.187685,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'nel'}",1767613464889
+2026-01-05T11:51:20.187689,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'hell'}",1767613465148
+2026-01-05T11:51:20.187693,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'hello'}",1767613465152
+2026-01-05T11:51:20.187697,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'hellop'}",1767613465152
+2026-01-05T11:51:20.187701,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613465222
+2026-01-05T11:51:20.187705,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'hello'}",1767613465242
+2026-01-05T11:51:20.187709,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613465455
+2026-01-05T11:51:20.187713,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'hell'}",1767613465476
+2026-01-05T11:51:20.187717,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613465616
+2026-01-05T11:51:20.187721,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'nel'}",1767613465647
+2026-01-05T11:51:20.187726,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613465759
+2026-01-05T11:51:20.187730,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613465785
+2026-01-05T11:51:20.187734,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613465890
+2026-01-05T11:51:20.187738,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'm'}",1767613465914
+2026-01-05T11:51:20.187742,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613466020
+2026-01-05T11:51:20.187746,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613466184
+2026-01-05T11:51:20.187750,debug-p01,Keyboard,R,2,undo,{'removed_word': 'hsp'},1767613466184
+2026-01-05T11:51:49.705296,debug-p01,Keyboard,R,2,keydown,"{'key': 'j', 'code': 'KeyJ'}",1767613469330
+2026-01-05T11:51:49.705316,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'm'}",1767613469354
+2026-01-05T11:51:49.705322,debug-p01,Keyboard,R,2,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613469445
+2026-01-05T11:51:49.705326,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613469461
+2026-01-05T11:51:49.705330,debug-p01,Keyboard,R,2,keydown,"{'key': ';', 'code': 'Semicolon'}",1767613470550
+2026-01-05T11:51:49.705335,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613470565
+2026-01-05T11:51:49.705339,debug-p01,Keyboard,R,2,keydown,"{'key': ';', 'code': 'Semicolon'}",1767613470698
+2026-01-05T11:51:49.705343,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613470715
+2026-01-05T11:51:49.705347,debug-p01,Keyboard,R,2,keydown,"{'key': 'l', 'code': 'KeyL'}",1767613471097
+2026-01-05T11:51:49.705351,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'nel'}",1767613471127
+2026-01-05T11:51:49.705355,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613473811
+2026-01-05T11:51:49.705359,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613473833
+2026-01-05T11:51:49.705362,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613473976
+2026-01-05T11:51:49.705366,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613474000
+2026-01-05T11:51:49.705370,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613474136
+2026-01-05T11:51:49.705374,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613474158
+2026-01-05T11:51:49.705377,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613474279
+2026-01-05T11:51:49.705381,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'm'}",1767613474303
+2026-01-05T11:51:49.705385,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613474413
+2026-01-05T11:51:49.705389,debug-p01,Keyboard,R,2,keydown,"{'key': 'j', 'code': 'KeyJ'}",1767613486729
+2026-01-05T11:51:49.705392,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'm'}",1767613486751
+2026-01-05T11:51:49.705396,debug-p01,Keyboard,R,2,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613488796
+2026-01-05T11:51:49.705399,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'he'}",1767613488811
+2026-01-05T11:51:49.705403,debug-p01,Keyboard,R,2,keydown,"{'key': 'l', 'code': 'KeyL'}",1767613490290
+2026-01-05T11:51:49.705406,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'nel'}",1767613490304
+2026-01-05T11:51:49.705411,debug-p01,Keyboard,R,2,keydown,"{'key': 'l', 'code': 'KeyL'}",1767613490461
+2026-01-05T11:51:49.705414,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'hell'}",1767613490476
+2026-01-05T11:51:49.705418,debug-p01,Keyboard,R,2,keydown,"{'key': 'l', 'code': 'KeyL'}",1767613490728
+2026-01-05T11:51:49.705421,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'hello'}",1767613490744
+2026-01-05T11:51:49.705425,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613495893
+2026-01-05T11:51:49.705428,debug-p01,Keyboard,R,2,confirm,{'word': 'hello'},1767613495893
+2026-01-05T11:52:07.326345,debug-p01,Keyboard,R,2,keydown,"{'key': 'p', 'code': 'KeyP'}",1767613501855
+2026-01-05T11:52:07.326366,debug-p01,Keyboard,R,2,prediction_update,"{'count': 1, 'top': 'p'}",1767613501881
+2026-01-05T11:52:07.326371,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613502020
+2026-01-05T11:52:07.326375,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'pg'}",1767613502037
+2026-01-05T11:52:07.326380,debug-p01,Keyboard,R,2,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613502160
+2026-01-05T11:52:07.326383,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pre'}",1767613502178
+2026-01-05T11:52:07.326387,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613503553
+2026-01-05T11:52:07.326391,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prev'}",1767613503568
+2026-01-05T11:52:07.326395,debug-p01,Keyboard,R,2,keydown,"{'key': 'a', 'code': 'KeyA'}",1767613504624
+2026-01-05T11:52:07.326399,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'preta'}",1767613504642
+2026-01-05T11:52:07.326403,debug-p01,Keyboard,R,2,keydown,"{'key': 'k', 'code': 'KeyK'}",1767613507336
+2026-01-05T11:52:07.326407,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerak'}",1767613507354
+2026-01-05T11:52:07.326411,debug-p01,Keyboard,R,2,keydown,"{'key': 'l', 'code': 'KeyL'}",1767613508192
+2026-01-05T11:52:07.326414,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prevail'}",1767613508213
+2026-01-05T11:52:07.326418,debug-p01,Keyboard,R,2,keydown,"{'key': 'k', 'code': 'KeyK'}",1767613508351
+2026-01-05T11:52:07.326422,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prevaili'}",1767613508380
+2026-01-05T11:52:07.326425,debug-p01,Keyboard,R,2,keydown,"{'key': 'j', 'code': 'KeyJ'}",1767613509387
+2026-01-05T11:52:07.326429,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prevailiy'}",1767613509457
+2026-01-05T11:52:07.326433,debug-p01,Keyboard,R,2,keydown,"{'key': 'f', 'code': 'KeyF'}",1767613512463
+2026-01-05T11:52:07.326437,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prevailing'}",1767613512627
+2026-01-05T11:52:07.326440,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613515137
+2026-01-05T11:52:07.326444,debug-p01,Keyboard,R,2,confirm,{'word': 'prevailing'},1767613515137
+2026-01-05T11:52:16.725780,debug-p01,Keyboard,R,2,keydown,"{'key': 's', 'code': 'KeyS'}",1767613520895
+2026-01-05T11:52:16.725802,debug-p01,Keyboard,R,2,prediction_update,"{'count': 3, 'top': 's'}",1767613520918
+2026-01-05T11:52:16.725807,debug-p01,Keyboard,R,2,keydown,"{'key': 'k', 'code': 'KeyK'}",1767613522160
+2026-01-05T11:52:16.725812,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'si'}",1767613522179
+2026-01-05T11:52:16.725816,debug-p01,Keyboard,R,2,keydown,"{'key': 'j', 'code': 'KeyJ'}",1767613523083
+2026-01-05T11:52:16.725820,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'win'}",1767613523102
+2026-01-05T11:52:16.725824,debug-p01,Keyboard,R,2,keydown,"{'key': 'd', 'code': 'KeyD'}",1767613524622
+2026-01-05T11:52:16.725828,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'wine'}",1767613524641
+2026-01-05T11:52:16.725832,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613525387
+2026-01-05T11:52:16.725836,debug-p01,Keyboard,R,2,confirm,{'word': 'wine'},1767613525387
+2026-01-05T11:52:38.765561,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613546438
+2026-01-05T11:52:38.765579,debug-p01,Keyboard,R,2,undo,{'removed_word': 'wine'},1767613546438
+2026-01-05T11:52:38.956403,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613546649
+2026-01-05T11:52:38.956420,debug-p01,Keyboard,R,2,undo,{'removed_word': 'prevailing'},1767613546649
+2026-01-05T11:52:39.133659,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613546846
+2026-01-05T11:52:39.133680,debug-p01,Keyboard,R,2,undo,{'removed_word': 'hello'},1767613546846
+2026-01-05T11:52:39.427428,debug-p01,Keyboard,R,2,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613547165
+2026-01-05T11:52:39.427446,debug-p01,Keyboard,R,2,undo,{'removed_word': 'prerakiyti'},1767613547165
+2026-01-05T11:52:46.237903,debug-p01,Keyboard,R,2,keydown,"{'key': 'p', 'code': 'KeyP'}",1767613551808
+2026-01-05T11:52:46.237923,debug-p01,Keyboard,R,2,prediction_update,"{'count': 1, 'top': 'p'}",1767613551831
+2026-01-05T11:52:46.237929,debug-p01,Keyboard,R,2,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613552045
+2026-01-05T11:52:46.237933,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'pg'}",1767613552060
+2026-01-05T11:52:46.237937,debug-p01,Keyboard,R,2,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613552293
+2026-01-05T11:52:46.237941,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'pre'}",1767613552306
+2026-01-05T11:52:46.237945,debug-p01,Keyboard,R,2,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613552538
+2026-01-05T11:52:46.237949,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prev'}",1767613552552
+2026-01-05T11:52:46.237953,debug-p01,Keyboard,R,2,keydown,"{'key': 'q', 'code': 'KeyQ'}",1767613552683
+2026-01-05T11:52:46.237956,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'preta'}",1767613552706
+2026-01-05T11:52:46.237960,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613552901
+2026-01-05T11:52:46.237964,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prerak'}",1767613552916
+2026-01-05T11:52:46.237968,debug-p01,Keyboard,R,2,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613553114
+2026-01-05T11:52:46.237971,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prevail'}",1767613553130
+2026-01-05T11:52:46.237975,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613553296
+2026-01-05T11:52:46.237979,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prevaili'}",1767613553315
+2026-01-05T11:52:46.237983,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613553534
+2026-01-05T11:52:46.237987,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prevailiy'}",1767613553574
+2026-01-05T11:52:46.237991,debug-p01,Keyboard,R,2,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613553715
+2026-01-05T11:52:46.237995,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'prevailing'}",1767613553795
+2026-01-05T11:52:46.237999,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613554592
+2026-01-05T11:52:46.238003,debug-p01,Keyboard,R,2,confirm,{'word': 'prevailing'},1767613554592
+2026-01-05T11:52:48.801354,debug-p01,Keyboard,R,2,keydown,"{'key': 'w', 'code': 'KeyW'}",1767613555487
+2026-01-05T11:52:48.801375,debug-p01,Keyboard,R,2,prediction_update,"{'count': 3, 'top': 's'}",1767613555508
+2026-01-05T11:52:48.801381,debug-p01,Keyboard,R,2,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613555580
+2026-01-05T11:52:48.801385,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'si'}",1767613555597
+2026-01-05T11:52:48.801390,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613555783
+2026-01-05T11:52:48.801393,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'win'}",1767613555796
+2026-01-05T11:52:48.801397,debug-p01,Keyboard,R,2,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613555951
+2026-01-05T11:52:48.801401,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'wine'}",1767613555970
+2026-01-05T11:52:48.801404,debug-p01,Keyboard,R,2,keydown,"{'key': ' ', 'code': 'Space'}",1767613556922
+2026-01-05T11:52:48.801408,debug-p01,Keyboard,R,2,nav,"{'direction': 1, 'new_index': 1}",1767613556922
+2026-01-05T11:52:48.801413,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613557406
+2026-01-05T11:52:48.801416,debug-p01,Keyboard,R,2,confirm,{'word': 'wind'},1767613557406
+2026-01-05T11:45:59.065977,debug-p01,Keyboard,R,2,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613557812
+2026-01-05T11:45:59.065997,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'g'}",1767613557833
+2026-01-05T11:45:59.066003,debug-p01,Keyboard,R,2,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613558045
+2026-01-05T11:45:59.066007,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'ff'}",1767613558066
+2026-01-05T11:45:59.066011,debug-p01,Keyboard,R,2,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613558182
+2026-01-05T11:45:59.066015,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'fro'}",1767613558206
+2026-01-05T11:45:59.066019,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613558392
+2026-01-05T11:45:59.066023,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'from'}",1767613558411
+2026-01-05T11:45:59.066027,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613559063
+2026-01-05T11:45:59.066031,debug-p01,Keyboard,R,2,confirm,{'word': 'from'},1767613559063
+2026-01-05T11:52:54.359842,debug-p01,Keyboard,R,2,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613559713
+2026-01-05T11:52:54.359859,debug-p01,Keyboard,R,2,prediction_update,"{'count': 6, 'top': 'g'}",1767613559734
+2026-01-05T11:52:54.359864,debug-p01,Keyboard,R,2,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613559829
+2026-01-05T11:52:54.359868,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'by'}",1767613559856
+2026-01-05T11:52:54.359872,debug-p01,Keyboard,R,2,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613559993
+2026-01-05T11:52:54.359875,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'the'}",1767613560020
+2026-01-05T11:52:54.359879,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613560491
+2026-01-05T11:52:54.359883,debug-p01,Keyboard,R,2,confirm,{'word': 'the'},1767613560491
+2026-01-05T11:52:56.394709,debug-p01,Keyboard,R,2,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613560874
+2026-01-05T11:52:56.394729,debug-p01,Keyboard,R,2,prediction_update,"{'count': 3, 'top': 'c'}",1767613560897
+2026-01-05T11:52:56.394735,debug-p01,Keyboard,R,2,keydown,"{'key': 'q', 'code': 'KeyQ'}",1767613561077
+2026-01-05T11:52:56.394739,debug-p01,Keyboard,R,2,prediction_update,"{'count': 9, 'top': 'da'}",1767613561092
+2026-01-05T11:52:56.394743,debug-p01,Keyboard,R,2,keydown,"{'key': 'w', 'code': 'KeyW'}",1767613561266
+2026-01-05T11:52:56.394747,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'das'}",1767613561282
+2026-01-05T11:52:56.394751,debug-p01,Keyboard,R,2,keydown,"{'key': 't', 'code': 'KeyT'}",1767613561454
+2026-01-05T11:52:56.394755,debug-p01,Keyboard,R,2,prediction_update,"{'count': 10, 'top': 'cast'}",1767613561471
+2026-01-05T11:52:56.394759,debug-p01,Keyboard,R,2,keydown,"{'key': ' ', 'code': 'Space'}",1767613562284
+2026-01-05T11:52:56.394763,debug-p01,Keyboard,R,2,nav,"{'direction': 1, 'new_index': 1}",1767613562284
+2026-01-05T11:52:56.394767,debug-p01,Keyboard,R,2,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613562709
+2026-01-05T11:52:56.394770,debug-p01,Keyboard,R,2,confirm,{'word': 'east'},1767613562709
+2026-01-05T11:52:58.262663,debug-p01,Keyboard,R,3,system,phrase_completed,1767613562736
+2026-01-05T11:52:58.262680,debug-p01,Keyboard,R,3,system,next_phrase_clicked,1767613564748
+2026-01-05T11:53:00.636484,debug-p01,Keyboard,R,3,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613565391
+2026-01-05T11:53:00.636506,debug-p01,Keyboard,R,3,prediction_update,"{'count': 6, 'top': 'm'}",1767613565413
+2026-01-05T11:53:00.636512,debug-p01,Keyboard,R,3,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613565603
+2026-01-05T11:53:00.636516,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'he'}",1767613565618
+2026-01-05T11:53:00.636520,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613565833
+2026-01-05T11:53:00.636525,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'her'}",1767613565854
+2026-01-05T11:53:00.636529,debug-p01,Keyboard,R,3,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613566073
+2026-01-05T11:53:00.636533,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'here'}",1767613566095
+2026-01-05T11:53:00.636537,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613566286
+2026-01-05T11:53:00.636541,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'meter'}",1767613566307
+2026-01-05T11:53:00.636545,debug-p01,Keyboard,R,3,keydown,"{'key': ' ', 'code': 'Space'}",1767613566833
+2026-01-05T11:53:00.636549,debug-p01,Keyboard,R,3,nav,"{'direction': 1, 'new_index': 1}",1767613566833
+2026-01-05T11:53:00.636553,debug-p01,Keyboard,R,3,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613567318
+2026-01-05T11:53:00.636557,debug-p01,Keyboard,R,3,confirm,{'word': 'never'},1767613567318
+2026-01-05T11:53:01.961968,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613567654
+2026-01-05T11:53:01.961989,debug-p01,Keyboard,R,3,prediction_update,"{'count': 6, 'top': 'g'}",1767613567677
+2026-01-05T11:53:01.961995,debug-p01,Keyboard,R,3,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613567818
+2026-01-05T11:53:01.961999,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'to'}",1767613567835
+2026-01-05T11:53:01.962003,debug-p01,Keyboard,R,3,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613567979
+2026-01-05T11:53:01.962007,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'vol'}",1767613567997
+2026-01-05T11:53:01.962011,debug-p01,Keyboard,R,3,keydown,"{'key': ' ', 'code': 'Space'}",1767613568439
+2026-01-05T11:53:01.962015,debug-p01,Keyboard,R,3,nav,"{'direction': 1, 'new_index': 1}",1767613568439
+2026-01-05T11:53:01.962019,debug-p01,Keyboard,R,3,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613568782
+2026-01-05T11:53:01.962024,debug-p01,Keyboard,R,3,confirm,{'word': 'too'},1767613568782
+2026-01-05T11:53:03.842213,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613569299
+2026-01-05T11:53:03.842233,debug-p01,Keyboard,R,3,prediction_update,"{'count': 6, 'top': 'g'}",1767613569324
+2026-01-05T11:53:03.842239,debug-p01,Keyboard,R,3,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613569392
+2026-01-05T11:53:03.842243,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'fi'}",1767613569410
+2026-01-05T11:53:03.842247,debug-p01,Keyboard,R,3,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613569671
+2026-01-05T11:53:03.842251,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'bid'}",1767613569686
+2026-01-05T11:53:03.842255,debug-p01,Keyboard,R,3,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613569807
+2026-01-05T11:53:03.842259,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'bien'}",1767613569825
+2026-01-05T11:53:03.842263,debug-p01,Keyboard,R,3,keydown,"{'key': ' ', 'code': 'Space'}",1767613570378
+2026-01-05T11:53:03.842266,debug-p01,Keyboard,R,3,nav,"{'direction': 1, 'new_index': 1}",1767613570378
+2026-01-05T11:53:03.842271,debug-p01,Keyboard,R,3,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613570832
+2026-01-05T11:53:03.842275,debug-p01,Keyboard,R,3,confirm,{'word': 'rich'},1767613570832
+2026-01-05T11:53:04.977174,debug-p01,Keyboard,R,3,keydown,"{'key': 'q', 'code': 'KeyQ'}",1767613571245
+2026-01-05T11:53:04.977195,debug-p01,Keyboard,R,3,prediction_update,"{'count': 3, 'top': 'a'}",1767613571265
+2026-01-05T11:53:04.977201,debug-p01,Keyboard,R,3,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613571356
+2026-01-05T11:53:04.977205,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'zu'}",1767613571374
+2026-01-05T11:53:04.977209,debug-p01,Keyboard,R,3,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613571489
+2026-01-05T11:53:04.977212,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'and'}",1767613571511
+2026-01-05T11:53:04.977216,debug-p01,Keyboard,R,3,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613572055
+2026-01-05T11:53:04.977220,debug-p01,Keyboard,R,3,confirm,{'word': 'and'},1767613572055
+2026-01-05T11:53:08.506609,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613572405
+2026-01-05T11:53:08.506644,debug-p01,Keyboard,R,3,prediction_update,"{'count': 6, 'top': 'g'}",1767613572426
+2026-01-05T11:53:08.506650,debug-p01,Keyboard,R,3,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613572923
+2026-01-05T11:53:08.506655,debug-p01,Keyboard,R,3,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613573635
+2026-01-05T11:53:08.506659,debug-p01,Keyboard,R,3,prediction_update,"{'count': 6, 'top': 'm'}",1767613573660
+2026-01-05T11:53:08.506663,debug-p01,Keyboard,R,3,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613574087
+2026-01-05T11:53:08.506667,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'he'}",1767613574102
+2026-01-05T11:53:08.506671,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613574395
+2026-01-05T11:53:08.506675,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'her'}",1767613574410
+2026-01-05T11:53:08.506683,debug-p01,Keyboard,R,3,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613574637
+2026-01-05T11:53:08.506687,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'here'}",1767613574652
+2026-01-05T11:53:08.506691,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613574846
+2026-01-05T11:53:08.506695,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'meter'}",1767613574863
+2026-01-05T11:53:08.506698,debug-p01,Keyboard,R,3,keydown,"{'key': ' ', 'code': 'Space'}",1767613575444
+2026-01-05T11:53:08.506702,debug-p01,Keyboard,R,3,nav,"{'direction': 1, 'new_index': 1}",1767613575444
+2026-01-05T11:53:08.506707,debug-p01,Keyboard,R,3,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613575903
+2026-01-05T11:53:08.506711,debug-p01,Keyboard,R,3,confirm,{'word': 'never'},1767613575903
+2026-01-05T11:53:09.854575,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613576281
+2026-01-05T11:53:09.854595,debug-p01,Keyboard,R,3,prediction_update,"{'count': 6, 'top': 'g'}",1767613576301
+2026-01-05T11:53:09.854600,debug-p01,Keyboard,R,3,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613576399
+2026-01-05T11:53:09.854604,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'to'}",1767613576416
+2026-01-05T11:53:09.854609,debug-p01,Keyboard,R,3,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613576555
+2026-01-05T11:53:09.854613,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'vol'}",1767613576577
+2026-01-05T11:53:09.854617,debug-p01,Keyboard,R,3,keydown,"{'key': ' ', 'code': 'Space'}",1767613577053
+2026-01-05T11:53:09.854621,debug-p01,Keyboard,R,3,nav,"{'direction': 1, 'new_index': 1}",1767613577053
+2026-01-05T11:53:09.854625,debug-p01,Keyboard,R,3,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613577375
+2026-01-05T11:53:09.854628,debug-p01,Keyboard,R,3,confirm,{'word': 'too'},1767613577375
+2026-01-05T11:53:11.915777,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613578058
+2026-01-05T11:53:11.915791,debug-p01,Keyboard,R,3,prediction_update,"{'count': 6, 'top': 'g'}",1767613578082
+2026-01-05T11:53:11.915796,debug-p01,Keyboard,R,3,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613578151
+2026-01-05T11:53:11.915800,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'by'}",1767613578174
+2026-01-05T11:53:11.915803,debug-p01,Keyboard,R,3,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613578424
+2026-01-05T11:53:11.915807,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'vui'}",1767613578443
+2026-01-05T11:53:11.915810,debug-p01,Keyboard,R,3,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613578880
+2026-01-05T11:53:11.915814,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'thin'}",1767613578900
+2026-01-05T11:53:11.915817,debug-p01,Keyboard,R,3,keydown,"{'key': ' ', 'code': 'Space'}",1767613579439
+2026-01-05T11:53:11.915821,debug-p01,Keyboard,R,3,nav,"{'direction': 1, 'new_index': 1}",1767613579439
+2026-01-05T11:53:11.915824,debug-p01,Keyboard,R,3,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613579643
+2026-01-05T11:53:11.915828,debug-p01,Keyboard,R,3,confirm,{'word': 'ruin'},1767613579643
+2026-01-05T11:53:13.319783,debug-p01,Keyboard,R,3,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613581153
+2026-01-05T11:53:13.319805,debug-p01,Keyboard,R,3,undo,{'removed_word': 'ruin'},1767613581153
+2026-01-05T11:53:15.075883,debug-p01,Keyboard,R,3,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613581865
+2026-01-05T11:53:15.075905,debug-p01,Keyboard,R,3,prediction_update,"{'count': 6, 'top': 'g'}",1767613581892
+2026-01-05T11:53:15.075911,debug-p01,Keyboard,R,3,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613581964
+2026-01-05T11:53:15.075915,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'by'}",1767613581981
+2026-01-05T11:53:15.075920,debug-p01,Keyboard,R,3,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613582180
+2026-01-05T11:53:15.075924,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'vui'}",1767613582195
+2026-01-05T11:53:15.075928,debug-p01,Keyboard,R,3,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613582390
+2026-01-05T11:53:15.075932,debug-p01,Keyboard,R,3,prediction_update,"{'count': 10, 'top': 'thin'}",1767613582405
+2026-01-05T11:53:15.075936,debug-p01,Keyboard,R,3,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613583070
+2026-01-05T11:53:15.075940,debug-p01,Keyboard,R,3,confirm,{'word': 'thin'},1767613583070
+2026-01-05T11:53:16.935104,debug-p01,Keyboard,R,4,system,phrase_completed,1767613583101
+2026-01-05T11:53:16.935120,debug-p01,Keyboard,R,4,system,next_phrase_clicked,1767613585116
+2026-01-05T11:53:29.480745,debug-p01,Keyboard,R,4,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613585917
+2026-01-05T11:53:29.480764,debug-p01,Keyboard,R,4,prediction_update,"{'count': 6, 'top': 'm'}",1767613585938
+2026-01-05T11:53:29.480770,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613586162
+2026-01-05T11:53:29.480774,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ng'}",1767613586187
+2026-01-05T11:53:29.480778,debug-p01,Keyboard,R,4,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613586348
+2026-01-05T11:53:29.480782,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ute'}",1767613586368
+2026-01-05T11:53:29.480786,debug-p01,Keyboard,R,4,keydown,"{'key': 'q', 'code': 'KeyQ'}",1767613586576
+2026-01-05T11:53:29.480790,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'utca'}",1767613586593
+2026-01-05T11:53:29.480794,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613586836
+2026-01-05T11:53:29.480798,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'urcat'}",1767613586858
+2026-01-05T11:53:29.480803,debug-p01,Keyboard,R,4,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613586976
+2026-01-05T11:53:29.480806,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ureaby'}",1767613587022
+2026-01-05T11:53:29.480810,debug-p01,Keyboard,R,4,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613587204
+2026-01-05T11:53:29.480814,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ureabyi'}",1767613587270
+2026-01-05T11:53:29.480818,debug-p01,Keyboard,R,4,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613587415
+2026-01-05T11:53:29.480822,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ureabyiy'}",1767613587539
+2026-01-05T11:53:29.480826,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613587677
+2026-01-05T11:53:29.480829,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ureabyiyt'}",1767613587832
+2026-01-05T11:53:29.480833,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613588834
+2026-01-05T11:53:29.480838,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ureabyiy'}",1767613588934
+2026-01-05T11:53:29.480841,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613589044
+2026-01-05T11:53:29.480845,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ureabyi'}",1767613589095
+2026-01-05T11:53:29.480849,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613589210
+2026-01-05T11:53:29.480853,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ureaby'}",1767613589257
+2026-01-05T11:53:29.480856,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613589388
+2026-01-05T11:53:29.480861,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'urcat'}",1767613589418
+2026-01-05T11:53:29.480864,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613589570
+2026-01-05T11:53:29.480868,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'utca'}",1767613589593
+2026-01-05T11:53:29.480872,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613589739
+2026-01-05T11:53:29.480875,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ute'}",1767613589764
+2026-01-05T11:53:29.480879,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613589908
+2026-01-05T11:53:29.480883,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ng'}",1767613589933
+2026-01-05T11:53:29.480886,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613590102
+2026-01-05T11:53:29.480891,debug-p01,Keyboard,R,4,prediction_update,"{'count': 6, 'top': 'm'}",1767613590126
+2026-01-05T11:53:29.480894,debug-p01,Keyboard,R,4,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613590499
+2026-01-05T11:53:29.480898,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613592859
+2026-01-05T11:53:29.480902,debug-p01,Keyboard,R,4,prediction_update,"{'count': 6, 'top': 'g'}",1767613592885
+2026-01-05T11:53:29.480905,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613593131
+2026-01-05T11:53:29.480909,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'ff'}",1767613593147
+2026-01-05T11:53:29.480912,debug-p01,Keyboard,R,4,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613593372
+2026-01-05T11:53:29.480916,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'tbc'}",1767613593394
+2026-01-05T11:53:29.480920,debug-p01,Keyboard,R,4,keydown,"{'key': 'q', 'code': 'KeyQ'}",1767613593620
+2026-01-05T11:53:29.480923,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'freq'}",1767613593636
+2026-01-05T11:53:29.480927,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613593907
+2026-01-05T11:53:29.480930,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'great'}",1767613593928
+2026-01-05T11:53:29.480934,debug-p01,Keyboard,R,4,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613594122
+2026-01-05T11:53:29.480937,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'treaty'}",1767613594161
+2026-01-05T11:53:29.480941,debug-p01,Keyboard,R,4,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613594471
+2026-01-05T11:53:29.480944,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'treatyi'}",1767613594532
+2026-01-05T11:53:29.480948,debug-p01,Keyboard,R,4,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613594758
+2026-01-05T11:53:29.480951,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'breathin'}",1767613594883
+2026-01-05T11:53:29.480955,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613595002
+2026-01-05T11:53:29.480958,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'breathing'}",1767613595163
+2026-01-05T11:53:29.480962,debug-p01,Keyboard,R,4,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613595812
+2026-01-05T11:53:29.480966,debug-p01,Keyboard,R,4,confirm,{'word': 'breathing'},1767613595812
+2026-01-05T11:53:30.324959,debug-p01,Keyboard,R,4,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613596085
+2026-01-05T11:53:30.324977,debug-p01,Keyboard,R,4,prediction_update,"{'count': 2, 'top': 'i'}",1767613596106
+2026-01-05T11:53:30.324983,debug-p01,Keyboard,R,4,keydown,"{'key': 'w', 'code': 'KeyW'}",1767613596264
+2026-01-05T11:53:30.324987,debug-p01,Keyboard,R,4,prediction_update,"{'count': 6, 'top': 'is'}",1767613596279
+2026-01-05T11:53:30.324991,debug-p01,Keyboard,R,4,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613596730
+2026-01-05T11:53:30.324995,debug-p01,Keyboard,R,4,confirm,{'word': 'is'},1767613596730
+2026-01-05T11:53:32.521220,debug-p01,Keyboard,R,4,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613597072
+2026-01-05T11:53:32.521239,debug-p01,Keyboard,R,4,prediction_update,"{'count': 3, 'top': 'c'}",1767613597095
+2026-01-05T11:53:32.521245,debug-p01,Keyboard,R,4,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613597198
+2026-01-05T11:53:32.521249,debug-p01,Keyboard,R,4,prediction_update,"{'count': 6, 'top': 'di'}",1767613597215
+2026-01-05T11:53:32.521253,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613597353
+2026-01-05T11:53:32.521257,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'dir'}",1767613597372
+2026-01-05T11:53:32.521261,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613597516
+2026-01-05T11:53:32.521265,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'dirt'}",1767613597540
+2026-01-05T11:53:32.521269,debug-p01,Keyboard,R,4,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613597661
+2026-01-05T11:53:32.521273,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'citri'}",1767613597677
+2026-01-05T11:53:32.521277,debug-p01,Keyboard,R,4,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613597901
+2026-01-05T11:53:32.521281,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'citric'}",1767613597919
+2026-01-05T11:53:32.521285,debug-p01,Keyboard,R,4,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613598015
+2026-01-05T11:53:32.521289,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'citricy'}",1767613598041
+2026-01-05T11:53:32.521293,debug-p01,Keyboard,R,4,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613598236
+2026-01-05T11:53:32.521296,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'citricyo'}",1767613598273
+2026-01-05T11:53:32.521300,debug-p01,Keyboard,R,4,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613598439
+2026-01-05T11:53:32.521304,debug-p01,Keyboard,R,4,prediction_update,"{'count': 10, 'top': 'difficult'}",1767613598529
+2026-01-05T11:53:32.521308,debug-p01,Keyboard,R,4,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613599144
+2026-01-05T11:53:32.521312,debug-p01,Keyboard,R,4,confirm,{'word': 'difficult'},1767613599144
+2026-01-05T11:53:34.383303,debug-p01,Keyboard,R,5,system,phrase_completed,1767613599172
+2026-01-05T11:53:34.383322,debug-p01,Keyboard,R,5,system,next_phrase_clicked,1767613601175
+2026-01-05T11:53:35.474111,debug-p01,Keyboard,R,5,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613601785
+2026-01-05T11:53:35.474132,debug-p01,Keyboard,R,5,prediction_update,"{'count': 2, 'top': 'i'}",1767613601808
+2026-01-05T11:53:35.474138,debug-p01,Keyboard,R,5,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613602349
+2026-01-05T11:53:35.474143,debug-p01,Keyboard,R,5,confirm,{'word': 'i'},1767613602349
+2026-01-05T11:53:38.380291,debug-p01,Keyboard,R,5,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613602791
+2026-01-05T11:53:38.380310,debug-p01,Keyboard,R,5,prediction_update,"{'count': 3, 'top': 'c'}",1767613602814
+2026-01-05T11:53:38.380316,debug-p01,Keyboard,R,5,keydown,"{'key': 'q', 'code': 'KeyQ'}",1767613602979
+2026-01-05T11:53:38.380320,debug-p01,Keyboard,R,5,prediction_update,"{'count': 9, 'top': 'da'}",1767613602995
+2026-01-05T11:53:38.380324,debug-p01,Keyboard,R,5,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613603142
+2026-01-05T11:53:38.380328,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'day'}",1767613603160
+2026-01-05T11:53:38.380332,debug-p01,Keyboard,R,5,keydown,"{'key': ' ', 'code': 'Space'}",1767613603554
+2026-01-05T11:53:38.380336,debug-p01,Keyboard,R,5,nav,"{'direction': 1, 'new_index': 1}",1767613603554
+2026-01-05T11:53:38.380340,debug-p01,Keyboard,R,5,keydown,"{'key': ' ', 'code': 'Space'}",1767613604096
+2026-01-05T11:53:38.380344,debug-p01,Keyboard,R,5,nav,"{'direction': 1, 'new_index': 2}",1767613604096
+2026-01-05T11:53:38.380348,debug-p01,Keyboard,R,5,keydown,"{'key': ' ', 'code': 'Space'}",1767613605242
+2026-01-05T11:53:38.380352,debug-p01,Keyboard,R,5,nav,"{'direction': 1, 'new_index': 3}",1767613605242
+2026-01-05T11:53:38.380355,debug-p01,Keyboard,R,5,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613605519
+2026-01-05T11:53:38.380359,debug-p01,Keyboard,R,5,confirm,{'word': 'can'},1767613605519
+2026-01-05T11:53:41.224830,debug-p01,Keyboard,R,5,keydown,"{'key': 'w', 'code': 'KeyW'}",1767613605980
+2026-01-05T11:53:41.224849,debug-p01,Keyboard,R,5,prediction_update,"{'count': 3, 'top': 's'}",1767613606001
+2026-01-05T11:53:41.224855,debug-p01,Keyboard,R,5,keydown,"{'key': 'w', 'code': 'KeyW'}",1767613606205
+2026-01-05T11:53:41.224859,debug-p01,Keyboard,R,5,prediction_update,"{'count': 9, 'top': 'xx'}",1767613606416
+2026-01-05T11:53:41.224863,debug-p01,Keyboard,R,5,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613606555
+2026-01-05T11:53:41.224867,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'xwd'}",1767613606824
+2026-01-05T11:53:41.224872,debug-p01,Keyboard,R,5,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613607242
+2026-01-05T11:53:41.224876,debug-p01,Keyboard,R,5,prediction_update,"{'count': 9, 'top': 'xx'}",1767613607263
+2026-01-05T11:53:41.224880,debug-p01,Keyboard,R,5,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1767613607411
+2026-01-05T11:53:41.224885,debug-p01,Keyboard,R,5,prediction_update,"{'count': 3, 'top': 's'}",1767613607434
+2026-01-05T11:53:41.224889,debug-p01,Keyboard,R,5,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613607912
+2026-01-05T11:53:41.224893,debug-p01,Keyboard,R,5,prediction_update,"{'count': 9, 'top': 'se'}",1767613607928
+2026-01-05T11:53:41.224897,debug-p01,Keyboard,R,5,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613608069
+2026-01-05T11:53:41.224900,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'see'}",1767613608096
+2026-01-05T11:53:41.224904,debug-p01,Keyboard,R,5,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613608623
+2026-01-05T11:53:41.224908,debug-p01,Keyboard,R,5,confirm,{'word': 'see'},1767613608623
+2026-01-05T11:53:42.240563,debug-p01,Keyboard,R,5,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613608888
+2026-01-05T11:53:42.240586,debug-p01,Keyboard,R,5,prediction_update,"{'count': 6, 'top': 'g'}",1767613608912
+2026-01-05T11:53:42.240592,debug-p01,Keyboard,R,5,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613608998
+2026-01-05T11:53:42.240597,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'by'}",1767613609014
+2026-01-05T11:53:42.240601,debug-p01,Keyboard,R,5,keydown,"{'key': 'e', 'code': 'KeyE'}",1767613609131
+2026-01-05T11:53:42.240605,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'the'}",1767613609149
+2026-01-05T11:53:42.240609,debug-p01,Keyboard,R,5,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613609746
+2026-01-05T11:53:42.240613,debug-p01,Keyboard,R,5,confirm,{'word': 'the'},1767613609746
+2026-01-05T11:53:43.804035,debug-p01,Keyboard,R,5,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613610055
+2026-01-05T11:53:43.804055,debug-p01,Keyboard,R,5,prediction_update,"{'count': 6, 'top': 'g'}",1767613610079
+2026-01-05T11:53:43.804061,debug-p01,Keyboard,R,5,keydown,"{'key': 'i', 'code': 'KeyI'}",1767613610165
+2026-01-05T11:53:43.804065,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'fi'}",1767613610182
+2026-01-05T11:53:43.804069,debug-p01,Keyboard,R,5,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613610374
+2026-01-05T11:53:43.804073,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'bin'}",1767613610392
+2026-01-05T11:53:43.804077,debug-p01,Keyboard,R,5,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613610614
+2026-01-05T11:53:43.804081,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'ring'}",1767613610631
+2026-01-05T11:53:43.804085,debug-p01,Keyboard,R,5,keydown,"{'key': 'w', 'code': 'KeyW'}",1767613610928
+2026-01-05T11:53:43.804089,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'rings'}",1767613610952
+2026-01-05T11:53:43.804093,debug-p01,Keyboard,R,5,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613611451
+2026-01-05T11:53:43.804097,debug-p01,Keyboard,R,5,confirm,{'word': 'rings'},1767613611451
+2026-01-05T11:53:44.768254,debug-p01,Keyboard,R,5,keydown,"{'key': 'o', 'code': 'KeyO'}",1767613611787
+2026-01-05T11:53:44.768272,debug-p01,Keyboard,R,5,prediction_update,"{'count': 2, 'top': 'o'}",1767613611808
+2026-01-05T11:53:44.768278,debug-p01,Keyboard,R,5,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613612069
+2026-01-05T11:53:44.768282,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'on'}",1767613612089
+2026-01-05T11:53:44.768286,debug-p01,Keyboard,R,5,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613612489
+2026-01-05T11:53:44.768290,debug-p01,Keyboard,R,5,confirm,{'word': 'on'},1767613612489
+2026-01-05T11:53:46.815935,debug-p01,Keyboard,R,5,keydown,"{'key': 'w', 'code': 'KeyW'}",1767613612712
+2026-01-05T11:53:46.815955,debug-p01,Keyboard,R,5,prediction_update,"{'count': 3, 'top': 's'}",1767613612733
+2026-01-05T11:53:46.815960,debug-p01,Keyboard,R,5,keydown,"{'key': 'q', 'code': 'KeyQ'}",1767613612906
+2026-01-05T11:53:46.815965,debug-p01,Keyboard,R,5,prediction_update,"{'count': 9, 'top': 'wa'}",1767613612920
+2026-01-05T11:53:46.815969,debug-p01,Keyboard,R,5,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613613122
+2026-01-05T11:53:46.815973,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'war'}",1767613613136
+2026-01-05T11:53:46.815977,debug-p01,Keyboard,R,5,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613613240
+2026-01-05T11:53:46.815981,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'warm'}",1767613613264
+2026-01-05T11:53:46.815985,debug-p01,Keyboard,R,5,keydown,"{'key': 'r', 'code': 'KeyR'}",1767613613412
+2026-01-05T11:53:46.815988,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'satyr'}",1767613613436
+2026-01-05T11:53:46.815992,debug-p01,Keyboard,R,5,keydown,"{'key': 'u', 'code': 'KeyU'}",1767613613602
+2026-01-05T11:53:46.815996,debug-p01,Keyboard,R,5,prediction_update,"{'count': 10, 'top': 'warmth'}",1767613613740
+2026-01-05T11:53:46.816000,debug-p01,Keyboard,R,5,keydown,"{'key': ' ', 'code': 'Space'}",1767613614233
+2026-01-05T11:53:46.816004,debug-p01,Keyboard,R,5,nav,"{'direction': 1, 'new_index': 1}",1767613614233
+2026-01-05T11:53:46.816008,debug-p01,Keyboard,R,5,keydown,"{'key': 'Enter', 'code': 'Enter'}",1767613614719
+2026-01-05T11:53:46.816012,debug-p01,Keyboard,R,5,confirm,{'word': 'saturn'},1767613614719
+2026-01-05T11:53:48.664868,debug-p01,Keyboard,R,6,system,phrase_completed,1767613614751
+2026-01-05T11:53:48.664886,debug-p01,Keyboard,R,6,system,next_phrase_clicked,1767613616755
