@@ -1,6 +1,15 @@
 /* static/style.css */
 
-/* --- 1. Base Styles (From original) --- */
+/* --- 指ごとの色定義 (新規追加) --- */
+:root {
+    /* 色相を分けて薄めの色を設定 */
+    --bg-finger-pinky:  #ffe0e6; /* 薄いピンク (小指) */
+    --bg-finger-ring:   #fffacd; /* 薄い黄色 (薬指) */
+    --bg-finger-middle: #daffda; /* 薄い緑 (中指) */
+    --bg-finger-index:  #dceeff; /* 薄い青 (人差し指) */
+}
+
+/* --- 1. Base Styles --- */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -16,7 +25,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* --- 2. Configuration Area (New) --- */
+/* --- 2. Configuration Area --- */
 .config-box {
     background-color: #eef;
     padding: 15px;
@@ -37,7 +46,6 @@ body {
 
 #start-test-btn {
     background-color: #d9534f;
-    /* Red for Start Action */
     color: white;
     font-weight: bold;
     border: none;
@@ -45,11 +53,15 @@ body {
     border-radius: 4px;
     cursor: pointer;
     margin-left: auto;
-    /* Push to right */
 }
 
 #start-test-btn:hover {
     background-color: #c9302c;
+}
+
+#start-test-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 /* --- 3. Test Area Styles --- */
@@ -58,7 +70,6 @@ body {
     padding: 15px;
     background-color: #fff;
     border: 2px solid #007bff;
-    /* Active test border */
     border-radius: 8px;
 }
 
@@ -66,8 +77,7 @@ body {
     margin-bottom: 15px;
 }
 
-.reference-box .label,
-.progress-box .label {
+.reference-box .label, .progress-box .label {
     font-weight: bold;
     color: #555;
     font-size: 0.9em;
@@ -122,10 +132,8 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    /* margin-bottom removal to fit new layout */
 }
 
-/* Small control buttons */
 .selection-controls button {
     width: 60px;
     padding: 10px 0;
@@ -136,19 +144,17 @@ input[type="text"] {
     border-radius: 4px;
     cursor: pointer;
 }
-
 #btn-confirm {
     background-color: #28a745;
 }
 
-/* --- 5. Horizontal Candidates (New) --- */
+/* --- 5. Horizontal Candidates --- */
 .candidates-row {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 10px;
     min-height: 60px;
-    /* Ensure space is reserved */
 }
 
 .candidate-item {
@@ -174,7 +180,7 @@ input[type="text"] {
 .candidate-item.selected {
     background-color: #cce5ff;
     border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
 }
 
 .candidate-word {
@@ -197,12 +203,11 @@ input[type="text"] {
     left: 0;
     height: 4px;
     background-color: #28a745;
-    /* Green bar */
     z-index: 1;
     transition: width 0.3s;
 }
 
-/* --- 6. Keyboard Styles (Preserved from original) --- */
+/* --- 6. Keyboard Styles --- */
 #keyboard-container {
     margin-top: 20px;
     padding: 15px;
@@ -218,7 +223,7 @@ input[type="text"] {
 }
 
 .key {
-    background-color: #ffffff;
+    background-color: #ffffff; /* デフォルト白 */
     border: 1px solid #c0c0c0;
     border-radius: 6px;
     padding: 12px 18px;
@@ -235,17 +240,39 @@ input[type="text"] {
     min-width: 30px;
 }
 
+/* 指ごとの背景色適用 (列ごとに指定) */
+
+/* 小指 (Pinky): Q, A, Z, P */
+.key-q, .key-a, .key-z, .key-p {
+    background-color: var(--bg-finger-pinky);
+}
+
+/* 薬指 (Ring): W, S, X, O, L */
+.key-w, .key-s, .key-x, .key-o, .key-l {
+    background-color: var(--bg-finger-ring);
+}
+
+/* 中指 (Middle): E, D, C, I, K */
+.key-e, .key-d, .key-c, .key-i, .key-k {
+    background-color: var(--bg-finger-middle);
+}
+
+/* 人差し指 (Index): R, F, V, T, G, B, Y, H, N, U, J, M */
+.key-r, .key-f, .key-v,
+.key-t, .key-g, .key-b,
+.key-y, .key-h, .key-n,
+.key-u, .key-j, .key-m {
+    background-color: var(--bg-finger-index);
+}
+
+
 /* Offsets for QWERTY layout */
-.keyboard-row:nth-child(2) {
-    margin-left: 30px;
-}
+.keyboard-row:nth-child(2) { margin-left: 30px; }
+.keyboard-row:nth-child(3) { margin-left: 50px; }
 
-.keyboard-row:nth-child(3) {
-    margin-left: 50px;
-}
-
+/* Active Key (Pressed) - 詳細度で勝つため、または後述することで背景色を上書き */
 .key.active {
-    background-color: #4CAF50;
+    background-color: #4CAF50 !important; /* 強制的に緑にする */
     color: #fff;
     box-shadow: 0 1px 0 #3a8a3d;
     transform: translateY(2px);
