@@ -14,7 +14,7 @@
         <h1>HandyKey4VR Evaluation</h1>
 
         <!-- ==========================================
-             実験設定エリア (更新)
+             実験設定エリア
              ========================================== -->
         <div id="config-section" class="config-box">
             <div class="config-item">
@@ -105,7 +105,7 @@
         </form>
 
         <!-- ==========================================
-             キーボード表示 (既存のデザインを維持)
+             キーボード表示
              ========================================== -->
         <div id="keyboard-container">
             <div class="keyboard-row">
@@ -140,6 +140,13 @@
                 <div class="key key-n" data-key="n">N <span class="index-label" data-char="n"></span></div>
                 <div class="key key-m" data-key="m">M <span class="index-label" data-char="m"></span></div>
             </div>
+        </div>
+
+        <!-- ==========================================
+             ハンドガイド画像 (新規追加)
+             ========================================== -->
+        <div id="hands-container">
+            <img src="{{ url_for('static', filename='hands_guide.png') }}" alt="Finger Guide">
         </div>
         
         <div id="info-container"></div>

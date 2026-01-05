@@ -210,7 +210,7 @@ input[type="text"] {
 /* --- 6. Keyboard Styles --- */
 #keyboard-container {
     margin-top: 20px;
-    padding: 15px;
+    padding: 10px;
     background-color: #e0e0e0;
     border-radius: 8px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
@@ -289,6 +289,21 @@ input[type="text"] {
 
 .key.active .index-label {
     color: #fff;
+}
+
+/* --- 7. Hands Guide Image (New) --- */
+#hands-container {
+    text-align: center;
+    margin-top: 0px;
+    margin-left: 70px;
+    padding: 0px;
+}
+
+#hands-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.9;
 }
 
 /* Completion Screen */
