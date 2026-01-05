@@ -6,7 +6,8 @@
     --bg-finger-pinky:  #ffe0e6; /* 薄いピンク (小指) */
     --bg-finger-ring:   #fffacd; /* 薄い黄色 (薬指) */
     --bg-finger-middle: #daffda; /* 薄い緑 (中指) */
-    --bg-finger-index:  #dceeff; /* 薄い青 (人差し指) */
+    --bg-finger-index-right:  #dcf2ff; /* 薄い青 (右人差し指) */
+    --bg-finger-index-left:  #ecdcff; /* 薄い紫 (左人差し指) */
 }
 
 /* --- 1. Base Styles --- */
@@ -259,10 +260,14 @@ input[type="text"] {
 
 /* 人差し指 (Index): R, F, V, T, G, B, Y, H, N, U, J, M */
 .key-r, .key-f, .key-v,
-.key-t, .key-g, .key-b,
+.key-t, .key-g, .key-b{
+    background-color: var(--bg-finger-index-left);
+}
+
+/* 人差し指 (Index): R, F, V, T, G, B, Y, H, N, U, J, M */
 .key-y, .key-h, .key-n,
 .key-u, .key-j, .key-m {
-    background-color: var(--bg-finger-index);
+    background-color: var(--bg-finger-index-right);
 }
 
 
@@ -282,8 +287,8 @@ input[type="text"] {
     position: absolute;
     bottom: 2px;
     right: 3px;
-    font-size: 0.7em;
-    color: #999;
+    font-size: 0.8em;
+    color: #02092b;
     font-weight: normal;
 }
 
