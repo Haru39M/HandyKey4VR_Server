@@ -3,6 +3,7 @@ import time
 import difflib
 import csv
 import os
+import random
 from datetime import datetime
 from collections import defaultdict
 
@@ -17,7 +18,6 @@ class Logger:
         self.base_log_dir = "logs_typing"
         
         # Debugモード判定
-        # if participant_id == "debug":
         if "debug" in participant_id:
             self.log_dir = os.path.join(self.base_log_dir, "debug")
         else:
@@ -87,6 +87,8 @@ class TypingTest:
         self.reference_text = "ReferenceText"
         self.reference_words = []
         
+        self.test_phrase_queue = [] # 今回のテストで使用するフレーズのリスト
+        
         self.logger = None
         self.participant_id = "test"
         self.condition = "default"
@@ -118,9 +120,18 @@ class TypingTest:
         self.completed_sentences_count = 0
         self.current_sentence_index = 0
         self.logger = Logger(participant_id, condition, handedness)
+        
+        # ランダムにフレーズを選択（重複なし）
+        if self.phrases:
+            # max_sentencesが総数より多い場合は全数を使う
+            count = min(len(self.phrases), self.max_sentences)
+            self.test_phrase_queue = random.sample(self.phrases, count)
+            print(f"[TypingTest] Selected {count} phrases randomly for this session.")
+        else:
+            self.test_phrase_queue = []
 
     def loadReferenceText(self):
-        if not self.phrases:
+        if not self.test_phrase_queue:
             self.reference_text = "No phrases loaded."
             self.reference_words = []
             return
@@ -130,10 +141,15 @@ class TypingTest:
             self.reference_words = []
             return
 
-        if self.current_sentence_index >= self.total_sentence:
-            self.current_sentence_index = 0
+        # キューから取得（current_sentence_index を使用）
+        if self.current_sentence_index < len(self.test_phrase_queue):
+            self.reference_text = self.test_phrase_queue[self.current_sentence_index]
+        else:
+            # 万が一キューが尽きた場合
+            self.reference_text = "TEST_FINISHED"
+            self.reference_words = []
+            return
 
-        self.reference_text = self.phrases[self.current_sentence_index]
         self.reference_words = self.reference_text.split()
         self.current_sentence_index += 1
         
