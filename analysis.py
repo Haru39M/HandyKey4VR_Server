@@ -1,165 +1,194 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 import glob
 import os
+import ast
 import re
 
-def load_and_process_logs(log_dir="logs_typing"):
-    """
-    指定されたディレクトリから *_typing.csv を読み込み、結合して返す。
-    debugディレクトリは除外する。
-    """
-    # log_dir直下の *_typing.csv ファイルのみ対象
-    files = glob.glob(os.path.join(log_dir, "*_typing.csv"))
-    
-    if not files:
-        print(f"No typing log files found in {log_dir}.")
+def load_phrases(filename='phrases2.txt'):
+    """フレーズリストを読み込む"""
+    try:
+        with open(filename, 'r', encoding='utf-8') as f:
+            # [source: ...] などのタグを除去
+            content = f.read()
+            content_cleaned = re.sub(r'\[source:\s*\d+\]', '', content)
+            phrases = [line.strip() for line in content_cleaned.split('\n') if line.strip()]
+        return phrases
+    except FileNotFoundError:
+        print(f"Error: {filename} not found.")
+        return []
+
+def levenshtein_distance(s1, s2):
+    """編集距離を計算"""
+    if len(s1) < len(s2):
+        return levenshtein_distance(s2, s1)
+    if len(s2) == 0:
+        return len(s1)
+    previous_row = range(len(s2) + 1)
+    for i, c1 in enumerate(s1):
+        current_row = [i + 1]
+        for j, c2 in enumerate(s2):
+            insertions = previous_row[j + 1] + 1
+            deletions = current_row[j] + 1
+            substitutions = previous_row[j] + (c1 != c2)
+            current_row.append(min(insertions, deletions, substitutions))
+        previous_row = current_row
+    return previous_row[-1]
+
+def process_raw_log(file_path, phrases):
+    """1つのRawログファイルを処理してDataFrameを返す"""
+    try:
+        df = pd.read_csv(file_path)
+    except Exception as e:
+        print(f"Error reading {file_path}: {e}")
         return None
 
-    df_list = []
-    for f in files:
-        try:
-            temp_df = pd.read_csv(f)
-            df_list.append(temp_df)
-        except Exception as e:
-            print(f"Error reading {f}: {e}")
-
-    if not df_list:
+    # 必要な列があるか確認
+    required_cols = ['TrialID', 'PhraseID', 'EventType', 'EventData', 'ClientTimestamp']
+    if not all(col in df.columns for col in required_cols):
+        print(f"Skipping {file_path}: Missing columns.")
         return None
 
-    df = pd.concat(df_list, ignore_index=True)
-
-    # --- WPMの再計算 (念のため) ---
-    # WPM = (文字数 / 5) / (秒数 / 60)
-    if 'CharCount' in df.columns and 'CompletionTime' in df.columns:
-        df['WPM'] = (df['CharCount'] / 5) / (df['CompletionTime'] / 60)
+    results = []
     
-    return df
+    # メタデータ取得 (最初の行から)
+    participant_id = df.iloc[0]['ParticipantID'] if 'ParticipantID' in df.columns else 'Unknown'
+    condition = df.iloc[0]['Condition'] if 'Condition' in df.columns else 'Unknown'
+    handedness = df.iloc[0]['Handedness'] if 'Handedness' in df.columns else 'R'
 
-def get_practice_count(log_dir, participant_id):
-    """
-    debugフォルダ内のログから練習回数（最大TrialID）を取得する
-    """
-    debug_dir = os.path.join(log_dir, "debug")
-    if not os.path.exists(debug_dir):
-        return 0
+    # トライアルごとに処理
+    for trial_id, group in df.groupby('TrialID'):
+        group = group.sort_values('ClientTimestamp')
         
-    # IDを含む *_typing.csv ファイルを検索
-    # ファイル名例: log_debug-AM04_..._typing.csv
-    pattern = os.path.join(debug_dir, f"*{participant_id}*_typing.csv")
-    files = glob.glob(pattern)
-    
-    if not files:
-        return 0
+        # --- ターゲット文の特定 ---
+        phrase_id = -1
         
-    max_trial = 0
-    for f in files:
-        try:
-            df = pd.read_csv(f)
-            if 'TrialID' in df.columns and not df.empty:
-                local_max = df['TrialID'].max()
-                if local_max > max_trial:
-                    max_trial = local_max
-        except:
-            continue
+        # 1. keydownイベントのPhraseIDを探す
+        keydown_events = group[group['EventType'] == 'keydown']
+        if not keydown_events.empty:
+            phrase_id = keydown_events.iloc[0]['PhraseID']
+        else:
+            # 2. keydownがない場合は、最も多く出現するPhraseIDを採用する (Mode)
+            try:
+                phrase_id = group['PhraseID'].mode()[0]
+            except IndexError:
+                phrase_id = group.iloc[0]['PhraseID']
+
+        if 0 <= phrase_id < len(phrases):
+            target_phrase = phrases[int(phrase_id)]
+        else:
+            target_phrase = ""
+
+        # 入力文の復元 (confirmイベントをつなげる)
+        input_words = []
+        backspace_count = 0
+        
+        for _, row in group.iterrows():
+            evt_type = row['EventType']
+            evt_data_str = row['EventData']
             
-    return max_trial
+            # EventDataは文字列化された辞書なのでパースする
+            try:
+                if isinstance(evt_data_str, str) and (evt_data_str.startswith('{') or evt_data_str.startswith('"')):
+                    if evt_data_str.startswith('"') and evt_data_str.endswith('"'):
+                        evt_data_str = evt_data_str[1:-1]
+                    evt_data = ast.literal_eval(evt_data_str)
+                else:
+                    evt_data = evt_data_str
+            except:
+                evt_data = {}
 
-def generate_filename(df, log_dir, test_type="typing"):
-    """
-    データフレームの内容に基づいてファイル名を生成する
-    Format: analysis_<ID>_test_<type>_practice<N>_trial<M>.png
-    """
-    if df is None or df.empty:
-        return "analysis_result.png"
+            if evt_type == 'confirm':
+                if isinstance(evt_data, dict) and 'word' in evt_data:
+                    input_words.append(evt_data['word'])
+            
+            elif evt_type == 'undo':
+                if input_words:
+                    input_words.pop()
+            
+            elif evt_type == 'keydown':
+                # Backspaceカウント
+                if isinstance(evt_data, dict) and evt_data.get('key') == 'Backspace':
+                    backspace_count += 1
+                elif isinstance(evt_data, str) and evt_data == 'Backspace':
+                    backspace_count += 1
 
-    # ID取得
-    if 'ParticipantID' in df.columns:
-        ids = df['ParticipantID'].unique()
-        # 複数IDがある場合は結合
-        id_str = "_".join(map(str, ids)) if len(ids) > 0 else "unknown"
-    else:
-        id_str = "unknown"
-        ids = []
-
-    # 本番回数 (TrialIDの最大値)
-    honban_count = df['TrialID'].max() if 'TrialID' in df.columns else 0
-    
-    # 練習回数 (debugフォルダから取得)
-    # 分析対象のID（複数ある場合は先頭）を使って検索
-    first_id = ids[0] if len(ids) > 0 else ""
-    practice_count = get_practice_count(log_dir, first_id)
-    
-    base_name = f"analysis_{id_str}_test_{test_type}_practice{practice_count}_trial{honban_count}.png"
-    
-    # 重複チェックとリネーム
-    if not os.path.exists(base_name):
-        return base_name
+        input_phrase = " ".join(input_words)
         
-    i = 1
-    while True:
-        name, ext = os.path.splitext(base_name)
-        new_name = f"{name}_{i}{ext}"
-        if not os.path.exists(new_name):
-            return new_name
-        i += 1
+        # --- 修正: 入力文が空の場合はスキップ (未完了または開始直後のデータ) ---
+        if not input_phrase:
+            continue
 
-def plot_results(df, log_dir, test_type="typing"):
-    if df is None or df.empty:
+        # --- 時間計算 ---
+        # 終了時刻: このTrialの最後のイベント時刻
+        end_time = group['ClientTimestamp'].max()
+        
+        # 開始時刻: そのTrialの最初のイベント時刻
+        start_time = group['ClientTimestamp'].min()
+        
+        # Trial 1 で system: test_started があればそれを使う
+        start_evts = group[group['EventData'].astype(str).str.contains('test_started', na=False)]
+        if not start_evts.empty:
+            start_time = start_evts.iloc[0]['ClientTimestamp']
+        
+        # ミリ秒 -> 秒
+        duration = (end_time - start_time) / 1000.0
+        if duration <= 0: duration = 0.001
+
+        # 指標計算
+        char_count = len(input_phrase)
+        # WPM = (文字数 / 5) / (分)
+        wpm = (char_count / 5.0) / (duration / 60.0)
+        
+        error_dist = levenshtein_distance(target_phrase, input_phrase)
+        
+        # 結果格納
+        results.append({
+            'Timestamp': group.iloc[-1]['Timestamp'], # 完了時のサーバー時刻
+            'ParticipantID': participant_id,
+            'Condition': condition,
+            'Handedness': handedness,
+            'TrialID': trial_id,
+            'TargetPhrase': target_phrase,
+            'InputPhrase': input_phrase,
+            'CompletionTime': round(duration, 3),
+            'CharCount': char_count,
+            'WPM': round(wpm, 2),
+            'ErrorDist': error_dist,
+            'BackspaceCount': backspace_count
+        })
+
+    return pd.DataFrame(results)
+
+def main():
+    log_dir = "logs_typing"
+    phrases = load_phrases()
+    
+    if not phrases:
+        print("Phrases not found. Aborting.")
         return
 
-    # スタイル設定
-    sns.set_style("whitegrid")
-    plt.figure(figsize=(12, 6))
-
-    # 学習曲線 (Trial IDごとのWPM推移)
-    if 'Condition' in df.columns and 'TrialID' in df.columns and 'WPM' in df.columns:
-        sns.lineplot(
-            data=df, 
-            x="TrialID", 
-            y="WPM", 
-            hue="Condition", 
-            style="Condition", 
-            markers=True, 
-            dashes=False,
-            linewidth=2.5,
-            markersize=8
-        )
-
-        plt.title(f"Learning Curve: WPM by Trial & Condition ({test_type})", fontsize=16)
-        plt.xlabel("Trial ID (Sentence Count)", fontsize=12)
-        plt.ylabel("WPM", fontsize=12)
-        
-        # Y軸の上限設定
-        max_wpm = df['WPM'].max() if not df['WPM'].empty else 0
-        plt.ylim(0, max_wpm + 10)
-        
-        plt.legend(title="Condition", fontsize=10, title_fontsize=12)
+    # Rawログファイルを検索 (debugフォルダ含む)
+    raw_files = glob.glob(os.path.join(log_dir, "**", "*_raw.csv"), recursive=True)
     
-    # ファイル名生成 & 保存
-    output_path = generate_filename(df, log_dir, test_type)
-    plt.savefig(output_path)
-    print(f"Analysis chart saved to {output_path}")
-    
-    # 統計量の表示
-    if 'Condition' in df.columns and 'WPM' in df.columns:
-        print(f"\n--- Statistics ({test_type} WPM) ---")
-        stats = df.groupby("Condition")["WPM"].agg(['mean', 'std', 'min', 'max', 'count'])
-        print(stats)
+    if not raw_files:
+        print("No raw log files found.")
+        return
+
+    print(f"Found {len(raw_files)} raw log files.")
+
+    for raw_file in raw_files:
+        print(f"Processing: {raw_file}")
+        df_summary = process_raw_log(raw_file, phrases)
+        
+        if df_summary is not None and not df_summary.empty:
+            # 保存ファイル名生成 (_raw.csv -> _summary.csv)
+            summary_file = raw_file.replace("_raw.csv", "_summary.csv")
+            
+            # CSV保存
+            df_summary.to_csv(summary_file, index=False, encoding='utf-8')
+            print(f"  -> Saved summary to: {summary_file}")
+        else:
+            print("  -> Skipped (No valid data)")
 
 if __name__ == "__main__":
-    # Typing Test Analysis
-    log_dir_typing = "logs_typing"
-    print(f"Loading Typing logs from {log_dir_typing}...")
-    df_typing = load_and_process_logs(log_dir_typing)
-    if df_typing is not None:
-        plot_results(df_typing, log_dir_typing, "typing")
-        # CSV保存も必要ならここに追加
-        # df_typing.to_csv(f"analysis_data_typing.csv", index=False)
-    else:
-        print("No typing logs found.")
-
-    # Gesture Test Analysis (必要に応じて実装)
-    # log_dir_gesture = "logs_gesture"
-    # ...
+    main()
