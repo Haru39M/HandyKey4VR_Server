@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const removed = committedWords.pop();
         logEvent('undo', { removed_word: removed });
         
-        await fetch('/test/backspace', { method: 'POST' });
+        // await fetch('/test/backspace', { method: 'POST' });
         
         validateOnServer();
     }

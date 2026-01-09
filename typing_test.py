@@ -1,6 +1,5 @@
 import re
 import time
-import difflib
 import csv
 import os
 import random
@@ -26,17 +25,11 @@ class Logger:
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
 
-        self.summary_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_typing.csv")
         self.raw_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_typing_raw.csv")
-
-        self._init_csv(self.summary_path, [
-            "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialID", 
-            "TargetPhrase", "InputPhrase", 
-            "CompletionTime", "CharCount", "WPM", "ErrorDist", "BackspaceCount"
-        ])
         
+        # Headerに PhraseID を追加
         self._init_csv(self.raw_path, [
-            "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialID",
+            "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialID", "PhraseID",
             "EventType", "EventData", "ClientTimestamp"
         ])
 
@@ -45,25 +38,7 @@ class Logger:
             writer = csv.writer(f)
             writer.writerow(header)
 
-    def log_summary(self, data):
-        with open(self.summary_path, 'a', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                datetime.now().isoformat(),
-                self.participant_id,
-                self.condition,
-                self.handedness,
-                data.get('trial_id'),
-                data.get('target'),
-                data.get('input'),
-                data.get('time'),
-                data.get('char_count'),
-                data.get('wpm'),
-                data.get('error_dist'),
-                data.get('backspace_count')
-            ])
-
-    def log_raw(self, trial_id, events):
+    def log_raw(self, trial_id, phrase_id, events):
         if not events: return
         with open(self.raw_path, 'a', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
@@ -74,6 +49,7 @@ class Logger:
                     self.condition,
                     self.handedness,
                     trial_id,
+                    phrase_id, # PhraseIDを記録
                     e.get('type'),
                     e.get('data'),
                     e.get('timestamp')
@@ -86,8 +62,9 @@ class TypingTest:
         self.current_sentence_index = 0
         self.reference_text = "ReferenceText"
         self.reference_words = []
+        self.current_phrase_id = -1 # 現在のフレーズID (phrases2.txtの行番号)
         
-        self.test_phrase_queue = [] # 今回のテストで使用するフレーズのリスト
+        self.test_phrase_queue = [] # (id, phrase) のタプルのリスト
         
         self.logger = None
         self.participant_id = "test"
@@ -121,11 +98,11 @@ class TypingTest:
         self.current_sentence_index = 0
         self.logger = Logger(participant_id, condition, handedness)
         
-        # ランダムにフレーズを選択（重複なし）
         if self.phrases:
-            # max_sentencesが総数より多い場合は全数を使う
             count = min(len(self.phrases), self.max_sentences)
-            self.test_phrase_queue = random.sample(self.phrases, count)
+            # インデックス(PhraseID)とフレーズのペアを作成してランダムサンプリング
+            indexed_phrases = list(enumerate(self.phrases))
+            self.test_phrase_queue = random.sample(indexed_phrases, count)
             print(f"[TypingTest] Selected {count} phrases randomly for this session.")
         else:
             self.test_phrase_queue = []
@@ -141,11 +118,10 @@ class TypingTest:
             self.reference_words = []
             return
 
-        # キューから取得（current_sentence_index を使用）
         if self.current_sentence_index < len(self.test_phrase_queue):
-            self.reference_text = self.test_phrase_queue[self.current_sentence_index]
+            # キューから (ID, Text) を取り出す
+            self.current_phrase_id, self.reference_text = self.test_phrase_queue[self.current_sentence_index]
         else:
-            # 万が一キューが尽きた場合
             self.reference_text = "TEST_FINISHED"
             self.reference_words = []
             return
@@ -162,7 +138,7 @@ class TypingTest:
     def log_client_events(self, events):
         if self.logger:
             current_trial_id = self.completed_sentences_count + 1
-            self.logger.log_raw(current_trial_id, events)
+            self.logger.log_raw(current_trial_id, self.current_phrase_id, events)
             for e in events:
                 if e.get('type') == 'keydown' and e.get('data') == 'Backspace':
                     self.backspace_count_phrase += 1
@@ -183,7 +159,6 @@ class TypingTest:
         is_completed = all_correct_so_far and (len(input_words) == len(self.reference_words))
 
         if is_completed:
-            self._save_summary_log(input_words)
             self.completed_sentences_count += 1
 
         return {
@@ -191,42 +166,3 @@ class TypingTest:
             "is_completed": is_completed,
             "is_all_finished": self.reference_text == "TEST_FINISHED"
         }
-
-    def _save_summary_log(self, input_words):
-        if not self.logger: return
-        
-        input_phrase = " ".join(input_words)
-        duration = time.time() - self.phrase_start_time
-        
-        char_count = len(input_phrase)
-        wpm = 0.0
-        if duration > 0:
-            wpm = (char_count / 5.0) / (duration / 60.0)
-            
-        dist = self._levenshtein_distance(self.reference_text, input_phrase)
-        
-        self.logger.log_summary({
-            'trial_id': self.completed_sentences_count + 1,
-            'target': self.reference_text,
-            'input': input_phrase,
-            'time': f"{duration:.3f}",
-            'char_count': char_count,
-            'wpm': f"{wpm:.2f}",
-            'error_dist': dist,
-            'backspace_count': self.backspace_count_phrase
-        })
-        print(f"[TypingTest] Logged: WPM={wpm:.2f}")
-
-    def _levenshtein_distance(self, s1, s2):
-        if len(s1) < len(s2): return self._levenshtein_distance(s2, s1)
-        if len(s2) == 0: return len(s1)
-        previous_row = range(len(s2) + 1)
-        for i, c1 in enumerate(s1):
-            current_row = [i + 1]
-            for j, c2 in enumerate(s2):
-                insertions = previous_row[j + 1] + 1
-                deletions = current_row[j] + 1
-                substitutions = previous_row[j] + (c1 != c2)
-                current_row.append(min(insertions, deletions, substitutions))
-            previous_row = current_row
-        return previous_row[-1]

@@ -88,10 +88,10 @@ def check_input():
     result = tester.check_input(committed_words)
     return jsonify(result)
 
-@app.route('/test/backspace', methods=['POST'])
-def notify_backspace():
-    tester.increment_backspace()
-    return jsonify({"status": "ok"})
+# @app.route('/test/backspace', methods=['POST'])
+# def notify_backspace():
+#     tester.increment_backspace()
+#     return jsonify({"status": "ok"})
 
 
 # =================================================
