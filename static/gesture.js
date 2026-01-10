@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isIdValid && isHandSelected && isCondSelected && isTrialsValid) {
             startBtn.disabled = false;
-            startBtn.style.backgroundColor = "#007bff";
+            startBtn.style.backgroundColor = "#28a745";
             startBtn.style.cursor = "pointer";
         } else {
             startBtn.disabled = true;
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // テスト開始
     startBtn.addEventListener('click', async () => {
         // DebugモードならIDを強制的に"debug"にする
-        const pid = debugMode.checked ? "debug" : idInput.value;
+        const pid = debugMode.checked ? "debug-"+idInput.value : idInput.value;
         const hand = handInput.value;
         const cond = condInput.value;
         const maxTrials = trialsInput.value;

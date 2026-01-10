@@ -61,7 +61,7 @@ class GestureTest:
         self.completed_trials = 0
         
         # ログ保存先の決定
-        if self.participant_id == "debug":
+        if "debug" in self.participant_id:
             current_log_dir = os.path.join(self.base_log_dir, "debug")
         else:
             current_log_dir = self.base_log_dir
