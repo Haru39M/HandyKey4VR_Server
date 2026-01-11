@@ -4,7 +4,7 @@ import csv
 import os
 import random
 from datetime import datetime
-from collections import defaultdict
+# from collections import defaultdict
 
 class Logger:
     def __init__(self, participant_id, condition, handedness="R"):
@@ -12,7 +12,6 @@ class Logger:
         self.condition = condition
         self.handedness = handedness
         
-        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         
         self.base_log_dir = "logs_typing"
         
@@ -25,6 +24,7 @@ class Logger:
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
 
+        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         self.raw_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_typing_raw.csv")
         
         # Headerに PhraseID を追加

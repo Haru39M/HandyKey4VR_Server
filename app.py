@@ -1,5 +1,5 @@
-import kenlm
-import os
+# import kenlm
+# import os
 import json
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from word_predictor import WordPredictor
@@ -131,6 +131,13 @@ def get_gesture_state():
     state = gesture_tester.check_state()
     return jsonify(state)
 
+@app.route('/gesture/log', methods=['POST'])
+def gesture_log():
+    data = request.json
+    events = data.get('events', [])
+    if events:
+        gesture_tester.log_client_events(events)
+    return jsonify({"status": "ok"})
 
 if __name__ == '__main__':
     app.config['TEMPLATES_AUTO_RELOAD'] = True

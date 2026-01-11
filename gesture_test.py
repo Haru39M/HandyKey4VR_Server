@@ -12,6 +12,74 @@ STATE_COUNTDOWN = "COUNTDOWN"           # 3秒カウントダウン中
 STATE_MEASURING = "MEASURING"           # ジェスチャー計測中
 STATE_COMPLETED = "COMPLETED"           # 全試行完了
 
+class Logger:
+    def __init__(self, participant_id, condition, handedness="R"):
+        self.participant_id = participant_id
+        self.condition = condition
+        self.handedness = handedness
+        
+        self.base_log_dir = "logs_gesture"
+        
+        # Debugモード判定 (typing_test.pyと同様のロジック)
+        if "debug" in participant_id:
+            self.log_dir = os.path.join(self.base_log_dir, "debug")
+        else:
+            self.log_dir = self.base_log_dir
+            
+        if not os.path.exists(self.log_dir):
+            os.makedirs(self.log_dir)
+
+        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+        self.log_filepath = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_gesture.csv")
+        
+        # Header設定
+        self._init_csv(self.log_filepath, [
+            "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialID", 
+            "TargetGesture", "TargetID", "ClientTimestamp"
+        ])
+
+    def _init_csv(self, filepath, header):
+        with open(filepath, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(header)
+
+    # def log_trial(self, trial_id, target_name, target_id, reaction_time, total_time):
+    #     """1試行分の結果を記録する"""
+    #     with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
+    #         writer = csv.writer(f)
+    #         writer.writerow([
+    #             datetime.now().isoformat(),
+    #             self.participant_id,
+    #             self.condition,
+    #             self.handedness,
+    #             trial_id,
+    #             target_name,
+    #             target_id,
+    #             reaction_time,
+    #             total_time
+    #         ])
+    #     print(f"[GestureTest] Log saved: {reaction_time}s")
+
+    def log_raw(self, trial_id, target_name, target_id, events):
+        """クライアントからのイベント群をRawログに書き込む"""
+        if not events: return
+        with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            for e in events:
+                writer.writerow([
+                    datetime.now().isoformat(), # ServerTimestamp
+                    self.participant_id,
+                    self.condition,
+                    self.handedness,
+                    trial_id,
+                    target_name,
+                    target_id,
+                    e.get('type'),
+                    # データが辞書等の場合は文字列化して保存
+                    # json.dumps(e.get('data')) if isinstance(e.get('data'), (dict, list)) else e.get('data'),
+                    e.get('timestamp') # ClientTimestamp (JSのDate.now())
+                ])
+
 class GestureTest:
     def __init__(self, gestures_path='gestures/gestures.json'):
         self.gestures_data = {}
@@ -38,9 +106,8 @@ class GestureTest:
         self.match_start_time = None
         self.match_duration_threshold = 0.5 # チャタリング防止時間
         
-        # ログ用
-        self.base_log_dir = "logs_gesture"
-        self.log_filepath = ""
+        # Logger
+        self.logger = None
             
         self.load_gestures(gestures_path)
 
@@ -60,18 +127,8 @@ class GestureTest:
         self.handedness = handedness
         self.completed_trials = 0
         
-        # ログ保存先の決定
-        if self.participant_id == "debug":
-            current_log_dir = os.path.join(self.base_log_dir, "debug")
-        else:
-            current_log_dir = self.base_log_dir
-            
-        if not os.path.exists(current_log_dir):
-            os.makedirs(current_log_dir)
-
-        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-        self.log_filepath = os.path.join(current_log_dir, f"log_{participant_id}_{now_str}_gesture.csv")
-        self._init_log()
+        # Loggerの初期化 (typing_test.pyと同様にここでインスタンス化)
+        self.logger = Logger(participant_id, condition, handedness)
         
         self._start_wait_hand_open()
 
@@ -109,8 +166,8 @@ class GestureTest:
                 if self.match_start_time is None:
                     self.match_start_time = time.time()
                 elif time.time() - self.match_start_time >= self.match_duration_threshold:
-                    # 完了 -> ログ保存 -> 次へ
-                    self._save_log()
+                    # 完了 -> ログ保存処理呼び出し -> 次へ
+                    self._process_trial_completion()
                     self.completed_trials += 1
                     
                     if self.completed_trials >= self.max_trials:
@@ -173,29 +230,42 @@ class GestureTest:
             
         return response
 
-    def _init_log(self):
-        with open(self.log_filepath, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialNum", 
-                "TargetGesture", "TargetID", "ReactionTime", "TotalTime"
-            ])
-
-    def _save_log(self):
+    def _process_trial_completion(self):
+        """試行完了時の計算とLoggerへの委譲"""
         duration = time.time() - self.measure_start_time
-        reaction_time = max(0, duration - self.match_duration_threshold)
+        # reaction_time = max(0, duration - self.match_duration_threshold)
         
-        with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                datetime.now().isoformat(),
-                self.participant_id,
-                self.condition,
-                self.handedness,
-                self.completed_trials + 1,
-                self.target_gesture['GestureName'],
-                self.current_gesture_id,
-                f"{reaction_time:.3f}",
-                f"{duration:.3f}"
-            ])
-        print(f"[GestureTest] Log saved: {reaction_time:.3f}s")
+        # reaction_time_str = f"{reaction_time:.3f}"
+        total_time_str = f"{duration:.3f}"
+
+        if self.logger:
+            # self.logger.log_trial(
+            #     trial_id=self.completed_trials + 1,
+            #     target_name=self.target_gesture['GestureName'],
+            #     target_id=self.current_gesture_id,
+            #     # reaction_time=reaction_time_str,
+            #     total_time=total_time_str
+            # )
+            self.logger.log_raw(
+                trial_id=self.completed_trials + 1,
+                target_name=self.target_gesture['GestureName'],
+                target_id=self.current_gesture_id,
+                events=[{
+                    "type": "trial_completed",
+                    "data": {
+                        # "reaction_time": reaction_time_str,
+                        "total_time": total_time_str
+                    },
+                    "timestamp": int(time.time() * 1000)
+                }]
+            )
+
+    def _log_client_events(self, events):
+        """app.pyから渡されたイベントリストをLoggerに記録する"""
+        if self.logger and events:
+            # 現在の試行情報を取得（未設定時はNoneや"Idle"などをセット）
+            current_trial = self.completed_trials + 1
+            t_name = self.target_gesture['GestureName'] if self.target_gesture else "None"
+            t_id = self.current_gesture_id if self.current_gesture_id else "None"
+            
+            self.logger.log_raw(current_trial, t_name, t_id, events)
