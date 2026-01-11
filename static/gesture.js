@@ -23,9 +23,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const fingerIds = ['T', 'I', 'M', 'R', 'P'];
     let pollingInterval = null;
 
+    // --- State Management for Logging ---
+    let isTestRunning = false;
+    let eventLogBuffer = [];
+    let lastState = "IDLE"; // ステート遷移検知用
+
+    // ============================================
+    //  LOGGING HELPER (app.jsと同様の実装)
+    // ============================================
+    function logEvent(type, data) {
+        if (!isTestRunning && type !== 'system') return; // systemイベントはtest開始前でも許可する場合あり
+        eventLogBuffer.push({
+            type: type,
+            data: data,
+            timestamp: Date.now() // Client side timestamp (ms)
+        });
+    }
+
+    function flushLogs() {
+        const logsToSend = [...eventLogBuffer];
+        eventLogBuffer = [];
+        return logsToSend;
+    }
+
+    async function uploadLogs() {
+        const logs = flushLogs();
+        if (logs.length === 0) return;
+
+        try {
+            // ログ送信専用のエンドポイントへPOST（サーバー側で実装が必要）
+            // または、既存の通信に乗せる設計の場合はそれに合わせる
+            await fetch('/gesture/log', { 
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ events: logs })
+            });
+        } catch (e) {
+            console.error("Log upload failed:", e);
+            // 送信失敗時はバッファに戻す簡易実装（順序が狂う可能性があるため、本番ではより厳密なQueue管理が必要）
+            // ここでは簡易的にエラーログのみ
+        }
+    }
+
     // --- Validation Logic ---
     function checkValidation() {
-        // DebugモードならID入力は必須としない（内部でdebugに固定するため）
         const isIdValid = debugMode.checked || idInput.value.trim() !== "";
         const isHandSelected = handInput.value !== "";
         const isCondSelected = condInput.value !== "";
@@ -42,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Add listeners
     [idInput, debugMode, handInput, condInput, trialsInput].forEach(el => {
         el.addEventListener('input', checkValidation);
         el.addEventListener('change', checkValidation);
@@ -50,11 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // テスト開始
     startBtn.addEventListener('click', async () => {
-        // DebugモードならIDを強制的に"debug"にする
-        const pid = debugMode.checked ? "debug" : idInput.value;
+        const pid = debugMode.checked ? "debug-"+idInput.value : idInput.value;
         const hand = handInput.value;
         const cond = condInput.value;
         const maxTrials = trialsInput.value;
+
+        // Startイベントをログ
+        logEvent('system', { 
+            action: 'test_start_click',
+            participant_id: pid,
+            condition: cond
+        });
 
         try {
             await fetch('/gesture/start', {
@@ -64,15 +110,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     participant_id: pid,
                     condition: cond,
                     max_trials: maxTrials,
-                    handedness: hand // 利き手を追加
+                    handedness: hand
                 })
             });
 
+            isTestRunning = true;
             configSection.style.display = 'none';
             testSection.style.display = 'block';
             
             if (pollingInterval) clearInterval(pollingInterval);
-            pollingInterval = setInterval(updateState, 100);
+            // ステート更新とログ送信を行うループを開始
+            pollingInterval = setInterval(async () => {
+                await updateState();
+                await uploadLogs(); // バッファがあれば送信
+            }, 100);
 
         } catch (e) {
             console.error(e);
@@ -84,6 +135,20 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const res = await fetch('/gesture/state');
             const data = await res.json();
+
+            // --- ステート遷移の検知とロギング ---
+            if (data.state !== lastState) {
+                logEvent('state_change', { from: lastState, to: data.state });
+                
+                // MEASURINGになった瞬間 = ターゲット画像が表示された瞬間
+                if (data.state === "MEASURING" && data.target) {
+                    logEvent('stimulus_shown', { 
+                        target_name: data.target.GestureName,
+                        target_id: data.target.GestureID // IDがあれば
+                    });
+                }
+                lastState = data.state;
+            }
 
             if (!data.is_running && data.state === "COMPLETED") {
                 finishTest();
@@ -114,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.display = "flex";
                 targetImg.style.display = "none";
                 
-                // サーバーから送られてきた残り時間を使用 (小数点切り上げ)
                 const remaining = Math.ceil(data.countdown_remaining);
                 overlayText.textContent = remaining > 0 ? remaining : "START!";
                 
@@ -127,7 +191,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!imgName) {
                         imgName = `gesture_${data.target.GestureName.toLowerCase()}.png`;
                     }
-                    targetImg.src = `/gesture_images/${imgName}`;
+                    // 画像のsrc変更を検知したい場合は、onloadイベントでログを取るのも有効
+                    if (targetImg.src.indexOf(imgName) === -1) {
+                        targetImg.src = `/gesture_images/${imgName}`;
+                    }
                     targetName.textContent = data.target.GestureName;
                     targetDesc.textContent = data.target.Description || "";
                 }
@@ -135,6 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.is_match) {
                     matchIndicator.textContent = "MATCH";
                     matchIndicator.className = "indicator match";
+                    // マッチした瞬間をクライアント側でも記録したければここでもログ可能
+                    // ただし、サーバー側で判定しているので冗長になる可能性あり
                 } else {
                     matchIndicator.textContent = "GO!";
                     matchIndicator.className = "indicator mismatch";
@@ -146,8 +215,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function finishTest() {
+    async function finishTest() {
         clearInterval(pollingInterval);
+        logEvent('system', 'test_finished');
+        await uploadLogs(); // 最後のログを送信
+        
+        isTestRunning = false;
         testSection.style.display = 'none';
         finishedScreen.style.display = 'block';
     }
