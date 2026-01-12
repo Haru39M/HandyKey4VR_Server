@@ -1,6 +1,11 @@
 .
 ├── README.md
+├── USAGE.md
 ├── analysis.py
+├── analysis_visualize.py
+├── analyze
+│   ├── wpm_boxplot.png
+│   └── wpm_learning_curve.png
 ├── app.py
 ├── botsu
 │   ├── main.py
@@ -11,22 +16,27 @@
 │   ├── test2.py
 │   ├── test3.py
 │   └── typing_test_v1.py
+├── check_word_predictor.py
 ├── combined_analysis_data.csv
 ├── config.json
+├── dockerfile
 ├── export_tree.sh
+├── gesture_test.py
 ├── gestures
 │   ├── gesture_images
+│   │   ├── gesture_fingerpoint.png
 │   │   ├── gesture_fist.png
 │   │   ├── gesture_gun.png
+│   │   ├── gesture_handopen.png
 │   │   ├── gesture_neutral.png
-│   │   ├── gesture_open.png
-│   │   ├── gesture_peace.png
-│   │   ├── gesture_point.png
-│   │   ├── gesture_rock.png
-│   │   ├── gesture_thumbs.png
+│   │   ├── gesture_rocknroll.png
+│   │   ├── gesture_thumbsup.png
+│   │   ├── gesture_victory.png
 │   │   └── gestures_all.png
 │   └── gestures.json
+├── get_model.sh
 ├── logs
+│   ├── gesture_log_p01.csv
 │   ├── log_p01.csv
 │   ├── log_p01_2025-12-16-01-53-05_raw.csv
 │   ├── log_p01_2025-12-16-01-53-05_summary.csv
@@ -35,23 +45,89 @@
 │   ├── log_p01_2025-12-16-02-01-30_raw.csv
 │   ├── log_p01_2025-12-16-02-01-30_summary.csv
 │   ├── log_p01_2025-12-16-04-22-11_raw.csv
-│   └── log_p01_2025-12-16-04-22-11_summary.csv
+│   ├── log_p01_2025-12-16-04-22-11_summary.csv
+│   ├── log_p01_2025-12-18-07-29-00_raw.csv
+│   ├── log_p01_2025-12-18-07-29-00_summary.csv
+│   ├── log_p01_2025-12-18-16-09-06_raw.csv
+│   ├── log_p01_2025-12-18-16-09-06_summary.csv
+│   ├── log_p01_2025-12-23-09-01-17_raw.csv
+│   ├── log_p01_2025-12-23-09-01-17_summary.csv
+│   ├── logs_gesture
+│   │   ├── debug
+│   │   │   └── log_debug_2025-12-29-09-00-16_gesture.csv
+│   │   ├── log_p01_2025-12-28-11-25-47_gesture.csv
+│   │   ├── log_p01_2025-12-28-12-01-10_gesture.csv
+│   │   ├── log_p01_2025-12-28-13-19-22_gesture.csv
+│   │   ├── log_p01_2025-12-28-13-22-27_gesture.csv
+│   │   ├── log_p01_2025-12-28-14-26-49_gesture.csv
+│   │   ├── log_p01_2025-12-29-06-55-20_gesture.csv
+│   │   ├── log_p01_2025-12-29-06-58-34_gesture.csv
+│   │   ├── log_p01_2025-12-29-07-00-44_gesture.csv
+│   │   ├── log_p01_2025-12-29-07-06-51_gesture.csv
+│   │   ├── log_p01_2025-12-29-07-25-55_gesture.csv
+│   │   └── log_p01_2025-12-29-08-10-09_gesture.csv
+│   └── logs_typing
+│       ├── debug
+│       │   ├── log_debug-p01_2026-01-04-12-46-57_typing.csv
+│       │   ├── log_debug-p01_2026-01-04-12-46-57_typing_raw.csv
+│       │   ├── log_debug_2025-12-29-09-04-30_typing.csv
+│       │   └── log_debug_2025-12-29-09-04-30_typing_raw.csv
+│       ├── log_debug-p01_2026-01-04-12-37-01_typing.csv
+│       ├── log_debug-p01_2026-01-04-12-37-01_typing_raw.csv
+│       ├── log_debug-p01_2026-01-04-12-43-29_typing.csv
+│       ├── log_debug-p01_2026-01-04-12-43-29_typing_raw.csv
+│       ├── log_p01_2025-12-28-11-22-57_typing.csv
+│       └── log_p01_2025-12-28-11-22-57_typing_raw.csv
+├── logs_gesture
+│   ├── debug
+│   │   ├── log_debug-p01_2026-01-10-14-35-19_gesture.csv
+│   │   ├── log_debug-p01_2026-01-11-19-01-44_gesture_raw.csv
+│   │   ├── log_debug_2026-01-10-13-41-07_gesture.csv
+│   │   └── log_debug_2026-01-11-18-12-49_gesture.csv
+│   └── log_p01_2026-01-10-15-11-10_gesture.csv
+├── logs_typing
+│   └── debug
+│       ├── log_debug-p01_2026-01-09-15-45-00_typing_raw.csv
+│       ├── log_debug-p01_2026-01-09-15-45-00_typing_summary.csv
+│       ├── log_debug-p01_2026-01-09-16-48-49_typing_raw.csv
+│       ├── log_debug-p01_2026-01-09-16-48-49_typing_summary.csv
+│       ├── log_debug-p01_2026-01-09-17-08-04_typing_raw.csv
+│       ├── log_debug-p01_2026-01-09-17-08-04_typing_summary.csv
+│       ├── log_debug-p01_2026-01-10-12-59-33_typing_raw.csv
+│       ├── log_debug-p01_2026-01-10-12-59-33_typing_summary.csv
+│       ├── log_debug-p01_2026-01-10-13-03-59_typing_raw.csv
+│       ├── log_debug-p01_2026-01-10-13-03-59_typing_summary.csv
+│       ├── log_debug-p01_2026-01-10-13-35-10_typing_raw.csv
+│       └── log_debug-p01_2026-01-10-13-35-10_typing_summary.csv
 ├── phrases2.txt
+├── pyproject.toml
 ├── requirements.txt
 ├── static
 │   ├── app.js
+│   ├── gesture.css
+│   ├── gesture.js
+│   ├── hands_guide.png
 │   └── style.css
 ├── system
 │   ├── OSCServer.py
 │   └── vrc_typing_display.py
 ├── templates
+│   ├── gesture.html
 │   └── index.html
+├── test_logger.py
 ├── tree.txt
 ├── treecommand.txt
 ├── typing_test.py
+├── uv.lock
 ├── wiki_en_token.arpa.bin
+├── word_notfound_limit=10_beamWidth=1000.txt
+├── word_notfound_limit=10_beamWidth=10000.txt
+├── word_notfound_limit=10_beamWidth=100000.txt
+├── word_notfound_limit=20_beamWidth=1000.txt
+├── word_notfound_limit=20_beamWidth=10000.txt
+├── word_notfound_limit=20_beamWidth=100000.txt
 ├── word_predictor.py
 ├── words.json
 └── wpm_analysis.png
 
-8 directories, 47 files
+17 directories, 114 files

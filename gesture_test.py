@@ -64,8 +64,8 @@ class Logger:
                     self.participant_id,
                     self.condition,
                     self.handedness,
-                    trial_id,
                     target_name,
+                    trial_id,
                     target_id,
                     e.get('type'),
                     data_str,
@@ -101,9 +101,9 @@ class GestureTest:
         # Logger
         self.logger = None
             
-        self.load_gestures(gestures_path)
+        self._load_gestures(gestures_path)
 
-    def load_gestures(self, path):
+    def _load_gestures(self, path):
         if not os.path.exists(path):
             print(f"[GestureTest] Error: {path} not found.")
             return
