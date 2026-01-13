@@ -1,101 +1,91 @@
 import pandas as pd
 import json
-import matplotlib.pyplot as plt
-import seaborn as sns
+import glob
 import os
 import sys
 
-def parse_event_data(row):
-    """EventDataカラムのJSON文字列をパースして辞書にする"""
-    try:
-        data_str = row['EventData']
-        if isinstance(data_str, str):
-            # CSVの仕様で二重引用符などが含まれる場合があるためjson.loadsを試みる
-            return json.loads(data_str)
+def parse_event_data(data_str):
+    """EventDataカラムのJSON文字列または辞書をパースする"""
+    if isinstance(data_str, dict):
         return data_str
-    except:
+    
+    if not isinstance(data_str, str):
         return {}
 
-def analyze_gesture_log(file_path):
-    print(f"Loading log file: {file_path}")
-    
     try:
-        df = pd.read_csv(file_path)
+        # CSV読み込み時に余計な引用符がついている場合の対策
+        clean_str = data_str.strip()
+        # 文字列が辞書形式ならパース
+        return json.loads(clean_str)
+    except Exception:
+        return {}
+
+def process_raw_log(filepath):
+    """RawログからSummaryデータを抽出する"""
+    try:
+        df = pd.read_csv(filepath)
     except Exception as e:
-        print(f"Error reading CSV: {e}")
-        return
+        print(f"Error reading {filepath}: {e}")
+        return None
 
-    # EventDataをパースして辞書列を追加
-    df['EventDataDict'] = df.apply(parse_event_data, axis=1)
-
-    # 反応時間 (rt_ms) が含まれる行（試行完了ログ）を抽出
-    # 条件: EventTypeが'state_change' かつ rt_ms キーを持っている
     results = []
-    
+
+    # 行ごとに処理
     for index, row in df.iterrows():
-        data = row['EventDataDict']
-        if row['EventType'] == 'state_change' and isinstance(data, dict):
-            if 'rt_ms' in data:
+        # EventDataをパース
+        event_data = parse_event_data(row.get('EventData', '{}'))
+        
+        # 'state_change' イベントで、かつ 'rt_ms' (反応時間) が含まれている行を探す
+        # これが試行完了のタイミング
+        if row['EventType'] == 'state_change' and isinstance(event_data, dict):
+            if 'rt_ms' in event_data:
                 results.append({
-                    'TrialID': row['TrialID'],
+                    'Timestamp': row['ServerTimestampISO'],
                     'ParticipantID': row['ParticipantID'],
                     'Condition': row['Condition'],
+                    'Handedness': row['Handedness'],
+                    'TrialID': int(row['TrialID']),
                     'TargetGesture': row['TargetGesture'],
-                    'RT_ms': data['rt_ms']
+                    'TargetID': row['TargetID'],
+                    'ReactionTime': float(event_data['rt_ms'])
                 })
 
     if not results:
-        print("No reaction time data found in this log.")
+        return None
+        
+    return pd.DataFrame(results)
+
+def main():
+    log_dir = "logs_gesture"
+    
+    # Rawログファイルを再帰的に検索 (debugフォルダなども含む)
+    raw_files = glob.glob(os.path.join(log_dir, "**", "*_raw.csv"), recursive=True)
+    
+    if not raw_files:
+        print(f"No raw log files found in {log_dir}.")
         return
 
-    res_df = pd.read_json(json.dumps(results))
-    
-    print("\n--- Analysis Result ---")
-    print(f"Total Trials: {len(res_df)}")
-    
-    # 1. ジェスチャごとの統計
-    print("\n[Statistics by Gesture]")
-    stats_gesture = res_df.groupby('TargetGesture')['RT_ms'].agg(['count', 'mean', 'std', 'min', 'max'])
-    print(stats_gesture.round(2))
+    print(f"Found {len(raw_files)} raw log files.")
 
-    # 2. 全体の平均
-    mean_rt = res_df['RT_ms'].mean()
-    print(f"\nOverall Mean RT: {mean_rt:.2f} ms")
+    count = 0
+    for raw_file in raw_files:
+        print(f"Processing: {raw_file}")
+        df_summary = process_raw_log(raw_file)
+        
+        if df_summary is not None and not df_summary.empty:
+            # Summaryファイル名生成 (_raw.csv -> _summary.csv)
+            summary_file = raw_file.replace("_raw.csv", "_summary.csv")
+            
+            try:
+                df_summary.to_csv(summary_file, index=False, encoding='utf-8')
+                print(f"  -> Generated: {summary_file} ({len(df_summary)} trials)")
+                count += 1
+            except Exception as e:
+                print(f"  -> Error saving summary: {e}")
+        else:
+            print("  -> No valid trial data found (skipped).")
 
-    # --- 可視化 (Boxplot) ---
-    plt.figure(figsize=(10, 6))
-    sns.set_style("whitegrid")
-    
-    # ジェスチャごとの箱ひげ図
-    sns.boxplot(x='TargetGesture', y='RT_ms', data=res_df, hue='TargetGesture', palette="Set2", legend=False)
-    sns.stripplot(x='TargetGesture', y='RT_ms', data=res_df, color='black', alpha=0.5, jitter=True)
-    
-    plt.title('Reaction Time by Gesture')
-    plt.ylabel('Reaction Time (ms)')
-    plt.xlabel('Gesture Type')
-    plt.ylim(0, None) # 0から開始
-    
-    # 保存または表示
-    output_img = file_path.replace('.csv', '_analysis.png')
-    plt.savefig(output_img)
-    print(f"\nGraph saved to: {output_img}")
-    # plt.show() # 実行環境でGUIが使えるならコメントアウトを外す
+    print(f"\nProcessing complete. Generated {count} summary files.")
 
 if __name__ == "__main__":
-    # 解析したいログファイルを指定
-    # 最新のログファイルを自動で探すか、引数で指定
-    target_file = "logs_gesture/debug/log_debug-p01_2026-01-13-16-01-55_gesture_raw.csv"
-    
-    # コマンドライン引数があればそれを使う
-    if len(sys.argv) > 1:
-        target_file = sys.argv[1]
-        
-    if os.path.exists(target_file):
-        analyze_gesture_log(target_file)
-    else:
-        # 見つからない場合はカレントディレクトリのCSVを探す例
-        csvs = [f for f in os.listdir('.') if f.endswith('.csv') and 'gesture' in f]
-        if csvs:
-            analyze_gesture_log(csvs[0])
-        else:
-            print(f"File not found: {target_file}")
+    main()
