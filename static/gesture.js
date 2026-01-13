@@ -26,12 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- State Management for Logging ---
     let isTestRunning = false;
     let eventLogBuffer = [];
-    let lastState = "IDLE"; // ステート遷移検知用
     
     // 画像表示済みかどうかを管理するID
     let lastRenderedTrialId = -1;
 
-    // ★追加: ポーリング重複防止用のフラグ
+    // ポーリング重複防止用のフラグ
     let isFetchingState = false;
 
     // ============================================
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timestamp: Date.now() 
         });
 
-        if (eventLogBuffer.length >= 5 || type === 'state_change' || type === 'state_input') {
+        if (eventLogBuffer.length >= 5 || type === 'state_input') {
             uploadLogs();
         }
     }
@@ -147,15 +146,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function startPolling() {
         if (pollingInterval) clearInterval(pollingInterval);
         isFetchingState = false; // フラグ初期化
-        pollingInterval = setInterval(checkState, 10); 
+        // ★修正: 10ms -> 33ms (約30Hz) に緩和して通信エラーを回避
+        pollingInterval = setInterval(checkState, 33); 
     }
 
     async function checkState() {
-        // ★修正: 前回の通信処理が終わっていなければスキップ (多重実行防止)
+        // 前回の通信処理が終わっていなければスキップ (多重実行防止)
         if (isFetchingState) return;
         isFetchingState = true;
 
         try {
+            // ★追加: 送信失敗してバッファに残っているログがあれば再送を試みる
+            // これにより「画像表示ログ」が届かずに判定が始まらない問題を解消
+            if (eventLogBuffer.length > 0) {
+                await uploadLogs();
+            }
+
             const res = await fetch('/gesture/state');
             if (!res.ok) {
                 // サーバーエラー時は無理に続けずログ出力のみ
@@ -180,19 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateHandStatus(data.current_input);
             }
 
-            // State Change Detection & Logging
-            if (lastState !== data.state) {
-                logEvent('state_change', JSON.stringify({
-                    from: lastState,
-                    to: data.state
-                }));
-                lastState = data.state;
-            }
+            // ★削除: state_change のログ記録はサーバー側で行うため、ここでは削除
 
             // State Handling
             if (data.state === 'COMPLETED') {
                 await finishTest(); // awaitを追加
-                return; // ★完了したら即抜ける
+                return; // 完了したら即抜ける
             }
 
             if (data.state === 'WAIT_HAND_OPEN') {
@@ -246,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (e) {
             console.error("Polling error:", e);
         } finally {
-            // ★処理が終わったらフラグを下ろす
+            // 処理が終わったらフラグを下ろす
             isFetchingState = false;
         }
     }
@@ -266,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function finishTest() {
         if (!isTestRunning) return; // 多重実行防止
         
-        // ★修正: 先にポーリングを確実に止める
+        // 先にポーリングを確実に止める
         if (pollingInterval) {
             clearInterval(pollingInterval);
             pollingInterval = null;
@@ -300,7 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
         targetImg.style.display = 'none';
         targetImg.src = "";
         
-        lastState = "IDLE";
         lastRenderedTrialId = -1;
         checkConfigValidity();
     }

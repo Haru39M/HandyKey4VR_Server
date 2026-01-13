@@ -51,26 +51,40 @@ class Logger:
         server_ts_iso = datetime.fromtimestamp(now).isoformat()
         server_ts_ms = int(now * 1000)
         
+        # eventsがリストでない場合のガード
+        if not isinstance(events, list):
+            if isinstance(events, (dict, str)):
+                events = [events]
+            else:
+                return
+
         try:
             with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 for event in events:
+                    # ★修正: eventが文字列の場合（JSON文字列の可能性）はパースを試みる
+                    if isinstance(event, str):
+                        try:
+                            event = json.loads(event)
+                        except:
+                            # パースできなければスキップ
+                            continue
+                    
+                    # それでも辞書でない場合はスキップ
+                    if not isinstance(event, dict):
+                        continue
+
                     raw_data = event.get('data', {})
                     
-                    # ★修正: データが「JSON文字列」の場合は一度辞書に戻す
-                    # これにより、CSV書き込み時の二重エスケープを防ぐ
+                    # データが「JSON文字列」の場合は一度辞書に戻す
                     if isinstance(raw_data, str):
                         try:
-                            # 文字列が { や [ で始まる場合、JSONとしてパースを試みる
                             stripped = raw_data.strip()
                             if stripped.startswith('{') or stripped.startswith('['):
                                 raw_data = json.loads(raw_data)
                         except:
-                            # パース失敗、あるいは普通の文字列ならそのまま使う
                             pass
                     
-                    # 辞書型(またはリスト)をJSON文字列に変換
-                    # ensure_ascii=Falseにより、日本語もそのまま記録される
                     event_data_str = json.dumps(raw_data, ensure_ascii=False)
                     
                     row = [
@@ -226,7 +240,7 @@ class GestureTest:
 
             self.current_input.update(normalized_data)
 
-            # ★修正: 入力データ(state_input)を確実にログに記録
+            # 入力データ(state_input)を確実にログに記録
             if self.logger:
                 current_trial = self.completed_trials + 1
                 tg = self.target_gesture
@@ -385,6 +399,18 @@ class GestureTest:
     def log_client_events(self, events):
         """クライアントから送られてきたログを処理する"""
         if self.logger and events:
+            # ★修正: eventsが文字列の場合はパースを試みる
+            if isinstance(events, str):
+                try:
+                    events = json.loads(events)
+                except:
+                    print(f"Failed to parse events string: {events}", flush=True)
+                    return # パース失敗したら処理しない
+
+            # リストでなければリストに入れる
+            if isinstance(events, dict):
+                events = [events]
+
             current_trial = self.completed_trials + 1
             tg = self.target_gesture
             t_name = tg['GestureName'] if tg else "None"
@@ -392,9 +418,17 @@ class GestureTest:
             self.logger.log_raw(current_trial, t_name, t_id, events)
 
             for event in events:
+                if not isinstance(event, dict): continue # ガード
+
                 if event.get('type') == 'system':
                     data = event.get('data', {})
-                    if data.get('action') == "stimulus_rendered_on_client":
+                    if isinstance(data, str): # dataが文字列の場合のケア
+                         try:
+                             data = json.loads(data)
+                         except:
+                             pass
+                             
+                    if isinstance(data, dict) and data.get('action') == "stimulus_rendered_on_client":
                          if self.state == STATE_MEASURING and self.measure_start_time is None:
                              self.measure_start_time = time.time()
                              print(f"[GestureTest] Client Render Trigger Received. Timer STARTED at {self.measure_start_time}", flush=True)
