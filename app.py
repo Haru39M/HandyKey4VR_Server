@@ -18,12 +18,30 @@ def get_predictor():
         print("[App] Model loaded.")
     return _predictor
 
+# =================================================
+#  【修正】パス設定 (app.pyより移植)
+# =================================================
+# app.py のあるディレクトリを基準にする
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+GESTURES_PATH = os.path.join(BASE_DIR, 'gestures', 'gestures.json')
+# 画像ディレクトリも絶対パスで定義
+IMAGES_DIR = os.path.join(BASE_DIR, 'gestures', 'gesture_images')
+
+print(f"[App] Initializing GestureTest with path: {GESTURES_PATH}")
+
+# ファイル存在チェック
+if not os.path.exists(GESTURES_PATH):
+    print(f"[App] CRITICAL WARNING: gestures.json NOT FOUND at {GESTURES_PATH}")
+
+if not os.path.exists(IMAGES_DIR):
+    print(f"[App] CRITICAL WARNING: Images directory NOT FOUND at {IMAGES_DIR}")
+
 # タイピングテスト用
 tester = TypingTest()
 tester.loadPhraseSet('phrases2.txt')
 
-# ジェスチャーテスト用
-gesture_tester = GestureTest('gestures/gestures.json')
+# ジェスチャーテスト用 (絶対パスで初期化)
+gesture_tester = GestureTest(GESTURES_PATH)
 
 app = Flask(__name__)
 
@@ -39,6 +57,7 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    # app_new.py の新しい予測ロジックを維持
     predictor = get_predictor()
     data = request.json
     input_word = data.get('word', '').strip()
@@ -56,6 +75,25 @@ def predict():
         "converted_index": predictor.current_index_sequence,
         "total_combinations": predictor.qwerty_combinations
     })
+
+# --- app.py の動作するタイピングテスト用エンドポイントを復元 ---
+
+@app.route('/log', methods=['POST'])
+def log_event():
+    """app.py から移植: ログ記録"""
+    data = request.json
+    tester.log_event(data)
+    return jsonify({'status': 'ok'})
+
+@app.route('/complete', methods=['POST'])
+def complete_trial():
+    """app.py から移植: 試行完了処理"""
+    data = request.json
+    result = tester.complete_trial(data)
+    return jsonify(result)
+
+# --- 以下は app_new.py で変更されていた実験的エンドポイント (一時的に無効化または共存) ---
+# ※ フロントエンドが app.py 前提の場合は上記 /log, /complete が使用されます
 
 @app.route('/test/start', methods=['POST'])
 def start_test():
@@ -88,11 +126,6 @@ def check_input():
     result = tester.check_input(committed_words)
     return jsonify(result)
 
-# @app.route('/test/backspace', methods=['POST'])
-# def notify_backspace():
-#     tester.increment_backspace()
-#     return jsonify({"status": "ok"})
-
 
 # =================================================
 #  ジェスチャーテスト関連
@@ -105,7 +138,8 @@ def gesture_page():
 
 @app.route('/gesture_images/<path:filename>')
 def serve_gesture_image(filename):
-    return send_from_directory('gestures/gesture_images', filename)
+    # 絶対パスを使用するよう修正 (app.py仕様)
+    return send_from_directory(IMAGES_DIR, filename)
 
 @app.route('/gesture/start', methods=['POST'])
 def start_gesture_test():
@@ -121,15 +155,34 @@ def start_gesture_test():
 
 @app.route('/gesture/input', methods=['POST'])
 def update_gesture_input():
-    data = request.json
-    if data:
-        gesture_tester.update_input(data)
-    return jsonify({"status": "updated"})
+    try:
+        data = request.json
+        # Debug: 受信データを確認
+        # print(f"[App] Received gesture input: {data}")
+        
+        if data:
+            gesture_tester.update_input(data)
+        return jsonify({"status": "updated"})
+    except Exception as e:
+        print(f"[App] Error in update_gesture_input: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 400
 
 @app.route('/gesture/state', methods=['GET'])
 def get_gesture_state():
     state = gesture_tester.check_state()
     return jsonify(state)
+
+@app.route('/gesture/log', methods=['POST'])
+def gesture_log():
+    """クライアント側からのログデータを受け取る (app.pyより移植)"""
+    try:
+        events = request.json
+        if events:
+            gesture_tester.log_client_events(events)
+        return jsonify({"status": "logged"})
+    except Exception as e:
+        print(f"Log Error: {e}")
+        return jsonify({"status": "error"}), 500
 
 
 if __name__ == '__main__':

@@ -12,190 +12,452 @@ STATE_COUNTDOWN = "COUNTDOWN"           # 3秒カウントダウン中
 STATE_MEASURING = "MEASURING"           # ジェスチャー計測中
 STATE_COMPLETED = "COMPLETED"           # 全試行完了
 
+# 定数
+DWELL_TIME_THRESHOLD = 0.5 # 秒
+MATCH_DISPLAY_DURATION = 0.5 # 秒（MATCH表示を見せる時間）
+
+class Logger:
+    def __init__(self, participant_id, condition, handedness="R"):
+        self.participant_id = participant_id
+        self.condition = condition
+        self.handedness = handedness
+        
+        self.base_log_dir = "logs_gesture"
+        
+        if "debug" in participant_id:
+            self.log_dir = os.path.join(self.base_log_dir, "debug")
+        else:
+            self.log_dir = self.base_log_dir
+            
+        if not os.path.exists(self.log_dir):
+            os.makedirs(self.log_dir)
+
+        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+        self.log_filepath = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_gesture_raw.csv")
+        
+        # CSVヘッダー
+        self.headers = [
+            "ServerTimestampISO", "ServerTimestamp", "ParticipantID", "Condition", "Handedness", 
+            "TrialID", "TargetGesture", "TargetID", 
+            "EventType", "EventData", "ClientTimestamp"
+        ]
+        
+        try:
+            with open(self.log_filepath, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow(self.headers)
+        except Exception as e:
+            print(f"Logger Init Error: {e}", flush=True)
+
+    def log_raw(self, trial_id, target_name, target_id, events):
+        now = time.time()
+        server_ts_iso = datetime.fromtimestamp(now).isoformat()
+        server_ts_ms = int(now * 1000)
+        
+        if not isinstance(events, list):
+            if isinstance(events, (dict, str)):
+                events = [events]
+            else:
+                return
+
+        try:
+            with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                for event in events:
+                    if isinstance(event, str):
+                        try:
+                            event = json.loads(event)
+                        except:
+                            continue
+                    
+                    if not isinstance(event, dict):
+                        continue
+
+                    raw_data = event.get('data', {})
+                    if isinstance(raw_data, str):
+                        try:
+                            stripped = raw_data.strip()
+                            if stripped.startswith('{') or stripped.startswith('['):
+                                raw_data = json.loads(raw_data)
+                        except:
+                            pass
+                    
+                    event_data_str = json.dumps(raw_data, ensure_ascii=False)
+                    
+                    row = [
+                        server_ts_iso,
+                        server_ts_ms,
+                        self.participant_id,
+                        self.condition,
+                        self.handedness,
+                        trial_id,
+                        target_name,
+                        target_id,
+                        event.get('type', 'unknown'),
+                        event_data_str,
+                        event.get('timestamp', '') 
+                    ]
+                    writer.writerow(row)
+        except Exception as e:
+            print(f"Log Error: {e}", flush=True)
+
 class GestureTest:
-    def __init__(self, gestures_path='gestures/gestures.json'):
-        self.gestures_data = {}
-        self.gesture_list = []
-        self.target_gesture = None
+    def __init__(self, gestures_file):
+        self.gestures_file = gestures_file
+        self.gestures = self._load_gestures()
+        
+        self.participant_id = None
+        self.condition = None
+        self.handedness = "R"
+        self.max_trials = 10
+        self.trials = [] 
+        self.completed_trials = 0
         self.current_gesture_id = None
         
-        # デバイスからの現在の入力状態
-        self.current_device_state = {
-            "T": "OPEN", "I": "OPEN", "M": "OPEN", "R": "OPEN", "P": "OPEN"
-        }
-        
-        # テスト設定
-        self.participant_id = "test"
-        self.condition = "default"
-        self.handedness = "R" # デフォルト
-        self.max_trials = 10
-        self.completed_trials = 0
         self.state = STATE_IDLE
+        self.logger = None
         
-        # タイマー管理
-        self.countdown_start_time = 0.0
-        self.measure_start_time = 0.0
-        self.match_start_time = None
-        self.match_duration_threshold = 0.5 # チャタリング防止時間
+        self.countdown_start_time = None
+        self.measure_start_time = None
         
-        # ログ用
-        self.base_log_dir = "logs_gesture"
-        self.log_filepath = ""
-            
-        self.load_gestures(gestures_path)
+        # マッチ判定用
+        self.match_hold_start_time = None # マッチし始めた時刻
+        self.match_commit_time = None     # マッチが確定した時刻
+        
+        self.current_input = {} 
 
-    def load_gestures(self, path):
-        if not os.path.exists(path):
-            print(f"[GestureTest] Error: {path} not found.")
-            return
-        with open(path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            self.gestures_data = data.get("Gestures", {})
-            self.gesture_list = list(self.gestures_data.keys())
+    def _load_gestures(self):
+        abs_path = os.path.abspath(self.gestures_file)
+        print(f"[GestureTest] Loading gestures from: {abs_path}", flush=True)
+        
+        if not os.path.exists(abs_path):
+            print(f"[GestureTest] CRITICAL ERROR: File not found at {abs_path}", flush=True)
+            return []
+
+        try:
+            with open(abs_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                gestures_list = []
+                if isinstance(data, list):
+                    gestures_list = data
+                elif isinstance(data, dict):
+                    if 'Gestures' in data and isinstance(data['Gestures'], dict):
+                        for id_key, g_data in data['Gestures'].items():
+                            if 'ID' not in g_data:
+                                try: g_data['ID'] = int(id_key)
+                                except: g_data['ID'] = id_key
+                            gestures_list.append(g_data)
+                    elif 'gestures' in data and isinstance(data['gestures'], list):
+                        gestures_list = data['gestures']
+                
+                valid_gestures = [g for g in gestures_list if isinstance(g, dict) and 'ID' in g]
+                if valid_gestures:
+                    try: valid_gestures.sort(key=lambda x: int(x['ID']))
+                    except: pass 
+                    print(f"[GestureTest] Successfully loaded {len(valid_gestures)} gestures.", flush=True)
+                return valid_gestures
+        except Exception as e:
+            print(f"[GestureTest] Error loading gestures JSON: {e}", flush=True)
+            return []
+
+    @property
+    def target_gesture(self):
+        if self.current_gesture_id is None:
+            return None
+        return next((g for g in self.gestures if g.get('ID') == self.current_gesture_id), None)
 
     def configure_test(self, participant_id, condition, max_trials, handedness="R"):
         self.participant_id = participant_id
         self.condition = condition
         self.max_trials = int(max_trials)
         self.handedness = handedness
+        self.logger = Logger(participant_id, condition, handedness)
+        
+        if not self.gestures:
+            self.gestures = self._load_gestures()
+            if not self.gestures:
+                self.trials = []
+                return
+
+        all_ids = [g['ID'] for g in self.gestures]
+        self.trials = [random.choice(all_ids) for _ in range(self.max_trials)]
         self.completed_trials = 0
+        self.state = STATE_IDLE
         
-        # ログ保存先の決定
-        if self.participant_id == "debug":
-            current_log_dir = os.path.join(self.base_log_dir, "debug")
-        else:
-            current_log_dir = self.base_log_dir
+        self.logger.log_raw("None", "None", -1, [{
+            "type": "system", 
+            "data": {"action": "test_configured", "trials": self.trials},
+            "timestamp": int(time.time() * 1000)
+        }])
+        
+        self._next_trial()
+
+    def _next_trial(self):
+        if self.completed_trials >= self.max_trials:
+            self.state = STATE_COMPLETED
+            print("[GestureTest] All trials completed.", flush=True)
+            return
             
-        if not os.path.exists(current_log_dir):
-            os.makedirs(current_log_dir)
-
-        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-        self.log_filepath = os.path.join(current_log_dir, f"log_{participant_id}_{now_str}_gesture.csv")
-        self._init_log()
+        self.current_gesture_id = self.trials[self.completed_trials]
+        self.state = STATE_WAIT_HAND_OPEN
         
-        self._start_wait_hand_open()
+        print(f"[GestureTest] Next trial ({self.completed_trials+1}/{self.max_trials}): GestureID={self.current_gesture_id}", flush=True)
+        
+        self.countdown_start_time = None
+        self.measure_start_time = None
+        self.match_hold_start_time = None
+        self.match_commit_time = None
 
-    def update_input(self, input_state):
-        for key, val in input_state.items():
-            if key in self.current_device_state:
-                self.current_device_state[key] = val
+    def update_input(self, data):
+        """外部からの入力データ更新"""
+        if self.state == STATE_IDLE:
+            return
+
+        if self.current_input is None:
+            self.current_input = {}
+        
+        try:
+            normalized_data = {}
+            for k, v in data.items():
+                if isinstance(k, str):
+                    clean_k = k.strip().upper()
+                    normalized_data[clean_k] = v
+                else:
+                    normalized_data[k] = v
+
+            self.current_input.update(normalized_data)
+
+            if self.logger:
+                current_trial = self.completed_trials + 1
+                tg = self.target_gesture
+                t_name = tg['GestureName'] if tg else "None"
+                t_id = tg['ID'] if tg else -1
+                
+                input_event = {
+                    "type": "state_input",
+                    "data": normalized_data,
+                    "timestamp": int(time.time() * 1000) 
+                }
+                
+                self.logger.log_raw(current_trial, t_name, t_id, [input_event])
+
+            self._update_state_logic()
+        except Exception as e:
+            print(f"Error in update_input: {e}", flush=True)
+
+    def _update_state_logic(self):
+        try:
+            if self.state == STATE_WAIT_HAND_OPEN:
+                if self._is_hand_open(self.current_input):
+                    print(f"[GestureTest] Hand OPEN detected. Moving to COUNTDOWN.", flush=True)
+                    self.state = STATE_COUNTDOWN
+                    self.countdown_start_time = time.time()
+                    
+                    if self.logger:
+                        self.logger.log_raw(self.completed_trials + 1, 
+                                            self.target_gesture['GestureName'], 
+                                            self.target_gesture['ID'], 
+                                            [{
+                                                "type": "state_change", 
+                                                "data": {"from": STATE_WAIT_HAND_OPEN, "to": STATE_COUNTDOWN},
+                                                "timestamp": int(time.time() * 1000)
+                                            }])
+
+            elif self.state == STATE_COUNTDOWN:
+                if time.time() - self.countdown_start_time >= 3.0:
+                    print(f"[GestureTest] Countdown finished. Waiting for Client Render Trigger...", flush=True)
+                    self.state = STATE_MEASURING
+                    self.measure_start_time = None 
+                    self.match_hold_start_time = None
+                    
+                    if self.logger:
+                        self.logger.log_raw(self.completed_trials + 1, 
+                                            self.target_gesture['GestureName'], 
+                                            self.target_gesture['ID'], 
+                                            [{
+                                                "type": "state_change", 
+                                                "data": {"from": STATE_COUNTDOWN, "to": STATE_MEASURING},
+                                                "timestamp": int(time.time() * 1000)
+                                            }])
+                
+            elif self.state == STATE_MEASURING:
+                if self.measure_start_time is None:
+                    return
+
+                # マッチ確定後の表示期間処理
+                if self.match_commit_time is not None:
+                    if time.time() - self.match_commit_time >= MATCH_DISPLAY_DURATION:
+                         self._process_match()
+                    return
+
+                target = self.target_gesture
+                is_matching = self._check_match(target, self.current_input)
+                
+                if is_matching:
+                    if self.match_hold_start_time is None:
+                        # マッチ開始！維持計測スタート
+                        self.match_hold_start_time = time.time()
+                    
+                    # 0.5秒維持できたかチェック
+                    elapsed = time.time() - self.match_hold_start_time
+                    if elapsed >= DWELL_TIME_THRESHOLD:
+                        # 即座に遷移せず、確定時刻を記録して待機に入る
+                        self.match_commit_time = time.time()
+                        print(f"[GestureTest] Match Committed (Wait for display).", flush=True)
+                else:
+                    # マッチが途切れたらリセット
+                    self.match_hold_start_time = None
+
+        except Exception as e:
+            print(f"Error in _update_state_logic: {e}", flush=True)
+
+    def _is_hand_open(self, input_data):
+        fingers = ['T', 'I', 'M', 'R', 'P']
+        for finger in fingers:
+            val = input_data.get(finger)
+            if isinstance(val, str):
+                val = val.strip().upper()
+            if val != 'OPEN':
+                return False
+        return True
+
+    def _check_match(self, target, input_data):
+        if not target: return False
+        
+        target_states = target.get('State', {})
+        if not target_states: target_states = target
+
+        for finger in ['T', 'I', 'M', 'R', 'P']:
+            target_val_or_list = target_states.get(finger)
+            input_val = input_data.get(finger)
+            
+            if isinstance(input_val, str):
+                input_val = input_val.strip().upper()
+            
+            if target_val_or_list is None:
+                continue
+
+            if isinstance(target_val_or_list, list):
+                if input_val not in target_val_or_list:
+                    return False
+            else:
+                t_str = str(target_val_or_list).strip().upper()
+                if t_str != input_val:
+                    return False
+        return True
+
+    def _process_match(self):
+        # 反応時間 (RT) の計算
+        if self.match_hold_start_time:
+             rt_end_time = self.match_hold_start_time
+        else:
+             rt_end_time = self.match_commit_time - DWELL_TIME_THRESHOLD if self.match_commit_time else time.time()
+
+        duration = (rt_end_time - self.measure_start_time) * 1000 if self.measure_start_time else 0
+        
+        print(f"[GestureTest] Match Processed! Trial {self.completed_trials + 1} done. RT: {duration:.2f}ms", flush=True)
+        
+        if self.logger:
+             self.logger.log_raw(self.completed_trials + 1, 
+                                self.target_gesture['GestureName'], 
+                                self.target_gesture['ID'], 
+                                [{
+                                    "type": "state_change", 
+                                    "data": {
+                                        "from": STATE_MEASURING, 
+                                        "to": STATE_COMPLETED if self.completed_trials + 1 >= self.max_trials else "NEXT_TRIAL",
+                                        "rt_ms": duration
+                                    },
+                                    "timestamp": int(time.time() * 1000)
+                                }])
+
+        self.completed_trials += 1
+        self._next_trial()
 
     def check_state(self):
-        """現在の状態を確認し、ステート遷移を行う"""
-        
-        if self.state == STATE_IDLE or self.state == STATE_COMPLETED:
-            return self._build_status_response()
+        try:
+            # 時間経過チェック (COUNTDOWN)
+            if self.state == STATE_COUNTDOWN and self.countdown_start_time:
+                if time.time() - self.countdown_start_time >= 3.0:
+                    self.state = STATE_MEASURING
+                    self.measure_start_time = None
+                    self.match_hold_start_time = None
 
-        # 1. HandOpen待機
-        if self.state == STATE_WAIT_HAND_OPEN:
-            if self._is_hand_open():
-                # HandOpen検知 -> カウントダウンへ
-                self.state = STATE_COUNTDOWN
-                self.countdown_start_time = time.time()
-                self._pick_next_target()
+            # ★追加: MEASURING中の時間経過チェック (ポーリング駆動での遷移)
+            if self.state == STATE_MEASURING:
+                # 1. マッチ確定後の表示時間終了チェック
+                if self.match_commit_time is not None:
+                     if time.time() - self.match_commit_time >= MATCH_DISPLAY_DURATION:
+                         self._process_match()
+                
+                # 2. 入力が来なくても、維持時間が経過していたら確定させるチェック
+                # (直前の状態が維持されていると仮定する)
+                elif self.match_hold_start_time is not None:
+                     elapsed = time.time() - self.match_hold_start_time
+                     if elapsed >= DWELL_TIME_THRESHOLD:
+                         self.match_commit_time = time.time()
+                         print(f"[GestureTest] Match Committed (via check_state).", flush=True)
 
-        # 2. カウントダウン (3秒)
-        elif self.state == STATE_COUNTDOWN:
-            elapsed = time.time() - self.countdown_start_time
-            if elapsed >= 3.0:
-                # カウントダウン終了 -> 計測開始
-                self.state = STATE_MEASURING
-                self.measure_start_time = time.time()
-                self.match_start_time = None
-
-        # 3. 計測中
-        elif self.state == STATE_MEASURING:
-            if self._is_matching_target():
-                if self.match_start_time is None:
-                    self.match_start_time = time.time()
-                elif time.time() - self.match_start_time >= self.match_duration_threshold:
-                    # 完了 -> ログ保存 -> 次へ
-                    self._save_log()
-                    self.completed_trials += 1
-                    
-                    if self.completed_trials >= self.max_trials:
-                        self.state = STATE_COMPLETED
-                    else:
-                        self._start_wait_hand_open()
-            else:
-                self.match_start_time = None
-
-        return self._build_status_response()
-
-    def _start_wait_hand_open(self):
-        self.state = STATE_WAIT_HAND_OPEN
-        self.target_gesture = None 
-
-    def _pick_next_target(self):
-        candidates = [gid for gid in self.gesture_list if self.gestures_data[gid]['GestureName'] != "HandOpen"]
-        if not candidates: candidates = self.gesture_list 
-        
-        self.current_gesture_id = random.choice(candidates)
-        self.target_gesture = self.gestures_data[self.current_gesture_id]
-        print(f"[GestureTest] Next Target Selected: {self.target_gesture['GestureName']}")
-
-    def _is_hand_open(self):
-        for f in ["T", "I", "M", "R", "P"]:
-            if self.current_device_state[f] != "OPEN":
-                return False
-        return True
-
-    def _is_matching_target(self):
-        if not self.target_gesture: return False
-        
-        target_state = self.target_gesture["State"]
-        if self.target_gesture['GestureName'] == "Neutral":
-            if self._is_hand_open(): return False
-
-        for f in ["T", "I", "M", "R", "P"]:
-            current_val = self.current_device_state.get(f)
-            allowed = target_state.get(f, [])
-            if current_val not in allowed:
-                return False
-        return True
-
-    def _build_status_response(self):
-        response = {
-            "state": self.state,
-            "current_input": self.current_device_state,
-            "progress": f"{self.completed_trials} / {self.max_trials}",
-            "is_running": self.state != STATE_COMPLETED and self.state != STATE_IDLE
-        }
-        
-        if self.state == STATE_COUNTDOWN:
-            elapsed = time.time() - self.countdown_start_time
-            remaining = max(0, 3.0 - elapsed)
-            response["countdown_remaining"] = remaining
+            remaining = 0
+            if self.state == STATE_COUNTDOWN and self.countdown_start_time:
+                elapsed = time.time() - self.countdown_start_time
+                remaining = max(0.0, 3.0 - elapsed)
             
-        if self.state == STATE_MEASURING:
-            response["target"] = self.target_gesture
-            response["is_match"] = (self.match_start_time is not None)
+            # 維持進捗の計算
+            progress = 0.0
+            if self.state == STATE_MEASURING:
+                if self.match_commit_time is not None:
+                    progress = 1.0 
+                elif self.match_hold_start_time:
+                    elapsed = time.time() - self.match_hold_start_time
+                    progress = min(1.0, elapsed / DWELL_TIME_THRESHOLD)
+
+            response = {
+                "state": self.state,
+                "current_trial": self.completed_trials + 1,
+                "total_trials": self.max_trials,
+                "current_input": self.current_input
+            }
             
-        return response
+            if self.state == STATE_COUNTDOWN:
+                response["countdown_remaining"] = remaining
+                
+            if self.state == STATE_MEASURING:
+                tg = self.target_gesture
+                response["target"] = tg 
+                response["is_match"] = (self.match_commit_time is not None)
+                response["match_progress"] = progress 
+                
+            return response
+        except Exception as e:
+            print(f"Error in check_state: {e}", flush=True)
+            return {"state": "ERROR", "error": str(e)}
 
-    def _init_log(self):
-        with open(self.log_filepath, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                "Timestamp", "ParticipantID", "Condition", "Handedness", "TrialNum", 
-                "TargetGesture", "TargetID", "ReactionTime", "TotalTime"
-            ])
+    def log_client_events(self, events):
+        if self.logger and events:
+            if isinstance(events, str):
+                try: events = json.loads(events)
+                except: return
 
-    def _save_log(self):
-        duration = time.time() - self.measure_start_time
-        reaction_time = max(0, duration - self.match_duration_threshold)
-        
-        with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                datetime.now().isoformat(),
-                self.participant_id,
-                self.condition,
-                self.handedness,
-                self.completed_trials + 1,
-                self.target_gesture['GestureName'],
-                self.current_gesture_id,
-                f"{reaction_time:.3f}",
-                f"{duration:.3f}"
-            ])
-        print(f"[GestureTest] Log saved: {reaction_time:.3f}s")
+            if isinstance(events, dict):
+                events = [events]
+
+            current_trial = self.completed_trials + 1
+            tg = self.target_gesture
+            t_name = tg['GestureName'] if tg else "None"
+            t_id = tg['ID'] if tg else -1
+            self.logger.log_raw(current_trial, t_name, t_id, events)
+
+            for event in events:
+                if not isinstance(event, dict): continue
+
+                if event.get('type') == 'system':
+                    data = event.get('data', {})
+                    if isinstance(data, str):
+                         try: data = json.loads(data)
+                         except: pass
+                             
+                    if isinstance(data, dict) and data.get('action') == "stimulus_rendered_on_client":
+                         if self.state == STATE_MEASURING and self.measure_start_time is None:
+                             self.measure_start_time = time.time()
+                             print(f"[GestureTest] Client Render Trigger Received. Timer STARTED at {self.measure_start_time}", flush=True)

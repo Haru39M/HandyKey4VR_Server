@@ -15,7 +15,6 @@
             <div class="config-item">
                 <label>ID: <input type="text" id="participant-id" value="p01"></label>
             </div>
-            <!-- Debug Mode 追加 -->
             <div class="config-item">
                 <label><input type="checkbox" id="debug-mode"> Debug</label>
             </div>
@@ -38,42 +37,44 @@
                 </label>
             </div>
             <div class="config-item">
-                <label>Trials: <input type="number" id="max-trials" value="10"></label>
+                <label>Trials: <input type="number" id="max-trials" value="10" min="1"></label>
             </div>
-            <!-- 初期状態は disabled -->
-            <button id="start-btn" disabled style="background-color: #ccc; cursor: not-allowed;">START TEST</button>
-            <a href="/" style="margin-left: auto;">Text Task &gt;</a>
+            <button id="start-btn" disabled>START TEST</button>
         </div>
 
-        <!-- テストエリア -->
-        <div id="test-section" style="display:none; position: relative;">
+        <!-- テスト実行エリア -->
+        <div id="test-section" style="display:none;">
             <div class="status-bar">
-                Progress: <span id="progress-text">0 / 10</span>
+                <div id="progress-text">Trial: 0 / 10</div>
             </div>
 
-            <!-- カウントダウン・待機用オーバーレイ -->
-            <div id="overlay-message" class="overlay">
-                <div id="overlay-text">Please Open Hand</div>
-            </div>
-
-            <div class="main-display">
-                <!-- ターゲット表示 -->
-                <div class="target-box">
-                    <h2>Target</h2>
+            <div class="main-content">
+                <!-- ターゲット画像・情報 -->
+                <div class="left-panel">
                     <div class="img-wrapper">
+                        <div id="overlay-message" class="overlay">
+                            <span id="overlay-text">Ready...</span>
+                        </div>
                         <img id="target-img" src="" alt="Target Gesture" style="display:none;">
                     </div>
-                    <div id="target-name" class="gesture-name">---</div>
-                    <div id="target-desc" class="gesture-desc">---</div>
+                    <div id="target-name" class="gesture-name"></div>
+                    <div id="target-desc" class="gesture-desc"></div>
                 </div>
 
-                <!-- 判定結果 -->
-                <div class="result-box">
-                    <div id="match-indicator" class="indicator mismatch">...</div>
+                <!-- 判定結果・プログレス -->
+                <div class="center-panel">
+                    <div class="result-box">
+                        <div id="match-indicator" class="indicator mismatch">GO!</div>
+                    </div>
+                    <!-- ★追加: プログレスバー -->
+                    <div id="match-progress-container">
+                        <div id="match-progress-bar"></div>
+                    </div>
+                    <div style="font-size: 0.8em; color: #888; margin-top: 5px;">Hold 0.5s</div>
                 </div>
 
-                <!-- 現在の入力状態可視化 -->
-                <div class="current-box">
+                <!-- 現在の手の状態（リアルタイム表示） -->
+                <div class="right-panel">
                     <h2>Your Hand</h2>
                     <div class="fingers-container">
                         <div class="finger" id="f-T">
