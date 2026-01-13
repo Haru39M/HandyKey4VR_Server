@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             startBtn.disabled = false;
             startBtn.style.opacity = '1';
             startBtn.style.cursor = 'pointer';
+            startBtn.style.backgroundColor = '#4caf50';
         } else {
             startBtn.disabled = true;
             startBtn.style.opacity = '0.5';
@@ -193,6 +194,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.display = 'flex';
                 overlayText.textContent = "Please Open Hand";
                 matchIndicator.style.visibility = 'hidden';
+                // 念のため画像を隠す（前の画像が残らないようにする場合）
+                targetImg.style.display = 'none';
             } else if (data.state === 'COUNTDOWN') {
                 overlay.style.display = 'flex';
                 overlayText.textContent = `Get Ready... ${Math.ceil(data.countdown_remaining)}`;
@@ -209,6 +212,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (targetImg.src.indexOf(imgName) === -1) {
                         targetImg.src = `/gesture_images/${imgName}`;
                     }
+                    
+                    // 【修正箇所】ここで画像を表示状態にする
+                    targetImg.style.display = 'inline-block';
+
                     targetName.textContent = data.target.GestureName;
                     targetDesc.textContent = data.target.Description || "";
                 }
@@ -255,6 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
         configSection.style.display = 'flex';
         testSection.style.display = 'none';
         finishedScreen.style.display = 'none';
+        
+        // リセット時に画像も隠す
+        targetImg.style.display = 'none';
+        targetImg.src = "";
+        
         lastState = "IDLE";
         checkConfigValidity(); // ボタン状態更新
     }
