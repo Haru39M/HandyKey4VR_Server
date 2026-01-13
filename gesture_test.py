@@ -45,7 +45,8 @@ class Logger:
             print(f"Logger Init Error: {e}", flush=True)
 
     def log_raw(self, trial_id, target_name, target_id, events):
-        server_ts = datetime.now().isoformat()
+        # ★修正: ServerTimestampをISO形式からUnixミリ秒(整数)に変更
+        server_ts = int(time.time() * 1000)
         try:
             with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
@@ -61,7 +62,7 @@ class Logger:
                         target_id,
                         event.get('type', 'unknown'),
                         event_data_str,
-                        event.get('timestamp', '')
+                        event.get('timestamp', '') # ClientTimestamp
                     ]
                     writer.writerow(row)
         except Exception as e:
@@ -89,7 +90,6 @@ class GestureTest:
         self.current_input = {} 
 
     def _load_gestures(self):
-        # パス解決のログ（デバッグ用）
         abs_path = os.path.abspath(self.gestures_file)
         print(f"[GestureTest] Loading gestures from: {abs_path}", flush=True)
         
@@ -102,41 +102,31 @@ class GestureTest:
                 data = json.load(f)
                 gestures_list = []
                 
-                # Case 1: Rootがリストの場合（古い形式）
                 if isinstance(data, list):
                     gestures_list = data
-                
-                # Case 2: Rootが辞書の場合（新しい形式 "Gestures": {...}）
                 elif isinstance(data, dict):
-                    # "Gestures" キーが存在するか確認
                     if 'Gestures' in data and isinstance(data['Gestures'], dict):
                         for id_key, g_data in data['Gestures'].items():
-                            # 辞書データにIDが含まれていない場合、キーをIDとして埋め込む
                             if 'ID' not in g_data:
                                 try:
-                                    g_data['ID'] = int(id_key) # 数値として扱えるならintに
+                                    g_data['ID'] = int(id_key)
                                 except:
-                                    g_data['ID'] = id_key      # 無理なら文字列のまま
+                                    g_data['ID'] = id_key
                             gestures_list.append(g_data)
-                    
-                    # 古い形式 "gestures": [...] の場合
                     elif 'gestures' in data and isinstance(data['gestures'], list):
                         gestures_list = data['gestures']
-                    
                     else:
                         print(f"[GestureTest] Warning: Valid 'Gestures' key not found in JSON dict.", flush=True)
 
-                # 'ID'キーを持つ要素のみを有効とする
                 valid_gestures = [g for g in gestures_list if isinstance(g, dict) and 'ID' in g]
                 
                 if not valid_gestures:
                     print(f"[GestureTest] Warning: No valid gestures found (checked for 'ID' key).", flush=True)
                 else:
-                    # ID順にソートしておく（見やすさのため）
                     try:
                         valid_gestures.sort(key=lambda x: int(x['ID']))
                     except:
-                        pass # IDが混在している場合はソートしない
+                        pass 
                     print(f"[GestureTest] Successfully loaded {len(valid_gestures)} gestures.", flush=True)
                     
                 return valid_gestures
@@ -198,7 +188,7 @@ class GestureTest:
     def update_input(self, data):
         """外部からの入力データ更新"""
         if self.state == STATE_IDLE:
-            print(f"[GestureTest] WARNING: Received input but State is IDLE. Please START the test first.", flush=True)
+            # アイドル中の入力は無視（Warningを出すとログが汚れるので抑制してもよい）
             return
 
         if self.current_input is None:
@@ -225,15 +215,19 @@ class GestureTest:
                     print(f"[GestureTest] Hand OPEN detected. Moving to COUNTDOWN.", flush=True)
                     self.state = STATE_COUNTDOWN
                     self.countdown_start_time = time.time()
-                # else: pass
                     
             elif self.state == STATE_COUNTDOWN:
                 if time.time() - self.countdown_start_time >= 3.0:
-                    print(f"[GestureTest] Countdown finished. Moving to MEASURING.", flush=True)
+                    print(f"[GestureTest] Countdown finished. Waiting for Client Render Trigger...", flush=True)
                     self.state = STATE_MEASURING
-                    self.measure_start_time = time.time()
+                    # ★重要: ここではまだ start_time を入れない。クライアントが表示したというログを待つ。
+                    self.measure_start_time = None 
                 
             elif self.state == STATE_MEASURING:
+                # ★修正: 計測開始時刻（＝クライアントでの画像表示）が確定するまで、マッチ判定を行わない
+                if self.measure_start_time is None:
+                    return
+
                 target = self.target_gesture
                 if self._check_match(target, self.current_input):
                     if self.match_start_time is None:
@@ -253,42 +247,30 @@ class GestureTest:
                 val = val.strip().upper()
                 
             if val != 'OPEN':
-                if self.state == STATE_WAIT_HAND_OPEN:
-                    # デバッグ用: 頻繁に出る場合はコメントアウト
-                    print(f"[GestureTest] Hand Check Failed. Finger: {finger}, Value: '{raw_val}' -> Normalized: '{val}'", flush=True)
                 return False
         return True
 
     def _check_match(self, target, input_data):
         if not target: return False
         
-        # 新しいJSON構造では "State" キーの下に指の状態がある
         target_states = target.get('State', {})
-        # もし "State" がなければ、ターゲット自体がフラットな辞書である可能性も考慮（古い形式への後方互換）
         if not target_states:
              target_states = target
 
         for finger in ['T', 'I', 'M', 'R', 'P']:
-            # ターゲットの値は文字列 "OPEN" または リスト ["OPEN", "TOUCH"] の可能性がある
             target_val_or_list = target_states.get(finger)
             input_val = input_data.get(finger)
             
-            # 入力の正規化
             if isinstance(input_val, str):
                 input_val = input_val.strip().upper()
             
-            # ターゲット定義がない指は無視（今回は全ての指が定義されている前提）
             if target_val_or_list is None:
                 continue
 
-            # 判定ロジック
             if isinstance(target_val_or_list, list):
-                # リストの場合: 入力値がリストのいずれかと一致すればOK
-                # リスト内の要素も大文字前提とする（必要ならここで正規化ループ）
                 if input_val not in target_val_or_list:
                     return False
             else:
-                # 文字列の場合: 完全一致チェック
                 t_str = str(target_val_or_list).strip().upper()
                 if t_str != input_val:
                     return False
@@ -296,19 +278,20 @@ class GestureTest:
         return True
 
     def _process_match(self):
-        print(f"[GestureTest] Match confirmed! Trial {self.completed_trials + 1} completed.", flush=True)
-        self._process_trial_completion()
+        duration = (self.match_start_time - self.measure_start_time) * 1000 if self.measure_start_time else 0
+        print(f"[GestureTest] Match! Trial {self.completed_trials + 1} done. RT: {duration:.2f}ms", flush=True)
+        
         self.completed_trials += 1
         self._next_trial()
 
     def check_state(self):
         try:
-            # ★修正: ポーリング時にも時間経過による状態遷移をチェックする
+            # ポーリング時にも時間経過による状態遷移をチェック
             if self.state == STATE_COUNTDOWN and self.countdown_start_time:
                 if time.time() - self.countdown_start_time >= 3.0:
-                    print(f"[GestureTest] Countdown finished (in check_state). Moving to MEASURING.", flush=True)
+                    print(f"[GestureTest] Countdown finished (in check_state). Waiting for Trigger...", flush=True)
                     self.state = STATE_MEASURING
-                    self.measure_start_time = time.time()
+                    self.measure_start_time = None # Trigger待ち
 
             remaining = 0
             if self.state == STATE_COUNTDOWN and self.countdown_start_time:
@@ -335,13 +318,22 @@ class GestureTest:
             print(f"Error in check_state: {e}", flush=True)
             return {"state": "ERROR", "error": str(e)}
 
-    def _process_trial_completion(self):
-        pass
-
     def log_client_events(self, events):
+        """クライアントから送られてきたログを処理する"""
         if self.logger and events:
             current_trial = self.completed_trials + 1
             tg = self.target_gesture
             t_name = tg['GestureName'] if tg else "None"
             t_id = tg['ID'] if tg else -1
             self.logger.log_raw(current_trial, t_name, t_id, events)
+
+            # ★追加: クライアントからの「表示完了」イベントを探してタイマースタート
+            for event in events:
+                if event.get('type') == 'system':
+                    data = event.get('data', {})
+                    # クライアントが表示完了した瞬間のイベント
+                    if data.get('action') == "stimulus_rendered_on_client":
+                         # 現在計測待機中（MEASURINGだがStartしてない）場合のみスタート
+                         if self.state == STATE_MEASURING and self.measure_start_time is None:
+                             self.measure_start_time = time.time()
+                             print(f"[GestureTest] Client Render Trigger Received. Timer STARTED at {self.measure_start_time}", flush=True)

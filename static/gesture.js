@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let isTestRunning = false;
     let eventLogBuffer = [];
     let lastState = "IDLE"; // ステート遷移検知用
+    
+    // ★追加: 画像表示済みかどうかを管理するID
+    let lastRenderedTrialId = -1;
 
     // ============================================
     //  CONFIG VALIDATION
@@ -36,8 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const handVal = handInput.value;
         const condVal = condInput.value;
         
-        // CSSの :disabled 疑似クラスにスタイルを任せるため、
-        // JSでは disabled プロパティの切り替えのみを行います。
         if (idVal && handVal && condVal) {
             startBtn.disabled = false;
         } else {
@@ -59,9 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
         eventLogBuffer.push({
             type: type,
             data: data, 
-            timestamp: Date.now() 
+            timestamp: Date.now() // JS側は参考値として残すが、解析の主役はサーバー時刻
         });
 
+        // バッファがある程度溜まるか、重要なイベントなら送信
         if (eventLogBuffer.length >= 5 || type === 'state_change' || type === 'state_input') {
             uploadLogs();
         }
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } catch (e) {
             console.error("Log upload failed:", e);
+            // 失敗したら戻す（順序が変わる可能性があるが、ロストよりマシ）
             eventLogBuffer = [...dataToSend, ...eventLogBuffer];
         }
     }
@@ -141,20 +144,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startPolling() {
         if (pollingInterval) clearInterval(pollingInterval);
-        pollingInterval = setInterval(checkState, 100); 
+        // ★修正: 100ms -> 10ms (100Hz) に変更して反応速度を高める
+        pollingInterval = setInterval(checkState, 10); 
     }
 
     async function checkState() {
         try {
             const res = await fetch('/gesture/state');
             if (!res.ok) {
-                // サーバーダウン時などの処理
                 console.warn("Polling response not OK:", res.status);
                 return;
             }
             const data = await res.json(); 
 
-            // ★サーバーがIDLEに戻っている（再起動された）場合の検知
             if (isTestRunning && data.state === 'IDLE') {
                 alert("Server reset detected. The test will be aborted. Please start again.");
                 resetToConfig();
@@ -173,11 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     from: lastState,
                     to: data.state
                 }));
-
-                if (data.current_input) {
-                    logEvent('state_input', JSON.stringify(data.current_input));
-                }
-
                 lastState = data.state;
             }
 
@@ -191,12 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.display = 'flex';
                 overlayText.textContent = "Please Open Hand";
                 matchIndicator.style.visibility = 'hidden';
-                // 念のため画像を隠す（前の画像が残らないようにする場合）
                 targetImg.style.display = 'none';
+                
+                // 新しい試行の準備としてIDリセット（念のため）
+                // ただし reset は COUNTDOWN 遷移時の方が安全かも
             } else if (data.state === 'COUNTDOWN') {
                 overlay.style.display = 'flex';
                 overlayText.textContent = `Get Ready... ${Math.ceil(data.countdown_remaining)}`;
                 matchIndicator.style.visibility = 'hidden';
+                
+                // カウントダウン中に次回の描画準備
+                // lastRenderedTrialId はまだ更新しない
             } else if (data.state === 'MEASURING') {
                 overlay.style.display = 'none';
                 matchIndicator.style.visibility = 'visible';
@@ -206,15 +208,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!imgName) {
                         imgName = `gesture_${data.target.GestureName.toLowerCase()}.png`;
                     }
+                    // 画像ソース更新
                     if (targetImg.src.indexOf(imgName) === -1) {
                         targetImg.src = `/gesture_images/${imgName}`;
                     }
                     
-                    // 【修正箇所】ここで画像を表示状態にする
+                    // 画像表示
                     targetImg.style.display = 'inline-block';
-
                     targetName.textContent = data.target.GestureName;
                     targetDesc.textContent = data.target.Description || "";
+
+                    // ★重要: 新しい試行で画像が表示された瞬間にサーバーへ通知を送る
+                    if (data.current_trial !== lastRenderedTrialId) {
+                        lastRenderedTrialId = data.current_trial;
+
+                        // サーバーへ「今表示した！」と伝える
+                        logEvent('system', { 
+                            action: "stimulus_rendered_on_client",
+                            trial_id: data.current_trial 
+                        });
+                        
+                        // 遅延なく即座に送信する
+                        uploadLogs();
+                    }
                 }
 
                 if (data.is_match) {
@@ -260,11 +276,11 @@ document.addEventListener('DOMContentLoaded', () => {
         testSection.style.display = 'none';
         finishedScreen.style.display = 'none';
         
-        // リセット時に画像も隠す
         targetImg.style.display = 'none';
         targetImg.src = "";
         
         lastState = "IDLE";
-        checkConfigValidity(); // ボタン状態更新
+        lastRenderedTrialId = -1; // リセット
+        checkConfigValidity();
     }
 });
