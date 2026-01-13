@@ -36,8 +36,23 @@ input, select {
 button {
     background-color: #007bff; color: white; border: none;
     padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;
+    /* 色の変化を少し滑らかにする場合 */
+    transition: background-color 0.2s, opacity 0.2s; 
 }
 button:hover { background-color: #0056b3; }
+
+button:disabled {
+    background-color: #888;   /* 背景をグレーに */
+    color: #eee;              /* 文字色を少し薄く */
+    cursor: not-allowed;      /* カーソルを禁止マークに */
+    opacity: 0.6;             /* 全体を少し半透明に */
+}
+
+/* disabled時はホバーしても色を変えない（上の定義を打ち消す） */
+button:disabled:hover {
+    background-color: #888;
+}
+
 a { color: #aaa; text-decoration: none; }
 
 /* Overlay (Countdown / Instruction) */

@@ -36,15 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const handVal = handInput.value;
         const condVal = condInput.value;
         
+        // CSSの :disabled 疑似クラスにスタイルを任せるため、
+        // JSでは disabled プロパティの切り替えのみを行います。
         if (idVal && handVal && condVal) {
             startBtn.disabled = false;
-            startBtn.style.opacity = '1';
-            startBtn.style.cursor = 'pointer';
-            startBtn.style.backgroundColor = '#4caf50';
         } else {
             startBtn.disabled = true;
-            startBtn.style.opacity = '0.5';
-            startBtn.style.cursor = 'not-allowed';
         }
     }
 
