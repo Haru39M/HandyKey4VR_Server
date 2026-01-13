@@ -14,23 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetImg = document.getElementById('target-img');
     const targetName = document.getElementById('target-name');
     const targetDesc = document.getElementById('target-desc');
-    const matchIndicator = document.getElementById('match-indicator');
-    const progressText = document.getElementById('progress-text');
     
+    const matchIndicator = document.getElementById('match-indicator');
+    // ★追加: プログレスバー
+    const matchProgressBar = document.getElementById('match-progress-bar');
+    
+    const progressText = document.getElementById('progress-text');
     const overlay = document.getElementById('overlay-message');
     const overlayText = document.getElementById('overlay-text');
 
     const fingerIds = ['T', 'I', 'M', 'R', 'P'];
     let pollingInterval = null;
 
-    // --- State Management for Logging ---
     let isTestRunning = false;
     let eventLogBuffer = [];
     
-    // 画像表示済みかどうかを管理するID
     let lastRenderedTrialId = -1;
-
-    // ポーリング重複防止用のフラグ
     let isFetchingState = false;
 
     // ============================================
@@ -84,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } catch (e) {
             console.error("Log upload failed:", e);
-            // 失敗したらバッファに戻す
             eventLogBuffer = [...dataToSend, ...eventLogBuffer];
         }
     }
@@ -145,36 +143,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startPolling() {
         if (pollingInterval) clearInterval(pollingInterval);
-        isFetchingState = false; // フラグ初期化
-        // ★修正: 10ms -> 33ms (約30Hz) に緩和して通信エラーを回避
+        isFetchingState = false; 
         pollingInterval = setInterval(checkState, 33); 
     }
 
     async function checkState() {
-        // 前回の通信処理が終わっていなければスキップ (多重実行防止)
         if (isFetchingState) return;
         isFetchingState = true;
 
         try {
-            // ★追加: 送信失敗してバッファに残っているログがあれば再送を試みる
-            // これにより「画像表示ログ」が届かずに判定が始まらない問題を解消
             if (eventLogBuffer.length > 0) {
                 await uploadLogs();
             }
 
             const res = await fetch('/gesture/state');
             if (!res.ok) {
-                // サーバーエラー時は無理に続けずログ出力のみ
                 console.warn("Polling response not OK:", res.status);
                 return;
             }
             const data = await res.json(); 
 
-            // テスト停止済みなら処理しない
             if (!isTestRunning) return;
 
             if (data.state === 'IDLE') {
-                // サーバー側でリセットされた場合
                 alert("Server reset detected. The test will be aborted.");
                 resetToConfig();
                 return;
@@ -186,23 +177,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateHandStatus(data.current_input);
             }
 
-            // ★削除: state_change のログ記録はサーバー側で行うため、ここでは削除
-
-            // State Handling
             if (data.state === 'COMPLETED') {
-                await finishTest(); // awaitを追加
-                return; // 完了したら即抜ける
+                await finishTest(); 
+                return; 
             }
 
             if (data.state === 'WAIT_HAND_OPEN') {
                 overlay.style.display = 'flex';
                 overlayText.textContent = "Please Open Hand";
                 matchIndicator.style.visibility = 'hidden';
+                matchProgressBar.style.width = '0%'; // リセット
                 targetImg.style.display = 'none';
             } else if (data.state === 'COUNTDOWN') {
                 overlay.style.display = 'flex';
                 overlayText.textContent = `Get Ready... ${Math.ceil(data.countdown_remaining)}`;
                 matchIndicator.style.visibility = 'hidden';
+                matchProgressBar.style.width = '0%'; // リセット
             } else if (data.state === 'MEASURING') {
                 overlay.style.display = 'none';
                 matchIndicator.style.visibility = 'visible';
@@ -220,7 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     targetName.textContent = data.target.GestureName;
                     targetDesc.textContent = data.target.Description || "";
 
-                    // 画像が表示された瞬間に通知
                     if (data.current_trial !== lastRenderedTrialId) {
                         lastRenderedTrialId = data.current_trial;
 
@@ -229,13 +218,19 @@ document.addEventListener('DOMContentLoaded', () => {
                             trial_id: data.current_trial 
                         });
                         
-                        await uploadLogs(); // 即時送信
+                        await uploadLogs(); 
                     }
                 }
 
+                // ★修正: サーバーからの進捗率でバーを更新
+                const progress = data.match_progress || 0.0;
+                matchProgressBar.style.width = `${progress * 100}%`;
+
+                // インジケーター表示
                 if (data.is_match) {
                     matchIndicator.textContent = "MATCH";
                     matchIndicator.className = "indicator match";
+                    matchProgressBar.style.width = '100%'; // 念のため100%に
                 } else {
                     matchIndicator.textContent = "GO!";
                     matchIndicator.className = "indicator mismatch";
@@ -245,7 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (e) {
             console.error("Polling error:", e);
         } finally {
-            // 処理が終わったらフラグを下ろす
             isFetchingState = false;
         }
     }
@@ -263,9 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function finishTest() {
-        if (!isTestRunning) return; // 多重実行防止
+        if (!isTestRunning) return; 
         
-        // 先にポーリングを確実に止める
         if (pollingInterval) {
             clearInterval(pollingInterval);
             pollingInterval = null;
@@ -298,6 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         targetImg.style.display = 'none';
         targetImg.src = "";
+        matchProgressBar.style.width = '0%';
         
         lastRenderedTrialId = -1;
         checkConfigValidity();
