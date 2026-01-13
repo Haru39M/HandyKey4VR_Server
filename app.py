@@ -1,4 +1,4 @@
-# import kenlm
+import kenlm
 import os
 import json
 from flask import Flask, render_template, request, jsonify, send_from_directory
@@ -18,12 +18,8 @@ def get_predictor():
         print("[App] Model loaded.")
     return _predictor
 
-# タイピングテスト用
-tester = TypingTest()
-tester.loadPhraseSet('phrases2.txt')
-
 # =================================================
-#  【修正】ジェスチャーテスト用：絶対パスで指定
+#  【修正】パス設定 (app.pyより移植)
 # =================================================
 # app.py のあるディレクトリを基準にする
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -33,20 +29,18 @@ IMAGES_DIR = os.path.join(BASE_DIR, 'gestures', 'gesture_images')
 
 print(f"[App] Initializing GestureTest with path: {GESTURES_PATH}")
 
-# ファイル存在チェック（起動時に確認）
+# ファイル存在チェック
 if not os.path.exists(GESTURES_PATH):
     print(f"[App] CRITICAL WARNING: gestures.json NOT FOUND at {GESTURES_PATH}")
-    # フォルダの中身を表示してデバッグ
-    gestures_dir = os.path.join(BASE_DIR, 'gestures')
-    if os.path.exists(gestures_dir):
-        print(f"[App] Contents of {gestures_dir}: {os.listdir(gestures_dir)}")
-    else:
-        print(f"[App] Directory {gestures_dir} does not exist either.")
 
-# 画像ディレクトリのチェックも追加
 if not os.path.exists(IMAGES_DIR):
     print(f"[App] CRITICAL WARNING: Images directory NOT FOUND at {IMAGES_DIR}")
 
+# タイピングテスト用
+tester = TypingTest()
+tester.loadPhraseSet('phrases2.txt')
+
+# ジェスチャーテスト用 (絶対パスで初期化)
 gesture_tester = GestureTest(GESTURES_PATH)
 
 app = Flask(__name__)
@@ -63,27 +57,75 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    # app_new.py の新しい予測ロジックを維持
     predictor = get_predictor()
     data = request.json
     input_word = data.get('word', '').strip()
 
     if not input_word:
-        return jsonify({'candidates': []})
-    
-    candidates = predictor.predict(input_word)
-    return jsonify({'candidates': candidates})
+        predictor.clear()
+        return jsonify({"predictions": [], "converted_index": "", "total_combinations": 0})
+
+    predictor.set_text_input(input_word)
+    ranked_predictions = predictor.predict_top_words_with_scores(limit=10,beam_width=10000)
+
+    return jsonify({
+        "predictions": ranked_predictions,
+        "input_word": input_word,
+        "converted_index": predictor.current_index_sequence,
+        "total_combinations": predictor.qwerty_combinations
+    })
+
+# --- app.py の動作するタイピングテスト用エンドポイントを復元 ---
 
 @app.route('/log', methods=['POST'])
 def log_event():
+    """app.py から移植: ログ記録"""
     data = request.json
     tester.log_event(data)
     return jsonify({'status': 'ok'})
 
 @app.route('/complete', methods=['POST'])
 def complete_trial():
+    """app.py から移植: 試行完了処理"""
     data = request.json
     result = tester.complete_trial(data)
     return jsonify(result)
+
+# --- 以下は app_new.py で変更されていた実験的エンドポイント (一時的に無効化または共存) ---
+# ※ フロントエンドが app.py 前提の場合は上記 /log, /complete が使用されます
+
+@app.route('/test/start', methods=['POST'])
+def start_test():
+    data = request.json
+    tester.configure_test(
+        data.get('participant_id', 'test'),
+        data.get('condition', 'default'),
+        data.get('max_sentences', 5),
+        data.get('handedness', 'R') # 利き手追加
+    )
+    tester.loadReferenceText()
+    return jsonify({'reference_text': tester.getReferenceText()})
+
+@app.route('/test/next', methods=['POST'])
+def next_phrase():
+    events = request.json.get('events', [])
+    if events:
+        tester.log_client_events(events)
+    tester.loadReferenceText()
+    return jsonify({'reference_text': tester.getReferenceText()})
+
+@app.route('/test/check', methods=['POST'])
+def check_input():
+    data = request.json
+    committed_words = data.get('committed_words', [])
+    events = data.get('events', [])
+    if events:
+        tester.log_client_events(events)
+    
+    result = tester.check_input(committed_words)
+    return jsonify(result)
+
 
 # =================================================
 #  ジェスチャーテスト関連
@@ -96,7 +138,7 @@ def gesture_page():
 
 @app.route('/gesture_images/<path:filename>')
 def serve_gesture_image(filename):
-    # 絶対パスを使用するよう修正
+    # 絶対パスを使用するよう修正 (app.py仕様)
     return send_from_directory(IMAGES_DIR, filename)
 
 @app.route('/gesture/start', methods=['POST'])
@@ -115,7 +157,7 @@ def start_gesture_test():
 def update_gesture_input():
     try:
         data = request.json
-        # Debug: 受信データを確認 (頻度が高い場合はコメントアウト)
+        # Debug: 受信データを確認
         # print(f"[App] Received gesture input: {data}")
         
         if data:
@@ -132,7 +174,7 @@ def get_gesture_state():
 
 @app.route('/gesture/log', methods=['POST'])
 def gesture_log():
-    """クライアント側からのログデータを受け取る"""
+    """クライアント側からのログデータを受け取る (app.pyより移植)"""
     try:
         events = request.json
         if events:
@@ -142,5 +184,7 @@ def gesture_log():
         print(f"Log Error: {e}")
         return jsonify({"status": "error"}), 500
 
+
 if __name__ == '__main__':
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(host='0.0.0.0', port=5000, debug=True)
