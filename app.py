@@ -1,5 +1,5 @@
 # import kenlm
-# import os
+import os
 import json
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from word_predictor import WordPredictor
@@ -22,8 +22,32 @@ def get_predictor():
 tester = TypingTest()
 tester.loadPhraseSet('phrases2.txt')
 
-# ジェスチャーテスト用
-gesture_tester = GestureTest('gestures/gestures.json')
+# =================================================
+#  【修正】ジェスチャーテスト用：絶対パスで指定
+# =================================================
+# app.py のあるディレクトリを基準にする
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+GESTURES_PATH = os.path.join(BASE_DIR, 'gestures', 'gestures.json')
+# 画像ディレクトリも絶対パスで定義
+IMAGES_DIR = os.path.join(BASE_DIR, 'gestures', 'gesture_images')
+
+print(f"[App] Initializing GestureTest with path: {GESTURES_PATH}")
+
+# ファイル存在チェック（起動時に確認）
+if not os.path.exists(GESTURES_PATH):
+    print(f"[App] CRITICAL WARNING: gestures.json NOT FOUND at {GESTURES_PATH}")
+    # フォルダの中身を表示してデバッグ
+    gestures_dir = os.path.join(BASE_DIR, 'gestures')
+    if os.path.exists(gestures_dir):
+        print(f"[App] Contents of {gestures_dir}: {os.listdir(gestures_dir)}")
+    else:
+        print(f"[App] Directory {gestures_dir} does not exist either.")
+
+# 画像ディレクトリのチェックも追加
+if not os.path.exists(IMAGES_DIR):
+    print(f"[App] CRITICAL WARNING: Images directory NOT FOUND at {IMAGES_DIR}")
+
+gesture_tester = GestureTest(GESTURES_PATH)
 
 app = Flask(__name__)
 
@@ -44,55 +68,22 @@ def predict():
     input_word = data.get('word', '').strip()
 
     if not input_word:
-        predictor.clear()
-        return jsonify({"predictions": [], "converted_index": "", "total_combinations": 0})
-
-    predictor.set_text_input(input_word)
-    ranked_predictions = predictor.predict_top_words_with_scores(limit=10,beam_width=10000)
-
-    return jsonify({
-        "predictions": ranked_predictions,
-        "input_word": input_word,
-        "converted_index": predictor.current_index_sequence,
-        "total_combinations": predictor.qwerty_combinations
-    })
-
-@app.route('/test/start', methods=['POST'])
-def start_test():
-    data = request.json
-    tester.configure_test(
-        data.get('participant_id', 'test'),
-        data.get('condition', 'default'),
-        data.get('max_sentences', 5),
-        data.get('handedness', 'R') # 利き手追加
-    )
-    tester.loadReferenceText()
-    return jsonify({'reference_text': tester.getReferenceText()})
-
-@app.route('/test/next', methods=['POST'])
-def next_phrase():
-    events = request.json.get('events', [])
-    if events:
-        tester.log_client_events(events)
-    tester.loadReferenceText()
-    return jsonify({'reference_text': tester.getReferenceText()})
-
-@app.route('/test/check', methods=['POST'])
-def check_input():
-    data = request.json
-    committed_words = data.get('committed_words', [])
-    events = data.get('events', [])
-    if events:
-        tester.log_client_events(events)
+        return jsonify({'candidates': []})
     
-    result = tester.check_input(committed_words)
+    candidates = predictor.predict(input_word)
+    return jsonify({'candidates': candidates})
+
+@app.route('/log', methods=['POST'])
+def log_event():
+    data = request.json
+    tester.log_event(data)
+    return jsonify({'status': 'ok'})
+
+@app.route('/complete', methods=['POST'])
+def complete_trial():
+    data = request.json
+    result = tester.complete_trial(data)
     return jsonify(result)
-
-# @app.route('/test/backspace', methods=['POST'])
-# def notify_backspace():
-#     tester.increment_backspace()
-#     return jsonify({"status": "ok"})
-
 
 # =================================================
 #  ジェスチャーテスト関連
@@ -105,7 +96,8 @@ def gesture_page():
 
 @app.route('/gesture_images/<path:filename>')
 def serve_gesture_image(filename):
-    return send_from_directory('gestures/gesture_images', filename)
+    # 絶対パスを使用するよう修正
+    return send_from_directory(IMAGES_DIR, filename)
 
 @app.route('/gesture/start', methods=['POST'])
 def start_gesture_test():
@@ -121,10 +113,17 @@ def start_gesture_test():
 
 @app.route('/gesture/input', methods=['POST'])
 def update_gesture_input():
-    data = request.json
-    if data:
-        gesture_tester.update_input(data)
-    return jsonify({"status": "updated"})
+    try:
+        data = request.json
+        # Debug: 受信データを確認 (頻度が高い場合はコメントアウト)
+        # print(f"[App] Received gesture input: {data}")
+        
+        if data:
+            gesture_tester.update_input(data)
+        return jsonify({"status": "updated"})
+    except Exception as e:
+        print(f"[App] Error in update_gesture_input: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 400
 
 @app.route('/gesture/state', methods=['GET'])
 def get_gesture_state():
@@ -133,12 +132,15 @@ def get_gesture_state():
 
 @app.route('/gesture/log', methods=['POST'])
 def gesture_log():
-    data = request.json
-    events = data.get('events', [])
-    if events:
-        gesture_tester.log_client_events(events)
-    return jsonify({"status": "ok"})
+    """クライアント側からのログデータを受け取る"""
+    try:
+        events = request.json
+        if events:
+            gesture_tester.log_client_events(events)
+        return jsonify({"status": "logged"})
+    except Exception as e:
+        print(f"Log Error: {e}")
+        return jsonify({"status": "error"}), 500
 
 if __name__ == '__main__':
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(host='0.0.0.0', port=5000, debug=True)

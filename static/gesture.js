@@ -29,169 +29,183 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastState = "IDLE"; // ステート遷移検知用
 
     // ============================================
-    //  LOGGING HELPER (app.jsと同様の実装)
+    //  CONFIG VALIDATION
     // ============================================
-    function logEvent(type, data) {
-        if (!isTestRunning && type !== 'system') return; // systemイベントはtest開始前でも許可する場合あり
-        eventLogBuffer.push({
-            type: type,
-            data: data,
-            timestamp: Date.now() // Client side timestamp (ms)
-        });
+    function checkConfigValidity() {
+        const idVal = idInput.value.trim();
+        const handVal = handInput.value;
+        const condVal = condInput.value;
+        
+        if (idVal && handVal && condVal) {
+            startBtn.disabled = false;
+            startBtn.style.opacity = '1';
+            startBtn.style.cursor = 'pointer';
+        } else {
+            startBtn.disabled = true;
+            startBtn.style.opacity = '0.5';
+            startBtn.style.cursor = 'not-allowed';
+        }
     }
 
-    function flushLogs() {
-        const logsToSend = [...eventLogBuffer];
-        eventLogBuffer = [];
-        return logsToSend;
+    idInput.addEventListener('input', checkConfigValidity);
+    handInput.addEventListener('change', checkConfigValidity);
+    condInput.addEventListener('change', checkConfigValidity);
+    checkConfigValidity();
+
+    // ============================================
+    //  LOGGING HELPER
+    // ============================================
+    function logEvent(type, data) {
+        if (!isTestRunning && type !== 'system') return;
+        
+        eventLogBuffer.push({
+            type: type,
+            data: data, 
+            timestamp: Date.now() 
+        });
+
+        if (eventLogBuffer.length >= 5 || type === 'state_change' || type === 'state_input') {
+            uploadLogs();
+        }
     }
 
     async function uploadLogs() {
-        const logs = flushLogs();
-        if (logs.length === 0) return;
+        if (eventLogBuffer.length === 0) return;
+
+        const dataToSend = [...eventLogBuffer];
+        eventLogBuffer = []; 
 
         try {
-            // ログ送信専用のエンドポイントへPOST（サーバー側で実装が必要）
-            // または、既存の通信に乗せる設計の場合はそれに合わせる
-            await fetch('/gesture/log', { 
-                method: 'POST', 
+            await fetch('/gesture/log', {
+                method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ events: logs })
+                body: JSON.stringify(dataToSend)
             });
         } catch (e) {
             console.error("Log upload failed:", e);
-            // 送信失敗時はバッファに戻す簡易実装（順序が狂う可能性があるため、本番ではより厳密なQueue管理が必要）
-            // ここでは簡易的にエラーログのみ
+            eventLogBuffer = [...dataToSend, ...eventLogBuffer];
         }
     }
 
-    // --- Validation Logic ---
-    function checkValidation() {
-        const isIdValid = debugMode.checked || idInput.value.trim() !== "";
-        const isHandSelected = handInput.value !== "";
-        const isCondSelected = condInput.value !== "";
-        const isTrialsValid = trialsInput.value > 0;
+    // ============================================
+    //  TEST FLOW
+    // ============================================
 
-        if (isIdValid && isHandSelected && isCondSelected && isTrialsValid) {
-            startBtn.disabled = false;
-            startBtn.style.backgroundColor = "#007bff";
-            startBtn.style.cursor = "pointer";
-        } else {
-            startBtn.disabled = true;
-            startBtn.style.backgroundColor = "#ccc";
-            startBtn.style.cursor = "not-allowed";
-        }
-    }
-
-    [idInput, debugMode, handInput, condInput, trialsInput].forEach(el => {
-        el.addEventListener('input', checkValidation);
-        el.addEventListener('change', checkValidation);
-    });
-
-    // テスト開始
     startBtn.addEventListener('click', async () => {
-        const pid = debugMode.checked ? "debug-"+idInput.value : idInput.value;
-        const hand = handInput.value;
-        const cond = condInput.value;
-        const maxTrials = trialsInput.value;
+        if (startBtn.disabled) return;
 
-        // Startイベントをログ
-        logEvent('system', { 
-            action: 'test_start_click',
-            participant_id: pid,
-            condition: cond
-        });
+        const pId = idInput.value.trim();
+        const handVal = handInput.value;
+        const condVal = condInput.value;
+        
+        const finalId = debugMode.checked && !pId.includes('debug') ? `debug-${pId}` : pId;
+
+        const config = {
+            participant_id: finalId,
+            condition: condVal,
+            handedness: handVal,
+            max_trials: parseInt(trialsInput.value)
+        };
+
+        logEvent('system', JSON.stringify({ 
+            action: "test_start_click",
+            participant_id: finalId,
+            condition: config.condition
+        }));
 
         try {
-            await fetch('/gesture/start', {
+            const res = await fetch('/gesture/start', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    participant_id: pid,
-                    condition: cond,
-                    max_trials: maxTrials,
-                    handedness: hand
-                })
+                body: JSON.stringify(config)
             });
 
-            isTestRunning = true;
-            configSection.style.display = 'none';
-            testSection.style.display = 'block';
-            
-            if (pollingInterval) clearInterval(pollingInterval);
-            // ステート更新とログ送信を行うループを開始
-            pollingInterval = setInterval(async () => {
-                await updateState();
-                await uploadLogs(); // バッファがあれば送信
-            }, 100);
+            if (!res.ok) {
+                const errText = await res.text();
+                throw new Error(`Server Error (${res.status}):\n${errText}`);
+            }
 
+            const data = await res.json();
+            
+            if (data.status === 'started') {
+                isTestRunning = true;
+                configSection.style.display = 'none';
+                testSection.style.display = 'block';
+                startPolling();
+            } else {
+                throw new Error("Unknown status received from server");
+            }
         } catch (e) {
             console.error(e);
-            alert("Error starting test");
+            alert(`Failed to start test:\n${e.message}`);
         }
     });
 
-    async function updateState() {
+    function startPolling() {
+        if (pollingInterval) clearInterval(pollingInterval);
+        pollingInterval = setInterval(checkState, 100); 
+    }
+
+    async function checkState() {
         try {
             const res = await fetch('/gesture/state');
-            const data = await res.json();
+            if (!res.ok) {
+                // サーバーダウン時などの処理
+                console.warn("Polling response not OK:", res.status);
+                return;
+            }
+            const data = await res.json(); 
 
-            // --- ステート遷移の検知とロギング ---
-            if (data.state !== lastState) {
-                logEvent('state_change', { from: lastState, to: data.state });
-                
-                // MEASURINGになった瞬間 = ターゲット画像が表示された瞬間
-                if (data.state === "MEASURING" && data.target) {
-                    logEvent('stimulus_shown', { 
-                        target_name: data.target.GestureName,
-                        target_id: data.target.GestureID // IDがあれば
-                    });
+            // ★サーバーがIDLEに戻っている（再起動された）場合の検知
+            if (isTestRunning && data.state === 'IDLE') {
+                alert("Server reset detected. The test will be aborted. Please start again.");
+                resetToConfig();
+                return;
+            }
+
+            progressText.textContent = `Trial: ${data.current_trial} / ${data.total_trials}`;
+            
+            if (data.current_input) {
+                updateHandStatus(data.current_input);
+            }
+
+            // State Change Detection & Logging
+            if (lastState !== data.state) {
+                logEvent('state_change', JSON.stringify({
+                    from: lastState,
+                    to: data.state
+                }));
+
+                if (data.current_input) {
+                    logEvent('state_input', JSON.stringify(data.current_input));
                 }
+
                 lastState = data.state;
             }
 
-            if (!data.is_running && data.state === "COMPLETED") {
+            // State Handling
+            if (data.state === 'COMPLETED') {
                 finishTest();
                 return;
             }
 
-            if (data.progress) progressText.textContent = data.progress;
-
-            if (data.current_input) {
-                fingerIds.forEach(fid => {
-                    const el = document.querySelector(`#f-${fid} .f-val`);
-                    const val = data.current_input[fid];
-                    el.textContent = val;
-                });
-            }
-
-            // --- ステートごとの表示制御 ---
-            if (data.state === "WAIT_HAND_OPEN") {
-                overlay.style.display = "flex";
+            if (data.state === 'WAIT_HAND_OPEN') {
+                overlay.style.display = 'flex';
                 overlayText.textContent = "Please Open Hand";
-                targetImg.style.display = "none";
-                targetName.textContent = "???";
-                targetDesc.textContent = "Waiting...";
-                matchIndicator.textContent = "WAIT";
-                matchIndicator.className = "indicator mismatch";
-
-            } else if (data.state === "COUNTDOWN") {
-                overlay.style.display = "flex";
-                targetImg.style.display = "none";
-                
-                const remaining = Math.ceil(data.countdown_remaining);
-                overlayText.textContent = remaining > 0 ? remaining : "START!";
-                
-            } else if (data.state === "MEASURING") {
-                overlay.style.display = "none";
-                targetImg.style.display = "inline";
+                matchIndicator.style.visibility = 'hidden';
+            } else if (data.state === 'COUNTDOWN') {
+                overlay.style.display = 'flex';
+                overlayText.textContent = `Get Ready... ${Math.ceil(data.countdown_remaining)}`;
+                matchIndicator.style.visibility = 'hidden';
+            } else if (data.state === 'MEASURING') {
+                overlay.style.display = 'none';
+                matchIndicator.style.visibility = 'visible';
 
                 if (data.target) {
                     let imgName = data.target.Image;
                     if (!imgName) {
                         imgName = `gesture_${data.target.GestureName.toLowerCase()}.png`;
                     }
-                    // 画像のsrc変更を検知したい場合は、onloadイベントでログを取るのも有効
                     if (targetImg.src.indexOf(imgName) === -1) {
                         targetImg.src = `/gesture_images/${imgName}`;
                     }
@@ -202,8 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.is_match) {
                     matchIndicator.textContent = "MATCH";
                     matchIndicator.className = "indicator match";
-                    // マッチした瞬間をクライアント側でも記録したければここでもログ可能
-                    // ただし、サーバー側で判定しているので冗長になる可能性あり
                 } else {
                     matchIndicator.textContent = "GO!";
                     matchIndicator.className = "indicator mismatch";
@@ -215,13 +227,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function updateHandStatus(inputData) {
+        fingerIds.forEach(fid => {
+            const el = document.getElementById(`f-${fid}`).querySelector('.f-val');
+            const val = inputData[fid];
+            el.textContent = val || "---";
+            
+            if (val === 'OPEN') el.style.color = '#4caf50';
+            else if (val === 'CLOSE') el.style.color = '#f44336';
+            else el.style.color = '#ccc';
+        });
+    }
+
     async function finishTest() {
         clearInterval(pollingInterval);
         logEvent('system', 'test_finished');
-        await uploadLogs(); // 最後のログを送信
+        await uploadLogs(); 
         
         isTestRunning = false;
         testSection.style.display = 'none';
         finishedScreen.style.display = 'block';
+    }
+
+    function resetToConfig() {
+        clearInterval(pollingInterval);
+        isTestRunning = false;
+        configSection.style.display = 'flex';
+        testSection.style.display = 'none';
+        finishedScreen.style.display = 'none';
+        lastState = "IDLE";
+        checkConfigValidity(); // ボタン状態更新
     }
 });
