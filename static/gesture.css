@@ -34,12 +34,12 @@ input, select {
     border-radius: 4px;
 }
 button {
-    background-color: #007bff; color: white; border: none;
+    background-color: #28a745; color: white; border: none;
     padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;
     /* 色の変化を少し滑らかにする場合 */
     transition: background-color 0.2s, opacity 0.2s; 
 }
-button:hover { background-color: #0056b3; }
+button:hover { background-color: #289241; }
 
 button:disabled {
     background-color: #888;   /* 背景をグレーに */
@@ -70,7 +70,7 @@ a { color: #aaa; text-decoration: none; }
     font-size: 4em;
     font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 20px #007bff;
+    text-shadow: 0 0 20px #28a745;
 }
 
 /* Main Display */

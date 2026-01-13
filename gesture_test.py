@@ -31,8 +31,9 @@ class Logger:
         now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         self.log_filepath = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_gesture_raw.csv")
         
+        # ★修正1: 一番左に ServerTimestampISO を追加
         self.headers = [
-            "ServerTimestamp", "ParticipantID", "Condition", "Handedness", 
+            "ServerTimestampISO", "ServerTimestamp", "ParticipantID", "Condition", "Handedness", 
             "TrialID", "TargetGesture", "TargetID", 
             "EventType", "EventData", "ClientTimestamp"
         ]
@@ -45,15 +46,20 @@ class Logger:
             print(f"Logger Init Error: {e}", flush=True)
 
     def log_raw(self, trial_id, target_name, target_id, events):
-        # ★修正: ServerTimestampをISO形式からUnixミリ秒(整数)に変更
-        server_ts = int(time.time() * 1000)
+        # 現在時刻を取得
+        now = time.time()
+        # ★修正1: ISO形式とUnixミリ秒を同じ時刻ソースから生成
+        server_ts_iso = datetime.fromtimestamp(now).isoformat()
+        server_ts_ms = int(now * 1000)
+        
         try:
             with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 for event in events:
                     event_data_str = json.dumps(event.get('data', {}))
                     row = [
-                        server_ts,
+                        server_ts_iso,   # 新設: 読みやすい時刻
+                        server_ts_ms,    # 既存: 計算用Unixミリ秒
                         self.participant_id,
                         self.condition,
                         self.handedness,
@@ -188,7 +194,6 @@ class GestureTest:
     def update_input(self, data):
         """外部からの入力データ更新"""
         if self.state == STATE_IDLE:
-            # アイドル中の入力は無視（Warningを出すとログが汚れるので抑制してもよい）
             return
 
         if self.current_input is None:
@@ -204,6 +209,23 @@ class GestureTest:
                     normalized_data[k] = v
 
             self.current_input.update(normalized_data)
+
+            # ★修正2: 入力データのログ記録を追加 (state_input)
+            if self.logger:
+                current_trial = self.completed_trials + 1
+                tg = self.target_gesture
+                t_name = tg['GestureName'] if tg else "None"
+                t_id = tg['ID'] if tg else -1
+                
+                # 入力イベントを作成
+                input_event = {
+                    "type": "state_input",
+                    "data": normalized_data,
+                    "timestamp": int(time.time() * 1000) # サーバー時刻を記録
+                }
+                
+                self.logger.log_raw(current_trial, t_name, t_id, [input_event])
+
             self._update_state_logic()
         except Exception as e:
             print(f"Error in update_input: {e}", flush=True)
@@ -216,15 +238,35 @@ class GestureTest:
                     self.state = STATE_COUNTDOWN
                     self.countdown_start_time = time.time()
                     
+                    # 状態遷移ログ
+                    if self.logger:
+                        self.logger.log_raw(self.completed_trials + 1, 
+                                            self.target_gesture['GestureName'], 
+                                            self.target_gesture['ID'], 
+                                            [{
+                                                "type": "state_change", 
+                                                "data": {"from": STATE_WAIT_HAND_OPEN, "to": STATE_COUNTDOWN},
+                                                "timestamp": int(time.time() * 1000)
+                                            }])
+
             elif self.state == STATE_COUNTDOWN:
                 if time.time() - self.countdown_start_time >= 3.0:
                     print(f"[GestureTest] Countdown finished. Waiting for Client Render Trigger...", flush=True)
                     self.state = STATE_MEASURING
-                    # ★重要: ここではまだ start_time を入れない。クライアントが表示したというログを待つ。
                     self.measure_start_time = None 
+                    
+                    # 状態遷移ログ
+                    if self.logger:
+                        self.logger.log_raw(self.completed_trials + 1, 
+                                            self.target_gesture['GestureName'], 
+                                            self.target_gesture['ID'], 
+                                            [{
+                                                "type": "state_change", 
+                                                "data": {"from": STATE_COUNTDOWN, "to": STATE_MEASURING},
+                                                "timestamp": int(time.time() * 1000)
+                                            }])
                 
             elif self.state == STATE_MEASURING:
-                # ★修正: 計測開始時刻（＝クライアントでの画像表示）が確定するまで、マッチ判定を行わない
                 if self.measure_start_time is None:
                     return
 
@@ -281,6 +323,17 @@ class GestureTest:
         duration = (self.match_start_time - self.measure_start_time) * 1000 if self.measure_start_time else 0
         print(f"[GestureTest] Match! Trial {self.completed_trials + 1} done. RT: {duration:.2f}ms", flush=True)
         
+        # 完了ログ
+        if self.logger:
+             self.logger.log_raw(self.completed_trials + 1, 
+                                self.target_gesture['GestureName'], 
+                                self.target_gesture['ID'], 
+                                [{
+                                    "type": "state_change", 
+                                    "data": {"from": STATE_MEASURING, "to": STATE_COMPLETED if self.completed_trials + 1 >= self.max_trials else "NEXT_TRIAL"},
+                                    "timestamp": int(time.time() * 1000)
+                                }])
+
         self.completed_trials += 1
         self._next_trial()
 
@@ -327,7 +380,7 @@ class GestureTest:
             t_id = tg['ID'] if tg else -1
             self.logger.log_raw(current_trial, t_name, t_id, events)
 
-            # ★追加: クライアントからの「表示完了」イベントを探してタイマースタート
+            # クライアントからの「表示完了」イベントを探してタイマースタート
             for event in events:
                 if event.get('type') == 'system':
                     data = event.get('data', {})
