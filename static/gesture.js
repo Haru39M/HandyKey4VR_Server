@@ -28,8 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let eventLogBuffer = [];
     let lastState = "IDLE"; // ステート遷移検知用
     
-    // ★追加: 画像表示済みかどうかを管理するID
+    // 画像表示済みかどうかを管理するID
     let lastRenderedTrialId = -1;
+
+    // ★追加: ポーリング重複防止用のフラグ
+    let isFetchingState = false;
 
     // ============================================
     //  CONFIG VALIDATION
@@ -60,10 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
         eventLogBuffer.push({
             type: type,
             data: data, 
-            timestamp: Date.now() // JS側は参考値として残すが、解析の主役はサーバー時刻
+            timestamp: Date.now() 
         });
 
-        // バッファがある程度溜まるか、重要なイベントなら送信
         if (eventLogBuffer.length >= 5 || type === 'state_change' || type === 'state_input') {
             uploadLogs();
         }
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } catch (e) {
             console.error("Log upload failed:", e);
-            // 失敗したら戻す（順序が変わる可能性があるが、ロストよりマシ）
+            // 失敗したらバッファに戻す
             eventLogBuffer = [...dataToSend, ...eventLogBuffer];
         }
     }
@@ -144,21 +146,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startPolling() {
         if (pollingInterval) clearInterval(pollingInterval);
-        // ★修正: 100ms -> 10ms (100Hz) に変更して反応速度を高める
+        isFetchingState = false; // フラグ初期化
         pollingInterval = setInterval(checkState, 10); 
     }
 
     async function checkState() {
+        // ★修正: 前回の通信処理が終わっていなければスキップ (多重実行防止)
+        if (isFetchingState) return;
+        isFetchingState = true;
+
         try {
             const res = await fetch('/gesture/state');
             if (!res.ok) {
+                // サーバーエラー時は無理に続けずログ出力のみ
                 console.warn("Polling response not OK:", res.status);
                 return;
             }
             const data = await res.json(); 
 
-            if (isTestRunning && data.state === 'IDLE') {
-                alert("Server reset detected. The test will be aborted. Please start again.");
+            // テスト停止済みなら処理しない
+            if (!isTestRunning) return;
+
+            if (data.state === 'IDLE') {
+                // サーバー側でリセットされた場合
+                alert("Server reset detected. The test will be aborted.");
                 resetToConfig();
                 return;
             }
@@ -180,8 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // State Handling
             if (data.state === 'COMPLETED') {
-                finishTest();
-                return;
+                await finishTest(); // awaitを追加
+                return; // ★完了したら即抜ける
             }
 
             if (data.state === 'WAIT_HAND_OPEN') {
@@ -189,16 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlayText.textContent = "Please Open Hand";
                 matchIndicator.style.visibility = 'hidden';
                 targetImg.style.display = 'none';
-                
-                // 新しい試行の準備としてIDリセット（念のため）
-                // ただし reset は COUNTDOWN 遷移時の方が安全かも
             } else if (data.state === 'COUNTDOWN') {
                 overlay.style.display = 'flex';
                 overlayText.textContent = `Get Ready... ${Math.ceil(data.countdown_remaining)}`;
                 matchIndicator.style.visibility = 'hidden';
-                
-                // カウントダウン中に次回の描画準備
-                // lastRenderedTrialId はまだ更新しない
             } else if (data.state === 'MEASURING') {
                 overlay.style.display = 'none';
                 matchIndicator.style.visibility = 'visible';
@@ -208,28 +213,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!imgName) {
                         imgName = `gesture_${data.target.GestureName.toLowerCase()}.png`;
                     }
-                    // 画像ソース更新
                     if (targetImg.src.indexOf(imgName) === -1) {
                         targetImg.src = `/gesture_images/${imgName}`;
                     }
                     
-                    // 画像表示
                     targetImg.style.display = 'inline-block';
                     targetName.textContent = data.target.GestureName;
                     targetDesc.textContent = data.target.Description || "";
 
-                    // ★重要: 新しい試行で画像が表示された瞬間にサーバーへ通知を送る
+                    // 画像が表示された瞬間に通知
                     if (data.current_trial !== lastRenderedTrialId) {
                         lastRenderedTrialId = data.current_trial;
 
-                        // サーバーへ「今表示した！」と伝える
                         logEvent('system', { 
                             action: "stimulus_rendered_on_client",
                             trial_id: data.current_trial 
                         });
                         
-                        // 遅延なく即座に送信する
-                        uploadLogs();
+                        await uploadLogs(); // 即時送信
                     }
                 }
 
@@ -244,6 +245,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (e) {
             console.error("Polling error:", e);
+        } finally {
+            // ★処理が終わったらフラグを下ろす
+            isFetchingState = false;
         }
     }
 
@@ -260,9 +264,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function finishTest() {
-        clearInterval(pollingInterval);
+        if (!isTestRunning) return; // 多重実行防止
+        
+        // ★修正: 先にポーリングを確実に止める
+        if (pollingInterval) {
+            clearInterval(pollingInterval);
+            pollingInterval = null;
+        }
+        
         logEvent('system', 'test_finished');
-        await uploadLogs(); 
+        
+        try {
+            await uploadLogs();
+        } catch (e) {
+            console.error("Finish log upload error:", e);
+        }
         
         isTestRunning = false;
         testSection.style.display = 'none';
@@ -270,8 +286,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetToConfig() {
-        clearInterval(pollingInterval);
+        if (pollingInterval) {
+            clearInterval(pollingInterval);
+            pollingInterval = null;
+        }
         isTestRunning = false;
+        isFetchingState = false;
+        
         configSection.style.display = 'flex';
         testSection.style.display = 'none';
         finishedScreen.style.display = 'none';
@@ -280,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
         targetImg.src = "";
         
         lastState = "IDLE";
-        lastRenderedTrialId = -1; // リセット
+        lastRenderedTrialId = -1;
         checkConfigValidity();
     }
 });

@@ -31,7 +31,7 @@ class Logger:
         now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         self.log_filepath = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_gesture_raw.csv")
         
-        # ★修正1: 一番左に ServerTimestampISO を追加
+        # CSVヘッダー
         self.headers = [
             "ServerTimestampISO", "ServerTimestamp", "ParticipantID", "Condition", "Handedness", 
             "TrialID", "TargetGesture", "TargetID", 
@@ -46,9 +46,8 @@ class Logger:
             print(f"Logger Init Error: {e}", flush=True)
 
     def log_raw(self, trial_id, target_name, target_id, events):
-        # 現在時刻を取得
+        # 現在時刻
         now = time.time()
-        # ★修正1: ISO形式とUnixミリ秒を同じ時刻ソースから生成
         server_ts_iso = datetime.fromtimestamp(now).isoformat()
         server_ts_ms = int(now * 1000)
         
@@ -56,10 +55,27 @@ class Logger:
             with open(self.log_filepath, 'a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 for event in events:
-                    event_data_str = json.dumps(event.get('data', {}))
+                    raw_data = event.get('data', {})
+                    
+                    # ★修正: データが「JSON文字列」の場合は一度辞書に戻す
+                    # これにより、CSV書き込み時の二重エスケープを防ぐ
+                    if isinstance(raw_data, str):
+                        try:
+                            # 文字列が { や [ で始まる場合、JSONとしてパースを試みる
+                            stripped = raw_data.strip()
+                            if stripped.startswith('{') or stripped.startswith('['):
+                                raw_data = json.loads(raw_data)
+                        except:
+                            # パース失敗、あるいは普通の文字列ならそのまま使う
+                            pass
+                    
+                    # 辞書型(またはリスト)をJSON文字列に変換
+                    # ensure_ascii=Falseにより、日本語もそのまま記録される
+                    event_data_str = json.dumps(raw_data, ensure_ascii=False)
+                    
                     row = [
-                        server_ts_iso,   # 新設: 読みやすい時刻
-                        server_ts_ms,    # 既存: 計算用Unixミリ秒
+                        server_ts_iso,
+                        server_ts_ms,
                         self.participant_id,
                         self.condition,
                         self.handedness,
@@ -210,18 +226,17 @@ class GestureTest:
 
             self.current_input.update(normalized_data)
 
-            # ★修正2: 入力データのログ記録を追加 (state_input)
+            # ★修正: 入力データ(state_input)を確実にログに記録
             if self.logger:
                 current_trial = self.completed_trials + 1
                 tg = self.target_gesture
                 t_name = tg['GestureName'] if tg else "None"
                 t_id = tg['ID'] if tg else -1
                 
-                # 入力イベントを作成
                 input_event = {
                     "type": "state_input",
                     "data": normalized_data,
-                    "timestamp": int(time.time() * 1000) # サーバー時刻を記録
+                    "timestamp": int(time.time() * 1000) 
                 }
                 
                 self.logger.log_raw(current_trial, t_name, t_id, [input_event])
@@ -238,7 +253,6 @@ class GestureTest:
                     self.state = STATE_COUNTDOWN
                     self.countdown_start_time = time.time()
                     
-                    # 状態遷移ログ
                     if self.logger:
                         self.logger.log_raw(self.completed_trials + 1, 
                                             self.target_gesture['GestureName'], 
@@ -255,7 +269,6 @@ class GestureTest:
                     self.state = STATE_MEASURING
                     self.measure_start_time = None 
                     
-                    # 状態遷移ログ
                     if self.logger:
                         self.logger.log_raw(self.completed_trials + 1, 
                                             self.target_gesture['GestureName'], 
@@ -323,7 +336,6 @@ class GestureTest:
         duration = (self.match_start_time - self.measure_start_time) * 1000 if self.measure_start_time else 0
         print(f"[GestureTest] Match! Trial {self.completed_trials + 1} done. RT: {duration:.2f}ms", flush=True)
         
-        # 完了ログ
         if self.logger:
              self.logger.log_raw(self.completed_trials + 1, 
                                 self.target_gesture['GestureName'], 
@@ -339,12 +351,11 @@ class GestureTest:
 
     def check_state(self):
         try:
-            # ポーリング時にも時間経過による状態遷移をチェック
             if self.state == STATE_COUNTDOWN and self.countdown_start_time:
                 if time.time() - self.countdown_start_time >= 3.0:
                     print(f"[GestureTest] Countdown finished (in check_state). Waiting for Trigger...", flush=True)
                     self.state = STATE_MEASURING
-                    self.measure_start_time = None # Trigger待ち
+                    self.measure_start_time = None 
 
             remaining = 0
             if self.state == STATE_COUNTDOWN and self.countdown_start_time:
@@ -380,13 +391,10 @@ class GestureTest:
             t_id = tg['ID'] if tg else -1
             self.logger.log_raw(current_trial, t_name, t_id, events)
 
-            # クライアントからの「表示完了」イベントを探してタイマースタート
             for event in events:
                 if event.get('type') == 'system':
                     data = event.get('data', {})
-                    # クライアントが表示完了した瞬間のイベント
                     if data.get('action') == "stimulus_rendered_on_client":
-                         # 現在計測待機中（MEASURINGだがStartしてない）場合のみスタート
                          if self.state == STATE_MEASURING and self.measure_start_time is None:
                              self.measure_start_time = time.time()
                              print(f"[GestureTest] Client Render Trigger Received. Timer STARTED at {self.measure_start_time}", flush=True)
