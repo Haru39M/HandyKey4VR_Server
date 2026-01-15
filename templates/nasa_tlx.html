@@ -39,7 +39,10 @@
                     <div class="question-title">1. 精神的要求 (Mental Demand)</div>
                     <div class="question-contents">どの程度の精神的・知覚的活動が要求されましたか？</div>
                     <div class="slider-container">
-                        <input type="range" name="q1" min="0" max="100" value="50" onchange="unlockNext(2)">
+                        <input type="range" name="q1" min="0" max="100" value="50" 
+                               oninput="updateValue('val1', this.value)" 
+                               onchange="unlockNext(2)">
+                        <span id="val1" class="slider-value">50</span>
                     </div>
                     <div class="labels"><span>低い (Low)</span><span>高い (High)</span></div>
                 </div>
@@ -49,7 +52,10 @@
                     <div class="question-title">2. 身体的要求 (Physical Demand)</div>
                     <div class="question-contents">どの程度の身体的活動を必要としましたか？</div>
                     <div class="slider-container">
-                        <input type="range" name="q2" min="0" max="100" value="50" onchange="unlockNext(3)">
+                        <input type="range" name="q2" min="0" max="100" value="50" 
+                               oninput="updateValue('val2', this.value)" 
+                               onchange="unlockNext(3)">
+                        <span id="val2" class="slider-value">50</span>
                     </div>
                     <div class="labels"><span>低い (Low)</span><span>高い (High)</span></div>
                 </div>
@@ -59,7 +65,10 @@
                     <div class="question-title">3. 時間的要求 (Temporal Demand)</div>
                     <div class="question-contents" >どの程度の時間的プレッシャーを感じましたか？</div>
                     <div class="slider-container">
-                        <input type="range" name="q3" min="0" max="100" value="50" onchange="unlockNext(4)">
+                        <input type="range" name="q3" min="0" max="100" value="50" 
+                               oninput="updateValue('val3', this.value)" 
+                               onchange="unlockNext(4)">
+                        <span id="val3" class="slider-value">50</span>
                     </div>
                     <div class="labels"><span>低い (Low)</span><span>高い (High)</span></div>
                 </div>
@@ -69,7 +78,10 @@
                     <div class="question-title">4. パフォーマンス (Performance)</div>
                     <div class="question-contents" >課題の目標を達成することに、どの程度成功したと思いますか？</div>
                     <div class="slider-container">
-                        <input type="range" name="q4" min="0" max="100" value="50" onchange="unlockNext(5)">
+                        <input type="range" name="q4" min="0" max="100" value="50" 
+                               oninput="updateValue('val4', this.value)" 
+                               onchange="unlockNext(5)">
+                        <span id="val4" class="slider-value">50</span>
                     </div>
                     <div class="labels"><span>悪い (Poor)</span><span>良い (Good)</span></div>
                 </div>
@@ -79,7 +91,10 @@
                     <div class="question-title">5. 努力 (Effort)</div>
                     <div class="question-contents" >課題の目標を達成するために、どの程度の努力を必要としましたか？</div>
                     <div class="slider-container">
-                        <input type="range" name="q5" min="0" max="100" value="50" onchange="unlockNext(6)">
+                        <input type="range" name="q5" min="0" max="100" value="50" 
+                               oninput="updateValue('val5', this.value)" 
+                               onchange="unlockNext(6)">
+                        <span id="val5" class="slider-value">50</span>
                     </div>
                     <div class="labels"><span>少ない (Low)</span><span>多い (High)</span></div>
                 </div>
@@ -89,7 +104,10 @@
                     <div class="question-title">6. 不満 (Frustration)</div>
                     <div class="question-contents" >作業中にどの程度のイライラを感じましたか？</div>
                     <div class="slider-container">
-                        <input type="range" name="q6" min="0" max="100" value="50" onchange="enableSubmit()">
+                        <input type="range" name="q6" min="0" max="100" value="50" 
+                               oninput="updateValue('val6', this.value)" 
+                               onchange="enableSubmit()">
+                        <span id="val6" class="slider-value">50</span>
                     </div>
                     <div class="labels"><span>少ない (Low)</span><span>多い (High)</span></div>
                 </div>
