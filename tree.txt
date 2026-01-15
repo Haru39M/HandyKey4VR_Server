@@ -70,6 +70,9 @@
 │   │   ├── log_p01_2025-12-29-07-06-51_gesture.csv
 │   │   ├── log_p01_2025-12-29-07-25-55_gesture.csv
 │   │   └── log_p01_2025-12-29-08-10-09_gesture.csv
+│   ├── logs_nasa_tlx
+│   │   └── debug
+│   │       └── log_debug-p01_2026-01-15-10-11-20_nasa_tlx_gesture_Controller.csv
 │   └── logs_typing
 │       ├── debug
 │       │   ├── log_debug-p01_2026-01-04-12-46-57_typing.csv
@@ -86,7 +89,8 @@
 │   └── debug
 │       ├── log_debug-p01_2026-01-13-16-11-47_gesture_raw.csv
 │       ├── log_debug-p01_2026-01-13-16-11-47_gesture_summary.csv
-│       └── log_debug-p01_2026-01-15-09-58-48_gesture_raw.csv
+│       ├── log_debug-p01_2026-01-15-09-58-48_gesture_raw.csv
+│       └── log_debug-p01_2026-01-15-10-10-48_gesture_raw.csv
 ├── logs_typing
 │   └── debug
 │       ├── log_debug-p01_2026-01-13-16-59-35_typing_raw.csv
@@ -128,4 +132,4 @@
 ├── words.json
 └── wpm_analysis.png
 
-17 directories, 112 files
+19 directories, 114 files
