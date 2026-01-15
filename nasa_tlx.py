@@ -12,7 +12,9 @@ def page():
     tester_id = request.args.get('id', 'unknown')
     condition = request.args.get('con', 'unknown')
     task_type = request.args.get('task', 'unknown') # typing or gesture
-    return render_template('/nasa_tlx.html', tester_id=tester_id, condition=condition, task_type=task_type)
+    
+    # 【修正】先頭のスラッシュを削除しました ('/nasa_tlx.html' -> 'nasa_tlx.html')
+    return render_template('nasa_tlx.html', tester_id=tester_id, condition=condition, task_type=task_type)
 
 @nasa_tlx_bp.route('/nasa_tlx/submit', methods=['POST'])
 def submit():
@@ -51,6 +53,7 @@ def submit():
             writer.writerow(values)
             
         print(f'[NASA-TLX] Saved: {filepath}')
+        # 保存完了画面もスラッシュなしで指定
         return render_template('nasa_tlx.html', done=True, tester_id=tester_id, condition=condition)
         
     except Exception as e:
