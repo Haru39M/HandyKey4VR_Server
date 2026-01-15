@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.2",
-    "flask-socketio>=5.6.0",
     "kenlm",
     "matplotlib>=3.10.8",
     "pandas>=2.3.3",
