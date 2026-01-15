@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetDesc = document.getElementById('target-desc');
     
     const matchIndicator = document.getElementById('match-indicator');
-    // ★追加: プログレスバー
     const matchProgressBar = document.getElementById('match-progress-bar');
     
     const progressText = document.getElementById('progress-text');
@@ -31,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let lastRenderedTrialId = -1;
     let isFetchingState = false;
+
+    // Session Info
+    let currentSessionConfig = {
+        id: "",
+        condition: ""
+    };
 
     // ============================================
     //  CONFIG VALIDATION
@@ -99,6 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const condVal = condInput.value;
         
         const finalId = debugMode.checked && !pId.includes('debug') ? `debug-${pId}` : pId;
+
+        // Save for redirect
+        currentSessionConfig.id = finalId;
+        currentSessionConfig.condition = condVal;
 
         const config = {
             participant_id: finalId,
@@ -186,13 +195,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.display = 'flex';
                 overlayText.textContent = "Please Open Hand";
                 matchIndicator.style.visibility = 'hidden';
-                matchProgressBar.style.width = '0%'; // リセット
+                matchProgressBar.style.width = '0%'; 
                 targetImg.style.display = 'none';
             } else if (data.state === 'COUNTDOWN') {
                 overlay.style.display = 'flex';
                 overlayText.textContent = `Get Ready... ${Math.ceil(data.countdown_remaining)}`;
                 matchIndicator.style.visibility = 'hidden';
-                matchProgressBar.style.width = '0%'; // リセット
+                matchProgressBar.style.width = '0%'; 
             } else if (data.state === 'MEASURING') {
                 overlay.style.display = 'none';
                 matchIndicator.style.visibility = 'visible';
@@ -222,15 +231,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                // ★修正: サーバーからの進捗率でバーを更新
                 const progress = data.match_progress || 0.0;
                 matchProgressBar.style.width = `${progress * 100}%`;
 
-                // インジケーター表示
                 if (data.is_match) {
                     matchIndicator.textContent = "MATCH";
                     matchIndicator.className = "indicator match";
-                    matchProgressBar.style.width = '100%'; // 念のため100%に
+                    matchProgressBar.style.width = '100%'; 
                 } else {
                     matchIndicator.textContent = "GO!";
                     matchIndicator.className = "indicator mismatch";
@@ -274,7 +281,40 @@ document.addEventListener('DOMContentLoaded', () => {
         
         isTestRunning = false;
         testSection.style.display = 'none';
+        
+        // === 修正: 終了画面 (サーバー経由の遷移) ===
+        finishedScreen.innerHTML = `
+            <h2>TEST COMPLETED</h2>
+            <p>Thank you! Please proceed to the questionnaire.</p>
+            <button id="go-tlx-btn" style="padding:15px 30px; font-size:1.2em; background:#007bff; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:20px;">
+                Go to Questionnaire
+            </button>
+        `;
         finishedScreen.style.display = 'block';
+
+        const btn = document.getElementById('go-tlx-btn');
+        btn.onclick = async () => {
+            try {
+                const res = await fetch('/api/nasa_tlx/next_url', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        participant_id: currentSessionConfig.id,
+                        condition: currentSessionConfig.condition,
+                        task_type: 'gesture'
+                    })
+                });
+                const data = await res.json();
+                if (data.redirect_url) {
+                    window.location.href = data.redirect_url;
+                } else {
+                    alert("遷移先の取得に失敗しました");
+                }
+            } catch (e) {
+                console.error("Transition error:", e);
+                alert("サーバー通信エラー");
+            }
+        };
     }
 
     function resetToConfig() {

@@ -1,10 +1,14 @@
 import kenlm
 import os
 import json
+import csv
+import datetime
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from word_predictor import WordPredictor
 from typing_test import TypingTest
 from gesture_test import GestureTest 
+# 新規インポート
+from nasa_tlx import nasa_tlx_bp
 
 # --- モデルとロジックの初期化 ---
 model_path = 'wiki_en_token.arpa.bin'
@@ -26,6 +30,11 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 GESTURES_PATH = os.path.join(BASE_DIR, 'gestures', 'gestures.json')
 # 画像ディレクトリも絶対パスで定義
 IMAGES_DIR = os.path.join(BASE_DIR, 'gestures', 'gesture_images')
+LOGS_DIR = os.path.join(BASE_DIR, 'logs') # ログ保存用
+
+# ログディレクトリがなければ作成
+if not os.path.exists(LOGS_DIR):
+    os.makedirs(LOGS_DIR)
 
 print(f"[App] Initializing GestureTest with path: {GESTURES_PATH}")
 
@@ -38,12 +47,22 @@ if not os.path.exists(IMAGES_DIR):
 
 # タイピングテスト用
 tester = TypingTest()
-tester.loadPhraseSet('phrases2.txt')
+# phrases2.txtが存在しない場合のエラー回避
+try:
+    tester.loadPhraseSet('phrases2.txt')
+except Exception as e:
+    print(f"[App] Warning: phrases2.txt load failed: {e}")
 
-# ジェスチャーテスト用 (絶対パスで初期化)
+# ジェスチャーテスト用
 gesture_tester = GestureTest(GESTURES_PATH)
 
 app = Flask(__name__)
+
+# ★設定: ログフォルダをapp.configに保存し、Blueprintから参照可能にする
+app.config['LOGS_FOLDER'] = LOGS_DIR
+
+# ★登録: NASA-TLX Blueprint
+app.register_blueprint(nasa_tlx_bp)
 
 # =================================================
 #  共通 / タイピングテスト関連
@@ -57,7 +76,6 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # app_new.py の新しい予測ロジックを維持
     predictor = get_predictor()
     data = request.json
     input_word = data.get('word', '').strip()
@@ -76,24 +94,17 @@ def predict():
         "total_combinations": predictor.qwerty_combinations
     })
 
-# --- app.py の動作するタイピングテスト用エンドポイントを復元 ---
-
 @app.route('/log', methods=['POST'])
 def log_event():
-    """app.py から移植: ログ記録"""
     data = request.json
     tester.log_event(data)
     return jsonify({'status': 'ok'})
 
 @app.route('/complete', methods=['POST'])
 def complete_trial():
-    """app.py から移植: 試行完了処理"""
     data = request.json
     result = tester.complete_trial(data)
     return jsonify(result)
-
-# --- 以下は app_new.py で変更されていた実験的エンドポイント (一時的に無効化または共存) ---
-# ※ フロントエンドが app.py 前提の場合は上記 /log, /complete が使用されます
 
 @app.route('/test/start', methods=['POST'])
 def start_test():
@@ -102,7 +113,7 @@ def start_test():
         data.get('participant_id', 'test'),
         data.get('condition', 'default'),
         data.get('max_sentences', 5),
-        data.get('handedness', 'R') # 利き手追加
+        data.get('handedness', 'R')
     )
     tester.loadReferenceText()
     return jsonify({'reference_text': tester.getReferenceText()})
@@ -133,23 +144,20 @@ def check_input():
 
 @app.route('/gesture', methods=['GET'])
 def gesture_page():
-    """ジェスチャーテスト画面"""
     return render_template('gesture.html')
 
 @app.route('/gesture_images/<path:filename>')
 def serve_gesture_image(filename):
-    # 絶対パスを使用するよう修正 (app.py仕様)
     return send_from_directory(IMAGES_DIR, filename)
 
 @app.route('/gesture/start', methods=['POST'])
 def start_gesture_test():
-    """ジェスチャーテスト開始"""
     data = request.json
     gesture_tester.configure_test(
         data.get('participant_id', 'test'),
         data.get('condition', 'default'),
         data.get('max_trials', 10),
-        data.get('handedness', 'R') # 利き手追加
+        data.get('handedness', 'R')
     )
     return jsonify({"status": "started"})
 
@@ -157,9 +165,6 @@ def start_gesture_test():
 def update_gesture_input():
     try:
         data = request.json
-        # Debug: 受信データを確認
-        # print(f"[App] Received gesture input: {data}")
-        
         if data:
             gesture_tester.update_input(data)
         return jsonify({"status": "updated"})
@@ -174,7 +179,6 @@ def get_gesture_state():
 
 @app.route('/gesture/log', methods=['POST'])
 def gesture_log():
-    """クライアント側からのログデータを受け取る (app.pyより移植)"""
     try:
         events = request.json
         if events:

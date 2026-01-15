@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA-TLX Questionnaire</title>
+    <!-- 外部CSSファイルの読み込み -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='nasa_tlx.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if done %}
+            <div class="success-box">
+                <div class="success-icon">✔</div>
+                <h3>回答が保存されました</h3>
+                <p>ご協力ありがとうございました。</p>
+                <div style="margin-top: 30px;">
+                    <a href="/" class="home-link">Typing Taskへ</a>
+                    <a href="/gesture" class="home-link">Gesture Taskへ</a>
+                </div>
+            </div>
+        {% else %}
+            <h2>NASA-TLX Questionnaire</h2>
+            <div class="meta-info">
+                ID: <strong>{{ tester_id }}</strong> | Condition: <strong>{{ condition }}</strong> | Task: {{ task_type }}
+            </div>
+            
+            <button id="startBtn" class="btn" onclick="startSurvey()">回答を開始する (Start)</button>
+            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+            <!-- 送信先をBlueprintのURLへ修正 -->
+            <form action="/nasa_tlx/submit" method="POST" id="tlxForm">
+                <input type="hidden" name="tester_id" value="{{ tester_id }}">
+                <input type="hidden" name="condition" value="{{ condition }}">
+                <input type="hidden" name="task_type" value="{{ task_type }}">
+
+                <!-- Q1 Mental -->
+                <div class="question-block" id="block1">
+                    <div class="question-title">1. 精神的要求 (Mental Demand)</div>
+                    <div style="font-size:0.9em; margin-bottom:10px; color:#555;">どの程度の精神的・知覚的活動が要求されましたか？</div>
+                    <div class="slider-container">
+                        <input type="range" name="q1" min="0" max="100" value="50" onchange="unlockNext(2)">
+                    </div>
+                    <div class="labels"><span>低い (Low)</span><span>高い (High)</span></div>
+                </div>
+
+                <!-- Q2 Physical -->
+                <div class="question-block" id="block2">
+                    <div class="question-title">2. 身体的要求 (Physical Demand)</div>
+                    <div style="font-size:0.9em; margin-bottom:10px; color:#555;">どの程度の身体的活動を必要としましたか？</div>
+                    <div class="slider-container">
+                        <input type="range" name="q2" min="0" max="100" value="50" onchange="unlockNext(3)">
+                    </div>
+                    <div class="labels"><span>低い (Low)</span><span>高い (High)</span></div>
+                </div>
+
+                <!-- Q3 Temporal -->
+                <div class="question-block" id="block3">
+                    <div class="question-title">3. 時間的要求 (Temporal Demand)</div>
+                    <div style="font-size:0.9em; margin-bottom:10px; color:#555;">どの程度の時間的プレッシャーを感じましたか？</div>
+                    <div class="slider-container">
+                        <input type="range" name="q3" min="0" max="100" value="50" onchange="unlockNext(4)">
+                    </div>
+                    <div class="labels"><span>低い (Low)</span><span>高い (High)</span></div>
+                </div>
+
+                <!-- Q4 Performance -->
+                <div class="question-block" id="block4">
+                    <div class="question-title">4. パフォーマンス (Performance)</div>
+                    <div style="font-size:0.9em; margin-bottom:10px; color:#555;">課題の目標を達成することに、どの程度成功したと思いますか？</div>
+                    <div class="slider-container">
+                        <input type="range" name="q4" min="0" max="100" value="50" onchange="unlockNext(5)">
+                    </div>
+                    <div class="labels"><span>良い (Good)</span><span>悪い (Poor)</span></div>
+                </div>
+
+                <!-- Q5 Effort -->
+                <div class="question-block" id="block5">
+                    <div class="question-title">5. 努力 (Effort)</div>
+                    <div style="font-size:0.9em; margin-bottom:10px; color:#555;">課題の目標を達成するために、どの程度の努力を必要としましたか？</div>
+                    <div class="slider-container">
+                        <input type="range" name="q5" min="0" max="100" value="50" onchange="unlockNext(6)">
+                    </div>
+                    <div class="labels"><span>少ない (Low)</span><span>多い (High)</span></div>
+                </div>
+
+                <!-- Q6 Frustration -->
+                <div class="question-block" id="block6">
+                    <div class="question-title">6. 不満 (Frustration)</div>
+                    <div style="font-size:0.9em; margin-bottom:10px; color:#555;">作業中にどの程度のイライラを感じましたか？</div>
+                    <div class="slider-container">
+                        <input type="range" name="q6" min="0" max="100" value="50" onchange="enableSubmit()">
+                    </div>
+                    <div class="labels"><span>少ない (Low)</span><span>多い (High)</span></div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn" disabled>送信する (Submit)</button>
+            </form>
+        {% endif %}
+    </div>
+
+    <!-- 外部JSファイルの読み込み -->
+    <script src="{{ url_for('static', filename='nasa_tlx.js') }}"></script>
+</body>
+</html>
