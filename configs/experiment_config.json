@@ -4,6 +4,20 @@
     "gesture": "https://forms.gle/GtPyjudwgbRXPnfH8",
     "sus": "https://forms.gle/pRpubhQqtTGLZsaq7"
   },
+  "common_settings": {
+    "typing": {
+      "debug": {
+        "num_trials": 5
+      },
+      "num_trials": 30
+    },
+    "gesture": {
+      "debug": {
+        "num_trials": 5
+      },
+      "num_trials": 100
+    }
+  },
   "assignments": [
     {
       "id": "S01",
@@ -12,28 +26,16 @@
         "gesture"
       ],
       "note": "Pattern 1: ABC, BC",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "keyboard",
-            "controller",
-            "proposed"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "controller",
-            "proposed"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "keyboard",
+          "controller",
+          "proposed"
+        ],
+        "gesture": [
+          "controller",
+          "proposed"
+        ]
       }
     },
     {
@@ -43,28 +45,16 @@
         "gesture"
       ],
       "note": "Pattern 2: ABC, CB",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "keyboard",
-            "controller",
-            "proposed"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "proposed",
-            "controller"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "keyboard",
+          "controller",
+          "proposed"
+        ],
+        "gesture": [
+          "proposed",
+          "controller"
+        ]
       }
     },
     {
@@ -74,28 +64,16 @@
         "gesture"
       ],
       "note": "Pattern 3: BCA, BC",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "controller",
-            "proposed",
-            "keyboard"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "controller",
-            "proposed"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "controller",
+          "proposed",
+          "keyboard"
+        ],
+        "gesture": [
+          "controller",
+          "proposed"
+        ]
       }
     },
     {
@@ -105,28 +83,16 @@
         "gesture"
       ],
       "note": "Pattern 4: BCA, CB",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "controller",
-            "proposed",
-            "keyboard"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "proposed",
-            "controller"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "controller",
+          "proposed",
+          "keyboard"
+        ],
+        "gesture": [
+          "proposed",
+          "controller"
+        ]
       }
     },
     {
@@ -136,28 +102,16 @@
         "gesture"
       ],
       "note": "Pattern 5: CAB, BC",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "proposed",
-            "keyboard",
-            "controller"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "controller",
-            "proposed"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "proposed",
+          "keyboard",
+          "controller"
+        ],
+        "gesture": [
+          "controller",
+          "proposed"
+        ]
       }
     },
     {
@@ -167,28 +121,16 @@
         "gesture"
       ],
       "note": "Pattern 6: CAB, CB",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "proposed",
-            "keyboard",
-            "controller"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "proposed",
-            "controller"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "proposed",
+          "keyboard",
+          "controller"
+        ],
+        "gesture": [
+          "proposed",
+          "controller"
+        ]
       }
     },
     {
@@ -198,28 +140,16 @@
         "typing"
       ],
       "note": "Pattern 7: BC, ABC",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "keyboard",
-            "controller",
-            "proposed"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "controller",
-            "proposed"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "keyboard",
+          "controller",
+          "proposed"
+        ],
+        "gesture": [
+          "controller",
+          "proposed"
+        ]
       }
     },
     {
@@ -229,28 +159,16 @@
         "typing"
       ],
       "note": "Pattern 8: BC, BCA",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "controller",
-            "proposed",
-            "keyboard"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "controller",
-            "proposed"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "controller",
+          "proposed",
+          "keyboard"
+        ],
+        "gesture": [
+          "controller",
+          "proposed"
+        ]
       }
     },
     {
@@ -260,28 +178,16 @@
         "typing"
       ],
       "note": "Pattern 9: BC, CAB",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "proposed",
-            "keyboard",
-            "controller"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "controller",
-            "proposed"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "proposed",
+          "keyboard",
+          "controller"
+        ],
+        "gesture": [
+          "controller",
+          "proposed"
+        ]
       }
     },
     {
@@ -291,28 +197,16 @@
         "typing"
       ],
       "note": "Pattern 10: CB, ABC",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "keyboard",
-            "controller",
-            "proposed"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "proposed",
-            "controller"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "keyboard",
+          "controller",
+          "proposed"
+        ],
+        "gesture": [
+          "proposed",
+          "controller"
+        ]
       }
     },
     {
@@ -322,28 +216,16 @@
         "typing"
       ],
       "note": "Pattern 11: CB, BCA",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "controller",
-            "proposed",
-            "keyboard"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "proposed",
-            "controller"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "controller",
+          "proposed",
+          "keyboard"
+        ],
+        "gesture": [
+          "proposed",
+          "controller"
+        ]
       }
     },
     {
@@ -353,28 +235,16 @@
         "typing"
       ],
       "note": "Pattern 12: CB, CAB",
-      "test_settings": {
-        "typing": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 30,
-          "cond_order": [
-            "proposed",
-            "keyboard",
-            "controller"
-          ]
-        },
-        "gesture": {
-          "debug": {
-            "num_trials": 5
-          },
-          "num_trials": 100,
-          "cond_order": [
-            "proposed",
-            "controller"
-          ]
-        }
+      "cond_orders": {
+        "typing": [
+          "proposed",
+          "keyboard",
+          "controller"
+        ],
+        "gesture": [
+          "proposed",
+          "controller"
+        ]
       }
     }
   ]
