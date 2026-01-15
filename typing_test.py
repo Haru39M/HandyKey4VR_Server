@@ -6,14 +6,16 @@ import random
 from datetime import datetime
 # from collections import defaultdict
 
+jst = datetime.timezone(datetime.timedelta(hours=9))
+
 class Logger:
     def __init__(self, participant_id, condition, handedness="R"):
         self.participant_id = participant_id
         self.condition = condition
         self.handedness = handedness
         
-        
-        self.base_log_dir = "logs_typing"
+        # 【修正】logsディレクトリ配下に保存するように変更
+        self.base_log_dir = os.path.join("logs", "logs_typing")
         
         # Debugモード判定
         if "debug" in participant_id:
@@ -24,7 +26,7 @@ class Logger:
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
 
-        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+        now_str = datetime.now(jst).strftime("%Y-%m-%d-%H-%M-%S")
         self.raw_path = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_typing_raw.csv")
         
         # Headerに PhraseID を追加
@@ -44,7 +46,7 @@ class Logger:
             writer = csv.writer(f)
             for e in events:
                 writer.writerow([
-                    datetime.now().isoformat(),
+                    datetime.now(jst).isoformat(),
                     self.participant_id,
                     self.condition,
                     self.handedness,

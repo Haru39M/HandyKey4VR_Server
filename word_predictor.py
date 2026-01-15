@@ -1,6 +1,5 @@
 import kenlm
 import os
-import json
 import subprocess
 
 class WordPredictor:

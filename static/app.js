@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedIndex = -1;
     let autoNextTimer = null;
     
+    // Session Config (for redirect)
+    let currentSessionConfig = {
+        id: "",
+        condition: ""
+    };
+    
     // Logging Buffer
     let eventLogBuffer = [];
 
@@ -102,6 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
         startTestBtn.addEventListener('click', async () => {
             const pid = debugMode.checked ? "debug-"+idInput.value : idInput.value;
             const hand = handInput.value;
+            
+            // Save for redirect
+            currentSessionConfig.id = pid;
+            currentSessionConfig.condition = conditionInput.value;
+
             const params = {
                 participant_id: pid,
                 condition: conditionInput.value,
@@ -185,9 +196,43 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateReference(text) {
         const refContent = document.getElementById('reference-text-content');
         if (text === "TEST_FINISHED") {
-            testSection.innerHTML = '<div class="finished-screen">TEST FINISHED<br><small>Thank you!</small></div>';
+            // === テスト終了 & NASA-TLXへの遷移 ===
+            testSection.innerHTML = `
+                <div class="finished-screen">
+                    <h2>TEST FINISHED</h2>
+                    <p>Thank you! Proceeding to questionnaire...</p>
+                    <button id="go-tlx-btn" style="padding:15px 30px; font-size:1.2em; background:#007bff; color:white; border:none; border-radius:5px; cursor:pointer;">
+                        Go to Questionnaire
+                    </button>
+                </div>`;
             input.disabled = true;
             isTestRunning = false;
+
+            // ボタンクリックでサーバー経由で遷移先を取得してリダイレクト
+            const btn = document.getElementById('go-tlx-btn');
+            btn.onclick = async () => {
+                try {
+                    const res = await fetch('/api/nasa_tlx/next_url', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            participant_id: currentSessionConfig.id,
+                            condition: currentSessionConfig.condition,
+                            task_type: 'typing'
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.redirect_url) {
+                        window.location.href = data.redirect_url;
+                    } else {
+                        alert("遷移先の取得に失敗しました");
+                    }
+                } catch (e) {
+                    console.error("Transition error:", e);
+                    alert("サーバー通信エラー");
+                }
+            };
+            
         } else {
             refContent.textContent = text;
         }
@@ -329,8 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
     async function undoLastWord() {
         const removed = committedWords.pop();
         logEvent('undo', { removed_word: removed });
-        
-        // await fetch('/test/backspace', { method: 'POST' });
         
         validateOnServer();
     }
