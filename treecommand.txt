@@ -1,1 +1,2 @@
-tree -I "__pycache__|kenlm|venv" > tree.txt
+tree -I "__pycache__|kenlm|venv" > tree.txt         //txtで出力(人間が見やすい)
+tree -J -I "__pycache__|kenlm|venv" > tree.json     //jsonで出力(AIが読みやすい)
