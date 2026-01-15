@@ -14,3 +14,11 @@ function enableSubmit() {
     btn.textContent = "回答を終了して保存する";
     btn.style.backgroundColor = "#28a745"; // 緑色に変更
 }
+
+// 数値を更新する関数
+function updateValue(id, value) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.textContent = value;
+    }
+}

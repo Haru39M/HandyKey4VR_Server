@@ -65,6 +65,16 @@ input[type=range] {
     cursor: pointer;
 }
 
+/* 追加: スライダーの数値表示用スタイル */
+.slider-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+    margin-left: 15px;
+    min-width: 50px;
+    text-align: right;
+}
+
 .labels {
     display: flex;
     justify-content: space-between;
@@ -109,9 +119,9 @@ input[type=range] {
 .home-link {
     display: inline-block;
     margin-top: 20px;
-    color: #007bff;
+    color: #27ae60;
     text-decoration: none;
-    border: 1px solid #007bff;
+    border: 1px solid #27ae60;
     padding: 10px 20px;
     border-radius: 4px;
 }
