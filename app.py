@@ -1,8 +1,5 @@
-import kenlm
 import os
 import json
-import csv
-import datetime
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from word_predictor import WordPredictor
 from typing_test import TypingTest
