@@ -1,30 +1,381 @@
 {
-    "id": "null",
-    "test_settings": {
-        "typing":{
-            "debug":{
-                "num_trials":5
-            },
-            "num_trials":30,
-            "cond_order":
-            [
-                "keyboard",
-                "controller",
-                "proposed"
-            ],
-            "google_form_url":"https://forms.gle/typing_experiment"
+  "form_urls": {
+    "typing": "https://forms.gle/fowikKyizfmMkPPi7",
+    "gesture": "https://forms.gle/GtPyjudwgbRXPnfH8",
+    "sus": "https://forms.gle/pRpubhQqtTGLZsaq7"
+  },
+  "assignments": [
+    {
+      "id": "S01",
+      "task_order": [
+        "typing",
+        "gesture"
+      ],
+      "note": "Pattern 1: ABC, BC",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "keyboard",
+            "controller",
+            "proposed"
+          ]
         },
-        "gesture":{
-            "debug":{
-                "num_trials":5
-            },
-            "num_trials":100,
-            "cond_order":
-            [
-                "controller",
-                "proposed"
-            ],
-            "google_form_url":"https://forms.gle/gesture_experiment"
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "controller",
+            "proposed"
+          ]
         }
+      }
+    },
+    {
+      "id": "S02",
+      "task_order": [
+        "typing",
+        "gesture"
+      ],
+      "note": "Pattern 2: ABC, CB",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "keyboard",
+            "controller",
+            "proposed"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "proposed",
+            "controller"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S03",
+      "task_order": [
+        "typing",
+        "gesture"
+      ],
+      "note": "Pattern 3: BCA, BC",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "controller",
+            "proposed",
+            "keyboard"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "controller",
+            "proposed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S04",
+      "task_order": [
+        "typing",
+        "gesture"
+      ],
+      "note": "Pattern 4: BCA, CB",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "controller",
+            "proposed",
+            "keyboard"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "proposed",
+            "controller"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S05",
+      "task_order": [
+        "typing",
+        "gesture"
+      ],
+      "note": "Pattern 5: CAB, BC",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "proposed",
+            "keyboard",
+            "controller"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "controller",
+            "proposed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S06",
+      "task_order": [
+        "typing",
+        "gesture"
+      ],
+      "note": "Pattern 6: CAB, CB",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "proposed",
+            "keyboard",
+            "controller"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "proposed",
+            "controller"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S07",
+      "task_order": [
+        "gesture",
+        "typing"
+      ],
+      "note": "Pattern 7: BC, ABC",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "keyboard",
+            "controller",
+            "proposed"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "controller",
+            "proposed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S08",
+      "task_order": [
+        "gesture",
+        "typing"
+      ],
+      "note": "Pattern 8: BC, BCA",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "controller",
+            "proposed",
+            "keyboard"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "controller",
+            "proposed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S09",
+      "task_order": [
+        "gesture",
+        "typing"
+      ],
+      "note": "Pattern 9: BC, CAB",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "proposed",
+            "keyboard",
+            "controller"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "controller",
+            "proposed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S10",
+      "task_order": [
+        "gesture",
+        "typing"
+      ],
+      "note": "Pattern 10: CB, ABC",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "keyboard",
+            "controller",
+            "proposed"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "proposed",
+            "controller"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S11",
+      "task_order": [
+        "gesture",
+        "typing"
+      ],
+      "note": "Pattern 11: CB, BCA",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "controller",
+            "proposed",
+            "keyboard"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "proposed",
+            "controller"
+          ]
+        }
+      }
+    },
+    {
+      "id": "S12",
+      "task_order": [
+        "gesture",
+        "typing"
+      ],
+      "note": "Pattern 12: CB, CAB",
+      "test_settings": {
+        "typing": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 30,
+          "cond_order": [
+            "proposed",
+            "keyboard",
+            "controller"
+          ]
+        },
+        "gesture": {
+          "debug": {
+            "num_trials": 5
+          },
+          "num_trials": 100,
+          "cond_order": [
+            "proposed",
+            "controller"
+          ]
+        }
+      }
     }
+  ]
 }
