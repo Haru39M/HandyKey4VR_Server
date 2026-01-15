@@ -1,9 +1,0 @@
-ServerTimestampISO,ServerTimestamp,ParticipantID,Condition,Handedness,TrialID,TargetGesture,TargetID,EventType,EventData,ClientTimestamp
-2026-01-15T09:58:48.884366,1768471128884,debug-p01,Controller,R,None,None,-1,system,"{""action"": ""test_configured"", ""trials"": [5]}",1768471128884
-2026-01-15T09:58:48.938141,1768471128938,debug-p01,Controller,R,1,RockNRoll,5,system,"{""action"": ""test_start_click"", ""participant_id"": ""debug-p01"", ""condition"": ""Controller""}",1768471128862
-2026-01-15T09:58:55.776214,1768471135776,debug-p01,Controller,R,1,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768471135776
-2026-01-15T09:58:55.779546,1768471135779,debug-p01,Controller,R,1,RockNRoll,5,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768471135779
-2026-01-15T09:58:58.801906,1768471138801,debug-p01,Controller,R,1,RockNRoll,5,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 1}",1768471138797
-2026-01-15T09:59:02.680612,1768471142680,debug-p01,Controller,R,1,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768471142680
-2026-01-15T09:59:03.739436,1768471143739,debug-p01,Controller,R,1,RockNRoll,5,state_change,"{""from"": ""MEASURING"", ""to"": ""COMPLETED"", ""rt_ms"": 3880.8557987213135}",1768471143739
-2026-01-15T09:59:03.748578,1768471143748,debug-p01,Controller,R,2,RockNRoll,5,system,"""test_finished""",1768471143755

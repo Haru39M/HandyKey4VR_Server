@@ -1,9 +1,0 @@
-ServerTimestampISO,ServerTimestamp,ParticipantID,Condition,Handedness,TrialID,TargetGesture,TargetID,EventType,EventData,ClientTimestamp
-2026-01-15T10:10:48.888198,1768471848888,debug-p01,Controller,R,None,None,-1,system,"{""action"": ""test_configured"", ""trials"": [3]}",1768471848888
-2026-01-15T10:10:48.932158,1768471848932,debug-p01,Controller,R,1,FingerPoint,3,system,"{""action"": ""test_start_click"", ""participant_id"": ""debug-p01"", ""condition"": ""Controller""}",1768471848879
-2026-01-15T10:10:52.390239,1768471852390,debug-p01,Controller,R,1,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768471852390
-2026-01-15T10:10:52.393387,1768471852393,debug-p01,Controller,R,1,FingerPoint,3,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768471852393
-2026-01-15T10:10:55.442308,1768471855442,debug-p01,Controller,R,1,FingerPoint,3,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 1}",1768471855445
-2026-01-15T10:11:04.014606,1768471864014,debug-p01,Controller,R,1,FingerPoint,3,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768471864014
-2026-01-15T10:11:05.040890,1768471865040,debug-p01,Controller,R,1,FingerPoint,3,state_change,"{""from"": ""MEASURING"", ""to"": ""COMPLETED"", ""rt_ms"": 8572.808980941772}",1768471865040
-2026-01-15T10:11:05.051223,1768471865051,debug-p01,Controller,R,2,FingerPoint,3,system,"""test_finished""",1768471865077
