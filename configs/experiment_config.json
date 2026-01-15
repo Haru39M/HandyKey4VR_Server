@@ -1,0 +1,30 @@
+{
+    "id": "null",
+    "test_settings": {
+        "typing":{
+            "debug":{
+                "num_trials":5
+            },
+            "num_trials":30,
+            "cond_order":
+            [
+                "keyboard",
+                "controller",
+                "proposed"
+            ],
+            "google_form_url":"https://forms.gle/typing_experiment"
+        },
+        "gesture":{
+            "debug":{
+                "num_trials":5
+            },
+            "num_trials":100,
+            "cond_order":
+            [
+                "controller",
+                "proposed"
+            ],
+            "google_form_url":"https://forms.gle/gesture_experiment"
+        }
+    }
+}
