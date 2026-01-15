@@ -1,5 +1,4 @@
 .
-├── NASA-TLX.py
 ├── README.md
 ├── USAGE.md
 ├── analysis.py
@@ -21,7 +20,6 @@
 │   ├── test3.py
 │   └── typing_test_v1.py
 ├── check_word_predictor.py
-├── combined_analysis_data.csv
 ├── config.json
 ├── dockerfile
 ├── export_tree.sh
@@ -40,6 +38,8 @@
 │   └── gestures.json
 ├── get_model.sh
 ├── logs
+│   ├── NASA-TLX_debug-p01_Controller_gesture_2026-01-15-09-59-33.csv
+│   ├── NASA-TLX_unknown_unknown_unknown_2026-01-15-09-57-01.csv
 │   ├── gesture_log_p01.csv
 │   ├── log_p01.csv
 │   ├── log_p01_2025-12-16-01-53-05_raw.csv
@@ -85,11 +85,14 @@
 ├── logs_gesture
 │   └── debug
 │       ├── log_debug-p01_2026-01-13-16-11-47_gesture_raw.csv
-│       └── log_debug-p01_2026-01-13-16-11-47_gesture_summary.csv
+│       ├── log_debug-p01_2026-01-13-16-11-47_gesture_summary.csv
+│       └── log_debug-p01_2026-01-15-09-58-48_gesture_raw.csv
 ├── logs_typing
 │   └── debug
 │       ├── log_debug-p01_2026-01-13-16-59-35_typing_raw.csv
-│       └── log_debug-p01_2026-01-13-16-59-35_typing_summary.csv
+│       ├── log_debug-p01_2026-01-13-16-59-35_typing_summary.csv
+│       └── log_debug-p01_2026-01-15-09-52-07_typing_raw.csv
+├── nasa_tlx.py
 ├── phrases2.txt
 ├── pyproject.toml
 ├── requirements.txt
@@ -98,13 +101,16 @@
 │   ├── gesture.css
 │   ├── gesture.js
 │   ├── hands_guide.png
+│   ├── nasa_tlx.css
+│   ├── nasa_tlx.js
 │   └── style.css
 ├── system
 │   ├── OSCServer.py
 │   └── vrc_typing_display.py
 ├── templates
 │   ├── gesture.html
-│   └── index.html
+│   ├── index.html
+│   └── nasa_tlx.html
 ├── tree.json
 ├── tree.txt
 ├── treecommand.txt
@@ -122,4 +128,4 @@
 ├── words.json
 └── wpm_analysis.png
 
-17 directories, 106 files
+17 directories, 112 files
