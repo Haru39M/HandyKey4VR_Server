@@ -43,73 +43,14 @@
     ]},
     {"type":"file","name":"get_model.sh"},
     {"type":"directory","name":"logs","contents":[
-      {"type":"file","name":"NASA-TLX_debug-p01_Controller_gesture_2026-01-15-09-59-33.csv"},
-      {"type":"file","name":"NASA-TLX_unknown_unknown_unknown_2026-01-15-09-57-01.csv"},
-      {"type":"file","name":"gesture_log_p01.csv"},
-      {"type":"file","name":"log_p01.csv"},
-      {"type":"file","name":"log_p01_2025-12-16-01-53-05_raw.csv"},
-      {"type":"file","name":"log_p01_2025-12-16-01-53-05_summary.csv"},
-      {"type":"file","name":"log_p01_2025-12-16-01-58-51_raw.csv"},
-      {"type":"file","name":"log_p01_2025-12-16-01-58-51_summary.csv"},
-      {"type":"file","name":"log_p01_2025-12-16-02-01-30_raw.csv"},
-      {"type":"file","name":"log_p01_2025-12-16-02-01-30_summary.csv"},
-      {"type":"file","name":"log_p01_2025-12-16-04-22-11_raw.csv"},
-      {"type":"file","name":"log_p01_2025-12-16-04-22-11_summary.csv"},
-      {"type":"file","name":"log_p01_2025-12-18-07-29-00_raw.csv"},
-      {"type":"file","name":"log_p01_2025-12-18-07-29-00_summary.csv"},
-      {"type":"file","name":"log_p01_2025-12-18-16-09-06_raw.csv"},
-      {"type":"file","name":"log_p01_2025-12-18-16-09-06_summary.csv"},
-      {"type":"file","name":"log_p01_2025-12-23-09-01-17_raw.csv"},
-      {"type":"file","name":"log_p01_2025-12-23-09-01-17_summary.csv"},
       {"type":"directory","name":"logs_gesture","contents":[
-        {"type":"directory","name":"debug","contents":[
-          {"type":"file","name":"log_debug_2025-12-29-09-00-16_gesture.csv"}
-        ]},
-        {"type":"file","name":"log_p01_2025-12-28-11-25-47_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-28-12-01-10_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-28-13-19-22_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-28-13-22-27_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-28-14-26-49_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-29-06-55-20_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-29-06-58-34_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-29-07-00-44_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-29-07-06-51_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-29-07-25-55_gesture.csv"},
-        {"type":"file","name":"log_p01_2025-12-29-08-10-09_gesture.csv"}
+        {"type":"directory","name":"debug"}
       ]},
       {"type":"directory","name":"logs_nasa_tlx","contents":[
-        {"type":"directory","name":"debug","contents":[
-          {"type":"file","name":"log_debug-p01_2026-01-15-10-11-20_nasa_tlx_gesture_Controller.csv"}
-        ]}
+        {"type":"directory","name":"debug"}
       ]},
       {"type":"directory","name":"logs_typing","contents":[
-        {"type":"directory","name":"debug","contents":[
-          {"type":"file","name":"log_debug-p01_2026-01-04-12-46-57_typing.csv"},
-          {"type":"file","name":"log_debug-p01_2026-01-04-12-46-57_typing_raw.csv"},
-          {"type":"file","name":"log_debug_2025-12-29-09-04-30_typing.csv"},
-          {"type":"file","name":"log_debug_2025-12-29-09-04-30_typing_raw.csv"}
-        ]},
-        {"type":"file","name":"log_debug-p01_2026-01-04-12-37-01_typing.csv"},
-        {"type":"file","name":"log_debug-p01_2026-01-04-12-37-01_typing_raw.csv"},
-        {"type":"file","name":"log_debug-p01_2026-01-04-12-43-29_typing.csv"},
-        {"type":"file","name":"log_debug-p01_2026-01-04-12-43-29_typing_raw.csv"},
-        {"type":"file","name":"log_p01_2025-12-28-11-22-57_typing.csv"},
-        {"type":"file","name":"log_p01_2025-12-28-11-22-57_typing_raw.csv"}
-      ]}
-    ]},
-    {"type":"directory","name":"logs_gesture","contents":[
-      {"type":"directory","name":"debug","contents":[
-        {"type":"file","name":"log_debug-p01_2026-01-13-16-11-47_gesture_raw.csv"},
-        {"type":"file","name":"log_debug-p01_2026-01-13-16-11-47_gesture_summary.csv"},
-        {"type":"file","name":"log_debug-p01_2026-01-15-09-58-48_gesture_raw.csv"},
-        {"type":"file","name":"log_debug-p01_2026-01-15-10-10-48_gesture_raw.csv"}
-      ]}
-    ]},
-    {"type":"directory","name":"logs_typing","contents":[
-      {"type":"directory","name":"debug","contents":[
-        {"type":"file","name":"log_debug-p01_2026-01-13-16-59-35_typing_raw.csv"},
-        {"type":"file","name":"log_debug-p01_2026-01-13-16-59-35_typing_summary.csv"},
-        {"type":"file","name":"log_debug-p01_2026-01-15-09-52-07_typing_raw.csv"}
+        {"type":"directory","name":"debug"}
       ]}
     ]},
     {"type":"file","name":"nasa_tlx.py"},
@@ -152,5 +93,5 @@
     {"type":"file","name":"wpm_analysis.png"}
   ]}
 ,
-  {"type":"report","directories":19,"files":114}
+  {"type":"report","directories":15,"files":66}
 ]

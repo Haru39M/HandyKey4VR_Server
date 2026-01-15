@@ -3,7 +3,7 @@ import os
 import time
 import csv
 import random
-from datetime import datetime
+from datetime import datetime,timedelta,timezone
 
 # 状態定義
 STATE_IDLE = "IDLE"
@@ -16,7 +16,7 @@ STATE_COMPLETED = "COMPLETED"           # 全試行完了
 DWELL_TIME_THRESHOLD = 0.5 # 秒
 MATCH_DISPLAY_DURATION = 0.5 # 秒（MATCH表示を見せる時間）
 
-jst = datetime.timezone(datetime.timedelta(hours=9))
+jst = timezone(timedelta(hours=9))
 
 class Logger:
     def __init__(self, participant_id, condition, handedness="R"):
@@ -24,7 +24,7 @@ class Logger:
         self.condition = condition
         self.handedness = handedness
         
-        # 【修正】logsディレクトリ配下に保存するように変更
+        # logsディレクトリ配下に保存
         self.base_log_dir = os.path.join("logs", "logs_gesture")
         
         if "debug" in participant_id:
@@ -182,8 +182,16 @@ class GestureTest:
                 self.trials = []
                 return
 
-        all_ids = [g['ID'] for g in self.gestures]
-        self.trials = [random.choice(all_ids) for _ in range(self.max_trials)]
+        # 【修正】HandOpen (待機状態) を出題対象から除外
+        # GestureNameが 'HandOpen' でないもののIDリストを作成して、そこからランダムに選ぶ
+        valid_ids = [g['ID'] for g in self.gestures if g.get('GestureName') != 'HandOpen']
+
+        if not valid_ids:
+            # 万が一HandOpenしか登録されていない場合などの安全策（全件対象に戻す）
+            print("[GestureTest] Warning: No valid targets found (only HandOpen?). Using all.", flush=True)
+            valid_ids = [g['ID'] for g in self.gestures]
+
+        self.trials = [random.choice(valid_ids) for _ in range(self.max_trials)]
         self.completed_trials = 0
         self.state = STATE_IDLE
         

@@ -3,10 +3,10 @@ import time
 import csv
 import os
 import random
-from datetime import datetime
+from datetime import datetime,timezone, timedelta
 # from collections import defaultdict
 
-jst = datetime.timezone(datetime.timedelta(hours=9))
+jst = timezone(timedelta(hours=9))
 
 class Logger:
     def __init__(self, participant_id, condition, handedness="R"):
