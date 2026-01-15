@@ -24,6 +24,10 @@
     ]},
     {"type":"file","name":"check_word_predictor.py"},
     {"type":"file","name":"config.json"},
+    {"type":"directory","name":"configs","contents":[
+      {"type":"file","name":"experiment_config.json"},
+      {"type":"file","name":"participants_config.json"}
+    ]},
     {"type":"file","name":"dockerfile"},
     {"type":"file","name":"export_tree.sh"},
     {"type":"file","name":"gesture_test.py"},
@@ -55,6 +59,7 @@
     ]},
     {"type":"file","name":"nasa_tlx.py"},
     {"type":"file","name":"phrases2.txt"},
+    {"type":"file","name":"phrases2_original.txt"},
     {"type":"file","name":"pyproject.toml"},
     {"type":"file","name":"requirements.txt"},
     {"type":"directory","name":"static","contents":[
@@ -93,5 +98,5 @@
     {"type":"file","name":"wpm_analysis.png"}
   ]}
 ,
-  {"type":"report","directories":15,"files":66}
+  {"type":"report","directories":16,"files":69}
 ]

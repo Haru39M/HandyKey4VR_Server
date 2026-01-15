@@ -21,6 +21,9 @@
 │   └── typing_test_v1.py
 ├── check_word_predictor.py
 ├── config.json
+├── configs
+│   ├── experiment_config.json
+│   └── participants_config.json
 ├── dockerfile
 ├── export_tree.sh
 ├── gesture_test.py
@@ -46,6 +49,7 @@
 │       └── debug
 ├── nasa_tlx.py
 ├── phrases2.txt
+├── phrases2_original.txt
 ├── pyproject.toml
 ├── requirements.txt
 ├── static
@@ -80,4 +84,4 @@
 ├── words.json
 └── wpm_analysis.png
 
-15 directories, 66 files
+16 directories, 69 files
