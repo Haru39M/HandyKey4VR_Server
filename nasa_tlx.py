@@ -37,12 +37,24 @@ def submit():
         # タイムスタンプ
         now_str = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
         
-        # CSVファイル名の生成
-        filename = f'NASA-TLX_{tester_id}_{condition}_{task_type}_{now_str}.csv'
+        # --- 保存場所とファイル名の決定 (tree.jsonの構成に合わせる) ---
+        # 基本ログディレクトリの取得
+        base_logs_dir = current_app.config.get('LOGS_FOLDER', 'logs')
         
-        # app.configから保存先パスを取得
-        logs_dir = current_app.config.get('LOGS_FOLDER', 'logs')
-        filepath = os.path.join(logs_dir, filename)
+        # NASA-TLX用のサブディレクトリ: logs/logs_nasa_tlx
+        target_dir = os.path.join(base_logs_dir, 'logs_nasa_tlx')
+
+        # デバッグモード判定: IDが 'debug-' で始まる場合は debug フォルダへ
+        if tester_id.startswith('debug-'):
+            target_dir = os.path.join(target_dir, 'debug')
+
+        # ディレクトリが存在しない場合は作成
+        os.makedirs(target_dir, exist_ok=True)
+
+        # ファイル名の生成: log_{ID}_{TIMESTAMP}_nasa_tlx_{TASK}_{CONDITION}.csv
+        # 既存の log_p01_..._typing.csv 等の規則に寄せる
+        filename = f'log_{tester_id}_{now_str}_nasa_tlx_{task_type}_{condition}.csv'
+        filepath = os.path.join(target_dir, filename)
         
         # ヘッダー
         header = ['Mental', 'Physical', 'Temporal', 'Performance', 'Effort', 'Frustration']
