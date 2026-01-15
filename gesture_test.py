@@ -16,6 +16,8 @@ STATE_COMPLETED = "COMPLETED"           # 全試行完了
 DWELL_TIME_THRESHOLD = 0.5 # 秒
 MATCH_DISPLAY_DURATION = 0.5 # 秒（MATCH表示を見せる時間）
 
+jst = datetime.timezone(datetime.timedelta(hours=9))
+
 class Logger:
     def __init__(self, participant_id, condition, handedness="R"):
         self.participant_id = participant_id
@@ -32,7 +34,7 @@ class Logger:
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
 
-        now_str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+        now_str = datetime.now(jst).strftime("%Y-%m-%d-%H-%M-%S")
         self.log_filepath = os.path.join(self.log_dir, f"log_{participant_id}_{now_str}_gesture_raw.csv")
         
         # CSVヘッダー
@@ -51,7 +53,7 @@ class Logger:
 
     def log_raw(self, trial_id, target_name, target_id, events):
         now = time.time()
-        server_ts_iso = datetime.fromtimestamp(now).isoformat()
+        server_ts_iso = datetime.fromtimestamp(now,jst).isoformat()
         server_ts_ms = int(now * 1000)
         
         if not isinstance(events, list):

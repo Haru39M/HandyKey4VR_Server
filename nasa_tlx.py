@@ -34,8 +34,9 @@ def submit():
             request.form.get('q6')  # Frustration
         ]
         
-        # タイムスタンプ
-        now_str = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+        # タイムスタンプ (JST指定)
+        jst = datetime.timezone(datetime.timedelta(hours=9))
+        now_str = datetime.datetime.now(jst).strftime('%Y-%m-%d-%H-%M-%S')
         
         # --- 保存場所とファイル名の決定 (tree.jsonの構成に合わせる) ---
         # 基本ログディレクトリの取得
