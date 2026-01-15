@@ -24,7 +24,8 @@ class Logger:
         self.condition = condition
         self.handedness = handedness
         
-        self.base_log_dir = "logs_gesture"
+        # 【修正】logsディレクトリ配下に保存するように変更
+        self.base_log_dir = os.path.join("logs", "logs_gesture")
         
         if "debug" in participant_id:
             self.log_dir = os.path.join(self.base_log_dir, "debug")
