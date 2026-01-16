@@ -42,12 +42,28 @@
 ├── get_model.sh
 ├── logs
 │   ├── logs_gesture
-│   │   └── debug
+│   │   ├── debug
+│   │   │   ├── log_debug-HW04_2026-01-16-21-28-53_gesture_raw.csv
+│   │   │   └── log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv
+│   │   ├── log_HW04_2026-01-16-21-30-28_gesture_raw.csv
+│   │   └── log_HW04_2026-01-16-23-37-38_gesture_raw.csv
 │   ├── logs_nasa_tlx
-│   │   └── debug
+│   │   ├── debug
+│   │   ├── log_HW04_2026-01-16-20-30-28_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_HW04_2026-01-16-20-46-09_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_HW04_2026-01-16-21-11-34_nasa_tlx_typing_Controller.csv
+│   │   ├── log_HW04_2026-01-16-21-39-40_nasa_tlx_gesture_Proposed.csv
+│   │   └── log_HW04_2026-01-17-00-03-02_nasa_tlx_gesture_Controller.csv
 │   └── logs_typing
-│       └── debug
+│       ├── debug
+│       │   ├── log_debug-HW04_2026-01-16-20-23-57_typing_raw.csv
+│       │   ├── log_debug-HW04_2026-01-16-20-36-17_typing_raw.csv
+│       │   └── log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv
+│       ├── log_HW04_2026-01-16-20-25-28_typing_raw.csv
+│       ├── log_HW04_2026-01-16-20-38-43_typing_raw.csv
+│       └── log_HW04_2026-01-16-20-57-46_typing_raw.csv
 ├── nasa_tlx.py
+├── organize_logs.py
 ├── phrases2.txt
 ├── phrases2_original.txt
 ├── pyproject.toml
@@ -84,4 +100,4 @@
 ├── words.json
 └── wpm_analysis.png
 
-16 directories, 69 files
+16 directories, 85 files

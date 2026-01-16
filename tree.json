@@ -48,16 +48,34 @@
     {"type":"file","name":"get_model.sh"},
     {"type":"directory","name":"logs","contents":[
       {"type":"directory","name":"logs_gesture","contents":[
-        {"type":"directory","name":"debug"}
+        {"type":"directory","name":"debug","contents":[
+          {"type":"file","name":"log_debug-HW04_2026-01-16-21-28-53_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv"}
+        ]},
+        {"type":"file","name":"log_HW04_2026-01-16-21-30-28_gesture_raw.csv"},
+        {"type":"file","name":"log_HW04_2026-01-16-23-37-38_gesture_raw.csv"}
       ]},
       {"type":"directory","name":"logs_nasa_tlx","contents":[
-        {"type":"directory","name":"debug"}
+        {"type":"directory","name":"debug"},
+        {"type":"file","name":"log_HW04_2026-01-16-20-30-28_nasa_tlx_typing_Keyboard.csv"},
+        {"type":"file","name":"log_HW04_2026-01-16-20-46-09_nasa_tlx_typing_Proposed.csv"},
+        {"type":"file","name":"log_HW04_2026-01-16-21-11-34_nasa_tlx_typing_Controller.csv"},
+        {"type":"file","name":"log_HW04_2026-01-16-21-39-40_nasa_tlx_gesture_Proposed.csv"},
+        {"type":"file","name":"log_HW04_2026-01-17-00-03-02_nasa_tlx_gesture_Controller.csv"}
       ]},
       {"type":"directory","name":"logs_typing","contents":[
-        {"type":"directory","name":"debug"}
+        {"type":"directory","name":"debug","contents":[
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-23-57_typing_raw.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-36-17_typing_raw.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv"}
+        ]},
+        {"type":"file","name":"log_HW04_2026-01-16-20-25-28_typing_raw.csv"},
+        {"type":"file","name":"log_HW04_2026-01-16-20-38-43_typing_raw.csv"},
+        {"type":"file","name":"log_HW04_2026-01-16-20-57-46_typing_raw.csv"}
       ]}
     ]},
     {"type":"file","name":"nasa_tlx.py"},
+    {"type":"file","name":"organize_logs.py"},
     {"type":"file","name":"phrases2.txt"},
     {"type":"file","name":"phrases2_original.txt"},
     {"type":"file","name":"pyproject.toml"},
@@ -98,5 +116,5 @@
     {"type":"file","name":"wpm_analysis.png"}
   ]}
 ,
-  {"type":"report","directories":16,"files":69}
+  {"type":"report","directories":16,"files":85}
 ]
