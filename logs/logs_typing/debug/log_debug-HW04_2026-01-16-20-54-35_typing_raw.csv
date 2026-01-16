@@ -1,0 +1,394 @@
+Timestamp,ParticipantID,Condition,Handedness,TrialID,PhraseID,EventType,EventData,ClientTimestamp
+2026-01-16T20:54:41.257709+09:00,debug-HW04,Controller,R,1,180,system,test_started,1768564475503
+2026-01-16T20:54:41.257733+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'h', 'code': 'KeyH'}",1768564477789
+2026-01-16T20:54:41.257742+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 6, 'top': 'm'}",1768564477833
+2026-01-16T20:54:41.257749+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564478359
+2026-01-16T20:54:41.257755+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'he'}",1768564478387
+2026-01-16T20:54:41.257761+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564481164
+2026-01-16T20:54:41.257767+09:00,debug-HW04,Controller,R,1,180,confirm,{'word': 'he'},1768564481164
+2026-01-16T20:54:46.217415+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'c', 'code': 'KeyC'}",1768564482442
+2026-01-16T20:54:46.217439+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 3, 'top': 'c'}",1768564482483
+2026-01-16T20:54:46.217446+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564482831
+2026-01-16T20:54:46.217452+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 6, 'top': 'do'}",1768564482860
+2026-01-16T20:54:46.217458+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564483027
+2026-01-16T20:54:46.217463+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'col'}",1768564483055
+2026-01-16T20:54:46.217468+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564483456
+2026-01-16T20:54:46.217495+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'doll'}",1768564483723
+2026-01-16T20:54:46.217503+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564483983
+2026-01-16T20:54:46.217509+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'colle'}",1768564484073
+2026-01-16T20:54:46.217514+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'd', 'code': 'KeyD'}",1768564484553
+2026-01-16T20:54:46.217518+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'cooled'}",1768564484638
+2026-01-16T20:54:46.217567+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564486122
+2026-01-16T20:54:46.217575+09:00,debug-HW04,Controller,R,1,180,confirm,{'word': 'cooled'},1768564486122
+2026-01-16T20:54:49.016527+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564487066
+2026-01-16T20:54:49.016546+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 2, 'top': 'o'}",1768564487114
+2026-01-16T20:54:49.016553+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'f', 'code': 'KeyF'}",1768564487566
+2026-01-16T20:54:49.016558+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'or'}",1768564487595
+2026-01-16T20:54:49.016563+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'f', 'code': 'KeyF'}",1768564487886
+2026-01-16T20:54:49.016568+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'off'}",1768564488231
+2026-01-16T20:54:49.016574+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564488984
+2026-01-16T20:54:49.016579+09:00,debug-HW04,Controller,R,1,180,confirm,{'word': 'off'},1768564488984
+2026-01-16T20:54:53.391815+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564490039
+2026-01-16T20:54:53.391842+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 3, 'top': 'a'}",1768564490081
+2026-01-16T20:54:53.391849+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'f', 'code': 'KeyF'}",1768564490899
+2026-01-16T20:54:53.391855+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'at'}",1768564490929
+2026-01-16T20:54:53.391860+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 't', 'code': 'KeyT'}",1768564491400
+2026-01-16T20:54:53.391865+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564491691
+2026-01-16T20:54:53.391870+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564491969
+2026-01-16T20:54:53.391875+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'art'}",1768564492097
+2026-01-16T20:54:53.391880+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'arte'}",1768564492305
+2026-01-16T20:54:53.391885+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'after'}",1768564492397
+2026-01-16T20:54:53.391891+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564493317
+2026-01-16T20:54:53.391925+09:00,debug-HW04,Controller,R,1,180,confirm,{'word': 'after'},1768564493317
+2026-01-16T20:54:57.110963+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 's', 'code': 'KeyS'}",1768564494664
+2026-01-16T20:54:57.110992+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 3, 'top': 's'}",1768564494710
+2026-01-16T20:54:57.111000+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'h', 'code': 'KeyH'}",1768564494983
+2026-01-16T20:54:57.111007+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'su'}",1768564495017
+2026-01-16T20:54:57.111012+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564495372
+2026-01-16T20:54:57.111018+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'she'}",1768564495400
+2026-01-16T20:54:57.111023+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564497109
+2026-01-16T20:54:57.111028+09:00,debug-HW04,Controller,R,1,180,confirm,{'word': 'she'},1768564497109
+2026-01-16T20:55:00.619936+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564497732
+2026-01-16T20:55:00.619963+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 2, 'top': 'o'}",1768564497776
+2026-01-16T20:55:00.619970+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564498302
+2026-01-16T20:55:00.619976+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 6, 'top': 'le'}",1768564498330
+2026-01-16T20:55:00.619981+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'f', 'code': 'KeyF'}",1768564498760
+2026-01-16T20:55:00.619987+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'let'}",1768564498789
+2026-01-16T20:55:00.619992+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 't', 'code': 'KeyT'}",1768564499330
+2026-01-16T20:55:00.619997+09:00,debug-HW04,Controller,R,1,180,prediction_update,"{'count': 10, 'top': 'left'}",1768564499367
+2026-01-16T20:55:00.620002+09:00,debug-HW04,Controller,R,1,180,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564500580
+2026-01-16T20:55:00.620008+09:00,debug-HW04,Controller,R,1,180,confirm,{'word': 'left'},1768564500580
+2026-01-16T20:55:02.636721+09:00,debug-HW04,Controller,R,2,180,system,phrase_completed,1768564500645
+2026-01-16T20:55:02.636743+09:00,debug-HW04,Controller,R,2,180,system,next_phrase_clicked,1768564502661
+2026-01-16T20:55:06.657324+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'g', 'code': 'KeyG'}",1768564504135
+2026-01-16T20:55:06.657353+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 6, 'top': 'g'}",1768564504177
+2026-01-16T20:55:06.657361+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564504510
+2026-01-16T20:55:06.657367+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'to'}",1768564504537
+2026-01-16T20:55:06.657372+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564504817
+2026-01-16T20:55:06.657393+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'vol'}",1768564504845
+2026-01-16T20:55:06.657426+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'd', 'code': 'KeyD'}",1768564505261
+2026-01-16T20:55:06.657435+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'role'}",1768564505291
+2026-01-16T20:55:06.657441+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564506580
+2026-01-16T20:55:06.657446+09:00,debug-HW04,Controller,R,2,433,confirm,{'word': 'role'},1768564506580
+2026-01-16T20:55:10.218656+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'j', 'code': 'KeyJ'}",1768564507593
+2026-01-16T20:55:10.218685+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 6, 'top': 'm'}",1768564507634
+2026-01-16T20:55:10.218694+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564507871
+2026-01-16T20:55:10.218700+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'no'}",1768564507897
+2026-01-16T20:55:10.218706+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'b', 'code': 'KeyB'}",1768564508607
+2026-01-16T20:55:10.218712+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'not'}",1768564508634
+2026-01-16T20:55:10.218718+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 's', 'code': 'KeyS'}",1768564509232
+2026-01-16T20:55:10.218722+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'jobs'}",1768564509481
+2026-01-16T20:55:10.218727+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564510177
+2026-01-16T20:55:10.218733+09:00,debug-HW04,Controller,R,2,433,confirm,{'word': 'jobs'},1768564510177
+2026-01-16T20:55:12.024266+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768564511982
+2026-01-16T20:55:12.024286+09:00,debug-HW04,Controller,R,2,433,undo,{'removed_word': 'jobs'},1768564511982
+2026-01-16T20:55:12.441858+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768564512400
+2026-01-16T20:55:12.441879+09:00,debug-HW04,Controller,R,2,433,undo,{'removed_word': 'role'},1768564512400
+2026-01-16T20:55:16.544188+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'g', 'code': 'KeyG'}",1768564513135
+2026-01-16T20:55:16.544215+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 6, 'top': 'g'}",1768564513178
+2026-01-16T20:55:16.544222+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564513426
+2026-01-16T20:55:16.544228+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'to'}",1768564513452
+2026-01-16T20:55:16.544234+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564513677
+2026-01-16T20:55:16.544239+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'vol'}",1768564513704
+2026-01-16T20:55:16.544244+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'd', 'code': 'KeyD'}",1768564514121
+2026-01-16T20:55:16.544249+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'role'}",1768564514151
+2026-01-16T20:55:16.544254+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': ' ', 'code': 'Space'}",1768564515149
+2026-01-16T20:55:16.544261+09:00,debug-HW04,Controller,R,2,433,nav,"{'direction': 1, 'new_index': 1}",1768564515149
+2026-01-16T20:55:16.544266+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': ' ', 'code': 'Space'}",1768564515636
+2026-01-16T20:55:16.544271+09:00,debug-HW04,Controller,R,2,433,nav,"{'direction': 1, 'new_index': 2}",1768564515636
+2026-01-16T20:55:16.544276+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564516455
+2026-01-16T20:55:16.544281+09:00,debug-HW04,Controller,R,2,433,confirm,{'word': 'good'},1768564516455
+2026-01-16T20:55:20.719790+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'j', 'code': 'KeyJ'}",1768564517149
+2026-01-16T20:55:20.719816+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 6, 'top': 'm'}",1768564517193
+2026-01-16T20:55:20.719824+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564517316
+2026-01-16T20:55:20.719831+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'no'}",1768564517342
+2026-01-16T20:55:20.719836+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'b', 'code': 'KeyB'}",1768564518011
+2026-01-16T20:55:20.719841+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'not'}",1768564518039
+2026-01-16T20:55:20.719846+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 's', 'code': 'KeyS'}",1768564518399
+2026-01-16T20:55:20.719852+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'jobs'}",1768564518430
+2026-01-16T20:55:20.719858+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564520690
+2026-01-16T20:55:20.719864+09:00,debug-HW04,Controller,R,2,433,confirm,{'word': 'jobs'},1768564520690
+2026-01-16T20:55:24.524291+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'f', 'code': 'KeyF'}",1768564521843
+2026-01-16T20:55:24.524320+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 6, 'top': 'g'}",1768564521884
+2026-01-16T20:55:24.524327+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564522402
+2026-01-16T20:55:24.524333+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'to'}",1768564522432
+2026-01-16T20:55:24.524339+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564522926
+2026-01-16T20:55:24.524344+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'for'}",1768564522952
+2026-01-16T20:55:24.524349+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564524509
+2026-01-16T20:55:24.524355+09:00,debug-HW04,Controller,R,2,433,confirm,{'word': 'for'},1768564524509
+2026-01-16T20:55:29.376326+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 't', 'code': 'KeyT'}",1768564525190
+2026-01-16T20:55:29.376352+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 6, 'top': 'g'}",1768564525238
+2026-01-16T20:55:29.376359+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'h', 'code': 'KeyH'}",1768564525815
+2026-01-16T20:55:29.376365+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'by'}",1768564525851
+2026-01-16T20:55:29.376370+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564526495
+2026-01-16T20:55:29.376375+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'tho'}",1768564526521
+2026-01-16T20:55:29.376380+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 's', 'code': 'KeyS'}",1768564527037
+2026-01-16T20:55:29.376385+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'thow'}",1768564527158
+2026-01-16T20:55:29.376389+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564527440
+2026-01-16T20:55:29.376394+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'those'}",1768564527498
+2026-01-16T20:55:29.376399+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564529330
+2026-01-16T20:55:29.376404+09:00,debug-HW04,Controller,R,2,433,confirm,{'word': 'those'},1768564529330
+2026-01-16T20:55:33.226778+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'w', 'code': 'KeyW'}",1768564530787
+2026-01-16T20:55:33.226803+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 3, 'top': 's'}",1768564530832
+2026-01-16T20:55:33.226810+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'i', 'code': 'KeyI'}",1768564531190
+2026-01-16T20:55:33.226816+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 6, 'top': 'si'}",1768564531217
+2026-01-16T20:55:33.226822+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 't', 'code': 'KeyT'}",1768564531801
+2026-01-16T20:55:33.226827+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'xiv'}",1768564531828
+2026-01-16T20:55:33.226831+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'h', 'code': 'KeyH'}",1768564531940
+2026-01-16T20:55:33.226837+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'with'}",1768564531976
+2026-01-16T20:55:33.226842+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564533204
+2026-01-16T20:55:33.226848+09:00,debug-HW04,Controller,R,2,433,confirm,{'word': 'with'},1768564533204
+2026-01-16T20:55:40.478169+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564534634
+2026-01-16T20:55:40.478197+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 3, 'top': 'c'}",1768564534679
+2026-01-16T20:55:40.478204+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'd', 'code': 'KeyD'}",1768564535161
+2026-01-16T20:55:40.478210+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 9, 'top': 'de'}",1768564535193
+2026-01-16T20:55:40.478216+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'u', 'code': 'KeyU'}",1768564535551
+2026-01-16T20:55:40.478221+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'dem'}",1768564535912
+2026-01-16T20:55:40.478227+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'c', 'code': 'KeyC'}",1768564536023
+2026-01-16T20:55:40.478232+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'deme'}",1768564536158
+2026-01-16T20:55:40.478238+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564536786
+2026-01-16T20:55:40.478243+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'deuda'}",1768564536851
+2026-01-16T20:55:40.478248+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 't', 'code': 'KeyT'}",1768564537731
+2026-01-16T20:55:40.478254+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'educar'}",1768564537779
+2026-01-16T20:55:40.478259+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'i', 'code': 'KeyI'}",1768564537995
+2026-01-16T20:55:40.478265+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'educari'}",1768564538033
+2026-01-16T20:55:40.478270+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564538412
+2026-01-16T20:55:40.478275+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'educatio'}",1768564538460
+2026-01-16T20:55:40.478280+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'n', 'code': 'KeyN'}",1768564538884
+2026-01-16T20:55:40.478286+09:00,debug-HW04,Controller,R,2,433,prediction_update,"{'count': 10, 'top': 'education'}",1768564539053
+2026-01-16T20:55:40.478291+09:00,debug-HW04,Controller,R,2,433,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564540440
+2026-01-16T20:55:40.478296+09:00,debug-HW04,Controller,R,2,433,confirm,{'word': 'education'},1768564540440
+2026-01-16T20:55:42.562149+09:00,debug-HW04,Controller,R,3,433,system,phrase_completed,1768564540510
+2026-01-16T20:55:42.562172+09:00,debug-HW04,Controller,R,3,433,system,next_phrase_clicked,1768564542524
+2026-01-16T20:55:46.820560+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 't', 'code': 'KeyT'}",1768564543842
+2026-01-16T20:55:46.820586+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 6, 'top': 'g'}",1768564543884
+2026-01-16T20:55:46.820594+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'h', 'code': 'KeyH'}",1768564544079
+2026-01-16T20:55:46.820599+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'by'}",1768564544109
+2026-01-16T20:55:46.820605+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564544814
+2026-01-16T20:55:46.820611+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'the'}",1768564544840
+2026-01-16T20:55:46.820616+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564545065
+2026-01-16T20:55:46.820621+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'fuer'}",1768564545093
+2026-01-16T20:55:46.820626+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564545356
+2026-01-16T20:55:46.820631+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'there'}",1768564545390
+2026-01-16T20:55:46.820636+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564546786
+2026-01-16T20:55:46.820641+09:00,debug-HW04,Controller,R,3,306,confirm,{'word': 'there'},1768564546786
+2026-01-16T20:55:49.414846+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564547522
+2026-01-16T20:55:49.414875+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 3, 'top': 'a'}",1768564547563
+2026-01-16T20:55:49.414882+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564547994
+2026-01-16T20:55:49.414888+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'at'}",1768564548021
+2026-01-16T20:55:49.414894+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564548384
+2026-01-16T20:55:49.414899+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'are'}",1768564548413
+2026-01-16T20:55:49.414904+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564549383
+2026-01-16T20:55:49.414909+09:00,debug-HW04,Controller,R,3,306,confirm,{'word': 'are'},1768564549383
+2026-01-16T20:55:55.124460+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'w', 'code': 'KeyW'}",1768564550634
+2026-01-16T20:55:55.124486+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 3, 'top': 's'}",1768564550677
+2026-01-16T20:55:55.124493+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'i', 'code': 'KeyI'}",1768564551244
+2026-01-16T20:55:55.124499+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 6, 'top': 'si'}",1768564551269
+2026-01-16T20:55:55.124504+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'n', 'code': 'KeyN'}",1768564551800
+2026-01-16T20:55:55.124510+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'win'}",1768564551827
+2026-01-16T20:55:55.124515+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'n', 'code': 'KeyN'}",1768564552050
+2026-01-16T20:55:55.124520+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'sinh'}",1768564552240
+2026-01-16T20:55:55.124525+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564552648
+2026-01-16T20:55:55.124530+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'sinne'}",1768564552740
+2026-01-16T20:55:55.124535+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564553036
+2026-01-16T20:55:55.124539+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'winner'}",1768564553105
+2026-01-16T20:55:55.124545+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 's', 'code': 'KeyS'}",1768564553716
+2026-01-16T20:55:55.124550+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'winners'}",1768564553779
+2026-01-16T20:55:55.124556+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564555064
+2026-01-16T20:55:55.124561+09:00,debug-HW04,Controller,R,3,306,confirm,{'word': 'winners'},1768564555064
+2026-01-16T20:55:58.327913+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564555925
+2026-01-16T20:55:58.327940+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 3, 'top': 'a'}",1768564555974
+2026-01-16T20:55:58.327946+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'n', 'code': 'KeyN'}",1768564556412
+2026-01-16T20:55:58.327951+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'zu'}",1768564556439
+2026-01-16T20:55:58.327956+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'd', 'code': 'KeyD'}",1768564556772
+2026-01-16T20:55:58.327961+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'and'}",1768564556798
+2026-01-16T20:55:58.327966+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564558287
+2026-01-16T20:55:58.327971+09:00,debug-HW04,Controller,R,3,306,confirm,{'word': 'and'},1768564558287
+2026-01-16T20:56:03.345947+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564559661
+2026-01-16T20:56:03.345976+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 2, 'top': 'o'}",1768564559704
+2026-01-16T20:56:03.345983+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564560077
+2026-01-16T20:56:03.345989+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 4, 'top': 'oo'}",1768564560107
+2026-01-16T20:56:03.345995+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 's', 'code': 'KeyS'}",1768564560550
+2026-01-16T20:56:03.346001+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'low'}",1768564560601
+2026-01-16T20:56:03.346006+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564561023
+2026-01-16T20:56:03.346012+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'lose'}",1768564561158
+2026-01-16T20:56:03.346018+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564561412
+2026-01-16T20:56:03.346023+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'lower'}",1768564561542
+2026-01-16T20:56:03.346029+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 's', 'code': 'KeyS'}",1768564562036
+2026-01-16T20:56:03.346034+09:00,debug-HW04,Controller,R,3,306,prediction_update,"{'count': 10, 'top': 'losers'}",1768564562122
+2026-01-16T20:56:03.346039+09:00,debug-HW04,Controller,R,3,306,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564563383
+2026-01-16T20:56:03.346044+09:00,debug-HW04,Controller,R,3,306,confirm,{'word': 'losers'},1768564563383
+2026-01-16T20:56:05.471391+09:00,debug-HW04,Controller,R,4,306,system,phrase_completed,1768564563445
+2026-01-16T20:56:05.471414+09:00,debug-HW04,Controller,R,4,306,system,next_phrase_clicked,1768564565454
+2026-01-16T20:56:16.296496+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 's', 'code': 'KeyS'}",1768564566550
+2026-01-16T20:56:16.296523+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 3, 'top': 's'}",1768564566591
+2026-01-16T20:56:16.296530+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'h', 'code': 'KeyH'}",1768564566883
+2026-01-16T20:56:16.296536+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'su'}",1768564566908
+2026-01-16T20:56:16.296542+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'i', 'code': 'KeyI'}",1768564567577
+2026-01-16T20:56:16.296547+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'shi'}",1768564567761
+2026-01-16T20:56:16.296552+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'b', 'code': 'KeyB'}",1768564568966
+2026-01-16T20:56:16.296558+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'suit'}",1768564569115
+2026-01-16T20:56:16.296585+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768564569980
+2026-01-16T20:56:16.296597+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'shi'}",1768564570026
+2026-01-16T20:56:16.296602+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'v', 'code': 'KeyV'}",1768564570271
+2026-01-16T20:56:16.296607+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'suit'}",1768564570301
+2026-01-16T20:56:16.296613+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564570993
+2026-01-16T20:56:16.296617+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'suite'}",1768564571120
+2026-01-16T20:56:16.296622+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564572023
+2026-01-16T20:56:16.296627+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'shiver'}",1768564572073
+2026-01-16T20:56:16.296633+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'i', 'code': 'KeyI'}",1768564572786
+2026-01-16T20:56:16.296638+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'shiveri'}",1768564572823
+2026-01-16T20:56:16.296644+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'n', 'code': 'KeyN'}",1768564574174
+2026-01-16T20:56:16.296648+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'whitefin'}",1768564574303
+2026-01-16T20:56:16.296654+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'g', 'code': 'KeyG'}",1768564574882
+2026-01-16T20:56:16.296658+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'shivering'}",1768564575022
+2026-01-16T20:56:16.296663+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564576257
+2026-01-16T20:56:16.296668+09:00,debug-HW04,Controller,R,4,399,confirm,{'word': 'shivering'},1768564576257
+2026-01-16T20:56:18.891919+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'i', 'code': 'KeyI'}",1768564577118
+2026-01-16T20:56:18.891945+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 2, 'top': 'i'}",1768564577159
+2026-01-16T20:56:18.891952+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 's', 'code': 'KeyS'}",1768564578146
+2026-01-16T20:56:18.891958+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 6, 'top': 'is'}",1768564578179
+2026-01-16T20:56:18.891963+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564578813
+2026-01-16T20:56:18.891969+09:00,debug-HW04,Controller,R,4,399,confirm,{'word': 'is'},1768564578813
+2026-01-16T20:56:22.262612+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564580188
+2026-01-16T20:56:22.262637+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 2, 'top': 'o'}",1768564580236
+2026-01-16T20:56:22.262644+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'n', 'code': 'KeyN'}",1768564581022
+2026-01-16T20:56:22.262650+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'on'}",1768564581050
+2026-01-16T20:56:22.262655+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564581549
+2026-01-16T20:56:22.262660+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'one'}",1768564581575
+2026-01-16T20:56:22.262665+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564582243
+2026-01-16T20:56:22.262670+09:00,debug-HW04,Controller,R,4,399,confirm,{'word': 'one'},1768564582243
+2026-01-16T20:56:25.279636+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'w', 'code': 'KeyW'}",1768564583340
+2026-01-16T20:56:25.279663+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 3, 'top': 's'}",1768564583383
+2026-01-16T20:56:25.279670+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564583563
+2026-01-16T20:56:25.279677+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 9, 'top': 'wa'}",1768564583589
+2026-01-16T20:56:25.279682+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'y', 'code': 'KeyY'}",1768564584048
+2026-01-16T20:56:25.279687+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'way'}",1768564584076
+2026-01-16T20:56:25.279693+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564585271
+2026-01-16T20:56:25.279699+09:00,debug-HW04,Controller,R,4,399,confirm,{'word': 'way'},1768564585271
+2026-01-16T20:56:27.519428+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 't', 'code': 'KeyT'}",1768564586229
+2026-01-16T20:56:27.519459+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 6, 'top': 'g'}",1768564586269
+2026-01-16T20:56:27.519466+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564586452
+2026-01-16T20:56:27.519473+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'to'}",1768564586482
+2026-01-16T20:56:27.519479+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564587521
+2026-01-16T20:56:27.519485+09:00,debug-HW04,Controller,R,4,399,confirm,{'word': 'to'},1768564587521
+2026-01-16T20:56:30.367652+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'k', 'code': 'KeyK'}",1768564588423
+2026-01-16T20:56:30.367680+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 2, 'top': 'i'}",1768564588471
+2026-01-16T20:56:30.367687+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564588840
+2026-01-16T20:56:30.367693+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 6, 'top': 'ke'}",1768564588973
+2026-01-16T20:56:30.367698+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564589174
+2026-01-16T20:56:30.367703+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'ice'}",1768564589318
+2026-01-16T20:56:30.367708+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'p', 'code': 'KeyP'}",1768564589465
+2026-01-16T20:56:30.367713+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'keep'}",1768564589523
+2026-01-16T20:56:30.367719+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564590382
+2026-01-16T20:56:30.367724+09:00,debug-HW04,Controller,R,4,399,confirm,{'word': 'keep'},1768564590382
+2026-01-16T20:56:33.790231+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'w', 'code': 'KeyW'}",1768564591257
+2026-01-16T20:56:33.790260+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 3, 'top': 's'}",1768564591298
+2026-01-16T20:56:33.790267+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564591840
+2026-01-16T20:56:33.790273+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 9, 'top': 'wa'}",1768564591871
+2026-01-16T20:56:33.790279+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564592076
+2026-01-16T20:56:33.790284+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'war'}",1768564592103
+2026-01-16T20:56:33.790289+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'm', 'code': 'KeyM'}",1768564592757
+2026-01-16T20:56:33.790294+09:00,debug-HW04,Controller,R,4,399,prediction_update,"{'count': 10, 'top': 'warm'}",1768564593053
+2026-01-16T20:56:33.790299+09:00,debug-HW04,Controller,R,4,399,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564593784
+2026-01-16T20:56:33.790305+09:00,debug-HW04,Controller,R,4,399,confirm,{'word': 'warm'},1768564593784
+2026-01-16T20:56:35.875202+09:00,debug-HW04,Controller,R,5,399,system,phrase_completed,1768564593847
+2026-01-16T20:56:35.875226+09:00,debug-HW04,Controller,R,5,399,system,next_phrase_clicked,1768564595853
+2026-01-16T20:56:40.115713+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 's', 'code': 'KeyS'}",1768564597131
+2026-01-16T20:56:40.115739+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 3, 'top': 's'}",1768564597181
+2026-01-16T20:56:40.115746+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'h', 'code': 'KeyH'}",1768564597673
+2026-01-16T20:56:40.115752+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'su'}",1768564597700
+2026-01-16T20:56:40.115758+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564598104
+2026-01-16T20:56:40.115763+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'sha'}",1768564598133
+2026-01-16T20:56:40.115768+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564598853
+2026-01-16T20:56:40.115773+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'suzo'}",1768564598882
+2026-01-16T20:56:40.115779+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564599146
+2026-01-16T20:56:40.115784+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'small'}",1768564599173
+2026-01-16T20:56:40.115789+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564600022
+2026-01-16T20:56:40.115837+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'small'},1768564600022
+2026-01-16T20:56:41.494337+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768564601451
+2026-01-16T20:56:41.494362+09:00,debug-HW04,Controller,R,5,192,undo,{'removed_word': 'small'},1768564601451
+2026-01-16T20:56:46.194076+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 's', 'code': 'KeyS'}",1768564602187
+2026-01-16T20:56:46.194103+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 3, 'top': 's'}",1768564602237
+2026-01-16T20:56:46.194110+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'h', 'code': 'KeyH'}",1768564602672
+2026-01-16T20:56:46.194116+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'su'}",1768564602701
+2026-01-16T20:56:46.194123+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564603242
+2026-01-16T20:56:46.194128+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'sha'}",1768564603271
+2026-01-16T20:56:46.194133+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564604075
+2026-01-16T20:56:46.194139+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'suzo'}",1768564604103
+2026-01-16T20:56:46.194144+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564604395
+2026-01-16T20:56:46.194149+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'small'}",1768564604420
+2026-01-16T20:56:46.194155+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': ' ', 'code': 'Space'}",1768564605381
+2026-01-16T20:56:46.194160+09:00,debug-HW04,Controller,R,5,192,nav,"{'direction': 1, 'new_index': 1}",1768564605381
+2026-01-16T20:56:46.194165+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564606103
+2026-01-16T20:56:46.194170+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'shall'},1768564606103
+2026-01-16T20:56:50.066070+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'w', 'code': 'KeyW'}",1768564606853
+2026-01-16T20:56:50.066096+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 3, 'top': 's'}",1768564606894
+2026-01-16T20:56:50.066102+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'e', 'code': 'KeyE'}",1768564607270
+2026-01-16T20:56:50.066108+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 9, 'top': 'se'}",1768564607298
+2026-01-16T20:56:50.066114+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': ' ', 'code': 'Space'}",1768564609423
+2026-01-16T20:56:50.066119+09:00,debug-HW04,Controller,R,5,192,nav,"{'direction': 1, 'new_index': 1}",1768564609423
+2026-01-16T20:56:50.066125+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564610034
+2026-01-16T20:56:50.066131+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'we'},1768564610034
+2026-01-16T20:56:54.354475+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'p', 'code': 'KeyP'}",1768564611325
+2026-01-16T20:56:54.354502+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 1, 'top': 'p'}",1768564611374
+2026-01-16T20:56:54.354510+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564611825
+2026-01-16T20:56:54.354515+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 2, 'top': 'po'}",1768564611852
+2026-01-16T20:56:54.354520+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564612422
+2026-01-16T20:56:54.354525+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 6, 'top': 'pla'}",1768564612500
+2026-01-16T20:56:54.354531+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'y', 'code': 'KeyY'}",1768564612936
+2026-01-16T20:56:54.354537+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'plan'}",1768564612990
+2026-01-16T20:56:54.354542+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564614340
+2026-01-16T20:56:54.354547+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'plan'},1768564614340
+2026-01-16T20:56:55.761921+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768564615756
+2026-01-16T20:56:55.761949+09:00,debug-HW04,Controller,R,5,192,undo,{'removed_word': 'plan'},1768564615756
+2026-01-16T20:57:00.680468+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'p', 'code': 'KeyP'}",1768564616783
+2026-01-16T20:57:00.680495+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 1, 'top': 'p'}",1768564616826
+2026-01-16T20:57:00.680502+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'l', 'code': 'KeyL'}",1768564617242
+2026-01-16T20:57:00.680508+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 2, 'top': 'po'}",1768564617269
+2026-01-16T20:57:00.680513+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564618089
+2026-01-16T20:57:00.680518+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 6, 'top': 'pla'}",1768564618117
+2026-01-16T20:57:00.680523+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'y', 'code': 'KeyY'}",1768564618603
+2026-01-16T20:57:00.680528+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'plan'}",1768564618631
+2026-01-16T20:57:00.680533+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': ' ', 'code': 'Space'}",1768564619936
+2026-01-16T20:57:00.680538+09:00,debug-HW04,Controller,R,5,192,nav,"{'direction': 1, 'new_index': 1}",1768564619936
+2026-01-16T20:57:00.680544+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564620700
+2026-01-16T20:57:00.680549+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'play'},1768564620700
+2026-01-16T20:57:02.892164+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564621811
+2026-01-16T20:57:02.892191+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 3, 'top': 'a'}",1768564621852
+2026-01-16T20:57:02.892198+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564622867
+2026-01-16T20:57:02.892204+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'a'},1768564622867
+2026-01-16T20:57:07.948622+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564624297
+2026-01-16T20:57:07.948648+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 6, 'top': 'g'}",1768564624345
+2026-01-16T20:57:07.948655+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564624839
+2026-01-16T20:57:07.948661+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'to'}",1768564624869
+2026-01-16T20:57:07.948667+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'u', 'code': 'KeyU'}",1768564625380
+2026-01-16T20:57:07.948673+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'von'}",1768564625407
+2026-01-16T20:57:07.948679+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'n', 'code': 'KeyN'}",1768564625991
+2026-01-16T20:57:07.948684+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'bony'}",1768564626301
+2026-01-16T20:57:07.948689+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'd', 'code': 'KeyD'}",1768564626492
+2026-01-16T20:57:07.948695+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'round'}",1768564626742
+2026-01-16T20:57:07.948701+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564627867
+2026-01-16T20:57:07.948706+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'round'},1768564627867
+2026-01-16T20:57:12.138458+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'o', 'code': 'KeyO'}",1768564628727
+2026-01-16T20:57:12.138485+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 2, 'top': 'o'}",1768564628769
+2026-01-16T20:57:12.138492+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'f', 'code': 'KeyF'}",1768564629644
+2026-01-16T20:57:12.138498+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'or'}",1768564629670
+2026-01-16T20:57:12.138503+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': ' ', 'code': 'Space'}",1768564631158
+2026-01-16T20:57:12.138509+09:00,debug-HW04,Controller,R,5,192,nav,"{'direction': 1, 'new_index': 1}",1768564631158
+2026-01-16T20:57:12.138514+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564632102
+2026-01-16T20:57:12.138519+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'of'},1768564632102
+2026-01-16T20:57:16.752864+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'c', 'code': 'KeyC'}",1768564633380
+2026-01-16T20:57:16.752891+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 3, 'top': 'c'}",1768564633421
+2026-01-16T20:57:16.752899+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'a', 'code': 'KeyA'}",1768564634102
+2026-01-16T20:57:16.752904+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 9, 'top': 'da'}",1768564634131
+2026-01-16T20:57:16.752910+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'r', 'code': 'KeyR'}",1768564634435
+2026-01-16T20:57:16.752943+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'car'}",1768564634461
+2026-01-16T20:57:16.752952+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'd', 'code': 'KeyD'}",1768564634810
+2026-01-16T20:57:16.752958+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'card'}",1768564635023
+2026-01-16T20:57:16.752963+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 's', 'code': 'KeyS'}",1768564635380
+2026-01-16T20:57:16.752969+09:00,debug-HW04,Controller,R,5,192,prediction_update,"{'count': 10, 'top': 'cards'}",1768564635495
+2026-01-16T20:57:16.752974+09:00,debug-HW04,Controller,R,5,192,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768564636671
+2026-01-16T20:57:16.752979+09:00,debug-HW04,Controller,R,5,192,confirm,{'word': 'cards'},1768564636671
+2026-01-16T20:57:18.763074+09:00,debug-HW04,Controller,R,6,192,system,phrase_completed,1768564636734
+2026-01-16T20:57:18.763095+09:00,debug-HW04,Controller,R,6,192,system,next_phrase_clicked,1768564638740
