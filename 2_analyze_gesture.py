@@ -3,10 +3,10 @@ import json
 import glob
 import os
 import ast
-import numpy as np
 
 # --- 設定 ---
-DATA_ROOT = "analyzed_data/gesture"
+# 親ディレクトリ指定
+DATA_ROOT_BASE = "analyzed_data"
 
 def parse_event_data(data_str):
     if isinstance(data_str, dict): return data_str
@@ -30,13 +30,9 @@ def process_gesture_raw_log(filepath):
     results = []
     time_col = 'ServerTimestampISO' if 'ServerTimestampISO' in df.columns else 'Timestamp'
 
-    # 試行ごとのデータを抽出
     for index, row in df.iterrows():
-        # state_change イベントで完了判定
         if row['EventType'] == 'state_change':
             event_data = parse_event_data(row.get('EventData', '{}'))
-            
-            # 反応時間 (rt_ms) が記録されている場合
             if isinstance(event_data, dict) and 'rt_ms' in event_data:
                 results.append({
                     'Timestamp': row.get(time_col),
@@ -53,19 +49,21 @@ def process_gesture_raw_log(filepath):
     return pd.DataFrame(results)
 
 def main():
-    if not os.path.exists(DATA_ROOT):
-        print(f"Data directory '{DATA_ROOT}' not found. Run 1_organize_logs.py first.")
+    if not os.path.exists(DATA_ROOT_BASE):
+        print(f"Data directory '{DATA_ROOT_BASE}' not found. Run 1_organize_logs.py first.")
         return
     
-    raw_files = glob.glob(os.path.join(DATA_ROOT, "**", "*_raw.csv"), recursive=True)
-    print(f"Found {len(raw_files)} raw gesture logs.")
+    # "gesture" という文字が含まれるパスのみ対象 (gesture, gesture_practice)
+    all_raw_files = glob.glob(os.path.join(DATA_ROOT_BASE, "**", "*_raw.csv"), recursive=True)
+    raw_files = [f for f in all_raw_files if "gesture" in f]
+    
+    print(f"Found {len(raw_files)} raw gesture logs (including practice).")
 
     total = 0
     for raw_file in raw_files:
         df = process_gesture_raw_log(raw_file)
         if df is not None and not df.empty:
-            summary_path = raw_file.replace("_raw.csv", "_summary.csv")
-            df.to_csv(summary_path, index=False)
+            df.to_csv(raw_file.replace("_raw.csv", "_summary.csv"), index=False)
             total += len(df)
             print(f"  -> Processed: {os.path.basename(raw_file)} ({len(df)} trials)")
     print(f"Gesture analysis complete. Total: {total}")
