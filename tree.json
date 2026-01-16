@@ -1,16 +1,161 @@
 [
   {"type":"directory","name":".","contents":[
+    {"type":"file","name":"1_organize_logs.py"},
+    {"type":"file","name":"2_analyze_gesture.py"},
+    {"type":"file","name":"2_analyze_typing.py"},
+    {"type":"file","name":"3_visualize_gesture.py"},
+    {"type":"file","name":"3_visualize_typing.py"},
     {"type":"file","name":"README.md"},
     {"type":"file","name":"USAGE.md"},
-    {"type":"file","name":"analysis.py"},
-    {"type":"file","name":"analysis_visualize.py"},
+    {"type":"directory","name":"analysis_results","contents":[
+      {"type":"directory","name":"20260117_004557","contents":[
+        {"type":"directory","name":"typing","contents":[
+          {"type":"file","name":"typing_cer_boxplot.png"},
+          {"type":"file","name":"typing_wpm_boxplot.png"},
+          {"type":"file","name":"typing_wpm_learning_curve.png"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260117_004607","contents":[
+        {"type":"directory","name":"gesture","contents":[
+          {"type":"file","name":"gesture_learning_curve.png"},
+          {"type":"file","name":"gesture_rt_boxplot.png"},
+          {"type":"file","name":"gesture_rt_by_type.png"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260117_005325","contents":[
+        {"type":"directory","name":"typing","contents":[
+          {"type":"file","name":"typing_cer_boxplot.pdf"},
+          {"type":"file","name":"typing_cer_boxplot.png"},
+          {"type":"file","name":"typing_cer_boxplot.svg"},
+          {"type":"file","name":"typing_kspc_boxplot.pdf"},
+          {"type":"file","name":"typing_kspc_boxplot.png"},
+          {"type":"file","name":"typing_kspc_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_boxplot.pdf"},
+          {"type":"file","name":"typing_wpm_boxplot.png"},
+          {"type":"file","name":"typing_wpm_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
+          {"type":"file","name":"typing_wpm_learning_curve.png"},
+          {"type":"file","name":"typing_wpm_learning_curve.svg"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260117_005343","contents":[
+        {"type":"directory","name":"gesture","contents":[
+          {"type":"file","name":"gesture_learning_curve.pdf"},
+          {"type":"file","name":"gesture_learning_curve.png"},
+          {"type":"file","name":"gesture_learning_curve.svg"},
+          {"type":"file","name":"gesture_rt_boxplot.pdf"},
+          {"type":"file","name":"gesture_rt_boxplot.png"},
+          {"type":"file","name":"gesture_rt_boxplot.svg"},
+          {"type":"file","name":"gesture_rt_by_type.pdf"},
+          {"type":"file","name":"gesture_rt_by_type.png"},
+          {"type":"file","name":"gesture_rt_by_type.svg"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260117_042212","contents":[
+        {"type":"directory","name":"typing","contents":[
+          {"type":"file","name":"typing_cer_boxplot.pdf"},
+          {"type":"file","name":"typing_cer_boxplot.png"},
+          {"type":"file","name":"typing_cer_boxplot.svg"},
+          {"type":"file","name":"typing_kspc_boxplot.pdf"},
+          {"type":"file","name":"typing_kspc_boxplot.png"},
+          {"type":"file","name":"typing_kspc_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_boxplot.pdf"},
+          {"type":"file","name":"typing_wpm_boxplot.png"},
+          {"type":"file","name":"typing_wpm_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
+          {"type":"file","name":"typing_wpm_learning_curve.png"},
+          {"type":"file","name":"typing_wpm_learning_curve.svg"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260117_044633","contents":[
+        {"type":"directory","name":"typing","contents":[
+          {"type":"file","name":"typing_cer_boxplot.pdf"},
+          {"type":"file","name":"typing_cer_boxplot.png"},
+          {"type":"file","name":"typing_cer_boxplot.svg"},
+          {"type":"file","name":"typing_kspc_boxplot.pdf"},
+          {"type":"file","name":"typing_kspc_boxplot.png"},
+          {"type":"file","name":"typing_kspc_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_boxplot.pdf"},
+          {"type":"file","name":"typing_wpm_boxplot.png"},
+          {"type":"file","name":"typing_wpm_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
+          {"type":"file","name":"typing_wpm_learning_curve.png"},
+          {"type":"file","name":"typing_wpm_learning_curve.svg"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260117_051359","contents":[
+        {"type":"directory","name":"typing","contents":[
+          {"type":"file","name":"typing_cer_boxplot.pdf"},
+          {"type":"file","name":"typing_cer_boxplot.png"},
+          {"type":"file","name":"typing_cer_boxplot.svg"},
+          {"type":"file","name":"typing_kspc_boxplot.pdf"},
+          {"type":"file","name":"typing_kspc_boxplot.png"},
+          {"type":"file","name":"typing_kspc_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_boxplot.pdf"},
+          {"type":"file","name":"typing_wpm_boxplot.png"},
+          {"type":"file","name":"typing_wpm_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
+          {"type":"file","name":"typing_wpm_learning_curve.png"},
+          {"type":"file","name":"typing_wpm_learning_curve.svg"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260117_053832","contents":[
+        {"type":"directory","name":"typing","contents":[
+          {"type":"file","name":"typing_cer_boxplot.pdf"},
+          {"type":"file","name":"typing_cer_boxplot.png"},
+          {"type":"file","name":"typing_cer_boxplot.svg"},
+          {"type":"file","name":"typing_kspc_boxplot.pdf"},
+          {"type":"file","name":"typing_kspc_boxplot.png"},
+          {"type":"file","name":"typing_kspc_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_boxplot.pdf"},
+          {"type":"file","name":"typing_wpm_boxplot.png"},
+          {"type":"file","name":"typing_wpm_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
+          {"type":"file","name":"typing_wpm_learning_curve.png"},
+          {"type":"file","name":"typing_wpm_learning_curve.svg"}
+        ]}
+      ]}
+    ]},
     {"type":"directory","name":"analyze","contents":[
       {"type":"file","name":"gesture_learning_curve.png"},
       {"type":"file","name":"gesture_rt_boxplot.png"},
       {"type":"file","name":"wpm_boxplot.png"},
       {"type":"file","name":"wpm_learning_curve.png"}
     ]},
-    {"type":"file","name":"analyze_gesture.py"},
+    {"type":"directory","name":"analyzed_data","contents":[
+      {"type":"directory","name":"gesture","contents":[
+        {"type":"directory","name":"HW04","contents":[
+          {"type":"file","name":"log_HW04_2026-01-16-21-30-28_gesture_raw.csv"},
+          {"type":"file","name":"log_HW04_2026-01-16-21-30-28_gesture_summary.csv"},
+          {"type":"file","name":"log_HW04_2026-01-16-23-37-38_gesture_raw.csv"},
+          {"type":"file","name":"log_HW04_2026-01-16-23-37-38_gesture_summary.csv"}
+        ]},
+        {"type":"directory","name":"debug-HW04","contents":[
+          {"type":"file","name":"log_debug-HW04_2026-01-16-21-28-53_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-21-28-53_gesture_summary.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-23-36-05_gesture_summary.csv"}
+        ]}
+      ]},
+      {"type":"directory","name":"typing","contents":[
+        {"type":"directory","name":"HW04","contents":[
+          {"type":"file","name":"log_HW04_2026-01-16-20-25-28_typing_raw.csv"},
+          {"type":"file","name":"log_HW04_2026-01-16-20-25-28_typing_summary.csv"},
+          {"type":"file","name":"log_HW04_2026-01-16-20-38-43_typing_raw.csv"},
+          {"type":"file","name":"log_HW04_2026-01-16-20-38-43_typing_summary.csv"},
+          {"type":"file","name":"log_HW04_2026-01-16-20-57-46_typing_raw.csv"},
+          {"type":"file","name":"log_HW04_2026-01-16-20-57-46_typing_summary.csv"}
+        ]},
+        {"type":"directory","name":"debug-HW04","contents":[
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-23-57_typing_raw.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-23-57_typing_summary.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-36-17_typing_raw.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-36-17_typing_summary.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv"},
+          {"type":"file","name":"log_debug-HW04_2026-01-16-20-54-35_typing_summary.csv"}
+        ]}
+      ]}
+    ]},
     {"type":"file","name":"app.py"},
     {"type":"directory","name":"botsu","contents":[
       {"type":"file","name":"main.py"},
@@ -75,7 +220,6 @@
       ]}
     ]},
     {"type":"file","name":"nasa_tlx.py"},
-    {"type":"file","name":"organize_logs.py"},
     {"type":"file","name":"phrases2.txt"},
     {"type":"file","name":"phrases2_original.txt"},
     {"type":"file","name":"pyproject.toml"},
@@ -103,7 +247,6 @@
     {"type":"file","name":"treecommand.txt"},
     {"type":"file","name":"typing_test.py"},
     {"type":"file","name":"uv.lock"},
-    {"type":"file","name":"visualize_gesture_analysis.py"},
     {"type":"file","name":"wiki_en_token.arpa.bin"},
     {"type":"file","name":"word_notfound_limit=10_beamWidth=1000.txt"},
     {"type":"file","name":"word_notfound_limit=10_beamWidth=10000.txt"},
@@ -116,5 +259,5 @@
     {"type":"file","name":"wpm_analysis.png"}
   ]}
 ,
-  {"type":"report","directories":16,"files":85}
+  {"type":"report","directories":40,"files":180}
 ]

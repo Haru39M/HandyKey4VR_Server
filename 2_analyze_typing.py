@@ -82,7 +82,7 @@ def process_typing_raw_log(filepath, phrases):
         completed_events = trial_data[trial_data['EventType'] == 'phrase_completed']
         
         if completed_events.empty:
-            # 救済措置: 最後のconfirmがあれば採用
+            # 救済措置
             confirm_events = trial_data[trial_data['EventType'] == 'confirm']
             if confirm_events.empty:
                 continue
@@ -101,9 +101,18 @@ def process_typing_raw_log(filepath, phrases):
         
         input_phrase = " ".join(words)
 
-        # --- 3. TargetPhrase の取得 ---
+        # --- 3. TargetPhrase の取得 (ロジック強化) ---
         phrase_id = -1
-        if 'PhraseID' in trial_data.columns:
+        
+        # A. test_started イベントが持つ PhraseID を最優先
+        start_events = trial_data[trial_data['EventType'] == 'test_started']
+        if not start_events.empty and 'PhraseID' in start_events.columns:
+            pid_cand = start_events.iloc[0]['PhraseID']
+            if pd.notna(pid_cand):
+                phrase_id = int(pid_cand)
+        
+        # B. なければ最頻値
+        if phrase_id == -1 and 'PhraseID' in trial_data.columns:
             valid_pids = trial_data['PhraseID'].dropna()
             if not valid_pids.empty:
                 phrase_id = int(valid_pids.mode()[0])
@@ -125,16 +134,16 @@ def process_typing_raw_log(filepath, phrases):
 
         # --- 5. 指標計算 ---
         
-        input_char_count = len(input_phrase) # これが T
+        input_char_count = len(input_phrase) # T
         target_char_count = len(target_phrase)
 
         # WPM (WPM = (|T|-1) / S * 60 / 5)
-        # 1文字入力などのエッジケースでマイナスにならないようmaxをとる
         wpm_char_count = max(0, input_char_count - 1)
         wpm = (wpm_char_count / 5.0) / (duration_sec / 60.0)
         
-        # CER
-        error_dist = levenshtein_distance(target_phrase, input_phrase)
+        # CER (小文字化して比較)
+        # システム仕様上、TargetとInputは一致するはずなので、これでほぼ0になるはず
+        error_dist = levenshtein_distance(target_phrase.lower(), input_phrase.lower())
         cer = error_dist / target_char_count if target_char_count > 0 else 0.0
         
         # KSPC
@@ -158,6 +167,7 @@ def process_typing_raw_log(filepath, phrases):
         if pd.isna(pid): pid = trial_data['ParticipantID'].dropna().iloc[0] if not trial_data['ParticipantID'].dropna().empty else 'Unknown'
         if pd.isna(cond): cond = trial_data['Condition'].dropna().iloc[0] if not trial_data['Condition'].dropna().empty else 'Unknown'
 
+        # カラム順序
         results.append({
             'ParticipantID': pid,
             'Condition': cond,
@@ -166,20 +176,19 @@ def process_typing_raw_log(filepath, phrases):
             'PhraseID': phrase_id,
             'TargetPhrase': target_phrase,
             'InputPhrase': input_phrase,
-            # --- 算出根拠となる指標 (左側に配置) ---
+            # 詳細
             'TargetCharCount': target_char_count,
-            'InputCharCount': input_char_count, # これが T
-            'DurationSec': duration_sec,        # これが S
+            'InputCharCount': input_char_count,
+            'DurationSec': duration_sec,
             'LevenshteinDist': error_dist,
             'TotalKeystrokes': keystrokes,
-            # --- 主要指標 ---
+            # 主要指標
             'WPM': wpm,
             'CER': cer,
             'KSPC': kspc,
             'BackspaceCount': bs_count
         })
 
-    # DataFrame作成時に列の順序を明示的に指定
     cols_order = [
         'ParticipantID', 'Condition', 'Handedness', 'TrialID', 'PhraseID',
         'TargetPhrase', 'InputPhrase',
@@ -188,7 +197,6 @@ def process_typing_raw_log(filepath, phrases):
     ]
     
     df_ret = pd.DataFrame(results)
-    # 存在する列だけを選択して並べ替え（念のため）
     existing_cols = [c for c in cols_order if c in df_ret.columns]
     return df_ret[existing_cols]
 
