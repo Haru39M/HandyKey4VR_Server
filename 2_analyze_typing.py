@@ -79,7 +79,6 @@ def process_typing_raw_log(filepath, phrases):
         if trial_data.empty: continue
 
         # --- 1. 完了判定と終了時刻 ---
-        # phrase_completed イベントがあれば、それが正式な完了
         completed_events = trial_data[trial_data['EventType'] == 'phrase_completed']
         
         if completed_events.empty:
@@ -107,7 +106,6 @@ def process_typing_raw_log(filepath, phrases):
         if 'PhraseID' in trial_data.columns:
             valid_pids = trial_data['PhraseID'].dropna()
             if not valid_pids.empty:
-                # 最頻値を使って安定化
                 phrase_id = int(valid_pids.mode()[0])
 
         target_phrase = ""
@@ -115,7 +113,6 @@ def process_typing_raw_log(filepath, phrases):
             target_phrase = phrases[phrase_id]
 
         # --- 4. 開始時刻とDuration ---
-        # next_phrase_clicked (読み取り開始) の次のユーザー操作を開始点とする
         user_actions = trial_data[~trial_data['EventType'].isin(['system', 'test_started', 'phrase_completed', 'next_phrase_clicked'])]
         
         if not user_actions.empty:
@@ -128,20 +125,21 @@ def process_typing_raw_log(filepath, phrases):
 
         # --- 5. 指標計算 ---
         
-        char_count = len(input_phrase)
+        input_char_count = len(input_phrase) # これが T
+        target_char_count = len(target_phrase)
 
-        # WPM (修正: 分子を T-1 に変更)
-        # 文字数が0の場合は0にする
-        wpm_char_count = max(0, char_count - 1)
+        # WPM (WPM = (|T|-1) / S * 60 / 5)
+        # 1文字入力などのエッジケースでマイナスにならないようmaxをとる
+        wpm_char_count = max(0, input_char_count - 1)
         wpm = (wpm_char_count / 5.0) / (duration_sec / 60.0)
         
         # CER
         error_dist = levenshtein_distance(target_phrase, input_phrase)
-        cer = error_dist / len(target_phrase) if len(target_phrase) > 0 else 0.0
+        cer = error_dist / target_char_count if target_char_count > 0 else 0.0
         
         # KSPC
         keystrokes = len(trial_data[trial_data['EventType'].isin(['keydown', 'nav'])])
-        kspc = keystrokes / char_count if char_count > 0 else 0.0
+        kspc = keystrokes / input_char_count if input_char_count > 0 else 0.0
 
         # Backspace
         bs_count = 0
@@ -151,7 +149,7 @@ def process_typing_raw_log(filepath, phrases):
             if ed.get('key') == 'Backspace' or ed.get('code') == 'Backspace':
                 bs_count += 1
 
-        # メタデータ補完
+        # メタデータ
         first_row = trial_data.iloc[0]
         pid = first_row.get('ParticipantID')
         cond = first_row.get('Condition')
@@ -168,14 +166,32 @@ def process_typing_raw_log(filepath, phrases):
             'PhraseID': phrase_id,
             'TargetPhrase': target_phrase,
             'InputPhrase': input_phrase,
-            'DurationSec': duration_sec,
+            # --- 算出根拠となる指標 (左側に配置) ---
+            'TargetCharCount': target_char_count,
+            'InputCharCount': input_char_count, # これが T
+            'DurationSec': duration_sec,        # これが S
+            'LevenshteinDist': error_dist,
+            'TotalKeystrokes': keystrokes,
+            # --- 主要指標 ---
             'WPM': wpm,
             'CER': cer,
             'KSPC': kspc,
             'BackspaceCount': bs_count
         })
 
-    return pd.DataFrame(results)
+    # DataFrame作成時に列の順序を明示的に指定
+    cols_order = [
+        'ParticipantID', 'Condition', 'Handedness', 'TrialID', 'PhraseID',
+        'TargetPhrase', 'InputPhrase',
+        'TargetCharCount', 'InputCharCount', 'DurationSec', 'LevenshteinDist', 'TotalKeystrokes',
+        'WPM', 'CER', 'KSPC', 'BackspaceCount'
+    ]
+    
+    df_ret = pd.DataFrame(results)
+    # 存在する列だけを選択して並べ替え（念のため）
+    existing_cols = [c for c in cols_order if c in df_ret.columns]
+    return df_ret[existing_cols]
+
 
 def main():
     if not os.path.exists(DATA_ROOT):
