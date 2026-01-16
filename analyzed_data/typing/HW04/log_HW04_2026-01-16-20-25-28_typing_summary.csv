@@ -1,21 +1,21 @@
-ParticipantID,Condition,Handedness,TrialID,TargetPhrase,InputPhrase,DurationSec,WPM,CER,KSPC,BackspaceCount
-HW04,Keyboard,R,1,valid until the end of the year,year,9.113311,5.267020954294219,0.8709677419354839,8.5,0
-HW04,Keyboard,R,2,valid until the end of the year,poisonous,13.175591,8.196975756153936,0.9032258064516129,4.0,0
-HW04,Keyboard,R,3,a rattle snake is very poisonous,slippery,11.264726,8.5221779917239,0.84375,5.25,1
-HW04,Keyboard,R,4,pumping helps if the roads are slippery,challenged,10.86219,11.047495946949924,0.8974358974358975,3.9,0
-HW04,Keyboard,R,5,parking tickets can be challenged,thin,11.804483,4.066251779091045,0.9090909090909091,11.5,1
-HW04,Keyboard,R,6,never too rich and never too thin,makeup,7.210121,9.98596278758706,0.9393939393939394,4.833333333333333,0
-HW04,Keyboard,R,7,she wears too much makeup,shack,6.776544,8.854070747566901,0.8,4.8,0
-HW04,Keyboard,R,8,it looks like a shack,east,6.595867,7.277284396425822,0.8571428571428571,9.5,3
-HW04,Keyboard,R,9,prevailing wind from the east,inspiring,6.853793,15.757697963740663,0.8620689655172413,3.5555555555555554,0
-HW04,Keyboard,R,10,your presentation was inspiring,cells,8.869646,6.764644271034042,0.9354838709677419,7.6,1
-HW04,Keyboard,R,11,electric cars need big fuel cells,lens,6.4132,7.484563088629702,0.8787878787878788,7.5,0
-HW04,Keyboard,R,12,video camera with a zoom lens,fudge,11.784696,5.091348983461262,0.9310344827586207,7.8,1
-HW04,Keyboard,R,13,all good boys deserve fudge,tree,5.991102,8.011881620443118,0.8888888888888888,7.0,0
-HW04,Keyboard,R,14,every apple from every tree,smart,8.1082,7.399916134283812,0.8888888888888888,5.4,0
-HW04,Keyboard,R,15,yes you are very smart,grow,10.478507,4.580805261665618,0.9545454545454546,11.0,1
-HW04,Keyboard,R,16,tell a lie and your nose will grow,bad,5.5475449999999995,6.489357003863871,0.9411764705882353,10.333333333333334,0
-HW04,Keyboard,R,17,sprawling subdivisions are bad,stop,5.225326,9.186029732881739,0.9333333333333333,7.5,0
-HW04,Keyboard,R,18,flashing red light means stop,sons,6.870373,6.986520236965301,0.896551724137931,7.75,1
-HW04,Keyboard,R,19,six daughters and seven sons,team,6.392184,7.509170574564187,0.8928571428571429,6.75,1
-HW04,Keyboard,R,20,he is still on our team,meter,7.234504,8.293588613676901,0.8695652173913043,5.8,0
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,DurationSec,WPM,CER,KSPC,BackspaceCount
+HW04,Keyboard,R,1,262,valid until the end of the year,valid until the end of the year,9.113311,39.50265715720664,0.0,1.1612903225806452,0
+HW04,Keyboard,R,2,467,a rattle snake is very poisonous,a rattle snake is very poisonous,13.175591,28.234027604530223,0.0,1.21875,0
+HW04,Keyboard,R,3,461,pumping helps if the roads are slippery,pumping helps if the roads are slippery,11.264726,40.480345460688525,0.0,1.0769230769230769,1
+HW04,Keyboard,R,4,462,parking tickets can be challenged,parking tickets can be challenged,10.86219,35.35198703023976,0.0,1.3333333333333333,0
+HW04,Keyboard,R,5,2,never too rich and never too thin,never too rich and meter never too thin,11.804483,38.62939190136493,0.18181818181818182,1.3076923076923077,1
+HW04,Keyboard,R,6,150,she wears too much makeup,she wears too much makeup,7.210121,39.94385115034824,0.0,1.28,0
+HW04,Keyboard,R,7,267,it looks like a shack,it looks like a shack,6.776544,35.416282990267604,0.0,1.2380952380952381,0
+HW04,Keyboard,R,8,1,prevailing wind from the east,prevailing wind from the east,6.595867,50.94099077498075,0.0,1.3793103448275863,3
+HW04,Keyboard,R,9,345,your presentation was inspiring,your presentation was inspiring,6.853793,52.525659879135546,0.0,1.032258064516129,0
+HW04,Keyboard,R,10,367,electric cars need big fuel cells,electric cars need big fuel cells,8.869646,43.29372333461787,0.0,1.2121212121212122,1
+HW04,Keyboard,R,11,98,video camera with a zoom lens,video camera with a zoom lens,6.4132,52.39194162040791,0.0,1.0344827586206897,0
+HW04,Keyboard,R,12,93,all good boys deserve fudge,all good tons boys deserve fudge,11.784696,31.566363697459828,0.18518518518518517,1.375,1
+HW04,Keyboard,R,13,240,every apple from every tree,every apple from every tree,5.991102,52.077230532880264,0.0,1.037037037037037,0
+HW04,Keyboard,R,14,40,yes you are very smart,yes you are very smart,8.1082,31.07964776399201,0.0,1.4090909090909092,0
+HW04,Keyboard,R,15,475,tell a lie and your nose will grow,fell tell a lie and your nose will grow,10.478507,43.51764998582336,0.14705882352941177,1.205128205128205,1
+HW04,Keyboard,R,16,198,sprawling subdivisions are bad,sprawling subdivisions are bad,5.5475449999999995,62.730451037350754,0.0,1.0333333333333334,0
+HW04,Keyboard,R,17,197,flashing red light means stop,flashing red light means stop,5.225326,64.30220813017216,0.0,1.0344827586206897,0
+HW04,Keyboard,R,18,297,six daughters and seven sons,six daughters and seven sons,6.870373,47.15901159951578,0.0,1.1071428571428572,1
+HW04,Keyboard,R,19,73,he is still on our team,he is still on our team,6.392184,41.30043816010303,0.0,1.2173913043478262,1
+HW04,Keyboard,R,20,245,a yard is almost as a meter,a yard is almost as a meter,7.234504,43.12666079111989,0.0,1.1111111111111112,0

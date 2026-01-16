@@ -9,8 +9,8 @@ DATA_ROOT = "analyzed_data/typing"
 PHRASE_FILE = "phrases2.txt"
 
 def load_phrases(filename=PHRASE_FILE):
+    """フレーズリストを読み込む"""
     try:
-        # カレントまたは親ディレクトリを探索
         if not os.path.exists(filename):
             if os.path.exists(os.path.join("..", filename)):
                 filename = os.path.join("..", filename)
@@ -61,7 +61,7 @@ def process_typing_raw_log(filepath, phrases):
         print(f"Error reading {filepath}: {e}")
         return None
 
-    # タイムスタンプ
+    # タイムスタンプパース
     time_col = 'Timestamp' if 'Timestamp' in df.columns else 'ServerTimestampISO'
     if time_col not in df.columns: return None
     df[time_col] = pd.to_datetime(df[time_col], errors='coerce')
@@ -69,68 +69,109 @@ def process_typing_raw_log(filepath, phrases):
     if 'TrialID' not in df.columns: return None
     
     results = []
-    trials = df[df['TrialID'].notna()]['TrialID'].unique()
+    
+    # TrialIDごとに処理 (NaNを除外してユニークなIDを取得)
+    df = df.dropna(subset=['TrialID'])
+    trials = df['TrialID'].unique()
 
     for trial_id in trials:
         trial_data = df[df['TrialID'] == trial_id].sort_values(by=time_col)
         if trial_data.empty: continue
 
-        # 完了確認
+        # --- 1. 完了判定と終了時刻 ---
+        # phrase_completed イベントがあれば、それが正式な完了
+        completed_events = trial_data[trial_data['EventType'] == 'phrase_completed']
+        
+        if completed_events.empty:
+            # 救済措置: 最後のconfirmがあれば採用
+            confirm_events = trial_data[trial_data['EventType'] == 'confirm']
+            if confirm_events.empty:
+                continue
+            end_time = confirm_events.iloc[-1][time_col]
+        else:
+            end_time = completed_events.iloc[0][time_col]
+
+        # --- 2. InputPhrase の復元 ---
         confirm_events = trial_data[trial_data['EventType'] == 'confirm']
-        if confirm_events.empty: continue
+        words = []
+        for _, row in confirm_events.iterrows():
+            event_data = safe_eval_event_data(row['EventData'])
+            word = str(event_data.get('word', ''))
+            if word:
+                words.append(word)
+        
+        input_phrase = " ".join(words)
+
+        # --- 3. TargetPhrase の取得 ---
+        phrase_id = -1
+        if 'PhraseID' in trial_data.columns:
+            valid_pids = trial_data['PhraseID'].dropna()
+            if not valid_pids.empty:
+                # 最頻値を使って安定化
+                phrase_id = int(valid_pids.mode()[0])
+
+        target_phrase = ""
+        if phrases and 0 <= phrase_id < len(phrases):
+            target_phrase = phrases[phrase_id]
+
+        # --- 4. 開始時刻とDuration ---
+        # next_phrase_clicked (読み取り開始) の次のユーザー操作を開始点とする
+        user_actions = trial_data[~trial_data['EventType'].isin(['system', 'test_started', 'phrase_completed', 'next_phrase_clicked'])]
+        
+        if not user_actions.empty:
+            start_time = user_actions.iloc[0][time_col]
+        else:
+            continue
             
-        confirm_row = confirm_events.iloc[-1]
-        event_data = safe_eval_event_data(confirm_row['EventData'])
-        input_phrase = str(event_data.get('word', ''))
-        
-        first_row = trial_data.iloc[0]
-        phrase_id = int(first_row['PhraseID']) if pd.notna(first_row.get('PhraseID')) else -1
-        target_phrase = phrases[phrase_id] if (phrases and 0 <= phrase_id < len(phrases)) else ""
-        
-        # 時間計算
-        user_actions = trial_data[~trial_data['EventType'].isin(['system'])]
-        start_time = user_actions.iloc[0][time_col] if not user_actions.empty else trial_data.iloc[0][time_col]
-        end_time = confirm_row[time_col]
-        
         duration_sec = (end_time - start_time).total_seconds()
         if duration_sec <= 0: duration_sec = 0.1
 
-        # --- 指標計算 ---
+        # --- 5. 指標計算 ---
         
-        # 1. WPM
         char_count = len(input_phrase)
-        wpm = (char_count / 5.0) / (duration_sec / 60.0)
+
+        # WPM (修正: 分子を T-1 に変更)
+        # 文字数が0の場合は0にする
+        wpm_char_count = max(0, char_count - 1)
+        wpm = (wpm_char_count / 5.0) / (duration_sec / 60.0)
         
-        # 2. CER (Character Error Rate)
+        # CER
         error_dist = levenshtein_distance(target_phrase, input_phrase)
-        # ターゲット長が0の場合はCER計算不可(便宜上0または1)
         cer = error_dist / len(target_phrase) if len(target_phrase) > 0 else 0.0
         
-        # 3. KSPC (Keystrokes Per Character) - 新規追加
-        # 入力効率の指標。1.0に近いほど理想的（誤り訂正が少ない）。
-        # 'keydown' イベントの総数をカウント
-        total_keystrokes = len(trial_data[trial_data['EventType'] == 'keydown'])
-        kspc = total_keystrokes / len(input_phrase) if len(input_phrase) > 0 else 0.0
+        # KSPC
+        keystrokes = len(trial_data[trial_data['EventType'].isin(['keydown', 'nav'])])
+        kspc = keystrokes / char_count if char_count > 0 else 0.0
 
-        # 4. Backspace Count
+        # Backspace
         bs_count = 0
-        for _, row in trial_data.iterrows():
-            if row['EventType'] == 'keydown':
-                ed = safe_eval_event_data(row['EventData'])
-                if ed.get('key') == 'Backspace':
-                    bs_count += 1
+        keydowns = trial_data[trial_data['EventType'] == 'keydown']
+        for _, row in keydowns.iterrows():
+            ed = safe_eval_event_data(row['EventData'])
+            if ed.get('key') == 'Backspace' or ed.get('code') == 'Backspace':
+                bs_count += 1
+
+        # メタデータ補完
+        first_row = trial_data.iloc[0]
+        pid = first_row.get('ParticipantID')
+        cond = first_row.get('Condition')
+        hand = first_row.get('Handedness')
+        
+        if pd.isna(pid): pid = trial_data['ParticipantID'].dropna().iloc[0] if not trial_data['ParticipantID'].dropna().empty else 'Unknown'
+        if pd.isna(cond): cond = trial_data['Condition'].dropna().iloc[0] if not trial_data['Condition'].dropna().empty else 'Unknown'
 
         results.append({
-            'ParticipantID': first_row.get('ParticipantID', 'Unknown'),
-            'Condition': first_row.get('Condition', 'Unknown'),
-            'Handedness': first_row.get('Handedness', 'R'),
-            'TrialID': trial_id,
+            'ParticipantID': pid,
+            'Condition': cond,
+            'Handedness': hand,
+            'TrialID': int(trial_id),
+            'PhraseID': phrase_id,
             'TargetPhrase': target_phrase,
             'InputPhrase': input_phrase,
             'DurationSec': duration_sec,
             'WPM': wpm,
             'CER': cer,
-            'KSPC': kspc, # 追加
+            'KSPC': kspc,
             'BackspaceCount': bs_count
         })
 
@@ -153,7 +194,10 @@ def main():
             df.to_csv(summary_path, index=False)
             total += len(df)
             print(f"  -> Processed: {os.path.basename(raw_file)} ({len(df)} trials)")
-    print(f"Typing analysis complete. Total: {total}")
+        else:
+            print(f"  -> Skipped (No valid trials): {os.path.basename(raw_file)}")
+            
+    print(f"Typing analysis complete. Total trials: {total}")
 
 if __name__ == "__main__":
     main()

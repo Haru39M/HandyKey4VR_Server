@@ -9,15 +9,13 @@ from datetime import datetime, timedelta, timezone
 DATA_ROOT = "analyzed_data/typing"
 JST = timezone(timedelta(hours=+9), 'JST')
 
-# グラフの色定義 (論文用に視認性の高い色)
 PALETTE = {
-    "Keyboard": "#333333",    # Dark Grey
-    "Controller": "#007bff",  # Blue
-    "Proposed": "#35dc67"     # Green
+    "Keyboard": "#333333",
+    "Controller": "#007bff",
+    "Proposed": "#35dc67"
 }
 
 def get_output_dir():
-    # 上書き防止 & タイムゾーンJST
     timestamp = datetime.now(JST).strftime("%Y%m%d_%H%M%S")
     output_dir = os.path.join("analysis_results", timestamp, "typing")
     if not os.path.exists(output_dir):
@@ -25,12 +23,11 @@ def get_output_dir():
     return output_dir
 
 def save_plot(filename, output_dir):
-    """PNG, SVG, PDF形式で保存する"""
     base_path = os.path.join(output_dir, filename)
     plt.savefig(base_path + ".png", dpi=300, bbox_inches='tight')
     plt.savefig(base_path + ".svg", format='svg', bbox_inches='tight')
     plt.savefig(base_path + ".pdf", format='pdf', bbox_inches='tight')
-    print(f"Saved: {filename} (.png, .svg, .pdf)")
+    print(f"Saved: {filename}")
     plt.close()
 
 def load_all_summaries(root_dir):
@@ -41,7 +38,7 @@ def load_all_summaries(root_dir):
     
     df = pd.concat(df_list, ignore_index=True)
     
-    # --- データ型変換 (ここがCER可視化修正の肝) ---
+    # 数値型変換
     numeric_cols = ['WPM', 'CER', 'KSPC', 'DurationSec', 'TrialID']
     for col in numeric_cols:
         if col in df.columns:
@@ -58,8 +55,7 @@ def main():
         print("No typing summary data found.")
         return
 
-    # グローバルなフォント設定（論文用）
-    plt.rcParams['font.family'] = 'sans-serif' # 必要に応じて 'Times New Roman' 等に変更
+    plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.size'] = 12
 
     # 1. WPM Boxplot
@@ -75,21 +71,19 @@ def main():
     plt.grid(True, linestyle='--', alpha=0.5)
     save_plot("typing_wpm_learning_curve", output_dir)
 
-    # 3. CER Boxplot (修正済み)
+    # 3. CER Boxplot
     plt.figure(figsize=(8, 6))
     sns.boxplot(data=df, x="Condition", y="CER", palette=PALETTE, hue="Condition", legend=False)
     plt.title("Character Error Rate (CER)")
-    # ylimを自動設定に変更（白いグラフ問題対策）
-    # 極端に大きい外れ値がある場合のみクリップするなどの処理も検討可能
-    # plt.ylim(0, 0.5) 
+    # 外れ値を除外して見やすくする（必要であればコメントアウトを解除）
+    # plt.ylim(0, 0.2) 
     save_plot("typing_cer_boxplot", output_dir)
 
-    # 4. KSPC Boxplot (新規指標)
+    # 4. KSPC Boxplot
     plt.figure(figsize=(8, 6))
     if 'KSPC' in df.columns:
         sns.boxplot(data=df, x="Condition", y="KSPC", palette=PALETTE, hue="Condition", legend=False)
         plt.title("Keystrokes Per Character (KSPC)")
-        # 1.0が理想値なので、基準線を引く
         plt.axhline(y=1.0, color='r', linestyle='--', alpha=0.5, label='Ideal (1.0)')
         plt.legend()
         save_plot("typing_kspc_boxplot", output_dir)
