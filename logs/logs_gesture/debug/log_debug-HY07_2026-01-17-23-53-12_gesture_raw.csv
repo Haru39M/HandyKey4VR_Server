@@ -1,0 +1,203 @@
+ServerTimestampISO,ServerTimestamp,ParticipantID,Condition,Handedness,TrialID,TargetGesture,TargetID,EventType,EventData,ClientTimestamp
+2026-01-17T23:53:12.101527+09:00,1768661592101,debug-HY07,Proposed,R,None,None,-1,system,"{""action"": ""test_configured"", ""trials"": [6, 3, 5, 3, 3, 6, 1, 5, 7, 3]}",1768661592101
+2026-01-17T23:53:12.148391+09:00,1768661592148,debug-HY07,Proposed,R,1,Gun,6,system,"{""action"": ""test_start_click"", ""participant_id"": ""debug-HY07"", ""condition"": ""Proposed""}",1768661592076
+2026-01-17T23:53:20.162836+09:00,1768661600162,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661600162
+2026-01-17T23:53:20.220607+09:00,1768661600220,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661600220
+2026-01-17T23:53:20.223504+09:00,1768661600223,debug-HY07,Proposed,R,1,Gun,6,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661600223
+2026-01-17T23:53:22.435896+09:00,1768661602435,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661602435
+2026-01-17T23:53:22.554219+09:00,1768661602554,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661602554
+2026-01-17T23:53:23.258643+09:00,1768661603258,debug-HY07,Proposed,R,1,Gun,6,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 1}",1768661603258
+2026-01-17T23:53:23.330635+09:00,1768661603330,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661603330
+2026-01-17T23:53:24.047731+09:00,1768661604047,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661604047
+2026-01-17T23:53:25.075408+09:00,1768661605075,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661605075
+2026-01-17T23:53:25.364072+09:00,1768661605364,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661605364
+2026-01-17T23:53:25.840579+09:00,1768661605840,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661605840
+2026-01-17T23:53:26.618040+09:00,1768661606618,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661606618
+2026-01-17T23:53:27.214816+09:00,1768661607214,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661607214
+2026-01-17T23:53:27.873482+09:00,1768661607873,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661607873
+2026-01-17T23:53:28.767447+09:00,1768661608767,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661608767
+2026-01-17T23:53:29.424534+09:00,1768661609424,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661609424
+2026-01-17T23:53:32.655167+09:00,1768661612655,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661612655
+2026-01-17T23:53:32.657155+09:00,1768661612657,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661612657
+2026-01-17T23:53:32.770145+09:00,1768661612770,debug-HY07,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661612770
+2026-01-17T23:53:33.827529+09:00,1768661613827,debug-HY07,Proposed,R,1,Gun,6,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 9513.715267181396}",1768661613827
+2026-01-17T23:53:34.320562+09:00,1768661614320,debug-HY07,Proposed,R,2,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661614320
+2026-01-17T23:53:34.380454+09:00,1768661614380,debug-HY07,Proposed,R,2,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661614380
+2026-01-17T23:53:34.443542+09:00,1768661614443,debug-HY07,Proposed,R,2,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661614443
+2026-01-17T23:53:34.446776+09:00,1768661614446,debug-HY07,Proposed,R,2,FingerPoint,3,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661614446
+2026-01-17T23:53:37.455672+09:00,1768661617455,debug-HY07,Proposed,R,2,FingerPoint,3,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 2}",1768661617523
+2026-01-17T23:53:38.525245+09:00,1768661618525,debug-HY07,Proposed,R,2,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661618525
+2026-01-17T23:53:38.521808+09:00,1768661618521,debug-HY07,Proposed,R,2,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661618521
+2026-01-17T23:53:38.531139+09:00,1768661618531,debug-HY07,Proposed,R,2,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661618531
+2026-01-17T23:53:39.595266+09:00,1768661619595,debug-HY07,Proposed,R,2,FingerPoint,3,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1079.0035724639893}",1768661619595
+2026-01-17T23:53:39.843942+09:00,1768661619843,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661619843
+2026-01-17T23:53:39.905536+09:00,1768661619905,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661619905
+2026-01-17T23:53:39.963875+09:00,1768661619963,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661619963
+2026-01-17T23:53:40.026684+09:00,1768661620026,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661620026
+2026-01-17T23:53:40.034714+09:00,1768661620034,debug-HY07,Proposed,R,3,RockNRoll,5,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661620034
+2026-01-17T23:53:43.054053+09:00,1768661623054,debug-HY07,Proposed,R,3,RockNRoll,5,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 3}",1768661623036
+2026-01-17T23:53:44.413258+09:00,1768661624413,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661624413
+2026-01-17T23:53:44.590844+09:00,1768661624590,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661624590
+2026-01-17T23:53:44.668127+09:00,1768661624668,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661624668
+2026-01-17T23:53:47.769631+09:00,1768661627769,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661627769
+2026-01-17T23:53:47.772890+09:00,1768661627772,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661627772
+2026-01-17T23:53:47.830084+09:00,1768661627830,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661627830
+2026-01-17T23:53:47.887418+09:00,1768661627887,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661627887
+2026-01-17T23:53:48.065186+09:00,1768661628065,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661628065
+2026-01-17T23:53:48.065847+09:00,1768661628065,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661628065
+2026-01-17T23:53:49.381948+09:00,1768661629381,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661629381
+2026-01-17T23:53:49.442173+09:00,1768661629442,debug-HY07,Proposed,R,3,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661629442
+2026-01-17T23:53:50.416856+09:00,1768661630416,debug-HY07,Proposed,R,3,RockNRoll,5,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 6329.952955245972}",1768661630416
+2026-01-17T23:53:50.641258+09:00,1768661630641,debug-HY07,Proposed,R,4,FingerPoint,3,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661630641
+2026-01-17T23:53:50.660053+09:00,1768661630660,debug-HY07,Proposed,R,4,FingerPoint,3,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661630660
+2026-01-17T23:53:50.703478+09:00,1768661630703,debug-HY07,Proposed,R,4,FingerPoint,3,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661630703
+2026-01-17T23:53:50.758591+09:00,1768661630758,debug-HY07,Proposed,R,4,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661630758
+2026-01-17T23:53:50.767004+09:00,1768661630767,debug-HY07,Proposed,R,4,FingerPoint,3,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661630767
+2026-01-17T23:53:53.783112+09:00,1768661633783,debug-HY07,Proposed,R,4,FingerPoint,3,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 4}",1768661633789
+2026-01-17T23:53:54.586228+09:00,1768661634586,debug-HY07,Proposed,R,4,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661634586
+2026-01-17T23:53:54.643564+09:00,1768661634643,debug-HY07,Proposed,R,4,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661634643
+2026-01-17T23:53:54.886090+09:00,1768661634886,debug-HY07,Proposed,R,4,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661634886
+2026-01-17T23:53:55.916095+09:00,1768661635916,debug-HY07,Proposed,R,4,FingerPoint,3,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1102.2350788116455}",1768661635916
+2026-01-17T23:53:56.137175+09:00,1768661636137,debug-HY07,Proposed,R,5,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661636137
+2026-01-17T23:53:56.198709+09:00,1768661636198,debug-HY07,Proposed,R,5,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661636198
+2026-01-17T23:53:56.199624+09:00,1768661636199,debug-HY07,Proposed,R,5,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661636199
+2026-01-17T23:53:56.258921+09:00,1768661636258,debug-HY07,Proposed,R,5,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661636258
+2026-01-17T23:53:56.267408+09:00,1768661636267,debug-HY07,Proposed,R,5,FingerPoint,3,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661636267
+2026-01-17T23:53:59.303918+09:00,1768661639303,debug-HY07,Proposed,R,5,FingerPoint,3,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 5}",1768661639334
+2026-01-17T23:54:00.265610+09:00,1768661640265,debug-HY07,Proposed,R,5,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661640265
+2026-01-17T23:54:00.263998+09:00,1768661640263,debug-HY07,Proposed,R,5,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661640263
+2026-01-17T23:54:00.378962+09:00,1768661640378,debug-HY07,Proposed,R,5,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661640378
+2026-01-17T23:54:00.391453+09:00,1768661640391,debug-HY07,Proposed,R,5,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661640391
+2026-01-17T23:54:01.424876+09:00,1768661641424,debug-HY07,Proposed,R,5,FingerPoint,3,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1093.3997631072998}",1768661641424
+2026-01-17T23:54:01.930299+09:00,1768661641930,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661641930
+2026-01-17T23:54:02.230536+09:00,1768661642230,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661642230
+2026-01-17T23:54:02.231833+09:00,1768661642231,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661642231
+2026-01-17T23:54:02.290042+09:00,1768661642290,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661642290
+2026-01-17T23:54:02.294528+09:00,1768661642294,debug-HY07,Proposed,R,6,Gun,6,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661642294
+2026-01-17T23:54:04.560134+09:00,1768661644560,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661644560
+2026-01-17T23:54:05.311514+09:00,1768661645311,debug-HY07,Proposed,R,6,Gun,6,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 6}",1768661645370
+2026-01-17T23:54:05.871767+09:00,1768661645871,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661645871
+2026-01-17T23:54:06.292772+09:00,1768661646292,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661646292
+2026-01-17T23:54:06.290708+09:00,1768661646290,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661646290
+2026-01-17T23:54:06.407904+09:00,1768661646407,debug-HY07,Proposed,R,6,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661646407
+2026-01-17T23:54:07.434971+09:00,1768661647434,debug-HY07,Proposed,R,6,Gun,6,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1097.6710319519043}",1768661647434
+2026-01-17T23:54:07.661979+09:00,1768661647661,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661647661
+2026-01-17T23:54:07.804661+09:00,1768661647804,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661647804
+2026-01-17T23:54:07.799571+09:00,1768661647799,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661647799
+2026-01-17T23:54:08.214232+09:00,1768661648214,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661648214
+2026-01-17T23:54:08.335032+09:00,1768661648335,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661648335
+2026-01-17T23:54:08.870106+09:00,1768661648870,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661648870
+2026-01-17T23:54:09.230541+09:00,1768661649230,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661649230
+2026-01-17T23:54:09.534636+09:00,1768661649534,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661649534
+2026-01-17T23:54:09.714313+09:00,1768661649714,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661649714
+2026-01-17T23:54:09.717072+09:00,1768661649717,debug-HY07,Proposed,R,7,Fist,1,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661649717
+2026-01-17T23:54:12.746112+09:00,1768661652746,debug-HY07,Proposed,R,7,Fist,1,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 7}",1768661652733
+2026-01-17T23:54:13.451795+09:00,1768661653451,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661653451
+2026-01-17T23:54:13.629554+09:00,1768661653629,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661653629
+2026-01-17T23:54:13.634444+09:00,1768661653634,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661653634
+2026-01-17T23:54:13.689286+09:00,1768661653689,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661653689
+2026-01-17T23:54:13.748295+09:00,1768661653748,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661653748
+2026-01-17T23:54:14.709558+09:00,1768661654709,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661654709
+2026-01-17T23:54:14.770066+09:00,1768661654770,debug-HY07,Proposed,R,7,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661654770
+2026-01-17T23:54:14.772697+09:00,1768661654772,debug-HY07,Proposed,R,7,Fist,1,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1001.7375946044922}",1768661654772
+2026-01-17T23:54:14.781154+09:00,1768661654781,debug-HY07,Proposed,R,7,Fist,1,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1001.7375946044922}",1768661654781
+2026-01-17T23:54:14.890520+09:00,1768661654890,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661654890
+2026-01-17T23:54:14.892420+09:00,1768661654892,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661654892
+2026-01-17T23:54:14.898057+09:00,1768661654898,debug-HY07,Proposed,R,9,ThumbsUp,7,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661654898
+2026-01-17T23:54:15.489312+09:00,1768661655489,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661655489
+2026-01-17T23:54:15.850909+09:00,1768661655850,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661655850
+2026-01-17T23:54:17.923397+09:00,1768661657923,debug-HY07,Proposed,R,9,ThumbsUp,7,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 9}",1768661657907
+2026-01-17T23:54:18.250434+09:00,1768661658250,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661658250
+2026-01-17T23:54:18.608222+09:00,1768661658608,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661658608
+2026-01-17T23:54:18.667051+09:00,1768661658667,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661658667
+2026-01-17T23:54:18.785557+09:00,1768661658785,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661658785
+2026-01-17T23:54:19.865719+09:00,1768661659865,debug-HY07,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661659865
+2026-01-17T23:54:20.911624+09:00,1768661660911,debug-HY07,Proposed,R,9,ThumbsUp,7,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1943.4237480163574}",1768661660911
+2026-01-17T23:54:21.062373+09:00,1768661661062,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661661062
+2026-01-17T23:54:21.123293+09:00,1768661661123,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661661123
+2026-01-17T23:54:21.180048+09:00,1768661661180,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661661180
+2026-01-17T23:54:21.240435+09:00,1768661661240,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661661240
+2026-01-17T23:54:21.244295+09:00,1768661661244,debug-HY07,Proposed,R,10,FingerPoint,3,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1768661661244
+2026-01-17T23:54:24.275922+09:00,1768661664275,debug-HY07,Proposed,R,10,FingerPoint,3,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 10}",1768661664278
+2026-01-17T23:54:25.200514+09:00,1768661665200,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661665200
+2026-01-17T23:54:25.201090+09:00,1768661665201,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661665201
+2026-01-17T23:54:25.248977+09:00,1768661665248,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661665248
+2026-01-17T23:54:25.248317+09:00,1768661665248,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661665248
+2026-01-17T23:54:26.621008+09:00,1768661666621,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661666621
+2026-01-17T23:54:26.921162+09:00,1768661666921,debug-HY07,Proposed,R,10,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661666921
+2026-01-17T23:54:27.959479+09:00,1768661667959,debug-HY07,Proposed,R,10,FingerPoint,3,state_change,"{""from"": ""MEASURING"", ""to"": ""COMPLETED"", ""rt_ms"": 2642.781972885132}",1768661667959
+2026-01-17T23:54:27.968614+09:00,1768661667968,debug-HY07,Proposed,R,11,FingerPoint,3,system,"""test_finished""",1768661667985
+2026-01-17T23:54:28.296047+09:00,1768661668296,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661668296
+2026-01-17T23:54:28.352906+09:00,1768661668352,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661668352
+2026-01-17T23:54:28.476697+09:00,1768661668476,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661668476
+2026-01-17T23:54:28.474825+09:00,1768661668474,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661668474
+2026-01-17T23:54:39.717802+09:00,1768661679717,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661679717
+2026-01-17T23:54:39.716512+09:00,1768661679716,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661679716
+2026-01-17T23:54:39.774511+09:00,1768661679774,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661679774
+2026-01-17T23:54:40.136703+09:00,1768661680136,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661680136
+2026-01-17T23:54:40.196210+09:00,1768661680196,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661680196
+2026-01-17T23:54:40.257398+09:00,1768661680257,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661680257
+2026-01-17T23:54:40.259127+09:00,1768661680259,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661680259
+2026-01-17T23:54:40.440321+09:00,1768661680440,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""CLOSE""}",1768661680440
+2026-01-17T23:54:40.498316+09:00,1768661680498,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661680498
+2026-01-17T23:54:40.801901+09:00,1768661680801,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""CLOSE""}",1768661680801
+2026-01-17T23:54:40.861370+09:00,1768661680861,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661680861
+2026-01-17T23:54:40.860607+09:00,1768661680860,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661680860
+2026-01-17T23:54:40.920361+09:00,1768661680920,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661680920
+2026-01-17T23:54:42.606342+09:00,1768661682606,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""CLOSE""}",1768661682606
+2026-01-17T23:54:42.677942+09:00,1768661682677,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""CLOSE""}",1768661682677
+2026-01-17T23:54:42.727820+09:00,1768661682727,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661682727
+2026-01-17T23:54:42.908374+09:00,1768661682908,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661682908
+2026-01-17T23:54:42.966953+09:00,1768661682966,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661682966
+2026-01-17T23:54:43.148402+09:00,1768661683148,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661683148
+2026-01-17T23:54:43.267936+09:00,1768661683267,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661683267
+2026-01-17T23:54:43.270674+09:00,1768661683270,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661683270
+2026-01-17T23:54:43.271773+09:00,1768661683271,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661683271
+2026-01-17T23:54:43.448432+09:00,1768661683448,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661683448
+2026-01-17T23:54:43.508212+09:00,1768661683508,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661683508
+2026-01-17T23:54:43.629385+09:00,1768661683629,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661683629
+2026-01-17T23:54:43.688395+09:00,1768661683688,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661683688
+2026-01-17T23:54:43.748323+09:00,1768661683748,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661683748
+2026-01-17T23:54:44.050349+09:00,1768661684050,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661684050
+2026-01-17T23:54:44.051222+09:00,1768661684051,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661684051
+2026-01-17T23:54:44.112201+09:00,1768661684112,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661684112
+2026-01-17T23:54:44.115536+09:00,1768661684115,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661684115
+2026-01-17T23:54:44.229825+09:00,1768661684229,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661684229
+2026-01-17T23:54:44.290401+09:00,1768661684290,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661684290
+2026-01-17T23:54:44.413981+09:00,1768661684413,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661684413
+2026-01-17T23:54:44.479211+09:00,1768661684479,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661684479
+2026-01-17T23:54:44.475196+09:00,1768661684475,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""CLOSE""}",1768661684475
+2026-01-17T23:54:44.538406+09:00,1768661684538,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661684538
+2026-01-17T23:54:44.893885+09:00,1768661684893,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661684893
+2026-01-17T23:54:44.891927+09:00,1768661684891,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661684891
+2026-01-17T23:54:44.950144+09:00,1768661684950,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""CLOSE""}",1768661684950
+2026-01-17T23:54:45.069890+09:00,1768661685069,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""CLOSE""}",1768661685069
+2026-01-17T23:54:45.131691+09:00,1768661685131,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661685131
+2026-01-17T23:54:45.369567+09:00,1768661685369,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661685369
+2026-01-17T23:54:45.430656+09:00,1768661685430,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661685430
+2026-01-17T23:54:45.492941+09:00,1768661685492,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661685492
+2026-01-17T23:54:45.491355+09:00,1768661685491,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661685491
+2026-01-17T23:54:45.670184+09:00,1768661685670,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661685670
+2026-01-17T23:54:45.671812+09:00,1768661685671,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661685671
+2026-01-17T23:54:45.790353+09:00,1768661685790,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661685790
+2026-01-17T23:54:45.852263+09:00,1768661685852,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661685852
+2026-01-17T23:54:45.851517+09:00,1768661685851,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661685851
+2026-01-17T23:54:45.971637+09:00,1768661685971,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661685971
+2026-01-17T23:54:46.030404+09:00,1768661686030,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1768661686030
+2026-01-17T23:54:46.271254+09:00,1768661686271,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661686271
+2026-01-17T23:54:46.271696+09:00,1768661686271,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1768661686271
+2026-01-17T23:54:46.329806+09:00,1768661686329,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661686329
+2026-01-17T23:54:47.548523+09:00,1768661687548,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661687548
+2026-01-17T23:54:47.648743+09:00,1768661687648,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661687648
+2026-01-17T23:54:48.070316+09:00,1768661688070,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661688070
+2026-01-17T23:54:48.140061+09:00,1768661688140,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661688140
+2026-01-17T23:54:48.249412+09:00,1768661688249,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661688249
+2026-01-17T23:54:48.309824+09:00,1768661688309,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661688309
+2026-01-17T23:54:48.367194+09:00,1768661688367,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661688367
+2026-01-17T23:54:49.087099+09:00,1768661689087,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661689087
+2026-01-17T23:54:49.208426+09:00,1768661689208,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661689208
+2026-01-17T23:54:49.268134+09:00,1768661689268,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661689268
+2026-01-17T23:54:49.985245+09:00,1768661689985,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661689985
+2026-01-17T23:54:50.405460+09:00,1768661690405,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661690405
+2026-01-17T23:54:51.181106+09:00,1768661691181,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1768661691181
+2026-01-17T23:54:58.774731+09:00,1768661698774,debug-HY07,Proposed,R,11,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1768661698774
