@@ -1,0 +1,570 @@
+Timestamp,ParticipantID,Condition,Handedness,TrialID,PhraseID,EventType,EventData,ClientTimestamp
+2026-01-19T16:28:54.627201+09:00,debug-SS05,Proposed,R,1,422,system,test_started,1768807699441
+2026-01-19T16:28:54.627274+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'p', 'code': 'KeyP'}",1768807701947
+2026-01-19T16:28:54.627285+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 1, 'top': 'p'}",1768807702076
+2026-01-19T16:28:54.627354+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807704648
+2026-01-19T16:28:54.627364+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 2, 'top': 'po'}",1768807704752
+2026-01-19T16:28:54.627369+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807706930
+2026-01-19T16:28:54.627374+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 1, 'top': 'p'}",1768807706980
+2026-01-19T16:28:54.627379+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807710273
+2026-01-19T16:28:54.627384+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 2, 'top': 'po'}",1768807710303
+2026-01-19T16:28:54.627388+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807717775
+2026-01-19T16:28:54.627393+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 6, 'top': 'plc'}",1768807718135
+2026-01-19T16:28:54.627398+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'a', 'code': 'KeyA'}",1768807720250
+2026-01-19T16:28:54.627416+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'plea'}",1768807720836
+2026-01-19T16:28:54.627420+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 's', 'code': 'KeyS'}",1768807720879
+2026-01-19T16:28:54.627425+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807721164
+2026-01-19T16:28:54.627429+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'pleas'}",1768807721641
+2026-01-19T16:28:54.627433+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'please'}",1768807722091
+2026-01-19T16:28:54.627438+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807734622
+2026-01-19T16:28:54.627448+09:00,debug-SS05,Proposed,R,1,422,confirm,{'word': 'please'},1768807734622
+2026-01-19T16:29:10.021895+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807742301
+2026-01-19T16:29:10.021928+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'a', 'code': 'KeyA'}",1768807742599
+2026-01-19T16:29:10.021934+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 6, 'top': 'g'}",1768807742755
+2026-01-19T16:29:10.021940+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'ba'}",1768807743514
+2026-01-19T16:29:10.021946+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807745256
+2026-01-19T16:29:10.021951+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'tak'}",1768807746105
+2026-01-19T16:29:10.021956+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807746469
+2026-01-19T16:29:10.021961+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'raid'}",1768807747039
+2026-01-19T16:29:10.021967+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807749399
+2026-01-19T16:29:10.021972+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 1}",1768807749399
+2026-01-19T16:29:10.021977+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807750022
+2026-01-19T16:29:10.021982+09:00,debug-SS05,Proposed,R,1,422,confirm,{'word': 'take'},1768807750022
+2026-01-19T16:29:17.861579+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'a', 'code': 'KeyA'}",1768807751388
+2026-01-19T16:29:17.861640+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 3, 'top': 'a'}",1768807751514
+2026-01-19T16:29:17.861651+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807752156
+2026-01-19T16:29:17.861656+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 1}",1768807752156
+2026-01-19T16:29:17.861662+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807756177
+2026-01-19T16:29:17.861667+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 2}",1768807756177
+2026-01-19T16:29:17.861672+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807756669
+2026-01-19T16:29:17.861677+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 0}",1768807756669
+2026-01-19T16:29:17.861681+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807757824
+2026-01-19T16:29:17.861686+09:00,debug-SS05,Proposed,R,1,422,confirm,{'word': 'a'},1768807757824
+2026-01-19T16:29:30.371970+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807761201
+2026-01-19T16:29:30.372001+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 6, 'top': 'g'}",1768807761263
+2026-01-19T16:29:30.372009+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807762233
+2026-01-19T16:29:30.372014+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'by'}",1768807763529
+2026-01-19T16:29:30.372020+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807764003
+2026-01-19T16:29:30.372025+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'vui'}",1768807764907
+2026-01-19T16:29:30.372030+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 's', 'code': 'KeyS'}",1768807765339
+2026-01-19T16:29:30.372036+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'this'}",1768807765697
+2026-01-19T16:29:30.372042+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807767170
+2026-01-19T16:29:30.372048+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 1}",1768807767170
+2026-01-19T16:29:30.372053+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807768251
+2026-01-19T16:29:30.372058+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 2}",1768807768251
+2026-01-19T16:29:30.372063+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807768446
+2026-01-19T16:29:30.372068+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 3}",1768807768446
+2026-01-19T16:29:30.372074+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807768626
+2026-01-19T16:29:30.372078+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 4}",1768807768626
+2026-01-19T16:29:30.372083+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807768789
+2026-01-19T16:29:30.372089+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 5}",1768807768789
+2026-01-19T16:29:30.372094+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807768939
+2026-01-19T16:29:30.372156+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 6}",1768807768939
+2026-01-19T16:29:30.372166+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807769121
+2026-01-19T16:29:30.372170+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 7}",1768807769121
+2026-01-19T16:29:30.372175+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807769331
+2026-01-19T16:29:30.372180+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 8}",1768807769331
+2026-01-19T16:29:30.372184+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807769495
+2026-01-19T16:29:30.372189+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 9}",1768807769495
+2026-01-19T16:29:30.372194+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807769705
+2026-01-19T16:29:30.372198+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 0}",1768807769705
+2026-01-19T16:29:30.372208+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807770349
+2026-01-19T16:29:30.372213+09:00,debug-SS05,Proposed,R,1,422,confirm,{'word': 'this'},1768807770349
+2026-01-19T16:29:42.491667+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807773639
+2026-01-19T16:29:42.491692+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807779875
+2026-01-19T16:29:42.491699+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 6, 'top': 'm'}",1768807780137
+2026-01-19T16:29:42.491705+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807781627
+2026-01-19T16:29:42.491711+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807782483
+2026-01-19T16:29:42.491715+09:00,debug-SS05,Proposed,R,1,422,undo,{'removed_word': 'this'},1768807782483
+2026-01-19T16:29:54.022318+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807785937
+2026-01-19T16:29:54.022362+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 6, 'top': 'g'}",1768807785985
+2026-01-19T16:29:54.022370+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'a', 'code': 'KeyA'}",1768807786129
+2026-01-19T16:29:54.022376+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'ba'}",1768807786163
+2026-01-19T16:29:54.022382+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807788412
+2026-01-19T16:29:54.022387+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807788603
+2026-01-19T16:29:54.022393+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'var'}",1768807789327
+2026-01-19T16:29:54.022398+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'farm'}",1768807790073
+2026-01-19T16:29:54.022405+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807792853
+2026-01-19T16:29:54.022410+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 1}",1768807792853
+2026-01-19T16:29:54.022415+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807793002
+2026-01-19T16:29:54.022420+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 2}",1768807793002
+2026-01-19T16:29:54.022425+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807793452
+2026-01-19T16:29:54.022430+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 3}",1768807793452
+2026-01-19T16:29:54.022434+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807794019
+2026-01-19T16:29:54.022439+09:00,debug-SS05,Proposed,R,1,422,confirm,{'word': 'bath'},1768807794019
+2026-01-19T16:30:01.922901+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807796902
+2026-01-19T16:30:01.922939+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 6, 'top': 'g'}",1768807796960
+2026-01-19T16:30:01.922947+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807798234
+2026-01-19T16:30:01.922953+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'by'}",1768807798265
+2026-01-19T16:30:01.922958+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807799553
+2026-01-19T16:30:01.922963+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'vui'}",1768807799584
+2026-01-19T16:30:01.922968+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 's', 'code': 'KeyS'}",1768807800276
+2026-01-19T16:30:01.922986+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'this'}",1768807800307
+2026-01-19T16:30:01.922994+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807801895
+2026-01-19T16:30:01.922999+09:00,debug-SS05,Proposed,R,1,422,confirm,{'word': 'this'},1768807801895
+2026-01-19T16:30:10.837233+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807804040
+2026-01-19T16:30:10.837271+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 6, 'top': 'm'}",1768807804094
+2026-01-19T16:30:10.837280+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807804908
+2026-01-19T16:30:10.837286+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'no'}",1768807805171
+2026-01-19T16:30:10.837291+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807806334
+2026-01-19T16:30:10.837296+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'non'}",1768807806945
+2026-01-19T16:30:10.837302+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807807384
+2026-01-19T16:30:10.837307+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'your'}",1768807807642
+2026-01-19T16:30:10.837312+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807808448
+2026-01-19T16:30:10.837317+09:00,debug-SS05,Proposed,R,1,422,prediction_update,"{'count': 10, 'top': 'youth'}",1768807808651
+2026-01-19T16:30:10.837322+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': ' ', 'code': 'Space'}",1768807810327
+2026-01-19T16:30:10.837327+09:00,debug-SS05,Proposed,R,1,422,nav,"{'direction': 1, 'new_index': 1}",1768807810327
+2026-01-19T16:30:10.837332+09:00,debug-SS05,Proposed,R,1,422,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807810818
+2026-01-19T16:30:10.837338+09:00,debug-SS05,Proposed,R,1,422,confirm,{'word': 'month'},1768807810818
+2026-01-19T16:30:12.912968+09:00,debug-SS05,Proposed,R,2,422,system,phrase_completed,1768807810887
+2026-01-19T16:30:12.912993+09:00,debug-SS05,Proposed,R,2,422,system,next_phrase_clicked,1768807812898
+2026-01-19T16:30:20.998372+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807816342
+2026-01-19T16:30:20.998412+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 6, 'top': 'm'}",1768807816386
+2026-01-19T16:30:20.998419+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807816728
+2026-01-19T16:30:20.998425+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'no'}",1768807816757
+2026-01-19T16:30:20.998430+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807818664
+2026-01-19T16:30:20.998435+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'non'}",1768807818695
+2026-01-19T16:30:20.998440+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': ' ', 'code': 'Space'}",1768807820572
+2026-01-19T16:30:20.998445+09:00,debug-SS05,Proposed,R,2,37,nav,"{'direction': 1, 'new_index': 1}",1768807820572
+2026-01-19T16:30:20.998450+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807821003
+2026-01-19T16:30:20.998455+09:00,debug-SS05,Proposed,R,2,37,confirm,{'word': 'you'},1768807821003
+2026-01-19T16:30:28.368396+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'a', 'code': 'KeyA'}",1768807822249
+2026-01-19T16:30:28.368437+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 3, 'top': 'a'}",1768807822298
+2026-01-19T16:30:28.368444+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807822700
+2026-01-19T16:30:28.368451+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 9, 'top': 'ad'}",1768807822799
+2026-01-19T16:30:28.368456+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 's', 'code': 'KeyS'}",1768807822895
+2026-01-19T16:30:28.368462+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'ads'}",1768807822956
+2026-01-19T16:30:28.368468+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807824723
+2026-01-19T16:30:28.368474+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 9, 'top': 'ad'}",1768807824773
+2026-01-19T16:30:28.368479+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807824979
+2026-01-19T16:30:28.368542+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 3, 'top': 'a'}",1768807825038
+2026-01-19T16:30:28.368549+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807825580
+2026-01-19T16:30:28.368554+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807825790
+2026-01-19T16:30:28.368559+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'at'}",1768807825820
+2026-01-19T16:30:28.368564+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'are'}",1768807825963
+2026-01-19T16:30:28.368569+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807828357
+2026-01-19T16:30:28.368574+09:00,debug-SS05,Proposed,R,2,37,confirm,{'word': 'are'},1768807828357
+2026-01-19T16:30:33.687119+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807830259
+2026-01-19T16:30:33.687142+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 6, 'top': 'm'}",1768807830307
+2026-01-19T16:30:33.687150+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807830948
+2026-01-19T16:30:33.687155+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'no'}",1768807830976
+2026-01-19T16:30:33.687160+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807832105
+2026-01-19T16:30:33.687165+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'not'}",1768807832516
+2026-01-19T16:30:33.687170+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807833619
+2026-01-19T16:30:33.687175+09:00,debug-SS05,Proposed,R,2,37,confirm,{'word': 'not'},1768807833619
+2026-01-19T16:30:35.168402+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'a', 'code': 'KeyA'}",1768807834490
+2026-01-19T16:30:35.168424+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 3, 'top': 'a'}",1768807834535
+2026-01-19T16:30:35.168431+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807835103
+2026-01-19T16:30:35.168438+09:00,debug-SS05,Proposed,R,2,37,confirm,{'word': 'a'},1768807835103
+2026-01-19T16:30:48.166967+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807837237
+2026-01-19T16:30:48.167034+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 2, 'top': 'i'}",1768807837283
+2026-01-19T16:30:48.167046+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807839606
+2026-01-19T16:30:48.167053+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807839934
+2026-01-19T16:30:48.167059+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 6, 'top': 'm'}",1768807839980
+2026-01-19T16:30:48.167065+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807841900
+2026-01-19T16:30:48.167070+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'he'}",1768807842060
+2026-01-19T16:30:48.167075+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807843235
+2026-01-19T16:30:48.167080+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'med'}",1768807843370
+2026-01-19T16:30:48.167086+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807844479
+2026-01-19T16:30:48.167091+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'neck'}",1768807844568
+2026-01-19T16:30:48.167096+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': ' ', 'code': 'Space'}",1768807846582
+2026-01-19T16:30:48.167102+09:00,debug-SS05,Proposed,R,2,37,nav,"{'direction': 1, 'new_index': 1}",1768807846582
+2026-01-19T16:30:48.167107+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': ' ', 'code': 'Space'}",1768807846896
+2026-01-19T16:30:48.167111+09:00,debug-SS05,Proposed,R,2,37,nav,"{'direction': 1, 'new_index': 2}",1768807846896
+2026-01-19T16:30:48.167116+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': ' ', 'code': 'Space'}",1768807847151
+2026-01-19T16:30:48.167121+09:00,debug-SS05,Proposed,R,2,37,nav,"{'direction': 1, 'new_index': 3}",1768807847151
+2026-01-19T16:30:48.167127+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': ' ', 'code': 'Space'}",1768807847360
+2026-01-19T16:30:48.167131+09:00,debug-SS05,Proposed,R,2,37,nav,"{'direction': 1, 'new_index': 4}",1768807847360
+2026-01-19T16:30:48.167135+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': ' ', 'code': 'Space'}",1768807847675
+2026-01-19T16:30:48.167140+09:00,debug-SS05,Proposed,R,2,37,nav,"{'direction': 1, 'new_index': 5}",1768807847675
+2026-01-19T16:30:48.167145+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807848186
+2026-01-19T16:30:48.167150+09:00,debug-SS05,Proposed,R,2,37,confirm,{'word': 'jedi'},1768807848186
+2026-01-19T16:30:53.690112+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807850437
+2026-01-19T16:30:53.690149+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 6, 'top': 'm'}",1768807850483
+2026-01-19T16:30:53.690156+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807851140
+2026-01-19T16:30:53.690162+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'he'}",1768807851169
+2026-01-19T16:30:53.690167+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807852025
+2026-01-19T16:30:53.690172+09:00,debug-SS05,Proposed,R,2,37,prediction_update,"{'count': 10, 'top': 'her'}",1768807852283
+2026-01-19T16:30:53.690177+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': ' ', 'code': 'Space'}",1768807853166
+2026-01-19T16:30:53.690182+09:00,debug-SS05,Proposed,R,2,37,nav,"{'direction': 1, 'new_index': 1}",1768807853166
+2026-01-19T16:30:53.690188+09:00,debug-SS05,Proposed,R,2,37,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807853631
+2026-01-19T16:30:53.690193+09:00,debug-SS05,Proposed,R,2,37,confirm,{'word': 'yet'},1768807853631
+2026-01-19T16:30:55.715432+09:00,debug-SS05,Proposed,R,3,37,system,phrase_completed,1768807853695
+2026-01-19T16:30:55.715455+09:00,debug-SS05,Proposed,R,3,37,system,next_phrase_clicked,1768807855699
+2026-01-19T16:30:58.603788+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807857785
+2026-01-19T16:30:58.603808+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 2, 'top': 'i'}",1768807857832
+2026-01-19T16:30:58.603814+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807858520
+2026-01-19T16:30:58.603819+09:00,debug-SS05,Proposed,R,3,125,confirm,{'word': 'i'},1768807858520
+2026-01-19T16:31:02.165011+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807860305
+2026-01-19T16:31:02.165047+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 3, 'top': 'c'}",1768807860368
+2026-01-19T16:31:02.165056+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807861279
+2026-01-19T16:31:02.165062+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 6, 'top': 'do'}",1768807861395
+2026-01-19T16:31:02.165067+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807862074
+2026-01-19T16:31:02.165073+09:00,debug-SS05,Proposed,R,3,125,confirm,{'word': 'do'},1768807862074
+2026-01-19T16:31:12.216495+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807864010
+2026-01-19T16:31:12.216525+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 6, 'top': 'g'}",1768807864056
+2026-01-19T16:31:12.216533+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807865569
+2026-01-19T16:31:12.216539+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'by'}",1768807865600
+2026-01-19T16:31:12.216545+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807868197
+2026-01-19T16:31:12.216551+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'tho'}",1768807868327
+2026-01-19T16:31:12.216556+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807868448
+2026-01-19T16:31:12.216561+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'full'}",1768807868539
+2026-01-19T16:31:12.216566+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807870579
+2026-01-19T16:31:12.216571+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'fully'}",1768807870626
+2026-01-19T16:31:12.216576+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807872125
+2026-01-19T16:31:12.216581+09:00,debug-SS05,Proposed,R,3,125,confirm,{'word': 'fully'},1768807872125
+2026-01-19T16:31:14.959225+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807874948
+2026-01-19T16:31:14.959245+09:00,debug-SS05,Proposed,R,3,125,undo,{'removed_word': 'fully'},1768807874948
+2026-01-19T16:31:19.730787+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807876940
+2026-01-19T16:31:19.730813+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 6, 'top': 'm'}",1768807876988
+2026-01-19T16:31:19.730820+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807877839
+2026-01-19T16:31:19.730825+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'no'}",1768807877868
+2026-01-19T16:31:19.730831+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807878771
+2026-01-19T16:31:19.730857+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'not'}",1768807878802
+2026-01-19T16:31:19.730862+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807879730
+2026-01-19T16:31:19.730867+09:00,debug-SS05,Proposed,R,3,125,confirm,{'word': 'not'},1768807879730
+2026-01-19T16:31:28.006199+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807881878
+2026-01-19T16:31:28.006245+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 6, 'top': 'g'}",1768807881924
+2026-01-19T16:31:28.006253+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807882954
+2026-01-19T16:31:28.006260+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'by'}",1768807882984
+2026-01-19T16:31:28.006266+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807884920
+2026-01-19T16:31:28.006271+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'tho'}",1768807884949
+2026-01-19T16:31:28.006276+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807885205
+2026-01-19T16:31:28.006301+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'full'}",1768807885234
+2026-01-19T16:31:28.006306+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807887050
+2026-01-19T16:31:28.006311+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'fully'}",1768807887082
+2026-01-19T16:31:28.006316+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807887994
+2026-01-19T16:31:28.006321+09:00,debug-SS05,Proposed,R,3,125,confirm,{'word': 'fully'},1768807887994
+2026-01-19T16:31:36.193533+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'a', 'code': 'KeyA'}",1768807889016
+2026-01-19T16:31:36.193564+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 3, 'top': 'a'}",1768807889062
+2026-01-19T16:31:36.193571+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807889961
+2026-01-19T16:31:36.193577+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'at'}",1768807889988
+2026-01-19T16:31:36.193583+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807890500
+2026-01-19T16:31:36.193589+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'are'}",1768807890527
+2026-01-19T16:31:36.193594+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807892797
+2026-01-19T16:31:36.193600+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'at'}",1768807892845
+2026-01-19T16:31:36.193605+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807894521
+2026-01-19T16:31:36.193610+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'art'}",1768807894620
+2026-01-19T16:31:36.193615+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807894835
+2026-01-19T16:31:36.193620+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'arte'}",1768807894924
+2026-01-19T16:31:36.193625+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807895000
+2026-01-19T16:31:36.193630+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'agree'}",1768807895063
+2026-01-19T16:31:36.193635+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807896185
+2026-01-19T16:31:36.193640+09:00,debug-SS05,Proposed,R,3,125,confirm,{'word': 'agree'},1768807896185
+2026-01-19T16:31:43.392595+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 's', 'code': 'KeyS'}",1768807898060
+2026-01-19T16:31:43.392621+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 3, 'top': 's'}",1768807898134
+2026-01-19T16:31:43.392628+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807899139
+2026-01-19T16:31:43.392634+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 6, 'top': 'si'}",1768807899182
+2026-01-19T16:31:43.392640+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807900191
+2026-01-19T16:31:43.392645+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'xiv'}",1768807900274
+2026-01-19T16:31:43.392650+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807902305
+2026-01-19T16:31:43.392655+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'with'}",1768807902469
+2026-01-19T16:31:43.392660+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807903400
+2026-01-19T16:31:43.392665+09:00,debug-SS05,Proposed,R,3,125,confirm,{'word': 'with'},1768807903400
+2026-01-19T16:31:48.280636+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807904794
+2026-01-19T16:31:48.280660+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 6, 'top': 'm'}",1768807904840
+2026-01-19T16:31:48.280666+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807906204
+2026-01-19T16:31:48.280672+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'no'}",1768807906234
+2026-01-19T16:31:48.280677+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807906414
+2026-01-19T16:31:48.280683+09:00,debug-SS05,Proposed,R,3,125,prediction_update,"{'count': 10, 'top': 'non'}",1768807906443
+2026-01-19T16:31:48.280688+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': ' ', 'code': 'Space'}",1768807907858
+2026-01-19T16:31:48.280692+09:00,debug-SS05,Proposed,R,3,125,nav,"{'direction': 1, 'new_index': 1}",1768807907858
+2026-01-19T16:31:48.280697+09:00,debug-SS05,Proposed,R,3,125,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807908245
+2026-01-19T16:31:48.280702+09:00,debug-SS05,Proposed,R,3,125,confirm,{'word': 'you'},1768807908245
+2026-01-19T16:31:50.294860+09:00,debug-SS05,Proposed,R,4,125,system,phrase_completed,1768807908310
+2026-01-19T16:31:50.294897+09:00,debug-SS05,Proposed,R,4,125,system,next_phrase_clicked,1768807910320
+2026-01-19T16:31:59.724073+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768807914893
+2026-01-19T16:31:59.724105+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 3, 'top': 's'}",1768807914938
+2026-01-19T16:31:59.724112+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807915476
+2026-01-19T16:31:59.724118+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 9, 'top': 'se'}",1768807915562
+2026-01-19T16:31:59.724124+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807916645
+2026-01-19T16:31:59.724129+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'sen'}",1768807916703
+2026-01-19T16:31:59.724135+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807918041
+2026-01-19T16:31:59.724140+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'sent'}",1768807918138
+2026-01-19T16:31:59.724145+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807919704
+2026-01-19T16:31:59.724151+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'sent'},1768807919705
+2026-01-19T16:32:05.421853+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807922349
+2026-01-19T16:32:05.421878+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807922400
+2026-01-19T16:32:05.421886+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807923004
+2026-01-19T16:32:05.421892+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'by'}",1768807923037
+2026-01-19T16:32:05.421898+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807923920
+2026-01-19T16:32:05.421903+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'vui'}",1768807923949
+2026-01-19T16:32:05.421908+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768807924490
+2026-01-19T16:32:05.421913+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'this'}",1768807924519
+2026-01-19T16:32:05.421919+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807925345
+2026-01-19T16:32:05.421924+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'this'},1768807925345
+2026-01-19T16:32:09.033838+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807927944
+2026-01-19T16:32:09.033878+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807928000
+2026-01-19T16:32:09.033885+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807928284
+2026-01-19T16:32:09.033892+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'by'}",1768807928313
+2026-01-19T16:32:09.033897+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807929020
+2026-01-19T16:32:09.033902+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'by'},1768807929020
+2026-01-19T16:32:30.084782+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807930476
+2026-01-19T16:32:30.084811+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807930521
+2026-01-19T16:32:30.084818+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807930688
+2026-01-19T16:32:30.084824+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'te'}",1768807930831
+2026-01-19T16:32:30.084830+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807932260
+2026-01-19T16:32:30.084835+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ret'}",1768807932522
+2026-01-19T16:32:30.084840+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'o', 'code': 'KeyO'}",1768807933880
+2026-01-19T16:32:30.084845+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'veto'}",1768807933943
+2026-01-19T16:32:30.084849+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768807934466
+2026-01-19T16:32:30.084854+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ferox'}",1768807934497
+2026-01-19T16:32:30.084859+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807935817
+2026-01-19T16:32:30.084864+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betost'}",1768807935854
+2026-01-19T16:32:30.084869+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807936130
+2026-01-19T16:32:30.084874+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betoste'}",1768807936178
+2026-01-19T16:32:30.084879+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807936866
+2026-01-19T16:32:30.084883+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betostet'}",1768807936987
+2026-01-19T16:32:30.084888+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807940274
+2026-01-19T16:32:30.084893+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betostete'}",1768807940386
+2026-01-19T16:32:30.084898+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807947892
+2026-01-19T16:32:30.084902+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807948010
+2026-01-19T16:32:30.084907+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betostetey'}",1768807948092
+2026-01-19T16:32:30.084912+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807948132
+2026-01-19T16:32:30.084916+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betosteteyy'}",1768807948302
+2026-01-19T16:32:30.084921+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betosteteyyy'}",1768807948456
+2026-01-19T16:32:30.084926+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949015
+2026-01-19T16:32:30.084932+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betosteteyy'}",1768807949211
+2026-01-19T16:32:30.084936+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949527
+2026-01-19T16:32:30.084941+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949567
+2026-01-19T16:32:30.084946+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949616
+2026-01-19T16:32:30.084951+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949658
+2026-01-19T16:32:30.084955+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949710
+2026-01-19T16:32:30.084960+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949752
+2026-01-19T16:32:30.084964+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949804
+2026-01-19T16:32:30.084969+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betoste'}",1768807949806
+2026-01-19T16:32:30.084975+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949847
+2026-01-19T16:32:30.084980+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betostete'}",1768807949899
+2026-01-19T16:32:30.084984+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betost'}",1768807949900
+2026-01-19T16:32:30.084989+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ferox'}",1768807949900
+2026-01-19T16:32:30.084993+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949903
+2026-01-19T16:32:30.084999+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807949947
+2026-01-19T16:32:30.085004+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betostetey'}",1768807949996
+2026-01-19T16:32:30.085009+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'veto'}",1768807949997
+2026-01-19T16:32:30.085013+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'betostet'}",1768807949997
+2026-01-19T16:32:30.085018+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ret'}",1768807949998
+2026-01-19T16:32:30.085024+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807950001
+2026-01-19T16:32:30.085029+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807950062
+2026-01-19T16:32:30.085034+09:00,debug-SS05,Proposed,R,4,130,undo,{'removed_word': 'by'},1768807950062
+2026-01-19T16:32:30.101061+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'te'}",1768807950064
+2026-01-19T16:32:30.101085+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807950068
+2026-01-19T16:32:30.101092+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807950079
+2026-01-19T16:32:30.101097+09:00,debug-SS05,Proposed,R,4,130,undo,{'removed_word': 'this'},1768807950079
+2026-01-19T16:32:30.125944+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807950110
+2026-01-19T16:32:30.125963+09:00,debug-SS05,Proposed,R,4,130,undo,{'removed_word': 'sent'},1768807950110
+2026-01-19T16:32:44.598363+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807950143
+2026-01-19T16:32:44.598392+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807951162
+2026-01-19T16:32:44.598400+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807951209
+2026-01-19T16:32:44.598406+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807952060
+2026-01-19T16:32:44.598412+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807952751
+2026-01-19T16:32:44.598418+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807952795
+2026-01-19T16:32:44.598423+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807953111
+2026-01-19T16:32:44.598428+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'te'}",1768807953139
+2026-01-19T16:32:44.598433+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807955649
+2026-01-19T16:32:44.598438+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ret'}",1768807955680
+2026-01-19T16:32:44.598444+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807957055
+2026-01-19T16:32:44.598449+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'teri'}",1768807957100
+2026-01-19T16:32:44.598455+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768807957505
+2026-01-19T16:32:44.598460+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'regis'}",1768807957535
+2026-01-19T16:32:44.598465+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807958301
+2026-01-19T16:32:44.598471+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'verist'}",1768807958348
+2026-01-19T16:32:44.598475+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807960100
+2026-01-19T16:32:44.598481+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'reviste'}",1768807960142
+2026-01-19T16:32:44.598486+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807960521
+2026-01-19T16:32:44.598491+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'register'}",1768807960622
+2026-01-19T16:32:44.598496+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807962848
+2026-01-19T16:32:44.598501+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'registerd'}",1768807962960
+2026-01-19T16:32:44.598506+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807963446
+2026-01-19T16:32:44.598510+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'registered'}",1768807963573
+2026-01-19T16:32:44.598516+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807964601
+2026-01-19T16:32:44.598521+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'registered'},1768807964601
+2026-01-19T16:32:50.764161+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807970783
+2026-01-19T16:32:50.764181+09:00,debug-SS05,Proposed,R,4,130,undo,{'removed_word': 'registered'},1768807970783
+2026-01-19T16:32:54.961405+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768807972731
+2026-01-19T16:32:54.961428+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 3, 'top': 's'}",1768807972778
+2026-01-19T16:32:54.961435+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807973662
+2026-01-19T16:32:54.961440+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 9, 'top': 'se'}",1768807973691
+2026-01-19T16:32:54.961445+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807974891
+2026-01-19T16:32:54.961450+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'se'},1768807974891
+2026-01-19T16:32:59.222206+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807977622
+2026-01-19T16:32:59.222226+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'm'}",1768807977671
+2026-01-19T16:32:59.222233+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807978775
+2026-01-19T16:32:59.222238+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807979196
+2026-01-19T16:32:59.222243+09:00,debug-SS05,Proposed,R,4,130,undo,{'removed_word': 'se'},1768807979196
+2026-01-19T16:33:01.387056+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768807980352
+2026-01-19T16:33:01.387083+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 3, 'top': 's'}",1768807980397
+2026-01-19T16:33:01.387090+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807980697
+2026-01-19T16:33:01.387095+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 9, 'top': 'se'}",1768807980726
+2026-01-19T16:33:01.387100+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807981356
+2026-01-19T16:33:01.387105+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'se'},1768807981356
+2026-01-19T16:33:03.667371+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768807983638
+2026-01-19T16:33:03.667394+09:00,debug-SS05,Proposed,R,4,130,undo,{'removed_word': 'se'},1768807983638
+2026-01-19T16:33:06.875863+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768807984072
+2026-01-19T16:33:06.875890+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 3, 'top': 's'}",1768807984116
+2026-01-19T16:33:06.875896+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807984448
+2026-01-19T16:33:06.875902+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 9, 'top': 'se'}",1768807984481
+2026-01-19T16:33:06.875907+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807985331
+2026-01-19T16:33:06.875912+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'sen'}",1768807985360
+2026-01-19T16:33:06.875918+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807985708
+2026-01-19T16:33:06.875923+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'sent'}",1768807985737
+2026-01-19T16:33:06.875928+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807986845
+2026-01-19T16:33:06.875933+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'sent'},1768807986845
+2026-01-19T16:33:11.308789+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807988467
+2026-01-19T16:33:11.308821+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807988516
+2026-01-19T16:33:11.308829+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807989305
+2026-01-19T16:33:11.308835+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'by'}",1768807989333
+2026-01-19T16:33:11.308840+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'i', 'code': 'KeyI'}",1768807989921
+2026-01-19T16:33:11.308845+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'vui'}",1768807989953
+2026-01-19T16:33:11.308850+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768807990357
+2026-01-19T16:33:11.308855+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'this'}",1768807990386
+2026-01-19T16:33:11.308860+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807991286
+2026-01-19T16:33:11.308865+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'this'},1768807991286
+2026-01-19T16:33:14.675554+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807993554
+2026-01-19T16:33:14.675580+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807993599
+2026-01-19T16:33:14.675587+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807993894
+2026-01-19T16:33:14.675593+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'by'}",1768807993923
+2026-01-19T16:33:14.675599+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768807994661
+2026-01-19T16:33:14.675605+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'by'},1768807994661
+2026-01-19T16:33:30.630896+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807996251
+2026-01-19T16:33:30.630925+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'g'}",1768807996303
+2026-01-19T16:33:30.630932+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768807996747
+2026-01-19T16:33:30.630938+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'te'}",1768807996777
+2026-01-19T16:33:30.630943+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768807998067
+2026-01-19T16:33:30.630949+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ret'}",1768807998097
+2026-01-19T16:33:30.630954+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768807999355
+2026-01-19T16:33:30.630959+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'fern'}",1768807999487
+2026-01-19T16:33:30.630965+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768808000841
+2026-01-19T16:33:30.630970+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ret'}",1768808000892
+2026-01-19T16:33:30.630975+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'o', 'code': 'KeyO'}",1768808001499
+2026-01-19T16:33:30.630981+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'veto'}",1768808001533
+2026-01-19T16:33:30.630986+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768808002505
+2026-01-19T16:33:30.630991+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ret'}",1768808002561
+2026-01-19T16:33:30.630996+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'i', 'code': 'KeyI'}",1768808002940
+2026-01-19T16:33:30.631001+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'teri'}",1768808002968
+2026-01-19T16:33:30.631006+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 's', 'code': 'KeyS'}",1768808006064
+2026-01-19T16:33:30.631011+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'regis'}",1768808006094
+2026-01-19T16:33:30.631015+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808006842
+2026-01-19T16:33:30.631020+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'verist'}",1768808006875
+2026-01-19T16:33:30.631025+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808007771
+2026-01-19T16:33:30.631030+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'reviste'}",1768808007812
+2026-01-19T16:33:30.631035+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808008507
+2026-01-19T16:33:30.631039+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'register'}",1768808008595
+2026-01-19T16:33:30.631044+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808008971
+2026-01-19T16:33:30.631049+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'registerd'}",1768808009081
+2026-01-19T16:33:30.631053+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808009332
+2026-01-19T16:33:30.631059+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'registered'}",1768808009462
+2026-01-19T16:33:30.631064+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808010620
+2026-01-19T16:33:30.631068+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'registered'},1768808010620
+2026-01-19T16:33:37.028403+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808013112
+2026-01-19T16:33:37.028430+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 6, 'top': 'm'}",1768808013171
+2026-01-19T16:33:37.028437+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'a', 'code': 'KeyA'}",1768808013412
+2026-01-19T16:33:37.028442+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'ha'}",1768808013485
+2026-01-19T16:33:37.028447+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'i', 'code': 'KeyI'}",1768808013936
+2026-01-19T16:33:37.028452+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'hai'}",1768808014005
+2026-01-19T16:33:37.028457+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'o', 'code': 'KeyO'}",1768808015976
+2026-01-19T16:33:37.028462+09:00,debug-SS05,Proposed,R,4,130,prediction_update,"{'count': 10, 'top': 'mail'}",1768808016006
+2026-01-19T16:33:37.028467+09:00,debug-SS05,Proposed,R,4,130,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808017026
+2026-01-19T16:33:37.028472+09:00,debug-SS05,Proposed,R,4,130,confirm,{'word': 'mail'},1768808017026
+2026-01-19T16:33:39.106218+09:00,debug-SS05,Proposed,R,5,130,system,phrase_completed,1768808017092
+2026-01-19T16:33:39.106241+09:00,debug-SS05,Proposed,R,5,130,system,next_phrase_clicked,1768808019109
+2026-01-19T16:33:47.615936+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808021109
+2026-01-19T16:33:47.615960+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 6, 'top': 'g'}",1768808021171
+2026-01-19T16:33:47.615967+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'a', 'code': 'KeyA'}",1768808021422
+2026-01-19T16:33:47.615973+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'ba'}",1768808021450
+2026-01-19T16:33:47.615979+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'o', 'code': 'KeyO'}",1768808022665
+2026-01-19T16:33:47.615985+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'val'}",1768808022694
+2026-01-19T16:33:47.615990+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'i', 'code': 'KeyI'}",1768808024811
+2026-01-19T16:33:47.615995+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'talk'}",1768808024856
+2026-01-19T16:33:47.616000+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808025847
+2026-01-19T16:33:47.616005+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'valid'}",1768808025876
+2026-01-19T16:33:47.616009+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808027572
+2026-01-19T16:33:47.616014+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'valid'},1768808027572
+2026-01-19T16:33:53.786649+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808029415
+2026-01-19T16:33:53.786678+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 6, 'top': 'm'}",1768808029461
+2026-01-19T16:33:53.786686+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808030406
+2026-01-19T16:33:53.786691+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'ng'}",1768808030552
+2026-01-19T16:33:53.786697+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'i', 'code': 'KeyI'}",1768808031320
+2026-01-19T16:33:53.786703+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'hbk'}",1768808031396
+2026-01-19T16:33:53.786708+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'o', 'code': 'KeyO'}",1768808032626
+2026-01-19T16:33:53.786713+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'util'}",1768808032657
+2026-01-19T16:33:53.786719+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808033782
+2026-01-19T16:33:53.786724+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'util'},1768808033782
+2026-01-19T16:33:55.648252+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768808035641
+2026-01-19T16:33:55.648283+09:00,debug-SS05,Proposed,R,5,262,undo,{'removed_word': 'util'},1768808035641
+2026-01-19T16:34:01.176682+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808036750
+2026-01-19T16:34:01.176716+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 6, 'top': 'm'}",1768808036795
+2026-01-19T16:34:01.176724+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808038041
+2026-01-19T16:34:01.176731+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'mm'}",1768808038200
+2026-01-19T16:34:01.176736+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808039093
+2026-01-19T16:34:01.176741+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'hub'}",1768808039230
+2026-01-19T16:34:01.176747+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'i', 'code': 'KeyI'}",1768808039945
+2026-01-19T16:34:01.176753+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'yuri'}",1768808039991
+2026-01-19T16:34:01.176758+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'o', 'code': 'KeyO'}",1768808040110
+2026-01-19T16:34:01.176764+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'until'}",1768808040144
+2026-01-19T16:34:01.176769+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808041161
+2026-01-19T16:34:01.176774+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'until'},1768808041161
+2026-01-19T16:34:13.038028+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808042977
+2026-01-19T16:34:13.038059+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 6, 'top': 'g'}",1768808043039
+2026-01-19T16:34:13.038067+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808043425
+2026-01-19T16:34:13.038074+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'by'}",1768808043454
+2026-01-19T16:34:13.038079+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 's', 'code': 'KeyS'}",1768808043713
+2026-01-19T16:34:13.038085+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'bus'}",1768808043767
+2026-01-19T16:34:13.038091+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768808045766
+2026-01-19T16:34:13.038097+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'by'}",1768808045814
+2026-01-19T16:34:13.038102+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768808046561
+2026-01-19T16:34:13.038197+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 6, 'top': 'g'}",1768808046614
+2026-01-19T16:34:13.038207+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768808047447
+2026-01-19T16:34:13.038212+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808048617
+2026-01-19T16:34:13.038218+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 6, 'top': 'g'}",1768808048664
+2026-01-19T16:34:13.038223+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808049141
+2026-01-19T16:34:13.038228+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'by'}",1768808049172
+2026-01-19T16:34:13.038234+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808050597
+2026-01-19T16:34:13.038238+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'the'}",1768808052169
+2026-01-19T16:34:13.038268+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808053044
+2026-01-19T16:34:13.038284+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'the'},1768808053044
+2026-01-19T16:34:18.197894+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808055489
+2026-01-19T16:34:18.197921+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 3, 'top': 'c'}",1768808055542
+2026-01-19T16:34:18.197929+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808056311
+2026-01-19T16:34:18.197934+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'du'}",1768808056873
+2026-01-19T16:34:18.197940+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808056927
+2026-01-19T16:34:18.197945+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'end'}",1768808057588
+2026-01-19T16:34:18.197950+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808058217
+2026-01-19T16:34:18.197955+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'end'},1768808058217
+2026-01-19T16:34:21.636736+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'o', 'code': 'KeyO'}",1768808059956
+2026-01-19T16:34:21.636761+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 2, 'top': 'o'}",1768808060080
+2026-01-19T16:34:21.636768+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808060587
+2026-01-19T16:34:21.636773+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'or'}",1768808060975
+2026-01-19T16:34:21.636779+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808061666
+2026-01-19T16:34:21.636784+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'or'},1768808061666
+2026-01-19T16:34:22.489416+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Backspace', 'code': 'Backspace'}",1768808062521
+2026-01-19T16:34:22.489435+09:00,debug-SS05,Proposed,R,5,262,undo,{'removed_word': 'or'},1768808062521
+2026-01-19T16:34:26.350005+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'o', 'code': 'KeyO'}",1768808063286
+2026-01-19T16:34:26.350034+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 2, 'top': 'o'}",1768808063336
+2026-01-19T16:34:26.350042+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808064157
+2026-01-19T16:34:26.350048+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'or'}",1768808064186
+2026-01-19T16:34:26.350054+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': ' ', 'code': 'Space'}",1768808065777
+2026-01-19T16:34:26.350060+09:00,debug-SS05,Proposed,R,5,262,nav,"{'direction': 1, 'new_index': 1}",1768808065777
+2026-01-19T16:34:26.350065+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808066272
+2026-01-19T16:34:26.350071+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'of'},1768808066272
+2026-01-19T16:34:30.184670+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808068238
+2026-01-19T16:34:30.184693+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 6, 'top': 'g'}",1768808068284
+2026-01-19T16:34:30.184700+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808068536
+2026-01-19T16:34:30.184705+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'by'}",1768808068567
+2026-01-19T16:34:30.184710+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808069137
+2026-01-19T16:34:30.184715+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'the'}",1768808069164
+2026-01-19T16:34:30.184720+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808070157
+2026-01-19T16:34:30.184725+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'the'},1768808070157
+2026-01-19T16:34:36.724358+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'u', 'code': 'KeyU'}",1768808071926
+2026-01-19T16:34:36.724384+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 6, 'top': 'm'}",1768808071974
+2026-01-19T16:34:36.724391+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'd', 'code': 'KeyD'}",1768808073518
+2026-01-19T16:34:36.724396+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'he'}",1768808073547
+2026-01-19T16:34:36.724401+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'a', 'code': 'KeyA'}",1768808073923
+2026-01-19T16:34:36.724407+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'mea'}",1768808074436
+2026-01-19T16:34:36.724413+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'f', 'code': 'KeyF'}",1768808074687
+2026-01-19T16:34:36.724417+09:00,debug-SS05,Proposed,R,5,262,prediction_update,"{'count': 10, 'top': 'near'}",1768808074978
+2026-01-19T16:34:36.724422+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': ' ', 'code': 'Space'}",1768808076248
+2026-01-19T16:34:36.724428+09:00,debug-SS05,Proposed,R,5,262,nav,"{'direction': 1, 'new_index': 1}",1768808076248
+2026-01-19T16:34:36.724433+09:00,debug-SS05,Proposed,R,5,262,keydown,"{'key': 'Enter', 'code': 'Enter'}",1768808076696
+2026-01-19T16:34:36.724438+09:00,debug-SS05,Proposed,R,5,262,confirm,{'word': 'year'},1768808076696
+2026-01-19T16:34:38.802190+09:00,debug-SS05,Proposed,R,6,262,system,phrase_completed,1768808076762
+2026-01-19T16:34:38.802212+09:00,debug-SS05,Proposed,R,6,262,system,next_phrase_clicked,1768808078777
