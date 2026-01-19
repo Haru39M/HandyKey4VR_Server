@@ -1,0 +1,6 @@
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
+debug-SS05,Proposed,R,1,422,please take a bath this month,please take a this bath this month,29,34,76.210064,5,77,5.19616411816686,0.1724137931034483,2.264705882352941,3
+debug-SS05,Proposed,R,2,37,you are not a jedi yet,you are not a jedi yet,22,22,32.691821,0,43,7.708350048778257,0.0,1.9545454545454546,3
+debug-SS05,Proposed,R,3,125,I do not fully agree with you,i do fully not fully agree with you,29,35,49.676914,6,41,8.213070562313915,0.20689655172413793,1.1714285714285715,2
+debug-SS05,Proposed,R,4,130,sent this by registered mail,sent this by registered se se sent this by registered mail,28,58,97.304399,30,98,7.029486919702366,1.0714285714285714,1.6896551724137931,23
+debug-SS05,Proposed,R,5,262,valid until the end of the year,valid util until the end or of the year,31,39,49.108502,8,52,9.285561184497135,0.25806451612903225,1.3333333333333333,5
