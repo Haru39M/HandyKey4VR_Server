@@ -1,0 +1,183 @@
+ServerTimestampISO,ServerTimestamp,ParticipantID,Condition,Handedness,TrialID,TargetGesture,TargetID,EventType,EventData,ClientTimestamp
+2026-01-22T18:32:12.500736+09:00,1769074332500,debug-MT10,Proposed,R,None,None,-1,system,"{""action"": ""test_configured"", ""trials"": [6, 5, 6, 5, 7, 4, 0, 3, 7, 4]}",1769074332500
+2026-01-22T18:32:12.550071+09:00,1769074332550,debug-MT10,Proposed,R,1,Gun,6,system,"{""action"": ""test_start_click"", ""participant_id"": ""debug-MT10"", ""condition"": ""Proposed""}",1769074332481
+2026-01-22T18:32:14.010411+09:00,1769074334010,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074334010
+2026-01-22T18:32:14.292549+09:00,1769074334292,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074334292
+2026-01-22T18:32:14.294987+09:00,1769074334294,debug-MT10,Proposed,R,1,Gun,6,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074334294
+2026-01-22T18:32:17.303183+09:00,1769074337303,debug-MT10,Proposed,R,1,Gun,6,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 1}",1769074337295
+2026-01-22T18:32:20.946683+09:00,1769074340946,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074340946
+2026-01-22T18:32:20.948782+09:00,1769074340948,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074340948
+2026-01-22T18:32:20.949628+09:00,1769074340949,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074340949
+2026-01-22T18:32:21.266321+09:00,1769074341266,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074341266
+2026-01-22T18:32:21.422675+09:00,1769074341422,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074341422
+2026-01-22T18:32:21.497040+09:00,1769074341497,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074341497
+2026-01-22T18:32:21.662013+09:00,1769074341662,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074341662
+2026-01-22T18:32:21.721860+09:00,1769074341721,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074341721
+2026-01-22T18:32:21.804490+09:00,1769074341804,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074341804
+2026-01-22T18:32:22.140531+09:00,1769074342140,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074342140
+2026-01-22T18:32:22.217603+09:00,1769074342217,debug-MT10,Proposed,R,1,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074342217
+2026-01-22T18:32:23.259462+09:00,1769074343259,debug-MT10,Proposed,R,1,Gun,6,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 4915.028810501099}",1769074343259
+2026-01-22T18:32:23.958876+09:00,1769074343958,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074343958
+2026-01-22T18:32:23.996766+09:00,1769074343996,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074343996
+2026-01-22T18:32:24.057825+09:00,1769074344057,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074344057
+2026-01-22T18:32:24.117456+09:00,1769074344117,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074344117
+2026-01-22T18:32:24.249087+09:00,1769074344249,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074344249
+2026-01-22T18:32:24.249481+09:00,1769074344249,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074344249
+2026-01-22T18:32:29.806152+09:00,1769074349806,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074349806
+2026-01-22T18:32:30.244045+09:00,1769074350244,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074350244
+2026-01-22T18:32:30.281996+09:00,1769074350281,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074350281
+2026-01-22T18:32:30.461618+09:00,1769074350461,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074350461
+2026-01-22T18:32:30.820579+09:00,1769074350820,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074350820
+2026-01-22T18:32:30.940431+09:00,1769074350940,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074350940
+2026-01-22T18:32:31.299334+09:00,1769074351299,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074351299
+2026-01-22T18:32:31.434888+09:00,1769074351434,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074351434
+2026-01-22T18:32:31.479119+09:00,1769074351479,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074351479
+2026-01-22T18:32:31.598828+09:00,1769074351598,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074351598
+2026-01-22T18:32:31.601992+09:00,1769074351601,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074351601
+2026-01-22T18:32:31.658508+09:00,1769074351658,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074351658
+2026-01-22T18:32:32.140699+09:00,1769074352140,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074352140
+2026-01-22T18:32:32.138665+09:00,1769074352138,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074352138
+2026-01-22T18:32:32.141613+09:00,1769074352141,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074352141
+2026-01-22T18:32:32.142692+09:00,1769074352142,debug-MT10,Proposed,R,2,RockNRoll,5,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074352142
+2026-01-22T18:32:35.151880+09:00,1769074355151,debug-MT10,Proposed,R,2,RockNRoll,5,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 2}",1769074355148
+2026-01-22T18:32:36.011410+09:00,1769074356011,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074356011
+2026-01-22T18:32:36.012092+09:00,1769074356012,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074356012
+2026-01-22T18:32:36.069234+09:00,1769074356069,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074356069
+2026-01-22T18:32:36.503849+09:00,1769074356503,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074356503
+2026-01-22T18:32:36.552147+09:00,1769074356552,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769074356552
+2026-01-22T18:32:38.071317+09:00,1769074358071,debug-MT10,Proposed,R,2,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769074358071
+2026-01-22T18:32:39.133750+09:00,1769074359133,debug-MT10,Proposed,R,2,RockNRoll,5,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 2920.0167655944824}",1769074359133
+2026-01-22T18:32:40.044630+09:00,1769074360044,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769074360044
+2026-01-22T18:32:40.102313+09:00,1769074360102,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074360102
+2026-01-22T18:32:40.162515+09:00,1769074360162,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074360162
+2026-01-22T18:32:40.222167+09:00,1769074360222,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074360222
+2026-01-22T18:32:40.227237+09:00,1769074360227,debug-MT10,Proposed,R,3,Gun,6,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074360227
+2026-01-22T18:32:43.260185+09:00,1769074363260,debug-MT10,Proposed,R,3,Gun,6,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 3}",1769074363237
+2026-01-22T18:32:44.549658+09:00,1769074364549,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074364549
+2026-01-22T18:32:44.615747+09:00,1769074364615,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074364615
+2026-01-22T18:32:44.785048+09:00,1769074364785,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074364785
+2026-01-22T18:32:44.860227+09:00,1769074364860,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074364860
+2026-01-22T18:32:45.084903+09:00,1769074365084,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074365084
+2026-01-22T18:32:45.145860+09:00,1769074365145,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074365145
+2026-01-22T18:32:45.205309+09:00,1769074365205,debug-MT10,Proposed,R,3,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074365205
+2026-01-22T18:32:46.257489+09:00,1769074366257,debug-MT10,Proposed,R,3,Gun,6,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1943.2153701782227}",1769074366257
+2026-01-22T18:32:46.703426+09:00,1769074366703,debug-MT10,Proposed,R,4,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074366703
+2026-01-22T18:32:46.763868+09:00,1769074366763,debug-MT10,Proposed,R,4,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074366763
+2026-01-22T18:32:46.884395+09:00,1769074366884,debug-MT10,Proposed,R,4,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074366884
+2026-01-22T18:32:46.887222+09:00,1769074366887,debug-MT10,Proposed,R,4,RockNRoll,5,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074366887
+2026-01-22T18:32:49.924890+09:00,1769074369924,debug-MT10,Proposed,R,4,RockNRoll,5,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 4}",1769074369904
+2026-01-22T18:32:51.020463+09:00,1769074371020,debug-MT10,Proposed,R,4,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074371020
+2026-01-22T18:32:51.515290+09:00,1769074371515,debug-MT10,Proposed,R,4,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769074371515
+2026-01-22T18:32:51.558286+09:00,1769074371558,debug-MT10,Proposed,R,4,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769074371558
+2026-01-22T18:32:52.620977+09:00,1769074372620,debug-MT10,Proposed,R,4,RockNRoll,5,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1631.9246292114258}",1769074372620
+2026-01-22T18:32:53.353857+09:00,1769074373353,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074373353
+2026-01-22T18:32:53.413722+09:00,1769074373413,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074373413
+2026-01-22T18:32:53.474462+09:00,1769074373474,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074373474
+2026-01-22T18:32:53.549429+09:00,1769074373549,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074373549
+2026-01-22T18:32:53.553854+09:00,1769074373553,debug-MT10,Proposed,R,5,ThumbsUp,7,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074373553
+2026-01-22T18:32:56.570861+09:00,1769074376570,debug-MT10,Proposed,R,5,ThumbsUp,7,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 5}",1769074376566
+2026-01-22T18:32:57.368230+09:00,1769074377368,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074377368
+2026-01-22T18:32:57.367493+09:00,1769074377367,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074377367
+2026-01-22T18:32:57.426953+09:00,1769074377426,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074377426
+2026-01-22T18:32:57.665267+09:00,1769074377665,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074377665
+2026-01-22T18:32:57.726172+09:00,1769074377726,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074377726
+2026-01-22T18:32:57.738907+09:00,1769074377738,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074377738
+2026-01-22T18:32:58.622590+09:00,1769074378622,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074378622
+2026-01-22T18:32:58.685534+09:00,1769074378685,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074378685
+2026-01-22T18:32:58.684717+09:00,1769074378684,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074378684
+2026-01-22T18:32:58.801937+09:00,1769074378801,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""CLOSE""}",1769074378801
+2026-01-22T18:32:58.802600+09:00,1769074378802,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074378802
+2026-01-22T18:32:59.462144+09:00,1769074379462,debug-MT10,Proposed,R,5,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074379462
+2026-01-22T18:33:00.493986+09:00,1769074380493,debug-MT10,Proposed,R,5,ThumbsUp,7,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 2891.3533687591553}",1769074380493
+2026-01-22T18:33:01.077101+09:00,1769074381077,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074381077
+2026-01-22T18:33:01.149435+09:00,1769074381149,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074381149
+2026-01-22T18:33:01.210244+09:00,1769074381210,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074381210
+2026-01-22T18:33:01.256088+09:00,1769074381256,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074381256
+2026-01-22T18:33:01.259267+09:00,1769074381259,debug-MT10,Proposed,R,6,Victory,4,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074381259
+2026-01-22T18:33:04.283906+09:00,1769074384283,debug-MT10,Proposed,R,6,Victory,4,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 6}",1769074384298
+2026-01-22T18:33:05.489016+09:00,1769074385489,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074385489
+2026-01-22T18:33:05.585176+09:00,1769074385585,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074385585
+2026-01-22T18:33:05.646479+09:00,1769074385646,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074385646
+2026-01-22T18:33:05.843058+09:00,1769074385843,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074385843
+2026-01-22T18:33:05.904283+09:00,1769074385904,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074385904
+2026-01-22T18:33:06.370260+09:00,1769074386370,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074386370
+2026-01-22T18:33:06.370959+09:00,1769074386370,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074386370
+2026-01-22T18:33:06.438418+09:00,1769074386438,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074386438
+2026-01-22T18:33:06.561663+09:00,1769074386561,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074386561
+2026-01-22T18:33:06.806916+09:00,1769074386806,debug-MT10,Proposed,R,6,Victory,4,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074386806
+2026-01-22T18:33:07.470373+09:00,1769074387470,debug-MT10,Proposed,R,6,Victory,4,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 2154.1738510131836}",1769074387470
+2026-01-22T18:33:07.990920+09:00,1769074387990,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074387990
+2026-01-22T18:33:07.992010+09:00,1769074387992,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074387992
+2026-01-22T18:33:08.066342+09:00,1769074388066,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074388066
+2026-01-22T18:33:08.127295+09:00,1769074388127,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074388127
+2026-01-22T18:33:08.131526+09:00,1769074388131,debug-MT10,Proposed,R,7,Neutral,0,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074388131
+2026-01-22T18:33:11.162036+09:00,1769074391162,debug-MT10,Proposed,R,7,Neutral,0,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 7}",1769074391152
+2026-01-22T18:33:15.913085+09:00,1769074395913,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769074395913
+2026-01-22T18:33:15.910625+09:00,1769074395910,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074395910
+2026-01-22T18:33:15.932293+09:00,1769074395932,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074395932
+2026-01-22T18:33:16.086752+09:00,1769074396086,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""TOUCH"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074396086
+2026-01-22T18:33:16.087973+09:00,1769074396087,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074396087
+2026-01-22T18:33:16.147820+09:00,1769074396147,debug-MT10,Proposed,R,7,Neutral,0,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074396147
+2026-01-22T18:33:16.990393+09:00,1769074396990,debug-MT10,Proposed,R,7,Neutral,0,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 4767.366886138916}",1769074396990
+2026-01-22T18:33:22.856303+09:00,1769074402856,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074402856
+2026-01-22T18:33:22.913213+09:00,1769074402913,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074402913
+2026-01-22T18:33:22.916805+09:00,1769074402916,debug-MT10,Proposed,R,8,FingerPoint,3,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074402916
+2026-01-22T18:33:23.344592+09:00,1769074403344,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074403344
+2026-01-22T18:33:23.452349+09:00,1769074403452,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""CLOSE""}",1769074403452
+2026-01-22T18:33:23.466774+09:00,1769074403466,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074403466
+2026-01-22T18:33:23.527484+09:00,1769074403527,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074403527
+2026-01-22T18:33:25.965928+09:00,1769074405965,debug-MT10,Proposed,R,8,FingerPoint,3,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 8}",1769074405981
+2026-01-22T18:33:26.888208+09:00,1769074406888,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074406888
+2026-01-22T18:33:26.924428+09:00,1769074406924,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074406924
+2026-01-22T18:33:26.948717+09:00,1769074406948,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074406948
+2026-01-22T18:33:27.045063+09:00,1769074407045,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074407045
+2026-01-22T18:33:27.104496+09:00,1769074407104,debug-MT10,Proposed,R,8,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074407104
+2026-01-22T18:33:28.162283+09:00,1769074408162,debug-MT10,Proposed,R,8,FingerPoint,3,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1139.1723155975342}",1769074408162
+2026-01-22T18:33:28.495244+09:00,1769074408495,debug-MT10,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""CLOSE""}",1769074408495
+2026-01-22T18:33:28.539979+09:00,1769074408539,debug-MT10,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074408539
+2026-01-22T18:33:28.600098+09:00,1769074408600,debug-MT10,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074408600
+2026-01-22T18:33:28.601909+09:00,1769074408601,debug-MT10,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074408601
+2026-01-22T18:33:28.604190+09:00,1769074408604,debug-MT10,Proposed,R,9,ThumbsUp,7,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074408604
+2026-01-22T18:33:31.618525+09:00,1769074411618,debug-MT10,Proposed,R,9,ThumbsUp,7,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 9}",1769074411648
+2026-01-22T18:33:32.673082+09:00,1769074412673,debug-MT10,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769074412673
+2026-01-22T18:33:32.695943+09:00,1769074412695,debug-MT10,Proposed,R,9,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074412695
+2026-01-22T18:33:33.753011+09:00,1769074413753,debug-MT10,Proposed,R,9,ThumbsUp,7,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1077.2674083709717}",1769074413753
+2026-01-22T18:33:33.986818+09:00,1769074413986,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""CLOSE""}",1769074413986
+2026-01-22T18:33:34.056218+09:00,1769074414056,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074414056
+2026-01-22T18:33:34.106502+09:00,1769074414106,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074414106
+2026-01-22T18:33:34.166194+09:00,1769074414166,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074414166
+2026-01-22T18:33:34.170248+09:00,1769074414170,debug-MT10,Proposed,R,10,Victory,4,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769074414170
+2026-01-22T18:33:37.211089+09:00,1769074417211,debug-MT10,Proposed,R,10,Victory,4,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 10}",1769074417201
+2026-01-22T18:33:38.660358+09:00,1769074418660,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074418660
+2026-01-22T18:33:38.674876+09:00,1769074418674,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""OPEN""}",1769074418674
+2026-01-22T18:33:38.736420+09:00,1769074418736,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074418736
+2026-01-22T18:33:38.967906+09:00,1769074418967,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074418967
+2026-01-22T18:33:39.077284+09:00,1769074419077,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074419077
+2026-01-22T18:33:39.152161+09:00,1769074419152,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""TOUCH""}",1769074419152
+2026-01-22T18:33:39.197567+09:00,1769074419197,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074419197
+2026-01-22T18:33:39.497382+09:00,1769074419497,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074419497
+2026-01-22T18:33:39.559223+09:00,1769074419559,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074419559
+2026-01-22T18:33:40.578907+09:00,1769074420578,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074420578
+2026-01-22T18:33:40.698779+09:00,1769074420698,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074420698
+2026-01-22T18:33:40.759622+09:00,1769074420759,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074420759
+2026-01-22T18:33:40.778656+09:00,1769074420778,debug-MT10,Proposed,R,10,Victory,4,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074420778
+2026-01-22T18:33:41.796225+09:00,1769074421796,debug-MT10,Proposed,R,10,Victory,4,state_change,"{""from"": ""MEASURING"", ""to"": ""COMPLETED"", ""rt_ms"": 3566.6282176971436}",1769074421796
+2026-01-22T18:33:41.808066+09:00,1769074421808,debug-MT10,Proposed,R,11,Victory,4,system,"""test_finished""",1769074421789
+2026-01-22T18:33:42.281915+09:00,1769074422281,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769074422281
+2026-01-22T18:33:42.343708+09:00,1769074422343,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074422343
+2026-01-22T18:33:42.381663+09:00,1769074422381,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074422381
+2026-01-22T18:33:42.389350+09:00,1769074422389,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769074422389
+2026-01-22T18:33:43.399710+09:00,1769074423399,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074423399
+2026-01-22T18:33:43.539533+09:00,1769074423539,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074423539
+2026-01-22T18:33:43.579923+09:00,1769074423579,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074423579
+2026-01-22T18:33:44.539447+09:00,1769074424539,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074424539
+2026-01-22T18:33:44.670955+09:00,1769074424670,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074424670
+2026-01-22T18:33:45.439125+09:00,1769074425439,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""TOUCH""}",1769074425439
+2026-01-22T18:33:45.678497+09:00,1769074425678,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074425678
+2026-01-22T18:33:46.172207+09:00,1769074426172,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074426172
+2026-01-22T18:33:46.538696+09:00,1769074426538,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074426538
+2026-01-22T18:33:46.578165+09:00,1769074426578,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074426578
+2026-01-22T18:33:46.645384+09:00,1769074426645,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074426645
+2026-01-22T18:33:47.176571+09:00,1769074427176,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074427176
+2026-01-22T18:33:47.235935+09:00,1769074427235,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074427235
+2026-01-22T18:33:54.686139+09:00,1769074434686,debug-MT10,Proposed,R,11,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769074434686
