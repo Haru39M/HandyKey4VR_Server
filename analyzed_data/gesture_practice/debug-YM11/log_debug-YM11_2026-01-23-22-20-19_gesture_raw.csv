@@ -1,0 +1,142 @@
+ServerTimestampISO,ServerTimestamp,ParticipantID,Condition,Handedness,TrialID,TargetGesture,TargetID,EventType,EventData,ClientTimestamp
+2026-01-23T22:20:19.956148+09:00,1769174419956,debug-YM11,Controller,R,None,None,-1,system,"{""action"": ""test_configured"", ""trials"": [3, 1, 4, 4, 1, 7, 7, 0, 5, 6]}",1769174419956
+2026-01-23T22:20:20.005026+09:00,1769174420005,debug-YM11,Controller,R,1,FingerPoint,3,system,"{""action"": ""test_start_click"", ""participant_id"": ""debug-YM11"", ""condition"": ""Controller""}",1769174419922
+2026-01-23T22:20:21.277580+09:00,1769174421277,debug-YM11,Controller,R,1,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174421277
+2026-01-23T22:20:21.287580+09:00,1769174421287,debug-YM11,Controller,R,1,FingerPoint,3,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174421287
+2026-01-23T22:20:24.332250+09:00,1769174424332,debug-YM11,Controller,R,1,FingerPoint,3,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 1}",1769174424337
+2026-01-23T22:20:25.360505+09:00,1769174425360,debug-YM11,Controller,R,1,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174425360
+2026-01-23T22:20:25.418918+09:00,1769174425418,debug-YM11,Controller,R,1,FingerPoint,3,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174425418
+2026-01-23T22:20:26.466384+09:00,1769174426466,debug-YM11,Controller,R,1,FingerPoint,3,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1086.592674255371}",1769174426466
+2026-01-23T22:20:26.597987+09:00,1769174426597,debug-YM11,Controller,R,2,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174426597
+2026-01-23T22:20:26.601809+09:00,1769174426601,debug-YM11,Controller,R,2,Fist,1,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174426601
+2026-01-23T22:20:29.640043+09:00,1769174429640,debug-YM11,Controller,R,2,Fist,1,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 2}",1769174429653
+2026-01-23T22:20:30.282082+09:00,1769174430282,debug-YM11,Controller,R,2,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174430282
+2026-01-23T22:20:30.336785+09:00,1769174430336,debug-YM11,Controller,R,2,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174430336
+2026-01-23T22:20:30.404901+09:00,1769174430404,debug-YM11,Controller,R,2,Fist,1,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174430404
+2026-01-23T22:20:31.235911+09:00,1769174431235,debug-YM11,Controller,R,2,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""CLOSE"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174431235
+2026-01-23T22:20:31.292505+09:00,1769174431292,debug-YM11,Controller,R,2,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174431292
+2026-01-23T22:20:31.440653+09:00,1769174431440,debug-YM11,Controller,R,2,Fist,1,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 757.9255104064941}",1769174431440
+2026-01-23T22:20:31.459845+09:00,1769174431459,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174431459
+2026-01-23T22:20:31.473754+09:00,1769174431473,debug-YM11,Controller,R,3,Victory,4,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174431473
+2026-01-23T22:20:32.292232+09:00,1769174432292,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174432292
+2026-01-23T22:20:32.352247+09:00,1769174432352,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174432352
+2026-01-23T22:20:34.481653+09:00,1769174434481,debug-YM11,Controller,R,3,Victory,4,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 3}",1769174434504
+2026-01-23T22:20:35.113863+09:00,1769174435113,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174435113
+2026-01-23T22:20:35.168060+09:00,1769174435168,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174435168
+2026-01-23T22:20:35.445316+09:00,1769174435445,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174435445
+2026-01-23T22:20:35.498885+09:00,1769174435498,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174435498
+2026-01-23T22:20:35.937608+09:00,1769174435937,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174435937
+2026-01-23T22:20:35.994564+09:00,1769174435994,debug-YM11,Controller,R,3,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174435994
+2026-01-23T22:20:37.009796+09:00,1769174437009,debug-YM11,Controller,R,3,Victory,4,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1508.3839893341064}",1769174437009
+2026-01-23T22:20:37.299858+09:00,1769174437299,debug-YM11,Controller,R,4,Victory,4,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174437299
+2026-01-23T22:20:37.308019+09:00,1769174437308,debug-YM11,Controller,R,4,Victory,4,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174437308
+2026-01-23T22:20:40.345509+09:00,1769174440345,debug-YM11,Controller,R,4,Victory,4,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 4}",1769174440340
+2026-01-23T22:20:41.106947+09:00,1769174441106,debug-YM11,Controller,R,4,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174441106
+2026-01-23T22:20:41.331223+09:00,1769174441331,debug-YM11,Controller,R,4,Victory,4,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174441331
+2026-01-23T22:20:41.940281+09:00,1769174441940,debug-YM11,Controller,R,4,Victory,4,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174441940
+2026-01-23T22:20:42.958241+09:00,1769174442958,debug-YM11,Controller,R,4,Victory,4,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1592.4839973449707}",1769174442958
+2026-01-23T22:20:43.291697+09:00,1769174443291,debug-YM11,Controller,R,5,Fist,1,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174443291
+2026-01-23T22:20:43.294945+09:00,1769174443294,debug-YM11,Controller,R,5,Fist,1,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174443294
+2026-01-23T22:20:43.793324+09:00,1769174443793,debug-YM11,Controller,R,5,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174443793
+2026-01-23T22:20:46.326864+09:00,1769174446326,debug-YM11,Controller,R,5,Fist,1,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 5}",1769174446318
+2026-01-23T22:20:47.099204+09:00,1769174447099,debug-YM11,Controller,R,5,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174447099
+2026-01-23T22:20:47.200583+09:00,1769174447200,debug-YM11,Controller,R,5,Fist,1,state_input,"{""T"": ""TOUCH"", ""I"": ""CLOSE"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174447200
+2026-01-23T22:20:47.229742+09:00,1769174447229,debug-YM11,Controller,R,5,Fist,1,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174447229
+2026-01-23T22:20:48.272136+09:00,1769174448272,debug-YM11,Controller,R,5,Fist,1,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 902.3261070251465}",1769174448272
+2026-01-23T22:20:48.386620+09:00,1769174448386,debug-YM11,Controller,R,6,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174448386
+2026-01-23T22:20:48.561230+09:00,1769174448561,debug-YM11,Controller,R,6,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174448561
+2026-01-23T22:20:48.564581+09:00,1769174448564,debug-YM11,Controller,R,6,ThumbsUp,7,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174448564
+2026-01-23T22:20:51.610972+09:00,1769174451610,debug-YM11,Controller,R,6,ThumbsUp,7,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 6}",1769174451604
+2026-01-23T22:20:52.508092+09:00,1769174452508,debug-YM11,Controller,R,6,ThumbsUp,7,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174452508
+2026-01-23T22:20:52.673771+09:00,1769174452673,debug-YM11,Controller,R,6,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174452673
+2026-01-23T22:20:53.674209+09:00,1769174453674,debug-YM11,Controller,R,6,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174453674
+2026-01-23T22:20:53.731763+09:00,1769174453731,debug-YM11,Controller,R,6,ThumbsUp,7,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1051.5358448028564}",1769174453731
+2026-01-23T22:20:53.840991+09:00,1769174453840,debug-YM11,Controller,R,7,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174453840
+2026-01-23T22:20:53.845205+09:00,1769174453845,debug-YM11,Controller,R,7,ThumbsUp,7,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174453845
+2026-01-23T22:20:56.871374+09:00,1769174456871,debug-YM11,Controller,R,7,ThumbsUp,7,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 7}",1769174456874
+2026-01-23T22:20:57.641669+09:00,1769174457641,debug-YM11,Controller,R,7,ThumbsUp,7,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174457641
+2026-01-23T22:20:58.706569+09:00,1769174458706,debug-YM11,Controller,R,7,ThumbsUp,7,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 781.5060615539551}",1769174458706
+2026-01-23T22:20:58.763803+09:00,1769174458763,debug-YM11,Controller,R,8,Neutral,0,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174458763
+2026-01-23T22:20:58.808835+09:00,1769174458808,debug-YM11,Controller,R,8,Neutral,0,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174458808
+2026-01-23T22:20:58.915019+09:00,1769174458915,debug-YM11,Controller,R,8,Neutral,0,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174458915
+2026-01-23T22:20:58.919245+09:00,1769174458919,debug-YM11,Controller,R,8,Neutral,0,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174458919
+2026-01-23T22:21:01.948982+09:00,1769174461948,debug-YM11,Controller,R,8,Neutral,0,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 8}",1769174461959
+2026-01-23T22:21:03.043904+09:00,1769174463043,debug-YM11,Controller,R,8,Neutral,0,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174463043
+2026-01-23T22:21:03.158942+09:00,1769174463158,debug-YM11,Controller,R,8,Neutral,0,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174463158
+2026-01-23T22:21:04.213693+09:00,1769174464213,debug-YM11,Controller,R,8,Neutral,0,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 1205.7108879089355}",1769174464213
+2026-01-23T22:21:04.315402+09:00,1769174464315,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174464315
+2026-01-23T22:21:04.373039+09:00,1769174464373,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174464373
+2026-01-23T22:21:06.040814+09:00,1769174466040,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174466040
+2026-01-23T22:21:06.093923+09:00,1769174466093,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174466093
+2026-01-23T22:21:06.214152+09:00,1769174466214,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174466214
+2026-01-23T22:21:06.272328+09:00,1769174466272,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174466272
+2026-01-23T22:21:06.275854+09:00,1769174466275,debug-YM11,Controller,R,9,RockNRoll,5,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174466275
+2026-01-23T22:21:06.669702+09:00,1769174466669,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174466669
+2026-01-23T22:21:09.294347+09:00,1769174469294,debug-YM11,Controller,R,9,RockNRoll,5,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 9}",1769174469292
+2026-01-23T22:21:09.954989+09:00,1769174469954,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174469954
+2026-01-23T22:21:10.230911+09:00,1769174470230,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174470230
+2026-01-23T22:21:10.289353+09:00,1769174470289,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174470289
+2026-01-23T22:21:12.612206+09:00,1769174472612,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174472612
+2026-01-23T22:21:12.669344+09:00,1769174472669,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174472669
+2026-01-23T22:21:13.209085+09:00,1769174473209,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174473209
+2026-01-23T22:21:13.373436+09:00,1769174473373,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174473373
+2026-01-23T22:21:13.745700+09:00,1769174473745,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174473745
+2026-01-23T22:21:13.792345+09:00,1769174473792,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174473792
+2026-01-23T22:21:14.924579+09:00,1769174474924,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174474924
+2026-01-23T22:21:15.651626+09:00,1769174475651,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174475651
+2026-01-23T22:21:15.706983+09:00,1769174475706,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174475706
+2026-01-23T22:21:15.759409+09:00,1769174475759,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174475759
+2026-01-23T22:21:16.029363+09:00,1769174476029,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174476029
+2026-01-23T22:21:16.081046+09:00,1769174476081,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174476081
+2026-01-23T22:21:17.270600+09:00,1769174477270,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174477270
+2026-01-23T22:21:18.057420+09:00,1769174478057,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174478057
+2026-01-23T22:21:18.105122+09:00,1769174478105,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174478105
+2026-01-23T22:21:18.350648+09:00,1769174478350,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174478350
+2026-01-23T22:21:20.365262+09:00,1769174480365,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174480365
+2026-01-23T22:21:20.755040+09:00,1769174480755,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""CLOSE"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174480755
+2026-01-23T22:21:21.031151+09:00,1769174481031,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174481031
+2026-01-23T22:21:21.088636+09:00,1769174481088,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174481088
+2026-01-23T22:21:21.136156+09:00,1769174481136,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769174481136
+2026-01-23T22:21:21.804457+09:00,1769174481804,debug-YM11,Controller,R,9,RockNRoll,5,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174481804
+2026-01-23T22:21:22.169436+09:00,1769174482169,debug-YM11,Controller,R,9,RockNRoll,5,state_change,"{""from"": ""MEASURING"", ""to"": ""NEXT_TRIAL"", ""rt_ms"": 11846.538543701172}",1769174482169
+2026-01-23T22:21:22.292220+09:00,1769174482292,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769174482292
+2026-01-23T22:21:22.450277+09:00,1769174482450,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174482450
+2026-01-23T22:21:22.500824+09:00,1769174482500,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""OPEN""}",1769174482500
+2026-01-23T22:21:22.622924+09:00,1769174482622,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174482622
+2026-01-23T22:21:25.581195+09:00,1769174485581,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174485581
+2026-01-23T22:21:26.231729+09:00,1769174486231,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174486231
+2026-01-23T22:21:26.714604+09:00,1769174486714,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174486714
+2026-01-23T22:21:26.718144+09:00,1769174486718,debug-YM11,Controller,R,10,Gun,6,state_change,"{""from"": ""WAIT_HAND_OPEN"", ""to"": ""COUNTDOWN""}",1769174486718
+2026-01-23T22:21:27.103579+09:00,1769174487103,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174487103
+2026-01-23T22:21:27.215422+09:00,1769174487215,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174487215
+2026-01-23T22:21:27.330410+09:00,1769174487330,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""CLOSE"", ""I"": ""TOUCH"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174487330
+2026-01-23T22:21:27.497687+09:00,1769174487497,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174487497
+2026-01-23T22:21:27.659662+09:00,1769174487659,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174487659
+2026-01-23T22:21:27.827936+09:00,1769174487827,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174487827
+2026-01-23T22:21:27.993776+09:00,1769174487993,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174487993
+2026-01-23T22:21:28.047825+09:00,1769174488047,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174488047
+2026-01-23T22:21:28.152714+09:00,1769174488152,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174488152
+2026-01-23T22:21:28.213396+09:00,1769174488213,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174488213
+2026-01-23T22:21:28.275925+09:00,1769174488275,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""CLOSE"", ""I"": ""CLOSE"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174488275
+2026-01-23T22:21:28.327672+09:00,1769174488327,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""CLOSE"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174488327
+2026-01-23T22:21:28.382683+09:00,1769174488382,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174488382
+2026-01-23T22:21:28.439569+09:00,1769174488439,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174488439
+2026-01-23T22:21:28.716555+09:00,1769174488716,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174488716
+2026-01-23T22:21:28.946986+09:00,1769174488946,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174488946
+2026-01-23T22:21:29.011545+09:00,1769174489011,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174489011
+2026-01-23T22:21:29.730849+09:00,1769174489730,debug-YM11,Controller,R,10,Gun,6,system,"{""action"": ""stimulus_rendered_on_client"", ""trial_id"": 10}",1769174489709
+2026-01-23T22:21:30.489715+09:00,1769174490489,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174490489
+2026-01-23T22:21:30.601092+09:00,1769174490601,debug-YM11,Controller,R,10,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""CLOSE"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174490601
+2026-01-23T22:21:31.663254+09:00,1769174491663,debug-YM11,Controller,R,10,Gun,6,state_change,"{""from"": ""MEASURING"", ""to"": ""COMPLETED"", ""rt_ms"": 864.5350933074951}",1769174491663
+2026-01-23T22:21:31.674620+09:00,1769174491674,debug-YM11,Controller,R,11,Gun,6,system,"""test_finished""",1769174491656
+2026-01-23T22:21:31.849146+09:00,1769174491849,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174491849
+2026-01-23T22:21:32.224800+09:00,1769174492224,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174492224
+2026-01-23T22:21:32.278948+09:00,1769174492278,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174492278
+2026-01-23T22:21:32.493636+09:00,1769174492493,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174492493
+2026-01-23T22:21:32.600869+09:00,1769174492600,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174492600
+2026-01-23T22:21:33.262954+09:00,1769174493262,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""TOUCH"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174493262
+2026-01-23T22:21:33.317256+09:00,1769174493317,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174493317
+2026-01-23T22:21:33.692089+09:00,1769174493692,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""TOUCH"", ""R"": ""TOUCH"", ""P"": ""TOUCH""}",1769174493692
+2026-01-23T22:21:34.190192+09:00,1769174494190,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174494190
+2026-01-23T22:21:34.689589+09:00,1769174494689,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""TOUCH"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""CLOSE"", ""P"": ""CLOSE""}",1769174494689
+2026-01-23T22:21:34.854040+09:00,1769174494854,debug-YM11,Controller,R,11,Gun,6,state_input,"{""T"": ""OPEN"", ""I"": ""OPEN"", ""M"": ""OPEN"", ""R"": ""OPEN"", ""P"": ""OPEN""}",1769174494854
