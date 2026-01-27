@@ -1,21 +1,21 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-MT10,Controller,R,1,150,she wears too much makeup,she wears too much makeup,25,25,48.933251,0,52,5.885568485936076,0.0,2.08,0
-MT10,Controller,R,2,111,world population is growing,world population is growing,27,27,19.613377,0,30,15.90751047104229,0.0,1.1111111111111112,1
-MT10,Controller,R,3,77,we are subjects and must obey,we are subjects and must obey,29,29,24.030738,0,36,13.982092435113728,0.0,1.2413793103448276,0
-MT10,Controller,R,4,10,a problem with the engine,a problem with the engine,25,25,19.2346,0,28,14.97301737493891,0.0,1.12,1
-MT10,Controller,R,5,212,the price of gas is high,the price of gas is high,24,24,18.879,0,27,14.619418401398375,0.0,1.125,0
-MT10,Controller,R,6,47,space is a high priority,space is a high priority,24,24,18.237785,0,29,15.133416695064668,0.0,1.2083333333333333,2
-MT10,Controller,R,7,119,hands on experience with a job,names hands on experience with a not job,30,40,38.338714,10,56,12.206982216461405,0.3333333333333333,1.4,4
-MT10,Controller,R,8,293,the objective of the exercise,the objective of the exercise,29,29,24.227603,0,36,13.868478858597774,0.0,1.2413793103448276,2
-MT10,Controller,R,9,252,machinery is too complicated,machinery ke vol is too complicated,28,35,35.417933,7,44,11.51958811373888,0.25,1.2571428571428571,4
-MT10,Controller,R,10,152,batman wears a cape,batman wears a cape,19,19,16.314175,0,38,13.24001979873331,0.0,2.0,0
-MT10,Controller,R,11,126,gas bills are sent monthly,gas bills are sent monthly,26,26,18.138262,0,27,16.539622153434546,0.0,1.0384615384615385,0
-MT10,Controller,R,12,157,I do not care if you do that,i do not care if you do that,28,28,28.027982,0,37,11.55987612665086,0.0,1.3214285714285714,1
-MT10,Controller,R,13,4,I can see the rings on Saturn,i can see the rings on saturn,29,29,34.802884,0,60,9.65437232155818,0.0,2.0689655172413794,1
-MT10,Controller,R,14,429,luckily my wallet was found,luckily my wallet was found,27,27,17.834457,0,36,17.494224803143712,0.0,1.3333333333333333,0
-MT10,Controller,R,15,67,I am wearing a tie and a jacket,i am wearing a tie and a jacket,31,31,30.652777,0,44,11.744449776932118,0.0,1.4193548387096775,0
-MT10,Controller,R,16,386,important for political parties,important for political parties,31,31,20.463729999999998,0,36,17.592100755825065,0.0,1.1612903225806452,2
-MT10,Controller,R,17,364,two or three cups of coffee,tsp two or three cups or coffee of coffee,27,41,46.131107,14,63,10.40512641502403,0.5185185185185185,1.5365853658536586,12
-MT10,Controller,R,18,379,bring the offenders to justice,bring the offenders to justice,30,30,18.46359,0,31,18.847905526498366,0.0,1.0333333333333334,0
-MT10,Controller,R,19,221,do you like to go camping,do you like to go camping,25,25,18.78593,0,30,15.33062243924043,0.0,1.2,0
-MT10,Controller,R,20,49,do not squander your time,do not squander your time,25,25,25.07188,0,34,11.486972656218839,0.0,1.36,1
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+MT10,Controller,R,1,150,she wears too much makeup,she wears too much makeup,25,25,55.535,47.916000000000004,0,52,5.185918789952282,6.010518407212621,7.058619008807618,0.0,2.08,0
+MT10,Controller,R,2,111,world population is growing,world population is growing,27,27,22.86,17.753999999999998,0,30,13.648293963254593,17.57350456235215,13.003880803996385,0.0,1.1111111111111112,1
+MT10,Controller,R,3,77,we are subjects and must obey,we are subjects and must obey,29,29,26.29,18.981,0,36,12.780524914416128,17.70191243875454,10.744348187530052,0.0,1.2413793103448276,0
+MT10,Controller,R,4,10,a problem with the engine,a problem with the engine,25,25,20.277,15.326,0,28,14.20328450954283,18.791595980686413,12.50525368714177,0.0,1.12,1
+MT10,Controller,R,5,212,the price of gas is high,the price of gas is high,24,24,20.652,13.118999999999998,0,27,13.36432306798373,21.03818888634805,12.486969649096153,0.0,1.125,0
+MT10,Controller,R,6,47,space is a high priority,space is a high priority,24,24,20.471,14.464,0,29,13.482487421230031,19.081858407079643,14.68755579069738,0.0,1.2083333333333333,2
+MT10,Controller,R,7,119,hands on experience with a job,names hands on experience with a not job,30,40,40.706,31.159999999999997,10,56,11.497076598044513,15.019255455712452,11.467032773101474,0.3333333333333333,1.4,4
+MT10,Controller,R,8,293,the objective of the exercise,the objective of the exercise,29,29,25.722,20.514000000000003,0,36,13.062747842313971,16.379058204153257,13.663105719623289,0.0,1.2413793103448276,2
+MT10,Controller,R,9,252,machinery is too complicated,machinery ke vol is too complicated,28,35,40.526,33.967,7,44,10.067610916448698,12.011658374304472,13.296893884331565,0.25,1.2571428571428571,4
+MT10,Controller,R,10,152,batman wears a cape,batman wears a cape,19,19,20.597,15.922,0,38,10.486964120988494,13.566134907674915,10.089602509191916,0.0,2.0,0
+MT10,Controller,R,11,126,gas bills are sent monthly,gas bills are sent monthly,26,26,20.334,13.440999999999999,0,27,14.75361463558572,22.319767874414108,13.29593878727411,0.0,1.0384615384615385,0
+MT10,Controller,R,12,157,I do not care if you do that,i do not care if you do that,28,28,28.748,18.64,0,37,11.270349241686379,17.381974248927037,10.823913787327328,0.0,1.3214285714285714,1
+MT10,Controller,R,13,4,I can see the rings on Saturn,i can see the rings on saturn,29,29,35.471,26.781,0,60,9.472526852922105,12.546208132631342,9.48705522395285,0.0,2.0689655172413794,1
+MT10,Controller,R,14,429,luckily my wallet was found,luckily my wallet was found,27,27,23.637,17.605,0,36,13.199644624952406,17.722238000568023,11.35203392474834,0.0,1.3333333333333333,0
+MT10,Controller,R,15,67,I am wearing a tie and a jacket,i am wearing a tie and a jacket,31,31,31.624,23.337,0,44,11.383759170250443,15.426147319706903,9.340051279008787,0.0,1.4193548387096775,0
+MT10,Controller,R,16,386,important for political parties,important for political parties,31,31,25.137,21.086,0,36,14.321518080916578,17.072939391065162,13.844343481514485,0.0,1.1612903225806452,2
+MT10,Controller,R,17,364,two or three cups of coffee,tsp two or three cups or coffee of coffee,27,41,47.705,36.221,14,63,10.061838381720994,13.251980895060878,11.392272722669619,0.5185185185185185,1.5365853658536586,12
+MT10,Controller,R,18,379,bring the offenders to justice,bring the offenders to justice,30,30,20.971,15.064,0,31,16.59434457107434,23.101433882103027,15.258492522869314,0.0,1.0333333333333334,0
+MT10,Controller,R,19,221,do you like to go camping,do you like to go camping,25,25,19.778,13.269,0,30,14.561634138942258,21.704725299570427,14.03337485703331,0.0,1.2,0
+MT10,Controller,R,20,49,do not squander your time,do not squander your time,25,25,26.04,21.244,0,34,11.059907834101383,13.556768970062135,14.096804358775023,0.0,1.36,1

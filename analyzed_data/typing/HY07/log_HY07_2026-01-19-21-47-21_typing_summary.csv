@@ -1,21 +1,21 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-HY07,Keyboard,R,1,159,nobody cares anymore,nobody cares anymore,20,20,7.530651,0,57,30.276266952219665,0.0,2.85,3
-HY07,Keyboard,R,2,145,stay away from strangers,stay away from strangers,24,24,9.661995,0,27,28.565529168665478,0.0,1.125,1
-HY07,Keyboard,R,3,61,movie about a nutty professor,movie about a nutty professeor nutty professor,29,46,28.012026,17,89,19.27743462754176,0.5862068965517241,1.934782608695652,5
-HY07,Keyboard,R,4,487,motivational seminars make me sick,motivational seminars make he me sick,34,37,10.196896,3,41,42.36583368115159,0.08823529411764706,1.1081081081081081,1
-HY07,Keyboard,R,5,106,no exchange without a bill,no exchange without a bill,26,26,9.624382,0,47,31.17083257917235,0.0,1.8076923076923077,0
-HY07,Keyboard,R,6,387,that sticker needs to be validated,that sticker needs to be validated,34,34,14.490956,0,45,27.327389580093953,0.0,1.3235294117647058,3
-HY07,Keyboard,R,7,99,what a monkey sees a monkey will do,what a monkey sees a monkey will do,35,35,18.95683,0,46,21.522585790978766,0.0,1.3142857142857143,4
-HY07,Keyboard,R,8,398,suburbs are sprawling up everywhere,suburbs are sprawling up everywhere,35,35,13.922953,0,40,29.304128226246256,0.0,1.1428571428571428,1
-HY07,Keyboard,R,9,221,do you like to go camping,do you like to go camping,25,25,10.384906,0,32,27.732557232583517,0.0,1.28,1
-HY07,Keyboard,R,10,303,the aspirations of a nation,the aspirations of a nation,27,27,9.171268,0,32,34.01928719125861,0.0,1.1851851851851851,1
-HY07,Keyboard,R,11,241,are you sure you want this,are you sure you want this,26,26,8.334838,0,33,35.99350101345701,0.0,1.2692307692307692,0
-HY07,Keyboard,R,12,211,universities are too expensive,universities are too expensive,30,30,7.25711,0,33,47.95297301542901,0.0,1.1,0
-HY07,Keyboard,R,13,214,we drive on parkways,we drive on parkways,20,20,8.314949,0,25,27.420492897791675,0.0,1.25,1
-HY07,Keyboard,R,14,225,listen to five hours of opera,listen to five hours of opera,29,29,13.936746,0,46,24.108927578934136,0.0,1.5862068965517242,5
-HY07,Keyboard,R,15,433,good jobs for those with education,good jobs for those with education,34,34,15.885647,0,55,24.92816313997157,0.0,1.6176470588235294,7
-HY07,Keyboard,R,16,430,one hour is allotted for questions,one hour is allotted for questionos questions,34,45,28.45346,11,83,18.55661842180178,0.3235294117647059,1.8444444444444446,17
-HY07,Keyboard,R,17,339,vote according to your conscience,vote according to your conscience,33,33,12.547316,0,38,30.60415470527721,0.0,1.1515151515151516,2
-HY07,Keyboard,R,18,173,I want to hold your hand,i want to hold your hand,24,24,9.097365,0,33,30.33845514607801,0.0,1.375,2
-HY07,Keyboard,R,19,179,seasoned golfers love the game,seasoned golfers love the game,30,30,8.889226,0,31,39.148515292557526,0.0,1.0333333333333334,0
-HY07,Keyboard,R,20,115,we accept personal checks,we accept personal checks,25,25,10.093098,0,34,28.534350899991264,0.0,1.36,3
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+HY07,Keyboard,R,1,159,nobody cares anymore,nobody cares anymore,20,20,14.301,12.983,0,57,15.942941053073211,17.56142648078256,18.556171475745828,0.0,2.85,3
+HY07,Keyboard,R,2,145,stay away from strangers,stay away from strangers,24,24,11.403,8.536999999999999,0,27,24.204156800841883,32.32985826402718,23.126441042834394,0.0,1.125,1
+HY07,Keyboard,R,3,61,movie about a nutty professor,movie about a nutty professeor nutty professor,29,46,30.723,25.708,17,89,17.57640855385216,21.005134588454958,18.44601414457218,0.5862068965517241,1.934782608695652,5
+HY07,Keyboard,R,4,487,motivational seminars make me sick,motivational seminars make he me sick,34,37,15.26,11.325000000000001,3,41,28.309305373525554,38.14569536423841,25.10675036615358,0.08823529411764706,1.1081081081081081,1
+HY07,Keyboard,R,5,106,no exchange without a bill,no exchange without a bill,26,26,12.163,9.386999999999999,0,47,24.664967524459424,31.95909236177693,20.228936120266344,0.0,1.8076923076923077,0
+HY07,Keyboard,R,6,387,that sticker needs to be validated,that sticker needs to be validated,34,34,15.89,12.256,0,45,24.92133417243549,32.31070496083551,23.600654627292894,0.0,1.3235294117647058,3
+HY07,Keyboard,R,7,99,what a monkey sees a monkey will do,what a monkey sees a monkey will do,35,35,20.256,16.148999999999997,0,46,20.142180094786728,25.264722273825008,19.22210229306234,0.0,1.3142857142857143,4
+HY07,Keyboard,R,8,398,suburbs are sprawling up everywhere,suburbs are sprawling up everywhere,35,35,16.466,13.690999999999999,0,40,24.77833110652253,29.800598933606018,22.559423437916184,0.0,1.1428571428571428,1
+HY07,Keyboard,R,9,221,do you like to go camping,do you like to go camping,25,25,11.257,8.256,0,32,25.58408101625655,34.883720930232556,22.202282023758034,0.0,1.28,1
+HY07,Keyboard,R,10,303,the aspirations of a nation,the aspirations of a nation,27,27,10.16,7.7490000000000006,0,32,30.708661417322837,40.26325977545489,25.23910911052435,0.0,1.1851851851851851,1
+HY07,Keyboard,R,11,241,are you sure you want this,are you sure you want this,26,26,9.224,6.643,0,33,32.52385082393756,45.16031913292188,28.963265371156723,0.0,1.2692307692307692,0
+HY07,Keyboard,R,12,211,universities are too expensive,universities are too expensive,30,30,12.268,10.49,0,33,28.36648190414085,33.17445185891325,25.505949908108498,0.0,1.1,0
+HY07,Keyboard,R,13,214,we drive on parkways,we drive on parkways,20,20,9.611,7.972999999999999,0,25,23.7228176048278,28.596513232158536,20.408212795833727,0.0,1.25,1
+HY07,Keyboard,R,14,225,listen to five hours of opera,listen to five hours of opera,29,29,18.204,15.392000000000001,0,46,18.457481872116016,21.829521829521827,17.182845959024284,0.0,1.5862068965517242,5
+HY07,Keyboard,R,15,433,good jobs for those with education,good jobs for those with education,34,34,17.543,14.129999999999999,0,55,22.573106082198027,28.02547770700637,22.779139440886823,0.0,1.6176470588235294,7
+HY07,Keyboard,R,16,430,one hour is allotted for questions,one hour is allotted for questionos questions,34,45,29.301,25.405,11,83,18.019862803317295,20.78331037197402,20.575425828549974,0.3235294117647059,1.8444444444444446,17
+HY07,Keyboard,R,17,339,vote according to your conscience,vote according to your conscience,33,33,13.93,11.24,0,38,27.566403445800432,34.16370106761566,27.46641688386158,0.0,1.1515151515151516,2
+HY07,Keyboard,R,18,173,I want to hold your hand,i want to hold your hand,24,24,9.723,7.064,0,33,28.386300524529464,39.07134767836919,23.81543063844117,0.0,1.375,2
+HY07,Keyboard,R,19,179,seasoned golfers love the game,seasoned golfers love the game,30,30,11.577,8.768,0,31,30.059600932884166,39.68978102189781,27.017245082383567,0.0,1.0333333333333334,0
+HY07,Keyboard,R,20,115,we accept personal checks,we accept personal checks,25,25,11.445,8.972,0,34,25.163826998689384,32.09986625055729,23.320817994552506,0.0,1.36,3

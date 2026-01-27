@@ -1,6 +1,6 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-debug-HY07,Proposed,R,1,92,the laser printer is jammed,the laser laser printer is manned jammed,27,40,69.733158,13,93,6.711297945232883,0.48148148148148145,2.325,14
-debug-HY07,Proposed,R,2,255,please follow the guidelines,please follow the guidelines,28,28,22.170507,0,51,14.614009503706885,0.0,1.8214285714285714,10
-debug-HY07,Proposed,R,3,36,the force is with you,the force is with you,21,21,26.700472,0,48,8.988605145257356,0.0,2.2857142857142856,2
-debug-HY07,Proposed,R,4,232,stiff penalty for staying out late,stift penalty for stift stift stin stiff penalty for staying out late,34,69,76.459855,35,88,10.672267165560278,1.0294117647058822,1.2753623188405796,10
-debug-HY07,Proposed,R,5,260,this phenomenon will never occur,this phenomenon will meter never occur,32,38,32.540515,6,46,13.644528981793927,0.1875,1.2105263157894737,3
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+debug-HY07,Proposed,R,1,92,the laser printer is jammed,the laser laser printer is manned jammed,27,40,76.123,65.497,13,93,6.14794477359011,7.145365436584881,6.3302243136410965,0.48148148148148145,2.325,14
+debug-HY07,Proposed,R,2,255,please follow the guidelines,please follow the guidelines,28,28,54.014,49.416000000000004,0,51,5.998444847632096,6.556580864497328,8.247093385539072,0.0,1.8214285714285714,10
+debug-HY07,Proposed,R,3,36,the force is with you,the force is with you,21,21,28.496,23.482,0,48,8.422234699606962,10.220594497913297,9.751782800958768,0.0,2.2857142857142856,2
+debug-HY07,Proposed,R,4,232,stiff penalty for staying out late,stift penalty for stift stift stin stiff penalty for staying out late,34,69,81.929,68.075,35,88,9.95984327893664,11.986779287550496,9.655601076405366,1.0294117647058822,1.2753623188405796,10
+debug-HY07,Proposed,R,5,260,this phenomenon will never occur,this phenomenon will meter never occur,32,38,34.887,29.671999999999997,6,46,12.726803680454038,14.963602049069832,12.703670881788199,0.1875,1.2105263157894737,3

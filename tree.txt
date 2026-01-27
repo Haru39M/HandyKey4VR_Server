@@ -4,35 +4,22 @@
 ├── 2_analyze_typing.py
 ├── 3_visualize_gesture.py
 ├── 3_visualize_typing.py
+├── 4_stat_analysis.py
 ├── README.md
 ├── USAGE.md
 ├── analysis_results
-│   ├── 20260117_004557
-│   │   └── typing
-│   │       ├── typing_cer_boxplot.png
-│   │       ├── typing_wpm_boxplot.png
-│   │       └── typing_wpm_learning_curve.png
-│   ├── 20260117_004607
-│   │   └── gesture
-│   │       ├── gesture_learning_curve.png
-│   │       ├── gesture_rt_boxplot.png
-│   │       └── gesture_rt_by_type.png
-│   ├── 20260117_005325
-│   │   └── typing
-│   │       ├── typing_cer_boxplot.pdf
-│   │       ├── typing_cer_boxplot.png
-│   │       ├── typing_cer_boxplot.svg
-│   │       ├── typing_kspc_boxplot.pdf
-│   │       ├── typing_kspc_boxplot.png
-│   │       ├── typing_kspc_boxplot.svg
-│   │       ├── typing_wpm_boxplot.pdf
-│   │       ├── typing_wpm_boxplot.png
-│   │       ├── typing_wpm_boxplot.svg
-│   │       ├── typing_wpm_learning_curve.pdf
-│   │       ├── typing_wpm_learning_curve.png
-│   │       └── typing_wpm_learning_curve.svg
-│   ├── 20260117_005343
-│   │   └── gesture
+│   ├── 20260117_055320
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   └── gesture_rt_by_type.svg
+│   │   └── gesture_practice
 │   │       ├── gesture_learning_curve.pdf
 │   │       ├── gesture_learning_curve.png
 │   │       ├── gesture_learning_curve.svg
@@ -42,8 +29,21 @@
 │   │       ├── gesture_rt_by_type.pdf
 │   │       ├── gesture_rt_by_type.png
 │   │       └── gesture_rt_by_type.svg
-│   ├── 20260117_042212
-│   │   └── typing
+│   ├── 20260117_055338
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
 │   │       ├── typing_cer_boxplot.pdf
 │   │       ├── typing_cer_boxplot.png
 │   │       ├── typing_cer_boxplot.svg
@@ -56,8 +56,21 @@
 │   │       ├── typing_wpm_learning_curve.pdf
 │   │       ├── typing_wpm_learning_curve.png
 │   │       └── typing_wpm_learning_curve.svg
-│   ├── 20260117_044633
-│   │   └── typing
+│   ├── 20260118_014642
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
 │   │       ├── typing_cer_boxplot.pdf
 │   │       ├── typing_cer_boxplot.png
 │   │       ├── typing_cer_boxplot.svg
@@ -70,8 +83,21 @@
 │   │       ├── typing_wpm_learning_curve.pdf
 │   │       ├── typing_wpm_learning_curve.png
 │   │       └── typing_wpm_learning_curve.svg
-│   ├── 20260117_051359
-│   │   └── typing
+│   ├── 20260118_220257
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
 │   │       ├── typing_cer_boxplot.pdf
 │   │       ├── typing_cer_boxplot.png
 │   │       ├── typing_cer_boxplot.svg
@@ -84,20 +110,312 @@
 │   │       ├── typing_wpm_learning_curve.pdf
 │   │       ├── typing_wpm_learning_curve.png
 │   │       └── typing_wpm_learning_curve.svg
-│   └── 20260117_053832
-│       └── typing
-│           ├── typing_cer_boxplot.pdf
-│           ├── typing_cer_boxplot.png
-│           ├── typing_cer_boxplot.svg
-│           ├── typing_kspc_boxplot.pdf
-│           ├── typing_kspc_boxplot.png
-│           ├── typing_kspc_boxplot.svg
-│           ├── typing_wpm_boxplot.pdf
-│           ├── typing_wpm_boxplot.png
-│           ├── typing_wpm_boxplot.svg
-│           ├── typing_wpm_learning_curve.pdf
-│           ├── typing_wpm_learning_curve.png
-│           └── typing_wpm_learning_curve.svg
+│   ├── 20260118_220514
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   └── gesture_rt_by_type.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       └── gesture_rt_by_type.svg
+│   ├── 20260119_012301
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   └── gesture_rt_by_type.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       └── gesture_rt_by_type.svg
+│   ├── 20260119_183547
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
+│   │       ├── typing_cer_boxplot.pdf
+│   │       ├── typing_cer_boxplot.png
+│   │       ├── typing_cer_boxplot.svg
+│   │       ├── typing_kspc_boxplot.pdf
+│   │       ├── typing_kspc_boxplot.png
+│   │       ├── typing_kspc_boxplot.svg
+│   │       ├── typing_wpm_boxplot.pdf
+│   │       ├── typing_wpm_boxplot.png
+│   │       ├── typing_wpm_boxplot.svg
+│   │       ├── typing_wpm_learning_curve.pdf
+│   │       ├── typing_wpm_learning_curve.png
+│   │       └── typing_wpm_learning_curve.svg
+│   ├── 20260119_224622
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
+│   │       ├── typing_cer_boxplot.pdf
+│   │       ├── typing_cer_boxplot.png
+│   │       ├── typing_cer_boxplot.svg
+│   │       ├── typing_kspc_boxplot.pdf
+│   │       ├── typing_kspc_boxplot.png
+│   │       ├── typing_kspc_boxplot.svg
+│   │       ├── typing_wpm_boxplot.pdf
+│   │       ├── typing_wpm_boxplot.png
+│   │       ├── typing_wpm_boxplot.svg
+│   │       ├── typing_wpm_learning_curve.pdf
+│   │       ├── typing_wpm_learning_curve.png
+│   │       └── typing_wpm_learning_curve.svg
+│   ├── 20260119_224658
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   └── gesture_rt_by_type.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       └── gesture_rt_by_type.svg
+│   ├── 20260120_222308
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
+│   │       ├── typing_cer_boxplot.pdf
+│   │       ├── typing_cer_boxplot.png
+│   │       ├── typing_cer_boxplot.svg
+│   │       ├── typing_kspc_boxplot.pdf
+│   │       ├── typing_kspc_boxplot.png
+│   │       ├── typing_kspc_boxplot.svg
+│   │       ├── typing_wpm_boxplot.pdf
+│   │       ├── typing_wpm_boxplot.png
+│   │       ├── typing_wpm_boxplot.svg
+│   │       ├── typing_wpm_learning_curve.pdf
+│   │       ├── typing_wpm_learning_curve.png
+│   │       └── typing_wpm_learning_curve.svg
+│   ├── 20260120_222338
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   └── gesture_rt_by_type.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       └── gesture_rt_by_type.svg
+│   ├── 20260122_202509
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
+│   │       ├── typing_cer_boxplot.pdf
+│   │       ├── typing_cer_boxplot.png
+│   │       ├── typing_cer_boxplot.svg
+│   │       ├── typing_kspc_boxplot.pdf
+│   │       ├── typing_kspc_boxplot.png
+│   │       ├── typing_kspc_boxplot.svg
+│   │       ├── typing_wpm_boxplot.pdf
+│   │       ├── typing_wpm_boxplot.png
+│   │       ├── typing_wpm_boxplot.svg
+│   │       ├── typing_wpm_learning_curve.pdf
+│   │       ├── typing_wpm_learning_curve.png
+│   │       └── typing_wpm_learning_curve.svg
+│   ├── 20260122_202722
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   └── gesture_rt_by_type.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       └── gesture_rt_by_type.svg
+│   ├── 20260124_001955
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
+│   │       ├── typing_cer_boxplot.pdf
+│   │       ├── typing_cer_boxplot.png
+│   │       ├── typing_cer_boxplot.svg
+│   │       ├── typing_kspc_boxplot.pdf
+│   │       ├── typing_kspc_boxplot.png
+│   │       ├── typing_kspc_boxplot.svg
+│   │       ├── typing_wpm_boxplot.pdf
+│   │       ├── typing_wpm_boxplot.png
+│   │       ├── typing_wpm_boxplot.svg
+│   │       ├── typing_wpm_learning_curve.pdf
+│   │       ├── typing_wpm_learning_curve.png
+│   │       └── typing_wpm_learning_curve.svg
+│   ├── 20260124_002055
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   └── gesture_rt_by_type.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       └── gesture_rt_by_type.svg
+│   ├── 20260127_050533
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
+│   │       ├── typing_cer_boxplot.pdf
+│   │       ├── typing_cer_boxplot.png
+│   │       ├── typing_cer_boxplot.svg
+│   │       ├── typing_kspc_boxplot.pdf
+│   │       ├── typing_kspc_boxplot.png
+│   │       ├── typing_kspc_boxplot.svg
+│   │       ├── typing_wpm_boxplot.pdf
+│   │       ├── typing_wpm_boxplot.png
+│   │       ├── typing_wpm_boxplot.svg
+│   │       ├── typing_wpm_learning_curve.pdf
+│   │       ├── typing_wpm_learning_curve.png
+│   │       └── typing_wpm_learning_curve.svg
+│   ├── 20260127_054231
+│   │   └── stats
+│   │       └── typing_stats.txt
+│   ├── 20260127_054411
+│   │   └── stats
+│   │       ├── gesture_stats_report.txt
+│   │       ├── nasa_tlx_stats_report.txt
+│   │       └── typing_stats_report.txt
+│   ├── 20260127_055347
+│   │   └── stats
+│   │       ├── gesture_stats_report.txt
+│   │       ├── nasa_tlx_stats_report.txt
+│   │       └── typing_stats_report.txt
+│   └── 20260127_055750
+│       └── stats
+│           ├── gesture_stats_report.txt
+│           ├── nasa_tlx_stats_report.txt
+│           └── typing_stats_report.txt
 ├── analyze
 │   ├── gesture_learning_curve.png
 │   ├── gesture_rt_boxplot.png
@@ -105,31 +423,297 @@
 │   └── wpm_learning_curve.png
 ├── analyzed_data
 │   ├── gesture
+│   │   ├── AM04
+│   │   │   ├── log_AM04_2026-01-17-22-35-35_gesture_raw.csv
+│   │   │   ├── log_AM04_2026-01-17-22-35-35_gesture_summary.csv
+│   │   │   ├── log_AM04_2026-01-17-22-57-07_gesture_raw.csv
+│   │   │   └── log_AM04_2026-01-17-22-57-07_gesture_summary.csv
+│   │   ├── EM09
+│   │   │   ├── log_EM09_2026-01-20-19-19-49_gesture_raw.csv
+│   │   │   ├── log_EM09_2026-01-20-19-19-49_gesture_summary.csv
+│   │   │   ├── log_EM09_2026-01-20-19-35-50_gesture_raw.csv
+│   │   │   └── log_EM09_2026-01-20-19-35-50_gesture_summary.csv
 │   │   ├── HW04
 │   │   │   ├── log_HW04_2026-01-16-21-30-28_gesture_raw.csv
 │   │   │   ├── log_HW04_2026-01-16-21-30-28_gesture_summary.csv
 │   │   │   ├── log_HW04_2026-01-16-23-37-38_gesture_raw.csv
 │   │   │   └── log_HW04_2026-01-16-23-37-38_gesture_summary.csv
-│   │   └── debug-HW04
-│   │       ├── log_debug-HW04_2026-01-16-21-28-53_gesture_raw.csv
-│   │       ├── log_debug-HW04_2026-01-16-21-28-53_gesture_summary.csv
-│   │       ├── log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv
-│   │       └── log_debug-HW04_2026-01-16-23-36-05_gesture_summary.csv
-│   └── typing
-│       ├── HW04
-│       │   ├── log_HW04_2026-01-16-20-25-28_typing_raw.csv
-│       │   ├── log_HW04_2026-01-16-20-25-28_typing_summary.csv
-│       │   ├── log_HW04_2026-01-16-20-38-43_typing_raw.csv
-│       │   ├── log_HW04_2026-01-16-20-38-43_typing_summary.csv
-│       │   ├── log_HW04_2026-01-16-20-57-46_typing_raw.csv
-│       │   └── log_HW04_2026-01-16-20-57-46_typing_summary.csv
-│       └── debug-HW04
-│           ├── log_debug-HW04_2026-01-16-20-23-57_typing_raw.csv
-│           ├── log_debug-HW04_2026-01-16-20-23-57_typing_summary.csv
-│           ├── log_debug-HW04_2026-01-16-20-36-17_typing_raw.csv
-│           ├── log_debug-HW04_2026-01-16-20-36-17_typing_summary.csv
-│           ├── log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv
-│           └── log_debug-HW04_2026-01-16-20-54-35_typing_summary.csv
+│   │   ├── HY07
+│   │   │   ├── log_HY07_2026-01-17-23-36-28_gesture_raw.csv
+│   │   │   ├── log_HY07_2026-01-17-23-36-28_gesture_summary.csv
+│   │   │   ├── log_HY07_2026-01-17-23-55-02_gesture_raw.csv
+│   │   │   └── log_HY07_2026-01-17-23-55-02_gesture_summary.csv
+│   │   ├── KM02
+│   │   │   ├── log_KM02_2026-01-23-18-56-44_gesture_raw.csv
+│   │   │   ├── log_KM02_2026-01-23-18-56-44_gesture_summary.csv
+│   │   │   ├── log_KM02_2026-01-23-19-17-54_gesture_raw.csv
+│   │   │   └── log_KM02_2026-01-23-19-17-54_gesture_summary.csv
+│   │   ├── MK08
+│   │   │   ├── log_MK08_2026-01-22-17-38-41_gesture_raw.csv
+│   │   │   ├── log_MK08_2026-01-22-17-38-41_gesture_summary.csv
+│   │   │   ├── log_MK08_2026-01-22-18-01-18_gesture_raw.csv
+│   │   │   └── log_MK08_2026-01-22-18-01-18_gesture_summary.csv
+│   │   ├── MT04
+│   │   │   ├── log_MT04_2026-01-20-14-27-06_gesture_raw.csv
+│   │   │   ├── log_MT04_2026-01-20-14-27-06_gesture_summary.csv
+│   │   │   ├── log_MT04_2026-01-20-14-42-58_gesture_raw.csv
+│   │   │   ├── log_MT04_2026-01-20-14-42-58_gesture_summary.csv
+│   │   │   ├── log_MT04_2026-01-20-14-44-53_gesture_raw.csv
+│   │   │   └── log_MT04_2026-01-20-14-44-53_gesture_summary.csv
+│   │   ├── MT10
+│   │   │   ├── log_MT10_2026-01-22-18-34-13_gesture_raw.csv
+│   │   │   ├── log_MT10_2026-01-22-18-34-13_gesture_summary.csv
+│   │   │   ├── log_MT10_2026-01-22-18-55-06_gesture_raw.csv
+│   │   │   └── log_MT10_2026-01-22-18-55-06_gesture_summary.csv
+│   │   ├── MY05
+│   │   │   ├── log_MY05_2026-01-18-20-24-44_gesture_raw.csv
+│   │   │   ├── log_MY05_2026-01-18-20-24-44_gesture_summary.csv
+│   │   │   ├── log_MY05_2026-01-18-20-46-10_gesture_raw.csv
+│   │   │   └── log_MY05_2026-01-18-20-46-10_gesture_summary.csv
+│   │   ├── SS05
+│   │   │   ├── log_SS05_2026-01-19-00-33-56_gesture_raw.csv
+│   │   │   ├── log_SS05_2026-01-19-00-33-56_gesture_summary.csv
+│   │   │   ├── log_SS05_2026-01-19-01-00-50_gesture_raw.csv
+│   │   │   └── log_SS05_2026-01-19-01-00-50_gesture_summary.csv
+│   │   ├── WE01
+│   │   │   ├── log_WE01_2026-01-20-17-15-12_gesture_raw.csv
+│   │   │   ├── log_WE01_2026-01-20-17-15-12_gesture_summary.csv
+│   │   │   ├── log_WE01_2026-01-20-17-36-04_gesture_raw.csv
+│   │   │   └── log_WE01_2026-01-20-17-36-04_gesture_summary.csv
+│   │   └── YM11
+│   │       ├── log_YM11_2026-01-23-22-03-41_gesture_raw.csv
+│   │       ├── log_YM11_2026-01-23-22-03-41_gesture_summary.csv
+│   │       ├── log_YM11_2026-01-23-22-21-50_gesture_raw.csv
+│   │       └── log_YM11_2026-01-23-22-21-50_gesture_summary.csv
+│   ├── gesture_practice
+│   │   ├── debug-AM04
+│   │   │   ├── log_debug-AM04_2026-01-17-22-33-45_gesture_raw.csv
+│   │   │   ├── log_debug-AM04_2026-01-17-22-33-45_gesture_summary.csv
+│   │   │   ├── log_debug-AM04_2026-01-17-22-54-13_gesture_raw.csv
+│   │   │   └── log_debug-AM04_2026-01-17-22-54-13_gesture_summary.csv
+│   │   ├── debug-EM09
+│   │   │   ├── log_debug-EM09_2026-01-20-19-18-06_gesture_raw.csv
+│   │   │   ├── log_debug-EM09_2026-01-20-19-18-06_gesture_summary.csv
+│   │   │   ├── log_debug-EM09_2026-01-20-19-34-08_gesture_raw.csv
+│   │   │   └── log_debug-EM09_2026-01-20-19-34-08_gesture_summary.csv
+│   │   ├── debug-HW04
+│   │   │   ├── log_debug-HW04_2026-01-16-21-28-53_gesture_raw.csv
+│   │   │   ├── log_debug-HW04_2026-01-16-21-28-53_gesture_summary.csv
+│   │   │   ├── log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv
+│   │   │   └── log_debug-HW04_2026-01-16-23-36-05_gesture_summary.csv
+│   │   ├── debug-HY07
+│   │   │   ├── log_debug-HY07_2026-01-17-23-31-35_gesture_raw.csv
+│   │   │   ├── log_debug-HY07_2026-01-17-23-31-35_gesture_summary.csv
+│   │   │   ├── log_debug-HY07_2026-01-17-23-53-12_gesture_raw.csv
+│   │   │   └── log_debug-HY07_2026-01-17-23-53-12_gesture_summary.csv
+│   │   ├── debug-KM02
+│   │   │   ├── log_debug-KM02_2026-01-23-18-55-06_gesture_raw.csv
+│   │   │   ├── log_debug-KM02_2026-01-23-18-55-06_gesture_summary.csv
+│   │   │   ├── log_debug-KM02_2026-01-23-19-15-44_gesture_raw.csv
+│   │   │   └── log_debug-KM02_2026-01-23-19-15-44_gesture_summary.csv
+│   │   ├── debug-MK08
+│   │   │   ├── log_debug-MK08_2026-01-22-17-36-34_gesture_raw.csv
+│   │   │   ├── log_debug-MK08_2026-01-22-17-36-34_gesture_summary.csv
+│   │   │   ├── log_debug-MK08_2026-01-22-17-58-45_gesture_raw.csv
+│   │   │   └── log_debug-MK08_2026-01-22-17-58-45_gesture_summary.csv
+│   │   ├── debug-MT04
+│   │   │   ├── log_debug-MT04_2026-01-20-14-25-30_gesture_raw.csv
+│   │   │   └── log_debug-MT04_2026-01-20-14-25-30_gesture_summary.csv
+│   │   ├── debug-MT10
+│   │   │   ├── log_debug-MT10_2026-01-22-18-32-12_gesture_raw.csv
+│   │   │   ├── log_debug-MT10_2026-01-22-18-32-12_gesture_summary.csv
+│   │   │   ├── log_debug-MT10_2026-01-22-18-53-26_gesture_raw.csv
+│   │   │   └── log_debug-MT10_2026-01-22-18-53-26_gesture_summary.csv
+│   │   ├── debug-MY05
+│   │   │   ├── log_debug-MY05_2026-01-18-20-22-00_gesture_raw.csv
+│   │   │   ├── log_debug-MY05_2026-01-18-20-22-00_gesture_summary.csv
+│   │   │   ├── log_debug-MY05_2026-01-18-20-44-31_gesture_raw.csv
+│   │   │   └── log_debug-MY05_2026-01-18-20-44-31_gesture_summary.csv
+│   │   ├── debug-SS05
+│   │   │   ├── log_debug-SS05_2026-01-19-00-31-23_gesture_raw.csv
+│   │   │   ├── log_debug-SS05_2026-01-19-00-31-23_gesture_summary.csv
+│   │   │   ├── log_debug-SS05_2026-01-19-00-53-49_gesture_raw.csv
+│   │   │   └── log_debug-SS05_2026-01-19-00-53-49_gesture_summary.csv
+│   │   ├── debug-WE01
+│   │   │   ├── log_debug-WE01_2026-01-20-17-12-45_gesture_raw.csv
+│   │   │   ├── log_debug-WE01_2026-01-20-17-12-45_gesture_summary.csv
+│   │   │   ├── log_debug-WE01_2026-01-20-17-34-31_gesture_raw.csv
+│   │   │   └── log_debug-WE01_2026-01-20-17-34-31_gesture_summary.csv
+│   │   └── debug-YM11
+│   │       ├── log_debug-YM11_2026-01-23-22-02-04_gesture_raw.csv
+│   │       ├── log_debug-YM11_2026-01-23-22-02-04_gesture_summary.csv
+│   │       ├── log_debug-YM11_2026-01-23-22-20-19_gesture_raw.csv
+│   │       └── log_debug-YM11_2026-01-23-22-20-19_gesture_summary.csv
+│   ├── typing
+│   │   ├── AM04
+│   │   │   ├── log_AM04_2026-01-18-00-38-20_typing_raw.csv
+│   │   │   ├── log_AM04_2026-01-18-00-38-20_typing_summary.csv
+│   │   │   ├── log_AM04_2026-01-18-00-57-33_typing_raw.csv
+│   │   │   ├── log_AM04_2026-01-18-00-57-33_typing_summary.csv
+│   │   │   ├── log_AM04_2026-01-18-01-19-17_typing_raw.csv
+│   │   │   └── log_AM04_2026-01-18-01-19-17_typing_summary.csv
+│   │   ├── EM09
+│   │   │   ├── log_EM09_2026-01-20-18-12-59_typing_raw.csv
+│   │   │   ├── log_EM09_2026-01-20-18-12-59_typing_summary.csv
+│   │   │   ├── log_EM09_2026-01-20-18-32-32_typing_raw.csv
+│   │   │   ├── log_EM09_2026-01-20-18-32-32_typing_summary.csv
+│   │   │   ├── log_EM09_2026-01-20-18-55-14_typing_raw.csv
+│   │   │   └── log_EM09_2026-01-20-18-55-14_typing_summary.csv
+│   │   ├── HW04
+│   │   │   ├── log_HW04_2026-01-16-20-25-28_typing_raw.csv
+│   │   │   ├── log_HW04_2026-01-16-20-25-28_typing_summary.csv
+│   │   │   ├── log_HW04_2026-01-16-20-38-43_typing_raw.csv
+│   │   │   ├── log_HW04_2026-01-16-20-38-43_typing_summary.csv
+│   │   │   ├── log_HW04_2026-01-16-20-57-46_typing_raw.csv
+│   │   │   └── log_HW04_2026-01-16-20-57-46_typing_summary.csv
+│   │   ├── HY07
+│   │   │   ├── log_HY07_2026-01-19-21-47-21_typing_raw.csv
+│   │   │   ├── log_HY07_2026-01-19-21-47-21_typing_summary.csv
+│   │   │   ├── log_HY07_2026-01-19-22-06-16_typing_raw.csv
+│   │   │   ├── log_HY07_2026-01-19-22-06-16_typing_summary.csv
+│   │   │   ├── log_HY07_2026-01-19-22-25-56_typing_raw.csv
+│   │   │   └── log_HY07_2026-01-19-22-25-56_typing_summary.csv
+│   │   ├── KM02
+│   │   │   ├── log_KM02_2026-01-23-17-39-30_typing_raw.csv
+│   │   │   ├── log_KM02_2026-01-23-17-39-30_typing_summary.csv
+│   │   │   ├── log_KM02_2026-01-23-18-09-08_typing_raw.csv
+│   │   │   ├── log_KM02_2026-01-23-18-09-08_typing_summary.csv
+│   │   │   ├── log_KM02_2026-01-23-18-37-16_typing_raw.csv
+│   │   │   └── log_KM02_2026-01-23-18-37-16_typing_summary.csv
+│   │   ├── MK08
+│   │   │   ├── log_MK08_2026-01-22-16-24-48_typing_raw.csv
+│   │   │   ├── log_MK08_2026-01-22-16-24-48_typing_summary.csv
+│   │   │   ├── log_MK08_2026-01-22-17-04-18_typing_raw.csv
+│   │   │   ├── log_MK08_2026-01-22-17-04-18_typing_summary.csv
+│   │   │   ├── log_MK08_2026-01-22-17-22-21_typing_raw.csv
+│   │   │   └── log_MK08_2026-01-22-17-22-21_typing_summary.csv
+│   │   ├── MT04
+│   │   │   ├── log_MT04_2026-01-20-13-17-44_typing_raw.csv
+│   │   │   ├── log_MT04_2026-01-20-13-17-44_typing_summary.csv
+│   │   │   ├── log_MT04_2026-01-20-13-37-27_typing_raw.csv
+│   │   │   ├── log_MT04_2026-01-20-13-37-27_typing_summary.csv
+│   │   │   ├── log_MT04_2026-01-20-13-57-06_typing_raw.csv
+│   │   │   └── log_MT04_2026-01-20-13-57-06_typing_summary.csv
+│   │   ├── MT10
+│   │   │   ├── log_MT10_2026-01-22-19-19-24_typing_raw.csv
+│   │   │   ├── log_MT10_2026-01-22-19-19-24_typing_summary.csv
+│   │   │   ├── log_MT10_2026-01-22-19-44-19_typing_raw.csv
+│   │   │   ├── log_MT10_2026-01-22-19-44-19_typing_summary.csv
+│   │   │   ├── log_MT10_2026-01-22-20-01-04_typing_raw.csv
+│   │   │   └── log_MT10_2026-01-22-20-01-04_typing_summary.csv
+│   │   ├── MY05
+│   │   │   ├── log_MY05_2026-01-18-18-37-01_typing_raw.csv
+│   │   │   ├── log_MY05_2026-01-18-18-37-01_typing_summary.csv
+│   │   │   ├── log_MY05_2026-01-18-19-13-37_typing_raw.csv
+│   │   │   ├── log_MY05_2026-01-18-19-13-37_typing_summary.csv
+│   │   │   ├── log_MY05_2026-01-18-19-53-05_typing_raw.csv
+│   │   │   └── log_MY05_2026-01-18-19-53-05_typing_summary.csv
+│   │   ├── SS05
+│   │   │   ├── log_SS05_2026-01-19-16-35-11_typing_raw.csv
+│   │   │   ├── log_SS05_2026-01-19-16-35-11_typing_summary.csv
+│   │   │   ├── log_SS05_2026-01-19-17-00-53_typing_raw.csv
+│   │   │   ├── log_SS05_2026-01-19-17-00-53_typing_summary.csv
+│   │   │   ├── log_SS05_2026-01-19-17-17-33_typing_raw.csv
+│   │   │   └── log_SS05_2026-01-19-17-17-33_typing_summary.csv
+│   │   ├── WE01
+│   │   │   ├── log_WE01_2026-01-20-15-45-45_typing_raw.csv
+│   │   │   ├── log_WE01_2026-01-20-15-45-45_typing_summary.csv
+│   │   │   ├── log_WE01_2026-01-20-16-26-35_typing_raw.csv
+│   │   │   ├── log_WE01_2026-01-20-16-26-35_typing_summary.csv
+│   │   │   ├── log_WE01_2026-01-20-16-51-56_typing_raw.csv
+│   │   │   └── log_WE01_2026-01-20-16-51-56_typing_summary.csv
+│   │   └── YM11
+│   │       ├── log_YM11_2026-01-23-22-45-56_typing_raw.csv
+│   │       ├── log_YM11_2026-01-23-22-45-56_typing_summary.csv
+│   │       ├── log_YM11_2026-01-23-23-06-31_typing_raw.csv
+│   │       ├── log_YM11_2026-01-23-23-06-31_typing_summary.csv
+│   │       ├── log_YM11_2026-01-23-23-40-26_typing_raw.csv
+│   │       └── log_YM11_2026-01-23-23-40-26_typing_summary.csv
+│   └── typing_practice
+│       ├── debug-AM04
+│       │   ├── log_debug-AM04_2026-01-18-00-35-29_typing_raw.csv
+│       │   ├── log_debug-AM04_2026-01-18-00-35-29_typing_summary.csv
+│       │   ├── log_debug-AM04_2026-01-18-00-52-19_typing_raw.csv
+│       │   ├── log_debug-AM04_2026-01-18-00-52-19_typing_summary.csv
+│       │   ├── log_debug-AM04_2026-01-18-01-13-35_typing_raw.csv
+│       │   └── log_debug-AM04_2026-01-18-01-13-35_typing_summary.csv
+│       ├── debug-EM09
+│       │   ├── log_debug-EM09_2026-01-20-18-08-18_typing_raw.csv
+│       │   ├── log_debug-EM09_2026-01-20-18-08-18_typing_summary.csv
+│       │   ├── log_debug-EM09_2026-01-20-18-30-10_typing_raw.csv
+│       │   ├── log_debug-EM09_2026-01-20-18-30-10_typing_summary.csv
+│       │   ├── log_debug-EM09_2026-01-20-18-46-47_typing_raw.csv
+│       │   └── log_debug-EM09_2026-01-20-18-46-47_typing_summary.csv
+│       ├── debug-HW04
+│       │   ├── log_debug-HW04_2026-01-16-20-23-57_typing_raw.csv
+│       │   ├── log_debug-HW04_2026-01-16-20-23-57_typing_summary.csv
+│       │   ├── log_debug-HW04_2026-01-16-20-36-17_typing_raw.csv
+│       │   ├── log_debug-HW04_2026-01-16-20-36-17_typing_summary.csv
+│       │   ├── log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv
+│       │   └── log_debug-HW04_2026-01-16-20-54-35_typing_summary.csv
+│       ├── debug-HY07
+│       │   ├── log_debug-HY07_2026-01-19-21-43-10_typing_raw.csv
+│       │   ├── log_debug-HY07_2026-01-19-21-43-10_typing_summary.csv
+│       │   ├── log_debug-HY07_2026-01-19-22-00-32_typing_raw.csv
+│       │   ├── log_debug-HY07_2026-01-19-22-00-32_typing_summary.csv
+│       │   ├── log_debug-HY07_2026-01-19-22-22-40_typing_raw.csv
+│       │   └── log_debug-HY07_2026-01-19-22-22-40_typing_summary.csv
+│       ├── debug-KM02
+│       │   ├── log_debug-KM02_2026-01-23-17-36-05_typing_raw.csv
+│       │   ├── log_debug-KM02_2026-01-23-17-36-05_typing_summary.csv
+│       │   ├── log_debug-KM02_2026-01-23-18-01-19_typing_raw.csv
+│       │   ├── log_debug-KM02_2026-01-23-18-01-19_typing_summary.csv
+│       │   ├── log_debug-KM02_2026-01-23-18-32-48_typing_raw.csv
+│       │   └── log_debug-KM02_2026-01-23-18-32-48_typing_summary.csv
+│       ├── debug-MK08
+│       │   ├── log_debug-MK08_2026-01-22-16-12-47_typing_raw.csv
+│       │   ├── log_debug-MK08_2026-01-22-16-12-47_typing_summary.csv
+│       │   ├── log_debug-MK08_2026-01-22-16-59-55_typing_raw.csv
+│       │   ├── log_debug-MK08_2026-01-22-16-59-55_typing_summary.csv
+│       │   ├── log_debug-MK08_2026-01-22-17-20-14_typing_raw.csv
+│       │   └── log_debug-MK08_2026-01-22-17-20-14_typing_summary.csv
+│       ├── debug-MT04
+│       │   ├── log_debug-MT04_2026-01-20-13-12-46_typing_raw.csv
+│       │   ├── log_debug-MT04_2026-01-20-13-12-46_typing_summary.csv
+│       │   ├── log_debug-MT04_2026-01-20-13-35-18_typing_raw.csv
+│       │   ├── log_debug-MT04_2026-01-20-13-35-18_typing_summary.csv
+│       │   ├── log_debug-MT04_2026-01-20-13-49-32_typing_raw.csv
+│       │   └── log_debug-MT04_2026-01-20-13-49-32_typing_summary.csv
+│       ├── debug-MT10
+│       │   ├── log_debug-MT10_2026-01-22-19-13-08_typing_raw.csv
+│       │   ├── log_debug-MT10_2026-01-22-19-13-08_typing_summary.csv
+│       │   ├── log_debug-MT10_2026-01-22-19-37-53_typing_raw.csv
+│       │   ├── log_debug-MT10_2026-01-22-19-37-53_typing_summary.csv
+│       │   ├── log_debug-MT10_2026-01-22-19-59-34_typing_raw.csv
+│       │   └── log_debug-MT10_2026-01-22-19-59-34_typing_summary.csv
+│       ├── debug-MY05
+│       │   ├── log_debug-MY05_2026-01-18-18-29-07_typing_raw.csv
+│       │   ├── log_debug-MY05_2026-01-18-18-29-07_typing_summary.csv
+│       │   ├── log_debug-MY05_2026-01-18-19-05-04_typing_raw.csv
+│       │   ├── log_debug-MY05_2026-01-18-19-05-04_typing_summary.csv
+│       │   ├── log_debug-MY05_2026-01-18-19-47-59_typing_raw.csv
+│       │   └── log_debug-MY05_2026-01-18-19-47-59_typing_summary.csv
+│       ├── debug-SS05
+│       │   ├── log_debug-SS05_2026-01-19-16-28-19_typing_raw.csv
+│       │   ├── log_debug-SS05_2026-01-19-16-28-19_typing_summary.csv
+│       │   ├── log_debug-SS05_2026-01-19-16-57-01_typing_raw.csv
+│       │   ├── log_debug-SS05_2026-01-19-16-57-01_typing_summary.csv
+│       │   ├── log_debug-SS05_2026-01-19-17-15-53_typing_raw.csv
+│       │   └── log_debug-SS05_2026-01-19-17-15-53_typing_summary.csv
+│       ├── debug-WE01
+│       │   ├── log_debug-WE01_2026-01-20-15-31-59_typing_raw.csv
+│       │   ├── log_debug-WE01_2026-01-20-15-31-59_typing_summary.csv
+│       │   ├── log_debug-WE01_2026-01-20-16-20-40_typing_raw.csv
+│       │   ├── log_debug-WE01_2026-01-20-16-20-40_typing_summary.csv
+│       │   ├── log_debug-WE01_2026-01-20-16-47-22_typing_raw.csv
+│       │   └── log_debug-WE01_2026-01-20-16-47-22_typing_summary.csv
+│       └── debug-YM11
+│           ├── log_debug-YM11_2026-01-23-22-39-43_typing_raw.csv
+│           ├── log_debug-YM11_2026-01-23-22-39-43_typing_summary.csv
+│           ├── log_debug-YM11_2026-01-23-23-03-28_typing_raw.csv
+│           ├── log_debug-YM11_2026-01-23-23-03-28_typing_summary.csv
+│           ├── log_debug-YM11_2026-01-23-23-23-42_typing_raw.csv
+│           └── log_debug-YM11_2026-01-23-23-23-42_typing_summary.csv
 ├── app.py
 ├── botsu
 │   ├── main.py
@@ -143,8 +727,7 @@
 ├── check_word_predictor.py
 ├── config.json
 ├── configs
-│   ├── experiment_config.json
-│   └── participants_config.json
+│   └── experiment_config.json
 ├── dockerfile
 ├── export_tree.sh
 ├── gesture_test.py
@@ -164,25 +747,190 @@
 ├── logs
 │   ├── logs_gesture
 │   │   ├── debug
+│   │   │   ├── log_debug-AM04_2026-01-17-22-33-45_gesture_raw.csv
+│   │   │   ├── log_debug-AM04_2026-01-17-22-54-13_gesture_raw.csv
+│   │   │   ├── log_debug-EM09_2026-01-20-19-18-06_gesture_raw.csv
+│   │   │   ├── log_debug-EM09_2026-01-20-19-34-08_gesture_raw.csv
 │   │   │   ├── log_debug-HW04_2026-01-16-21-28-53_gesture_raw.csv
-│   │   │   └── log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv
+│   │   │   ├── log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv
+│   │   │   ├── log_debug-HY07_2026-01-17-23-31-35_gesture_raw.csv
+│   │   │   ├── log_debug-HY07_2026-01-17-23-53-12_gesture_raw.csv
+│   │   │   ├── log_debug-KM02_2026-01-23-18-55-06_gesture_raw.csv
+│   │   │   ├── log_debug-KM02_2026-01-23-19-15-44_gesture_raw.csv
+│   │   │   ├── log_debug-MK08_2026-01-22-17-36-34_gesture_raw.csv
+│   │   │   ├── log_debug-MK08_2026-01-22-17-58-45_gesture_raw.csv
+│   │   │   ├── log_debug-MT04_2026-01-20-14-25-30_gesture_raw.csv
+│   │   │   ├── log_debug-MT10_2026-01-22-18-32-12_gesture_raw.csv
+│   │   │   ├── log_debug-MT10_2026-01-22-18-53-26_gesture_raw.csv
+│   │   │   ├── log_debug-MY05_2026-01-18-20-22-00_gesture_raw.csv
+│   │   │   ├── log_debug-MY05_2026-01-18-20-44-31_gesture_raw.csv
+│   │   │   ├── log_debug-SS05_2026-01-19-00-31-23_gesture_raw.csv
+│   │   │   ├── log_debug-SS05_2026-01-19-00-53-49_gesture_raw.csv
+│   │   │   ├── log_debug-WE01_2026-01-20-17-12-45_gesture_raw.csv
+│   │   │   ├── log_debug-WE01_2026-01-20-17-34-31_gesture_raw.csv
+│   │   │   ├── log_debug-YM11_2026-01-23-22-02-04_gesture_raw.csv
+│   │   │   └── log_debug-YM11_2026-01-23-22-20-19_gesture_raw.csv
+│   │   ├── log_AM04_2026-01-17-22-35-35_gesture_raw.csv
+│   │   ├── log_AM04_2026-01-17-22-57-07_gesture_raw.csv
+│   │   ├── log_EM09_2026-01-20-19-19-49_gesture_raw.csv
+│   │   ├── log_EM09_2026-01-20-19-35-50_gesture_raw.csv
 │   │   ├── log_HW04_2026-01-16-21-30-28_gesture_raw.csv
-│   │   └── log_HW04_2026-01-16-23-37-38_gesture_raw.csv
+│   │   ├── log_HW04_2026-01-16-23-37-38_gesture_raw.csv
+│   │   ├── log_HY07_2026-01-17-23-36-28_gesture_raw.csv
+│   │   ├── log_HY07_2026-01-17-23-55-02_gesture_raw.csv
+│   │   ├── log_KM02_2026-01-23-18-56-44_gesture_raw.csv
+│   │   ├── log_KM02_2026-01-23-19-17-54_gesture_raw.csv
+│   │   ├── log_MK08_2026-01-22-17-38-41_gesture_raw.csv
+│   │   ├── log_MK08_2026-01-22-18-01-18_gesture_raw.csv
+│   │   ├── log_MT04_2026-01-20-14-27-06_gesture_raw.csv
+│   │   ├── log_MT04_2026-01-20-14-42-58_gesture_raw.csv
+│   │   ├── log_MT04_2026-01-20-14-44-53_gesture_raw.csv
+│   │   ├── log_MT10_2026-01-22-18-34-13_gesture_raw.csv
+│   │   ├── log_MT10_2026-01-22-18-55-06_gesture_raw.csv
+│   │   ├── log_MY05_2026-01-18-20-24-44_gesture_raw.csv
+│   │   ├── log_MY05_2026-01-18-20-46-10_gesture_raw.csv
+│   │   ├── log_SS05_2026-01-19-00-33-56_gesture_raw.csv
+│   │   ├── log_SS05_2026-01-19-01-00-50_gesture_raw.csv
+│   │   ├── log_WE01_2026-01-20-17-15-12_gesture_raw.csv
+│   │   ├── log_WE01_2026-01-20-17-36-04_gesture_raw.csv
+│   │   ├── log_YM11_2026-01-23-22-03-41_gesture_raw.csv
+│   │   └── log_YM11_2026-01-23-22-21-50_gesture_raw.csv
 │   ├── logs_nasa_tlx
 │   │   ├── debug
+│   │   ├── log_AM04_2026-01-17-22-47-44_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_AM04_2026-01-17-23-09-20_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_AM04_2026-01-18-00-47-14_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_AM04_2026-01-18-01-07-09_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_AM04_2026-01-18-01-34-27_nasa_tlx_typing_Controller.csv
+│   │   ├── log_EM09_2026-01-20-18-25-51_nasa_tlx_typing_Controller.csv
+│   │   ├── log_EM09_2026-01-20-18-40-19_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_EM09_2026-01-20-19-09-59_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_EM09_2026-01-20-19-30-40_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_EM09_2026-01-20-19-45-53_nasa_tlx_gesture_Proposed.csv
 │   │   ├── log_HW04_2026-01-16-20-30-28_nasa_tlx_typing_Keyboard.csv
 │   │   ├── log_HW04_2026-01-16-20-46-09_nasa_tlx_typing_Proposed.csv
 │   │   ├── log_HW04_2026-01-16-21-11-34_nasa_tlx_typing_Controller.csv
 │   │   ├── log_HW04_2026-01-16-21-39-40_nasa_tlx_gesture_Proposed.csv
-│   │   └── log_HW04_2026-01-17-00-03-02_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_HW04_2026-01-17-00-03-02_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_HY07_2026-01-17-23-47-33_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_HY07_2026-01-18-00-03-49_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_HY07_2026-01-19-21-53-53_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_HY07_2026-01-19-22-18-28_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_HY07_2026-01-19-22-36-49_nasa_tlx_typing_Controller.csv
+│   │   ├── log_KM02_2026-01-23-17-49-06_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_KM02_2026-01-23-18-23-06_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_KM02_2026-01-23-18-48-35_nasa_tlx_typing_Controller.csv
+│   │   ├── log_KM02_2026-01-23-19-07-09_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_KM02_2026-01-23-19-28-52_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_MK08_2026-01-22-16-47-28_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_MK08_2026-01-22-17-15-59_nasa_tlx_typing_Controller.csv
+│   │   ├── log_MK08_2026-01-22-17-31-19_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_MK08_2026-01-22-17-51-33_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_MK08_2026-01-22-18-17-59_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_MT04_2026-01-20-13-30-58_nasa_tlx_typing_Controller.csv
+│   │   ├── log_MT04_2026-01-20-13-45-05_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_MT04_2026-01-20-14-14-01_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_MT04_2026-01-20-14-38-04_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_MT04_2026-01-20-14-57-17_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_MT10_2026-01-22-18-45-06_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_MT10_2026-01-22-19-06-11_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_MT10_2026-01-22-19-32-07_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_MT10_2026-01-22-19-56-44_nasa_tlx_typing_Controller.csv
+│   │   ├── log_MT10_2026-01-22-20-07-05_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_MY05_2026-01-18-18-56-39_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_MY05_2026-01-18-19-33-25_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_MY05_2026-01-18-20-07-34_nasa_tlx_typing_Controller.csv
+│   │   ├── log_MY05_2026-01-18-20-37-46_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_MY05_2026-01-18-20-55-29_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_SS05_2026-01-19-00-44-28_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_SS05_2026-01-19-01-11-03_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_SS05_2026-01-19-16-51-21_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_SS05_2026-01-19-17-11-40_nasa_tlx_typing_Controller.csv
+│   │   ├── log_SS05_2026-01-19-17-22-24_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_WE01_2026-01-20-16-08-51_nasa_tlx_typing_Proposed.csv
+│   │   ├── log_WE01_2026-01-20-16-39-57_nasa_tlx_typing_Controller.csv
+│   │   ├── log_WE01_2026-01-20-17-02-20_nasa_tlx_typing_Keyboard.csv
+│   │   ├── log_WE01_2026-01-20-17-26-33_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_WE01_2026-01-20-17-47-02_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_YM11_2026-01-23-22-14-06_nasa_tlx_gesture_Proposed.csv
+│   │   ├── log_YM11_2026-01-23-22-33-13_nasa_tlx_gesture_Controller.csv
+│   │   ├── log_YM11_2026-01-23-23-00-39_nasa_tlx_typing_Controller.csv
+│   │   ├── log_YM11_2026-01-23-23-16-25_nasa_tlx_typing_Keyboard.csv
+│   │   └── log_YM11_2026-01-24-00-06-00_nasa_tlx_typing_Proposed.csv
 │   └── logs_typing
 │       ├── debug
+│       │   ├── log_debug-AM04_2026-01-18-00-35-29_typing_raw.csv
+│       │   ├── log_debug-AM04_2026-01-18-00-52-19_typing_raw.csv
+│       │   ├── log_debug-AM04_2026-01-18-01-13-35_typing_raw.csv
+│       │   ├── log_debug-EM09_2026-01-20-18-08-18_typing_raw.csv
+│       │   ├── log_debug-EM09_2026-01-20-18-30-10_typing_raw.csv
+│       │   ├── log_debug-EM09_2026-01-20-18-46-47_typing_raw.csv
 │       │   ├── log_debug-HW04_2026-01-16-20-23-57_typing_raw.csv
 │       │   ├── log_debug-HW04_2026-01-16-20-36-17_typing_raw.csv
-│       │   └── log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv
+│       │   ├── log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv
+│       │   ├── log_debug-HY07_2026-01-19-21-43-10_typing_raw.csv
+│       │   ├── log_debug-HY07_2026-01-19-22-00-32_typing_raw.csv
+│       │   ├── log_debug-HY07_2026-01-19-22-22-40_typing_raw.csv
+│       │   ├── log_debug-KM02_2026-01-23-17-36-05_typing_raw.csv
+│       │   ├── log_debug-KM02_2026-01-23-18-01-19_typing_raw.csv
+│       │   ├── log_debug-KM02_2026-01-23-18-32-48_typing_raw.csv
+│       │   ├── log_debug-MK08_2026-01-22-16-12-47_typing_raw.csv
+│       │   ├── log_debug-MK08_2026-01-22-16-59-55_typing_raw.csv
+│       │   ├── log_debug-MK08_2026-01-22-17-20-14_typing_raw.csv
+│       │   ├── log_debug-MT04_2026-01-20-13-12-46_typing_raw.csv
+│       │   ├── log_debug-MT04_2026-01-20-13-35-18_typing_raw.csv
+│       │   ├── log_debug-MT04_2026-01-20-13-49-32_typing_raw.csv
+│       │   ├── log_debug-MT10_2026-01-22-19-13-08_typing_raw.csv
+│       │   ├── log_debug-MT10_2026-01-22-19-37-53_typing_raw.csv
+│       │   ├── log_debug-MT10_2026-01-22-19-59-34_typing_raw.csv
+│       │   ├── log_debug-MY05_2026-01-18-18-29-07_typing_raw.csv
+│       │   ├── log_debug-MY05_2026-01-18-19-05-04_typing_raw.csv
+│       │   ├── log_debug-MY05_2026-01-18-19-47-59_typing_raw.csv
+│       │   ├── log_debug-SS05_2026-01-19-16-28-19_typing_raw.csv
+│       │   ├── log_debug-SS05_2026-01-19-16-57-01_typing_raw.csv
+│       │   ├── log_debug-SS05_2026-01-19-17-15-53_typing_raw.csv
+│       │   ├── log_debug-WE01_2026-01-20-15-31-59_typing_raw.csv
+│       │   ├── log_debug-WE01_2026-01-20-16-20-40_typing_raw.csv
+│       │   ├── log_debug-WE01_2026-01-20-16-47-22_typing_raw.csv
+│       │   ├── log_debug-YM11_2026-01-23-22-39-43_typing_raw.csv
+│       │   ├── log_debug-YM11_2026-01-23-23-03-28_typing_raw.csv
+│       │   └── log_debug-YM11_2026-01-23-23-23-42_typing_raw.csv
+│       ├── log_AM04_2026-01-18-00-38-20_typing_raw.csv
+│       ├── log_AM04_2026-01-18-00-57-33_typing_raw.csv
+│       ├── log_AM04_2026-01-18-01-19-17_typing_raw.csv
+│       ├── log_EM09_2026-01-20-18-12-59_typing_raw.csv
+│       ├── log_EM09_2026-01-20-18-32-32_typing_raw.csv
+│       ├── log_EM09_2026-01-20-18-55-14_typing_raw.csv
 │       ├── log_HW04_2026-01-16-20-25-28_typing_raw.csv
 │       ├── log_HW04_2026-01-16-20-38-43_typing_raw.csv
-│       └── log_HW04_2026-01-16-20-57-46_typing_raw.csv
+│       ├── log_HW04_2026-01-16-20-57-46_typing_raw.csv
+│       ├── log_HY07_2026-01-19-21-47-21_typing_raw.csv
+│       ├── log_HY07_2026-01-19-22-06-16_typing_raw.csv
+│       ├── log_HY07_2026-01-19-22-25-56_typing_raw.csv
+│       ├── log_KM02_2026-01-23-17-39-30_typing_raw.csv
+│       ├── log_KM02_2026-01-23-18-09-08_typing_raw.csv
+│       ├── log_KM02_2026-01-23-18-37-16_typing_raw.csv
+│       ├── log_MK08_2026-01-22-16-24-48_typing_raw.csv
+│       ├── log_MK08_2026-01-22-17-04-18_typing_raw.csv
+│       ├── log_MK08_2026-01-22-17-22-21_typing_raw.csv
+│       ├── log_MT04_2026-01-20-13-17-44_typing_raw.csv
+│       ├── log_MT04_2026-01-20-13-37-27_typing_raw.csv
+│       ├── log_MT04_2026-01-20-13-57-06_typing_raw.csv
+│       ├── log_MT10_2026-01-22-19-19-24_typing_raw.csv
+│       ├── log_MT10_2026-01-22-19-44-19_typing_raw.csv
+│       ├── log_MT10_2026-01-22-20-01-04_typing_raw.csv
+│       ├── log_MY05_2026-01-18-18-37-01_typing_raw.csv
+│       ├── log_MY05_2026-01-18-19-13-37_typing_raw.csv
+│       ├── log_MY05_2026-01-18-19-53-05_typing_raw.csv
+│       ├── log_SS05_2026-01-19-16-35-11_typing_raw.csv
+│       ├── log_SS05_2026-01-19-17-00-53_typing_raw.csv
+│       ├── log_SS05_2026-01-19-17-17-33_typing_raw.csv
+│       ├── log_WE01_2026-01-20-15-45-45_typing_raw.csv
+│       ├── log_WE01_2026-01-20-16-26-35_typing_raw.csv
+│       ├── log_WE01_2026-01-20-16-51-56_typing_raw.csv
+│       ├── log_YM11_2026-01-23-22-45-56_typing_raw.csv
+│       ├── log_YM11_2026-01-23-23-06-31_typing_raw.csv
+│       └── log_YM11_2026-01-23-23-40-26_typing_raw.csv
 ├── nasa_tlx.py
 ├── phrases2.txt
 ├── phrases2_original.txt
@@ -219,4 +967,4 @@
 ├── words.json
 └── wpm_analysis.png
 
-40 directories, 180 files
+126 directories, 842 files

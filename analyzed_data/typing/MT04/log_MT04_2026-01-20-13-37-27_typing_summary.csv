@@ -1,21 +1,21 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-MT04,Keyboard,R,1,198,sprawling subdivisions are bad,sprawling subdivisions are bad,30,30,10.762326999999999,0,39,32.33501453728362,0.0,1.3,4
-MT04,Keyboard,R,2,265,a picture is worth many words,a picture is worth many words,29,29,14.899146,0,34,22.551628126873847,0.0,1.1724137931034482,2
-MT04,Keyboard,R,3,43,Valium in the economy size,valium in the economy size,26,26,10.79315,0,47,27.795407272205054,0.0,1.8076923076923077,0
-MT04,Keyboard,R,4,146,accompanied by an adult,accompanied by zu an adult,23,26,9.320498,3,33,32.18712133192883,0.13043478260869565,1.2692307692307692,2
-MT04,Keyboard,R,5,241,are you sure you want this,are you sure you sang want this,26,31,12.479778,5,43,28.846666983980004,0.19230769230769232,1.3870967741935485,3
-MT04,Keyboard,R,6,369,drugs should be avoided,drugs should be avoided,23,23,20.425819,0,47,12.924818338985576,0.0,2.0434782608695654,9
-MT04,Keyboard,R,7,290,sharp cheese keeps the mind sharp,sharp cheese keeps the nine mind sharp,33,38,27.377344,5,73,16.217789424715562,0.15151515151515152,1.9210526315789473,15
-MT04,Keyboard,R,8,40,yes you are very smart,yes you are very smart,22,22,9.400987,0,31,26.80569604021365,0.0,1.4090909090909092,0
-MT04,Keyboard,R,9,270,this equation is too complicated,this equation is too complicated,32,32,26.703461,0,84,13.930778485979776,0.0,2.625,14
-MT04,Keyboard,R,10,438,the food at this restaurant,the food at this restaurant,27,27,13.912921,0,40,22.425197411815965,0.0,1.4814814814814814,3
-MT04,Keyboard,R,11,234,exceed the maximum speed limit,exceed the maxium maximum speed limit,30,37,22.731071,7,51,19.00482383782093,0.23333333333333334,1.3783783783783783,7
-MT04,Keyboard,R,12,360,peering through a small hole,peering through a small hole,28,28,9.070992,0,33,35.71825440922007,0.0,1.1785714285714286,0
-MT04,Keyboard,R,13,183,these cookies are so amazing,these cookies are so amazing,28,28,11.393972,0,39,28.43608883715003,0.0,1.3928571428571428,5
-MT04,Keyboard,R,14,16,watch out for low flying objects,watch out for low flying objects,32,32,16.71309,0,41,22.258002559670295,0.0,1.28125,4
-MT04,Keyboard,R,15,311,keep receipts for all your expenses,keep recipts receipts for all your expenses,35,43,16.707647,8,49,30.165827659633937,0.22857142857142856,1.1395348837209303,3
-MT04,Keyboard,R,16,498,everyone wants to win the lottery,everyone wants to win the lottery,33,33,13.647551,0,78,28.13691628629928,0.0,2.3636363636363638,2
-MT04,Keyboard,R,17,74,the dow jones index has risen,the dow jones index has risen,29,29,16.467576,0,54,20.403731551018797,0.0,1.8620689655172413,4
-MT04,Keyboard,R,18,488,questioning the wisdom of the courts,questioning the wisdom of the courts,36,36,19.160877,0,79,21.919664741859155,0.0,2.1944444444444446,10
-MT04,Keyboard,R,19,395,the proprietor was unavailable,the proprietor was unavailable,30,30,14.89675,0,37,23.36080017453471,0.0,1.2333333333333334,3
-MT04,Keyboard,R,20,94,the second largest country,the second largest country,26,26,8.55773,0,33,35.0560253712141,0.0,1.2692307692307692,3
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+MT04,Keyboard,R,1,198,sprawling subdivisions are bad,sprawling subdivisions are bad,30,30,18.139,16.77,0,39,19.185181101494017,20.751341681574242,18.837493643033255,0.0,1.3,4
+MT04,Keyboard,R,2,265,a picture is worth many words,a picture is worth many words,29,29,15.397,12.499,0,34,21.822432941482106,26.88215057204576,22.41252072893955,0.0,1.1724137931034482,2
+MT04,Keyboard,R,3,43,Valium in the economy size,valium in the economy size,26,26,12.559,11.345,0,47,23.887252169758742,26.443367122080208,25.631357015682347,0.0,1.8076923076923077,0
+MT04,Keyboard,R,4,146,accompanied by an adult,accompanied by zu an adult,23,26,14.349,12.763,3,33,20.907380305247752,23.505445428190864,19.509066405786527,0.13043478260869565,1.2692307692307692,2
+MT04,Keyboard,R,5,241,are you sure you want this,are you sure you sang want this,26,31,13.373,10.727999999999998,5,43,26.91991325805728,33.55704697986578,25.1432612679866,0.19230769230769232,1.3870967741935485,3
+MT04,Keyboard,R,6,369,drugs should be avoided,drugs should be avoided,23,23,26.516,25.286999999999995,0,47,9.956252828480919,10.440147111163842,10.619694886510407,0.0,2.0434782608695654,9
+MT04,Keyboard,R,7,290,sharp cheese keeps the mind sharp,sharp cheese keeps the nine mind sharp,33,38,29.731,27.634999999999998,5,73,14.933907369412397,16.066582232675955,18.125641021011628,0.15151515151515152,1.9210526315789473,15
+MT04,Keyboard,R,8,40,yes you are very smart,yes you are very smart,22,22,11.111,9.362,0,31,22.680226802268024,26.917325357829526,20.306378433807048,0.0,1.4090909090909092,0
+MT04,Keyboard,R,9,270,this equation is too complicated,this equation is too complicated,32,32,30.389,27.881999999999998,0,84,12.24127151271842,13.341941037228322,15.233061157078945,0.0,2.625,14
+MT04,Keyboard,R,10,438,the food at this restaurant,the food at this restaurant,27,27,15.177,13.286000000000001,0,40,20.557422415497133,23.483365949119374,23.15674142318484,0.0,1.4814814814814814,3
+MT04,Keyboard,R,11,234,exceed the maximum speed limit,exceed the maxium maximum speed limit,30,37,25.897,21.514,7,51,16.681468896011122,20.079947940875712,19.171205750343237,0.23333333333333334,1.3783783783783783,7
+MT04,Keyboard,R,12,360,peering through a small hole,peering through a small hole,28,28,11.233,9.387,0,33,28.84358586308199,34.51581975071908,26.05132177240199,0.0,1.1785714285714286,0
+MT04,Keyboard,R,13,183,these cookies are so amazing,these cookies are so amazing,28,28,13.079,11.825999999999999,0,39,24.772536126615186,27.39726027397261,30.72801997441592,0.0,1.3928571428571428,5
+MT04,Keyboard,R,14,16,watch out for low flying objects,watch out for low flying objects,32,32,18.697,15.944,0,41,19.896240038508854,23.33166081284496,22.182289563253182,0.0,1.28125,4
+MT04,Keyboard,R,15,311,keep receipts for all your expenses,keep recipts receipts for all your expenses,35,43,17.689,15.337,8,49,28.492283339928772,32.86170698311274,31.56842282354744,0.22857142857142856,1.1395348837209303,3
+MT04,Keyboard,R,16,498,everyone wants to win the lottery,everyone wants to win the lottery,33,33,16.978,15.754,0,78,22.61750500647897,24.374761965215185,21.646247886080683,0.0,2.3636363636363638,2
+MT04,Keyboard,R,17,74,the dow jones index has risen,the dow jones index has risen,29,29,17.178,15.147000000000002,0,54,19.559902200488995,22.182610417904534,26.72120168433447,0.0,1.8620689655172413,4
+MT04,Keyboard,R,18,488,questioning the wisdom of the courts,questioning the wisdom of the courts,36,36,25.936,23.826,0,79,16.193707587908698,17.627801561319565,15.919261224837383,0.0,2.1944444444444446,10
+MT04,Keyboard,R,19,395,the proprietor was unavailable,the proprietor was unavailable,30,30,15.64,14.418,0,37,22.25063938618926,24.136496046608407,28.337160882992784,0.0,1.2333333333333334,3
+MT04,Keyboard,R,20,94,the second largest country,the second largest country,26,26,9.231,8.312999999999999,0,33,32.49918752031199,36.08805485384338,34.342990617547784,0.0,1.2692307692307692,3

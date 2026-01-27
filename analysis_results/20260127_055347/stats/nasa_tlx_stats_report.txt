@@ -1,0 +1,79 @@
+
+
+========================================
+ NASA-TLX [tlx] Analysis for: Mental
+========================================
+
+[1. RM-ANOVA Results]
+      Source           SS  DF          MS         F     p-unc       ng2  eps
+0  Condition   212.018519   1  212.018519  0.938142  0.353571  0.037198  1.0
+1      Error  2485.981481  11  225.998316       NaN       NaN       NaN  NaN
+
+[2. Post-hoc Tests]
+No significant main effect (p=0.3536).
+
+
+========================================
+ NASA-TLX [tlx] Analysis for: Physical
+========================================
+
+[1. RM-ANOVA Results]
+      Source           SS  DF          MS         F     p-unc       ng2  eps
+0  Condition   104.166667   1  104.166667  1.008311  0.336886  0.027864  1.0
+1      Error  1136.388889  11  103.308081       NaN       NaN       NaN  NaN
+
+[2. Post-hoc Tests]
+No significant main effect (p=0.3369).
+
+
+========================================
+ NASA-TLX [tlx] Analysis for: Temporal
+========================================
+
+[1. RM-ANOVA Results]
+      Source           SS  DF           MS         F     p-unc       ng2  eps
+0  Condition  1617.041667   1  1617.041667  6.608446  0.026018  0.172651  1.0
+1      Error  2691.625000  11   244.693182       NaN       NaN       NaN  NaN
+
+[2. Post-hoc Tests (Significant p=0.0260)]
+    Contrast        A       B  Paired  Parametric        T   dof alternative     p-unc   BF10   hedges
+0  Condition  gesture  typing    True        True -2.57069  11.0   two-sided  0.026018  2.753 -0.84457
+
+========================================
+ NASA-TLX [tlx] Analysis for: Performance
+========================================
+
+[1. RM-ANOVA Results]
+      Source           SS  DF          MS         F     p-unc       ng2  eps
+0  Condition    26.740741   1   26.740741  0.150626  0.705344  0.004158  1.0
+1      Error  1952.842593  11  177.531145       NaN       NaN       NaN  NaN
+
+[2. Post-hoc Tests]
+No significant main effect (p=0.7053).
+
+
+========================================
+ NASA-TLX [tlx] Analysis for: Effort
+========================================
+
+[1. RM-ANOVA Results]
+      Source           SS  DF           MS         F    p-unc       ng2  eps
+0  Condition  1320.166667   1  1320.166667  5.002928  0.04697  0.227334  1.0
+1      Error  2902.666667  11   263.878788       NaN      NaN       NaN  NaN
+
+[2. Post-hoc Tests (Significant p=0.0470)]
+    Contrast        A       B  Paired  Parametric         T   dof alternative    p-unc  BF10    hedges
+0  Condition  gesture  typing    True        True -2.236723  11.0   two-sided  0.04697  1.74 -1.002841
+
+========================================
+ NASA-TLX [tlx] Analysis for: Frustration
+========================================
+
+[1. RM-ANOVA Results]
+      Source          SS  DF          MS         F     p-unc       ng2  eps
+0  Condition  449.223380   1  449.223380  5.204051  0.043441  0.095508  1.0
+1      Error  949.540509  11   86.321864       NaN       NaN       NaN  NaN
+
+[2. Post-hoc Tests (Significant p=0.0434)]
+    Contrast        A       B  Paired  Parametric         T   dof alternative     p-unc   BF10    hedges
+0  Condition  gesture  typing    True        True -2.281239  11.0   two-sided  0.043441  1.847 -0.600778

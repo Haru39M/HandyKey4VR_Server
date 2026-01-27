@@ -1,21 +1,21 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-HW04,Proposed,R,1,368,the plug does not fit the socket,the plug does not bit fit the socket,32,36,18.494277,4,46,22.709727987744536,0.125,1.2777777777777777,2
-HW04,Proposed,R,2,488,questioning the wisdom of the courts,questioning the wisdom of the courts,36,36,14.117452,0,73,29.750411051512692,0.0,2.0277777777777777,17
-HW04,Proposed,R,3,266,this camera takes nice photographs,this camera takes nice photographs,34,34,15.042321,0,39,26.32572460061183,0.0,1.1470588235294117,0
-HW04,Proposed,R,4,261,obligations must be met first,obligations must be met first,29,29,13.604515,0,44,24.697683085358058,0.0,1.5172413793103448,2
-HW04,Proposed,R,5,134,parking lot is full of trucks,parking lot is full of trucks,29,29,23.26167,0,46,14.44436276501214,0.0,1.5862068965517242,6
-HW04,Proposed,R,6,362,it is difficult to concentrate,it is difficult to concentrate,30,30,20.227886,0,57,17.203972773032238,0.0,1.9,12
-HW04,Proposed,R,7,423,rent is paid at the beginning of the month,rent is paid at the beginning of the month,42,42,15.789294,0,51,31.160354604835398,0.0,1.2142857142857142,1
-HW04,Proposed,R,8,120,this watch is too expensive,this watch is too expensive,27,27,9.435086,0,30,33.068061064838204,0.0,1.1111111111111112,0
-HW04,Proposed,R,9,131,fall is my favorite season,fall is my favorite season,26,26,7.891231,0,35,38.01688228363864,0.0,1.3461538461538463,0
-HW04,Proposed,R,10,489,rejection letters are discouraging,rejection letters are discouraging,34,34,8.165131,0,37,48.4989156940654,0.0,1.088235294117647,1
-HW04,Proposed,R,11,154,lydia wants to go home,lydia wants to go home,22,22,6.331363,0,25,39.801856251173724,0.0,1.1363636363636365,0
-HW04,Proposed,R,12,227,victims deserve more redress,victims deserve more redress,28,28,10.457249000000001,0,31,30.98329206849717,0.0,1.1071428571428572,1
-HW04,Proposed,R,13,281,interesting observation was made,interesting observation was made,32,32,7.079091,0,33,52.54911965392167,0.0,1.03125,0
-HW04,Proposed,R,14,220,not quite so smart as you think,not quite so smart as you think,31,31,12.535278,0,38,28.71894823553175,0.0,1.2258064516129032,1
-HW04,Proposed,R,15,342,the gun discharged by accident,the gun discharged by accident,30,30,15.460726,0,37,22.508645454294964,0.0,1.2333333333333334,2
-HW04,Proposed,R,16,452,presidents drive expensive cars,presidents drive expensive cars,31,31,8.942103,0,32,40.25898605730665,0.0,1.032258064516129,0
-HW04,Proposed,R,17,276,well connected with people,well connected with people,26,26,8.734012,0,29,34.34847582073393,0.0,1.1153846153846154,1
-HW04,Proposed,R,18,186,a most ridiculous thing,a most ridiculus thing ridiculous thing,23,39,31.074767,16,52,14.674285409766707,0.6956521739130435,1.3333333333333333,6
-HW04,Proposed,R,19,141,it is very windy today,it is very windy today,22,22,8.73561,0,35,28.847441678371634,0.0,1.5909090909090908,1
-HW04,Proposed,R,20,458,insurance is important for bad drivers,insurance is important for bad drivers,38,38,14.132864,0,43,31.41613759249364,0.0,1.131578947368421,2
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+HW04,Proposed,R,1,368,the plug does not fit the socket,the plug does not bit fit the socket,32,36,19.528,16.474999999999998,4,46,21.507578861122493,25.493171471927166,21.28572695314764,0.125,1.2777777777777777,2
+HW04,Proposed,R,2,488,questioning the wisdom of the courts,questioning the wisdom of the courts,36,36,33.01,30.344999999999995,0,73,12.7234171463193,13.840830449826992,16.403718694508772,0.0,2.0277777777777777,17
+HW04,Proposed,R,3,266,this camera takes nice photographs,this camera takes nice photographs,34,34,18.025,16.105999999999998,0,39,21.969486823855753,24.587110393642124,21.216700601540516,0.0,1.1470588235294117,0
+HW04,Proposed,R,4,261,obligations must be met first,obligations must be met first,29,29,17.413,15.118000000000002,0,44,19.29592832940906,22.225162058473337,18.247506609165338,0.0,1.5172413793103448,2
+HW04,Proposed,R,5,134,parking lot is full of trucks,parking lot is full of trucks,29,29,25.753,23.081,0,46,13.04702364773036,14.557428187686842,16.706365213614777,0.0,1.5862068965517242,6
+HW04,Proposed,R,6,362,it is difficult to concentrate,it is difficult to concentrate,30,30,22.183,20.572000000000003,0,57,15.687688770680252,16.916196772311878,19.92656533513071,0.0,1.9,12
+HW04,Proposed,R,7,423,rent is paid at the beginning of the month,rent is paid at the beginning of the month,42,42,18.413,16.119,0,51,26.720251995872477,30.522985296854642,23.0623891174465,0.0,1.2142857142857142,1
+HW04,Proposed,R,8,120,this watch is too expensive,this watch is too expensive,27,27,10.735,9.557,0,30,29.063809967396367,32.6462278957832,26.395246949750252,0.0,1.1111111111111112,0
+HW04,Proposed,R,9,131,fall is my favorite season,fall is my favorite season,26,26,9.728,8.796,0,35,30.838815789473685,34.10641200545703,26.8330289853725,0.0,1.3461538461538463,0
+HW04,Proposed,R,10,489,rejection letters are discouraging,rejection letters are discouraging,34,34,12.505,11.454,0,37,31.66733306677329,34.57307490832896,30.16185744080592,0.0,1.088235294117647,1
+HW04,Proposed,R,11,154,lydia wants to go home,lydia wants to go home,22,22,8.367,7.402,0,25,30.118321979204012,34.04485274250203,25.46103138627258,0.0,1.1363636363636365,0
+HW04,Proposed,R,12,227,victims deserve more redress,victims deserve more redress,28,28,13.314,12.046,0,31,24.335286164939163,26.896895234932764,22.684863265509726,0.0,1.1071428571428572,1
+HW04,Proposed,R,13,281,interesting observation was made,interesting observation was made,32,32,10.499,9.345,0,33,35.43194589960948,39.807383627608345,31.312079670410498,0.0,1.03125,0
+HW04,Proposed,R,14,220,not quite so smart as you think,not quite so smart as you think,31,31,13.65,11.642999999999999,0,38,26.373626373626372,30.919866013913943,23.489648823055653,0.0,1.2258064516129032,1
+HW04,Proposed,R,15,342,the gun discharged by accident,the gun discharged by accident,30,30,16.36,14.147,0,37,21.271393643031786,24.598854880893473,22.888365077949864,0.0,1.2333333333333334,2
+HW04,Proposed,R,16,452,presidents drive expensive cars,presidents drive expensive cars,31,31,12.239,10.593,0,32,29.41416782416864,33.98470688190314,26.884240731408227,0.0,1.032258064516129,0
+HW04,Proposed,R,17,276,well connected with people,well connected with people,26,26,10.013,8.93,0,29,29.961050634175574,33.5946248600224,30.38935584590486,0.0,1.1153846153846154,1
+HW04,Proposed,R,18,186,a most ridiculous thing,a most ridiculus thing ridiculous thing,23,39,31.615,27.183999999999997,16,52,14.423533133006485,16.77457327839906,17.383586243723503,0.6956521739130435,1.3333333333333333,6
+HW04,Proposed,R,19,141,it is very windy today,it is very windy today,22,22,12.568,11.019000000000002,0,35,20.050922978994272,22.869588891913963,19.552925328871364,0.0,1.5909090909090908,1
+HW04,Proposed,R,20,458,insurance is important for bad drivers,insurance is important for bad drivers,38,38,16.635,14.468,0,43,26.690712353471593,30.68841581421067,24.657675233363065,0.0,1.131578947368421,2

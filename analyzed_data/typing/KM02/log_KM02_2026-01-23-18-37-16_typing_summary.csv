@@ -1,21 +1,21 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-KM02,Controller,R,1,158,always cover all the bases,always cover all the bases,26,26,23.068902,0,34,13.004520111100215,0.0,1.3076923076923077,3
-KM02,Controller,R,2,457,learn to walk before you run,learn to walk before you run,28,28,21.511544,0,36,15.061680370316516,0.0,1.2857142857142858,2
-KM02,Controller,R,3,44,the facts get in the way,the facts get in the way,24,24,20.042274,0,29,13.77089246459758,0.0,1.2083333333333333,0
-KM02,Controller,R,4,43,Valium in the economy size,valium in the economy size,26,26,18.368786,0,31,16.332053735069916,0.0,1.1923076923076923,2
-KM02,Controller,R,5,374,he watched in astonishment,he watched in astonishment,26,26,25.057655,0,31,11.97238927585203,0.0,1.1923076923076923,2
-KM02,Controller,R,6,320,where did you get such a silly idea,where did you get such a silly idea,35,35,25.089481,0,46,16.261795132390343,0.0,1.3142857142857143,0
-KM02,Controller,R,7,112,the library is closed today,the library is closed today,27,27,20.983035,0,29,14.869155010226118,0.0,1.0740740740740742,0
-KM02,Controller,R,8,121,the postal service is very slow,the postal service is very slow,31,31,26.037775,0,36,13.826066167328046,0.0,1.1612903225806452,0
-KM02,Controller,R,9,336,we must redouble our efforts,we must redouble our efforts,28,28,24.932548,0,35,12.995061716115016,0.0,1.25,0
-KM02,Controller,R,10,330,do not feel too bad about it,do not feel too bad about it,28,28,22.58118,0,33,14.34823158045771,0.0,1.1785714285714286,0
-KM02,Controller,R,11,416,the treasurer must balance her books,the treasurer must balance her books,36,36,28.464579,0,41,14.755180464815586,0.0,1.1388888888888888,1
-KM02,Controller,R,12,390,we have enough witnesses,we have enough witnesses,24,24,17.595516,0,27,15.685814499557727,0.0,1.125,0
-KM02,Controller,R,13,104,our fax number has changed,our gas fax number is has changed,26,33,29.566228,7,50,12.987791340850109,0.2692307692307692,1.5151515151515151,2
-KM02,Controller,R,14,22,great disturbance in the force,great disturbance in the force,30,30,25.111857,0,33,13.857995448126356,0.0,1.1,1
-KM02,Controller,R,15,342,the gun discharged by accident,the run gun discharged by accident,30,34,41.018823,4,59,9.654104409578013,0.13333333333333333,1.7352941176470589,11
-KM02,Controller,R,16,319,interactions between men and women,interactions between men and women,34,34,22.20343,0,40,17.835082237293967,0.0,1.1764705882352942,2
-KM02,Controller,R,17,52,popularity is desired by all,popularity is desired by all,28,28,14.329356,0,37,22.61092543168025,0.0,1.3214285714285714,4
-KM02,Controller,R,18,383,a coupon for a free sample,a coupon for a free sample,26,26,21.566446,0,33,13.910497816840106,0.0,1.2692307692307692,2
-KM02,Controller,R,19,285,stability of the nation,stability of the nation,23,23,15.021537,0,28,17.574766150760738,0.0,1.2173913043478262,0
-KM02,Controller,R,20,247,coalition governments never work,coalition governments never work,32,32,17.372563,0,35,21.413075318823136,0.0,1.09375,0
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+KM02,Controller,R,1,158,always cover all the bases,always cover all the bases,26,26,27.471,21.82,0,34,10.920607185759529,13.748854262144821,11.160905689124395,0.0,1.3076923076923077,3
+KM02,Controller,R,2,457,learn to walk before you run,learn to walk before you run,28,28,25.582,19.619999999999997,0,36,12.66515518724103,16.51376146788991,11.021408672157479,0.0,1.2857142857142858,2
+KM02,Controller,R,3,44,the facts get in the way,the facts get in the way,24,24,24.32,16.817999999999998,0,29,11.348684210526315,16.410988226899754,9.7351880696164,0.0,1.2083333333333333,0
+KM02,Controller,R,4,43,Valium in the economy size,valium in the economy size,26,26,23.263,18.339,0,31,12.89601513132442,16.35858007524947,11.589548536698238,0.0,1.1923076923076923,2
+KM02,Controller,R,5,374,he watched in astonishment,he watched in astonishment,26,26,26.154,22.896,0,31,11.470520761642579,13.10272536687631,13.381646180434332,0.0,1.1923076923076923,2
+KM02,Controller,R,6,320,where did you get such a silly idea,where did you get such a silly idea,35,35,30.194,23.729000000000003,0,46,13.512618401006822,17.194150617388004,10.79209399763815,0.0,1.3142857142857143,0
+KM02,Controller,R,7,112,the library is closed today,the library is closed today,27,27,22.834,16.758,0,29,13.663834632565473,18.61797350519155,13.053145303026435,0.0,1.0740740740740742,0
+KM02,Controller,R,8,121,the postal service is very slow,the postal service is very slow,31,31,29.666,23.101000000000003,0,36,12.135104159644037,15.583740963594646,10.305649991789673,0.0,1.1612903225806452,0
+KM02,Controller,R,9,336,we must redouble our efforts,we must redouble our efforts,28,28,27.263,22.41,0,35,11.884238711807212,14.457831325301205,10.611234523675057,0.0,1.25,0
+KM02,Controller,R,10,330,do not feel too bad about it,do not feel too bad about it,28,28,24.321,17.814,0,33,13.321820648822005,18.187942068036378,11.23958495220417,0.0,1.1785714285714286,0
+KM02,Controller,R,11,416,the treasurer must balance her books,the treasurer must balance her books,36,36,31.291,24.677,0,41,13.42238982455019,17.01989707014629,12.019499367339698,0.0,1.1388888888888888,1
+KM02,Controller,R,12,390,we have enough witnesses,we have enough witnesses,24,24,19.666,16.674,0,27,14.034374046577849,16.552716804605975,12.461384537407932,0.0,1.125,0
+KM02,Controller,R,13,104,our fax number has changed,our gas fax number is has changed,26,33,32.319,25.163999999999998,7,50,11.881555741204863,15.259895088221272,10.612445212279754,0.2692307692307692,1.5151515151515151,2
+KM02,Controller,R,14,22,great disturbance in the force,great disturbance in the force,30,30,28.471,22.587999999999997,0,33,12.222963717466897,15.406410483442537,11.204040786507488,0.0,1.1,1
+KM02,Controller,R,15,342,the gun discharged by accident,the run gun discharged by accident,30,34,42.569,34.239999999999995,4,59,9.302544104865042,11.565420560747665,11.306473078777044,0.13333333333333333,1.7352941176470589,11
+KM02,Controller,R,16,319,interactions between men and women,interactions between men and women,34,34,29.125,24.127000000000002,0,40,13.59656652360515,16.41314709661375,12.380517078262201,0.0,1.1764705882352942,2
+KM02,Controller,R,17,52,popularity is desired by all,popularity is desired by all,28,28,28.804,24.044999999999998,0,37,11.248437716983753,13.474734872114785,10.998892093404141,0.0,1.3214285714285714,4
+KM02,Controller,R,18,383,a coupon for a free sample,a coupon for a free sample,26,26,22.583,17.964,0,33,13.28432891998406,16.7000668002672,11.390222633937674,0.0,1.2692307692307692,2
+KM02,Controller,R,19,285,stability of the nation,stability of the nation,23,23,25.542,20.652,0,28,10.335917312661499,12.783265543288787,9.078178475668269,0.0,1.2173913043478262,0
+KM02,Controller,R,20,247,coalition governments never work,coalition governments never work,32,32,23.806,19.74,0,35,15.626312694278754,18.844984802431615,14.24307346535925,0.0,1.09375,0

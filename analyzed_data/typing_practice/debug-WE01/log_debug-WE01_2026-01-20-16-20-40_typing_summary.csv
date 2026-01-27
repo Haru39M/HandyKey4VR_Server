@@ -1,6 +1,6 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-debug-WE01,Controller,L,1,331,this library has many books,this libratay library has man many books,27,40,48.81496,13,49,9.587224899907733,0.48148148148148145,1.225,6
-debug-WE01,Controller,L,2,200,on the way to the cottage,on the way to the cottage,25,25,24.424138,0,34,11.791613689703194,0.0,1.36,4
-debug-WE01,Controller,L,3,423,rent is paid at the beginning of the month,tent tent rent is paid at the beginning or the month of the month,42,65,94.384824,23,115,8.136901330663076,0.5476190476190477,1.7692307692307692,7
-debug-WE01,Controller,L,4,413,our life expectancy has increased,our life expectancy has increased,33,33,27.162269,0,38,14.137257826288373,0.0,1.1515151515151516,1
-debug-WE01,Controller,L,5,29,question that must be answered,question that must te re be answered,30,36,35.62935,6,51,11.788034303179822,0.2,1.4166666666666667,4
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+debug-WE01,Controller,L,1,331,this library has many books,this libratay library has man many books,27,40,60.758,48.24799999999999,13,49,7.702689357780046,9.699883933012769,7.999711280758707,0.48148148148148145,1.225,6
+debug-WE01,Controller,L,2,200,on the way to the cottage,on the way to the cottage,25,25,26.804,18.936999999999998,0,34,10.744664975376809,15.20832233194276,10.47638982454751,0.0,1.36,4
+debug-WE01,Controller,L,3,423,rent is paid at the beginning of the month,tent tent rent is paid at the beginning or the month of the month,42,65,96.539,71.169,23,115,7.955334113674266,10.791215276314126,10.434913605365049,0.5476190476190477,1.7692307692307692,7
+debug-WE01,Controller,L,4,413,our life expectancy has increased,our life expectancy has increased,33,33,30.638,24.957,0,38,12.533455186369867,15.386464719317226,12.235081069478952,0.0,1.1515151515151516,1
+debug-WE01,Controller,L,5,29,question that must be answered,question that must te re be answered,30,36,42.568,33.94,6,51,9.866566434880662,12.374779021803182,8.908402836038485,0.2,1.4166666666666667,4

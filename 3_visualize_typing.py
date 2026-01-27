@@ -36,7 +36,7 @@ def load_summaries(target_dir):
     if not df_list: return None
     
     df = pd.concat(df_list, ignore_index=True)
-    numeric_cols = ['WPM', 'CER', 'KSPC', 'DurationSec', 'TrialID']
+    numeric_cols = ['ActiveWPM', 'CER', 'KSPC', 'DurationSec', 'TrialID']
     for col in numeric_cols:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')

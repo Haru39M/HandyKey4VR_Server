@@ -1,6 +1,6 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-debug-WE01,Keyboard,L,1,309,the collapse of the Roman empire,the collapse of the roman empire,32,32,42.631755,0,43,8.725889891232486,0.0,1.34375,5
-debug-WE01,Keyboard,L,2,57,the cotton is high,the cotton is mit high high,18,27,12.519951,9,27,24.920225326760463,0.5,1.0,2
-debug-WE01,Keyboard,L,3,183,these cookies are so amazing,these cliiiew cookies are so anazaiyt amazing,28,45,19.073508,17,62,27.682374946444043,0.6071428571428571,1.3777777777777778,3
-debug-WE01,Keyboard,L,4,316,a good joke deserves a good laugh,a vol role good joke deserves a role laugh good laugh,33,53,68.641468,20,68,9.09071466828186,0.6060606060606061,1.2830188679245282,4
-debug-WE01,Keyboard,L,5,350,please keep this confidential,please keep this confidentioqo confidential,29,43,15.027723,14,45,33.53801504060196,0.4827586206896552,1.0465116279069768,1
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+debug-WE01,Keyboard,L,1,309,the collapse of the Roman empire,the collapse of the roman empire,32,32,45.007,31.998000000000005,0,43,8.265380940742551,11.625726607912993,11.24227448549459,0.0,1.34375,5
+debug-WE01,Keyboard,L,2,57,the cotton is high,the cotton is mit high high,18,27,13.176,9.005,9,27,23.679417122040075,34.64741810105497,28.421466034496664,0.5,1.0,2
+debug-WE01,Keyboard,L,3,183,these cookies are so amazing,these cliiiew cookies are so anazaiyt amazing,28,45,21.088,17.359,17,62,25.03793626707132,30.41649864623538,23.530485692978242,0.6071428571428571,1.3777777777777778,3
+debug-WE01,Keyboard,L,4,316,a good joke deserves a good laugh,a vol role good joke deserves a role laugh good laugh,33,53,68.834,59.053,20,68,9.065287503268733,10.566778995139959,16.991726081001058,0.6060606060606061,1.2830188679245282,4
+debug-WE01,Keyboard,L,5,350,please keep this confidential,please keep this confidentioqo confidential,29,43,16.229,12.608,14,45,31.055517900055463,39.974619289340104,35.91987467006861,0.4827586206896552,1.0465116279069768,1

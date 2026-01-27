@@ -1,21 +1,21 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-MK08,Keyboard,L,1,288,the presidential suite is very busy,the presidential suite is very busy,35,35,16.817876,0,51,24.25990059624652,0.0,1.457142857142857,3
-MK08,Keyboard,L,2,36,the force is with you,the the force is with you,21,25,16.189151,4,43,17.78969138035713,0.19047619047619047,1.72,9
-MK08,Keyboard,L,3,26,can I skate with sister today,can i skate with sister today,29,29,13.868472,0,46,24.227614981664882,0.0,1.5862068965517242,5
-MK08,Keyboard,L,4,247,coalition governments never work,coalition governments never work,32,32,17.192348,0,51,21.6375331630095,0.0,1.59375,8
-MK08,Keyboard,L,5,158,always cover all the bases,always cover always always cover all the bases,26,46,28.467202,20,85,18.96919830758218,0.7692307692307693,1.8478260869565217,21
-MK08,Keyboard,L,6,231,a little encouragement is needed,a little encouragement is needed,32,32,12.187161,0,33,30.52392595781741,0.0,1.03125,0
-MK08,Keyboard,L,7,192,shall we play a round of cards,shall we play a round of cards,30,30,13.418564,0,39,25.934220681139948,0.0,1.3,0
-MK08,Keyboard,L,8,416,the treasurer must balance her books,the treasurer must balance her books,36,36,16.938343,0,47,24.795813852630097,0.0,1.3055555555555556,2
-MK08,Keyboard,L,9,137,a duck quacks to ask for food,books a duck quacks to ask for role food,29,40,34.558076,11,46,13.542420590775945,0.3793103448275862,1.15,4
-MK08,Keyboard,L,10,150,she wears too much makeup,she seats wears too much makeump makeup,25,39,19.282108,14,51,23.64886660732322,0.56,1.3076923076923077,2
-MK08,Keyboard,L,11,58,drove my chevy to the levee,drove my chevy to the to the emery chevy to the levee,27,53,32.903837,26,84,18.96435361018838,0.9629629629629629,1.5849056603773586,10
-MK08,Keyboard,L,12,294,historic meeting without a result,historic meeting without a result,33,33,10.969119,0,36,35.00736932473793,0.0,1.0909090909090908,1
-MK08,Keyboard,L,13,310,did you see that spectacular explosion,did you see that spectacular explosion,38,38,22.346631,0,57,19.868766795316933,0.0,1.5,5
-MK08,Keyboard,L,14,299,sign the withdrawal slip,sign the withdrawl withdrawl withdrawal slip,24,44,20.118122,20,64,25.64851729202159,0.8333333333333334,1.4545454545454546,7
-MK08,Keyboard,L,15,428,safe to walk the streets in the evening,safe to walk the streets in the evening the evening,39,51,24.530835,12,78,24.459012504058666,0.3076923076923077,1.5294117647058822,10
-MK08,Keyboard,L,16,386,important for political parties,important for political parties,31,31,7.888387,0,38,45.63670621129516,0.0,1.2258064516129032,3
-MK08,Keyboard,L,17,358,he underwent triple bypass surgery,he underwent triple bypass surgery,34,34,24.914912,0,56,15.894095873186306,0.0,1.6470588235294117,10
-MK08,Keyboard,L,18,414,the cream rises to the top,the dream cream rises to the top,26,32,16.925268,6,42,21.978972504305396,0.23076923076923078,1.3125,3
-MK08,Keyboard,L,19,183,these cookies are so amazing,these cookies are so amazing,28,28,8.186623,0,29,39.57675832880053,0.0,1.0357142857142858,0
-MK08,Keyboard,L,20,364,two or three cups of coffee,two or three cups or of coffee,27,30,14.904722,3,43,23.348305322299872,0.1111111111111111,1.4333333333333333,5
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+MK08,Keyboard,L,1,288,the presidential suite is very busy,the presidential suite is very busy,35,35,17.983,13.988,0,51,22.688094311293998,29.167858164140693,21.467096248884207,0.0,1.457142857142857,3
+MK08,Keyboard,L,2,36,the force is with you,the the force is with you,21,25,17.136,12.055,4,43,16.80672268907563,23.890501866445458,20.36113485197623,0.19047619047619047,1.72,9
+MK08,Keyboard,L,3,26,can I skate with sister today,can i skate with sister today,29,29,15.643,10.901,0,46,21.479255897206418,30.822860288046964,20.116266456968827,0.0,1.5862068965517242,5
+MK08,Keyboard,L,4,247,coalition governments never work,coalition governments never work,32,32,21.092,18.004,0,51,17.637018774890954,20.66207509442346,19.386985864876365,0.0,1.59375,8
+MK08,Keyboard,L,5,158,always cover all the bases,always cover always always cover all the bases,26,46,30.133,23.906,20,85,17.920552218497992,22.588471513427592,20.193298044817514,0.7692307692307693,1.8478260869565217,21
+MK08,Keyboard,L,6,231,a little encouragement is needed,a little encouragement is needed,32,32,13.056,9.36,0,33,28.492647058823533,39.743589743589745,24.959930440441617,0.0,1.03125,0
+MK08,Keyboard,L,7,192,shall we play a round of cards,shall we play a round of cards,30,30,14.965,9.866999999999999,0,39,23.254259939859672,35.26907874733962,19.846782068788276,0.0,1.3,0
+MK08,Keyboard,L,8,416,the treasurer must balance her books,the treasurer must balance her books,36,36,19.534,15.630999999999998,0,47,21.500972663049044,26.86968204209584,20.53407093542896,0.0,1.3055555555555556,2
+MK08,Keyboard,L,9,137,a duck quacks to ask for food,books a duck quacks to ask for role food,29,40,36.63,15.416,11,46,12.776412776412775,30.35806953814219,11.164872287244707,0.3793103448275862,1.15,4
+MK08,Keyboard,L,10,150,she wears too much makeup,she seats wears too much makeump makeup,25,39,20.21,14.716999999999999,14,51,22.563087580405735,30.984575660800434,22.677254959457986,0.56,1.3076923076923077,2
+MK08,Keyboard,L,11,58,drove my chevy to the levee,drove my chevy to the to the emery chevy to the levee,27,53,34.533,22.961000000000002,26,84,18.06967248718617,27.17651670223422,17.80962461534799,0.9629629629629629,1.5849056603773586,10
+MK08,Keyboard,L,12,294,historic meeting without a result,historic meeting without a result,33,33,13.204,10.014,0,36,29.082096334444106,38.34631515877771,27.412395301634216,0.0,1.0909090909090908,1
+MK08,Keyboard,L,13,310,did you see that spectacular explosion,did you see that spectacular explosion,38,38,23.554,17.646,0,57,18.85030143500043,25.161509690581433,18.644728438137864,0.0,1.5,5
+MK08,Keyboard,L,14,299,sign the withdrawal slip,sign the withdrawl withdrawl withdrawal slip,24,44,26.853,21.239000000000004,20,64,19.215730086023907,24.29492913979,18.41846135351653,0.8333333333333334,1.4545454545454546,7
+MK08,Keyboard,L,15,428,safe to walk the streets in the evening,safe to walk the streets in the evening the evening,39,51,27.262,19.067,12,78,22.00865673831707,31.46798132899774,20.154946990356574,0.3076923076923077,1.5294117647058822,10
+MK08,Keyboard,L,16,386,important for political parties,important for political parties,31,31,11.725999999999999,9.245000000000001,0,38,30.70100631076241,38.939967550027035,28.154874428476415,0.0,1.2258064516129032,3
+MK08,Keyboard,L,17,358,he underwent triple bypass surgery,he underwent triple bypass surgery,34,34,25.696,21.767000000000003,0,56,15.410958904109588,18.19267698810125,18.46966433833829,0.0,1.6470588235294117,10
+MK08,Keyboard,L,18,414,the cream rises to the top,the dream cream rises to the top,26,32,17.579,11.015999999999998,6,42,21.16161328858297,33.76906318082789,25.82887762968348,0.23076923076923078,1.3125,3
+MK08,Keyboard,L,19,183,these cookies are so amazing,these cookies are so amazing,28,28,10.379,7.944999999999999,0,29,31.216880238944025,40.780365009439905,27.037597296675777,0.0,1.0357142857142858,0
+MK08,Keyboard,L,20,364,two or three cups of coffee,two or three cups or of coffee,27,30,15.92,10.884,3,43,21.859296482412063,31.973539140022048,20.359878883933366,0.1111111111111111,1.4333333333333333,5

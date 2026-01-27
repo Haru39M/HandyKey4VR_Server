@@ -1,6 +1,6 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-debug-EM09,Proposed,R,1,346,that land is owned by the government,g g that lands land is owned by the goverment government,36,56,158.340958,20,127,4.168220328690951,0.5555555555555556,2.267857142857143,36
-debug-EM09,Proposed,R,2,319,interactions between men and women,interaction interactions between men and women,34,46,73.282048,12,83,7.368789693213814,0.35294117647058826,1.8043478260869565,18
-debug-EM09,Proposed,R,3,309,the collapse of the Roman empire,the collapse or of the roman cupid vulpite empire,32,49,62.599179,17,72,9.201398631761608,0.53125,1.469387755102041,11
-debug-EM09,Proposed,R,4,352,the cat has a pleasant temperament,the cat has a pleasq pleasant temperment temperament,34,52,75.501636,18,87,8.105784621673628,0.5294117647058824,1.6730769230769231,17
-debug-EM09,Proposed,R,5,299,sign the withdrawal slip,sign the withdrawal slip,24,24,26.974474999999998,0,43,10.231895152732353,0.0,1.7916666666666667,8
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+debug-EM09,Proposed,R,1,346,that land is owned by the government,g g that lands land is owned by the goverment government,36,56,178.352,149.77399999999997,20,127,3.7005472324392215,4.406639336600478,3.061699477856557,0.5555555555555556,2.267857142857143,36
+debug-EM09,Proposed,R,2,319,interactions between men and women,interaction interactions between men and women,34,46,89.774,78.495,12,83,6.015104595985474,6.8794190712784244,5.7102035967601035,0.35294117647058826,1.8043478260869565,18
+debug-EM09,Proposed,R,3,309,the collapse of the Roman empire,the collapse or of the roman cupid vulpite empire,32,49,67.36,54.76,17,72,8.551068883610451,10.51862673484295,7.405718204999837,0.53125,1.469387755102041,11
+debug-EM09,Proposed,R,4,352,the cat has a pleasant temperament,the cat has a pleasq pleasant temperment temperament,34,52,80.246,67.412,18,87,7.626548363781372,9.078502343796355,7.851982216924213,0.5294117647058824,1.6730769230769231,17
+debug-EM09,Proposed,R,5,299,sign the withdrawal slip,sign the withdrawal slip,24,24,33.118,29.034,0,43,8.3338365843348,9.506096300888613,7.322899716296595,0.0,1.7916666666666667,8

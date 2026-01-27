@@ -59,13 +59,24 @@ def process_typing_raw_log(filepath, phrases):
         print(f"Error reading {filepath}: {e}")
         return None
 
-    time_col = 'Timestamp' if 'Timestamp' in df.columns else 'ServerTimestampISO'
-    if time_col not in df.columns: return None
-    df[time_col] = pd.to_datetime(df[time_col], errors='coerce')
+    # --- タイムスタンプパース (修正箇所) ---
+    # サーバー受信時刻(Timestamp)はバッチ送信時に同時刻になりDurationが0になる恐れがあるため、
+    # クライアント発生時刻(ClientTimestamp)があればそれを優先する。
+    if 'ClientTimestamp' in df.columns:
+        time_col = 'ClientTimestamp'
+        # ClientTimestampはミリ秒単位のUNIX時間と想定
+        df[time_col] = pd.to_datetime(df[time_col], unit='ms', errors='coerce')
+    else:
+        # ClientTimestampがない場合は従来のサーバー時刻を使用
+        time_col = 'Timestamp' if 'Timestamp' in df.columns else 'ServerTimestampISO'
+        if time_col not in df.columns: return None
+        df[time_col] = pd.to_datetime(df[time_col], errors='coerce')
     
     if 'TrialID' not in df.columns: return None
     
     results = []
+    
+    # TrialIDごとに処理
     df = df.dropna(subset=['TrialID'])
     trials = df['TrialID'].unique()
 
@@ -73,55 +84,111 @@ def process_typing_raw_log(filepath, phrases):
         trial_data = df[df['TrialID'] == trial_id].sort_values(by=time_col)
         if trial_data.empty: continue
 
-        # 完了判定
+        # --- 1. 完了判定と終了時刻 ---
         completed_events = trial_data[trial_data['EventType'] == 'phrase_completed']
+        
+        # confirmイベントを抽出
+        confirm_events = trial_data[trial_data['EventType'] == 'confirm']
+        
         if completed_events.empty:
-            confirm_events = trial_data[trial_data['EventType'] == 'confirm']
             if confirm_events.empty: continue
             end_time = confirm_events.iloc[-1][time_col]
         else:
             end_time = completed_events.iloc[0][time_col]
 
-        # InputPhrase復元
-        confirm_events = trial_data[trial_data['EventType'] == 'confirm']
-        words = []
-        for _, row in confirm_events.iterrows():
+        # --- 2. 開始時刻とDuration (文全体) ---
+        # system系以外の最初のアクション
+        user_actions = trial_data[~trial_data['EventType'].isin(['system', 'test_started', 'phrase_completed', 'next_phrase_clicked'])]
+        
+        if not user_actions.empty:
+            start_time = user_actions.iloc[0][time_col]
+        else:
+            continue
+            
+        total_duration_sec = (end_time - start_time).total_seconds()
+        if total_duration_sec <= 0: total_duration_sec = 0.1
+
+        # --- 3. 単語ごとの分析 (ActiveWPM, MeanWordWPM用) ---
+        input_words = []
+        word_wpms = []
+        active_duration_sum = 0
+        
+        # 各単語区間の開始点（初期値は試行開始時間）
+        last_confirm_time = start_time 
+        
+        # confirmごとにループ (修正: enumerateを追加)
+        for i, (_, row) in enumerate(confirm_events.iterrows()):
+            confirm_time = row[time_col]
             event_data = safe_eval_event_data(row['EventData'])
             word = str(event_data.get('word', ''))
-            if word: words.append(word)
-        input_phrase = " ".join(words)
+            
+            if not word: continue
+            input_words.append(word)
+            
+            # --- この単語区間のアクティブ時間計測 ---
+            # 区間データ
+            segment = trial_data[(trial_data[time_col] > last_confirm_time) & (trial_data[time_col] <= confirm_time)]
+            
+            # 区間内のユーザー操作
+            seg_actions = segment[~segment['EventType'].isin(['system', 'confirm'])]
+            
+            if not seg_actions.empty:
+                # 実際の入力開始時刻
+                word_start_time = seg_actions.iloc[0][time_col]
+                
+                # アイドルを除いた入力時間
+                active_dur = (confirm_time - word_start_time).total_seconds()
+                
+                # 単語全体の所要時間 (アイドル込み)
+                full_dur = (confirm_time - last_confirm_time).total_seconds()
+                
+                if i == 0: full_dur = active_dur # 1単語目は開始時刻＝入力開始時刻とみなす
 
-        # TargetPhrase取得
+                # Active時間の積算
+                if active_dur > 0:
+                    active_duration_sum += active_dur
+                
+                # 単語WPM
+                if full_dur > 0:
+                    w_wpm = (len(word) / 5.0) / (full_dur / 60.0)
+                    word_wpms.append(w_wpm)
+            
+            last_confirm_time = confirm_time
+
+        input_phrase = " ".join(input_words)
+
+        # --- 4. TargetPhrase の取得 ---
         phrase_id = -1
-        # test_started優先
         start_events = trial_data[trial_data['EventType'] == 'test_started']
         if not start_events.empty and 'PhraseID' in start_events.columns:
             pid_cand = start_events.iloc[0]['PhraseID']
             if pd.notna(pid_cand): phrase_id = int(pid_cand)
-        # なければ最頻値
         if phrase_id == -1 and 'PhraseID' in trial_data.columns:
             valid_pids = trial_data['PhraseID'].dropna()
             if not valid_pids.empty: phrase_id = int(valid_pids.mode()[0])
 
         target_phrase = phrases[phrase_id] if (phrases and 0 <= phrase_id < len(phrases)) else ""
 
-        # 開始時刻
-        user_actions = trial_data[~trial_data['EventType'].isin(['system', 'test_started', 'phrase_completed', 'next_phrase_clicked'])]
-        if not user_actions.empty:
-            start_time = user_actions.iloc[0][time_col]
-        else:
-            continue
-            
-        duration_sec = (end_time - start_time).total_seconds()
-        if duration_sec <= 0: duration_sec = 0.1
-
-        # 指標計算
+        # --- 5. 指標計算 ---
+        
         input_char_count = len(input_phrase)
         target_char_count = len(target_phrase)
 
-        # WPM (T-1)
+        # A. 文全体 WPM (アイドル込み)
         wpm_char_count = max(0, input_char_count - 1)
-        wpm = (wpm_char_count / 5.0) / (duration_sec / 60.0)
+        wpm = (wpm_char_count / 5.0) / (total_duration_sec / 60.0)
+        
+        # B. Active WPM (アイドル除外)
+        if active_duration_sum > 0:
+            active_wpm = (wpm_char_count / 5.0) / (active_duration_sum / 60.0)
+        else:
+            active_wpm = 0
+
+        # C. Mean Word WPM (単語ごとのWPMの平均)
+        if word_wpms:
+            mean_word_wpm = sum(word_wpms) / len(word_wpms)
+        else:
+            mean_word_wpm = 0
         
         # CER
         error_dist = levenshtein_distance(target_phrase.lower(), input_phrase.lower())
@@ -154,25 +221,35 @@ def process_typing_raw_log(filepath, phrases):
             'PhraseID': phrase_id,
             'TargetPhrase': target_phrase,
             'InputPhrase': input_phrase,
+            # 詳細情報
             'TargetCharCount': target_char_count,
             'InputCharCount': input_char_count,
-            'DurationSec': duration_sec,
+            'DurationSec': total_duration_sec,
+            'ActiveDurationSec': active_duration_sum,
             'LevenshteinDist': error_dist,
             'TotalKeystrokes': keystrokes,
+            # 主要指標
             'WPM': wpm,
+            'ActiveWPM': active_wpm,
+            'MeanWordWPM': mean_word_wpm,
             'CER': cer,
             'KSPC': kspc,
             'BackspaceCount': bs_count
         })
 
+    # カラム順序
     cols_order = [
         'ParticipantID', 'Condition', 'Handedness', 'TrialID', 'PhraseID',
         'TargetPhrase', 'InputPhrase',
-        'TargetCharCount', 'InputCharCount', 'DurationSec', 'LevenshteinDist', 'TotalKeystrokes',
-        'WPM', 'CER', 'KSPC', 'BackspaceCount'
+        'TargetCharCount', 'InputCharCount', 
+        'DurationSec', 'ActiveDurationSec', 
+        'LevenshteinDist', 'TotalKeystrokes',
+        'WPM', 'ActiveWPM', 'MeanWordWPM', 
+        'CER', 'KSPC', 'BackspaceCount'
     ]
     df_ret = pd.DataFrame(results)
     return df_ret[[c for c in cols_order if c in df_ret.columns]]
+
 
 def main():
     if not os.path.exists(DATA_ROOT_BASE):
@@ -180,7 +257,6 @@ def main():
         return
 
     phrases = load_phrases()
-    # "typing" という文字が含まれるパスのみを対象にする (typing, typing_practice 両方ヒットする)
     all_raw_files = glob.glob(os.path.join(DATA_ROOT_BASE, "**", "*_raw.csv"), recursive=True)
     raw_files = [f for f in all_raw_files if "typing" in f]
 

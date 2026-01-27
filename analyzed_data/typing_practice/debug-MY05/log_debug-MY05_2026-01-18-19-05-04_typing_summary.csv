@@ -1,6 +1,6 @@
-ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,LevenshteinDist,TotalKeystrokes,WPM,CER,KSPC,BackspaceCount
-debug-MY05,Proposed,R,1,120,this watch is too expensive,this watch is too expensive,27,27,89.403406,0,46,3.4897999299937186,0.0,1.7037037037037037,8
-debug-MY05,Proposed,R,2,58,drove my chevy to the levee,drove my chevy to the leave levee,27,33,63.16347,6,75,6.079463335374071,0.2222222222222222,2.272727272727273,8
-debug-MY05,Proposed,R,3,446,wishful thinking is fine,wishful think thinking is gain rainy time fine,24,46,80.132761,22,69,6.738816849203537,0.9166666666666666,1.5,14
-debug-MY05,Proposed,R,4,228,the protesters blocked all traffic,the protesters blocked all traffic,34,34,57.354197,0,55,6.9044642016346245,0.0,1.6176470588235294,10
-debug-MY05,Proposed,R,5,104,our fax number has changed,our fax number has changed,26,26,98.471338,0,111,3.046571785182811,0.0,4.269230769230769,29
+ParticipantID,Condition,Handedness,TrialID,PhraseID,TargetPhrase,InputPhrase,TargetCharCount,InputCharCount,DurationSec,ActiveDurationSec,LevenshteinDist,TotalKeystrokes,WPM,ActiveWPM,MeanWordWPM,CER,KSPC,BackspaceCount
+debug-MY05,Proposed,R,1,120,this watch is too expensive,this watch is too expensive,27,27,108.331,92.66000000000001,0,46,2.880062032105307,3.3671487157349445,3.2137793435556894,0.0,1.7037037037037037,8
+debug-MY05,Proposed,R,2,58,drove my chevy to the levee,drove my chevy to the leave levee,27,33,89.339,74.64599999999999,6,75,4.298234813463325,5.144281006349973,4.713583862582055,0.2222222222222222,2.272727272727273,8
+debug-MY05,Proposed,R,3,446,wishful thinking is fine,wishful think thinking is gain rainy time fine,24,46,90.287,79.11500000000001,22,69,5.980927486792118,6.825507173102445,6.719895720298224,0.9166666666666666,1.5,14
+debug-MY05,Proposed,R,4,228,the protesters blocked all traffic,the protesters blocked all traffic,34,34,60.21,55.396,0,55,6.576980568011957,7.148530579825258,8.704335458968504,0.0,1.6176470588235294,10
+debug-MY05,Proposed,R,5,104,our fax number has changed,our fax number has changed,26,26,109.89,104.634,0,111,2.73000273000273,2.8671368771145134,3.042644542356089,0.0,4.269230769230769,29
