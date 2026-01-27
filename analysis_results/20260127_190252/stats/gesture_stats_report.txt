@@ -1,0 +1,14 @@
+
+
+==================================================
+ Gesture Task Paired Comparison for: ReactionTimeMs
+==================================================
+
+[Descriptive Statistics (Mean, SD)]
+ Condition        mean        std  count
+Controller 1873.310331 500.634326     12
+  Proposed 1357.856845 322.527554     12
+
+[T-test Result: Controller vs Proposed]
+               T  dof alternative     p-val             CI95%  cohen-d   BF10     power
+T-test  2.744319   11   two-sided  0.019084  [102.05, 928.85]  1.22405  3.519  0.970467
