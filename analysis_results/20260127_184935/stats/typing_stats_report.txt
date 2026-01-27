@@ -1,0 +1,64 @@
+
+
+==================================================
+ Typing Task Analysis for: WPM
+==================================================
+
+[Descriptive Statistics (Mean, SD)]
+ Condition      mean      std  count
+Controller 11.690093 1.282815     12
+  Keyboard 22.211159 7.876646     12
+  Proposed 10.626845 3.904300     12
+
+[1. RM-ANOVA Results]
+      Source          SS  DF          MS          F     p-unc       ng2       eps
+0  Condition  984.078509   2  492.039255  24.415616  0.000003  0.531269  0.751058
+1      Error  443.358206  22   20.152646        NaN       NaN       NaN       NaN
+
+[2. Post-hoc Tests (Significant p=0.0000)]
+    Contrast           A         B  Paired  Parametric         T   dof alternative     p-unc    p-corr p-adjust     BF10    hedges
+0  Condition  Controller  Keyboard    True        True -4.863996  11.0   two-sided  0.000499  0.000999     holm   72.275 -1.800150
+1  Condition  Controller  Proposed    True        True  0.875467  11.0   two-sided  0.400033  0.400033     holm    0.397  0.353269
+2  Condition    Keyboard  Proposed    True        True  5.849061  11.0   two-sided  0.000111  0.000333     holm  263.388  1.799274
+
+==================================================
+ Typing Task Analysis for: CER
+==================================================
+
+[Descriptive Statistics (Mean, SD)]
+ Condition     mean      std  count
+Controller 0.084810 0.051932     12
+  Keyboard 0.081658 0.061063     12
+  Proposed 0.147279 0.095577     12
+
+[1. RM-ANOVA Results]
+      Source        SS  DF        MS        F     p-unc       ng2       eps
+0  Condition  0.032874   2  0.016437  3.95525  0.034087  0.161116  0.763917
+1      Error  0.091427  22  0.004156      NaN       NaN       NaN       NaN
+
+[2. Post-hoc Tests (Significant p=0.0341)]
+    Contrast           A         B  Paired  Parametric         T   dof alternative     p-unc    p-corr p-adjust   BF10    hedges
+0  Condition  Controller  Keyboard    True        True  0.169184  11.0   two-sided  0.868723  0.868723     holm  0.291  0.053680
+1  Condition  Controller  Proposed    True        True -1.963385  11.0   two-sided  0.075378  0.150756     holm  1.217 -0.784183
+2  Condition    Keyboard  Proposed    True        True -2.447965  11.0   two-sided  0.032362  0.097087     holm   2.32 -0.790016
+
+==================================================
+ Typing Task Analysis for: KSPC
+==================================================
+
+[Descriptive Statistics (Mean, SD)]
+ Condition     mean      std  count
+Controller 1.355935 0.099184     12
+  Keyboard 1.445852 0.154146     12
+  Proposed 1.576615 0.248936     12
+
+[1. RM-ANOVA Results]
+      Source        SS  DF        MS        F     p-unc       ng2       eps
+0  Condition  0.295535   2  0.147767  4.82049  0.018361  0.219439  0.793123
+1      Error  0.674388  22  0.030654      NaN       NaN       NaN       NaN
+
+[2. Post-hoc Tests (Significant p=0.0184)]
+    Contrast           A         B  Paired  Parametric         T   dof alternative     p-unc    p-corr p-adjust   BF10    hedges
+0  Condition  Controller  Keyboard    True        True -1.605874  11.0   two-sided  0.136603  0.273207     holm  0.791 -0.669819
+1  Condition  Controller  Proposed    True        True -3.247410  11.0   two-sided  0.007771  0.023313     holm  7.266 -1.124492
+2  Condition    Keyboard  Proposed    True        True -1.502540  11.0   two-sided  0.161111  0.273207     holm  0.705 -0.609808
