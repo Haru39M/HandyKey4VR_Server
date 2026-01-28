@@ -4,21 +4,23 @@ import seaborn as sns
 import glob
 import os
 import numpy as np
+from scipy.stats import gaussian_kde
 from datetime import datetime, timedelta, timezone
 
 # --- 設定 ---
 DATA_ROOT_BASE = "analyzed_data"
 JST = timezone(timedelta(hours=+9), 'JST')
 
-# 配色とラベルのマッピング
-# 論文用に "Proposed" を "HandyKey4VR" に置き換えます
+# 配色設定
+# HandyKey4VR: 緑, Controller: 青
 PALETTE = {
     "Keyboard": "#333333",
     "Controller": "#007bff",
-    "HandyKey4VR": "#35dc67"
+    "HandyKey4VR": "#35dc67",
+    "Proposed": "#35dc67"
 }
 
-# 内部的な Condition 名を変換するためのマップ
+# 内部的な Condition 名を英語の正式名称に変換するためのマップ
 LABEL_MAP = {
     "Proposed": "HandyKey4VR",
     "Controller": "Controller"
@@ -46,70 +48,110 @@ def load_summaries(target_dir):
 
 def plot_gesture_distribution(df, output_dir, title_suffix=""):
     """
-    反応時間の確率密度関数 (Probability Density Function) を KDE を用いて描画する。
+    反応時間の確率密度関数 (Probability Density Function) を KDE を用いて描画し、
+    平均値と最頻値（ピーク位置）を重ねて表示する。
     """
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(12, 7))
     
-    # ラベルを HandyKey4VR に変換
+    # 1. データの加工: 内部名を正式名称に置換
     df_plot = df.copy()
     df_plot["Condition"] = df_plot["Condition"].map(LABEL_MAP).fillna(df_plot["Condition"])
 
-    # 描画対象の条件（Controller, HandyKey4VR）
+    # 描画対象の条件を固定
     target_conditions = ["HandyKey4VR", "Controller"]
     df_filtered = df_plot[df_plot["Condition"].isin(target_conditions)]
 
-    # 1. 近似曲線 (KDE: Kernel Density Estimation) の描画
-    # bw_adjust=1.5 で平滑化を強め、gridsize=1000 で山の頂点を滑らかにします
-    sns.kdeplot(data=df_filtered, x="ReactionTimeMs", hue="Condition", 
+    if df_filtered.empty:
+        print("    Skipping distribution plot: No data for target conditions.")
+        plt.close()
+        return
+
+    # 2. 近似曲線 (KDE) の描画
+    ax = sns.kdeplot(data=df_filtered, x="ReactionTimeMs", hue="Condition", 
                 palette=PALETTE, hue_order=target_conditions,
                 fill=True, common_norm=False, alpha=0.2, linewidth=2.5,
                 bw_adjust=1.5, gridsize=1000)
+
+    # 3. 統計値（平均値・最頻値）の計算と描画
+    # IndexErrorを避けるため、グラフオブジェクトではなくデータから直接計算
+    for i, cond in enumerate(target_conditions):
+        cond_data = df_filtered[df_filtered["Condition"] == cond]["ReactionTimeMs"].dropna()
+        if len(cond_data) < 2: continue
+        
+        color = PALETTE.get(cond)
+        
+        # 平均値
+        mean_val = cond_data.mean()
+        
+        # 最頻値（KDEピーク位置）を独自に計算
+        # 描画されているKDEと同じバンド幅設定を使用してピークを探す
+        kde = gaussian_kde(cond_data, bw_method='scott') # scottはbw_adjust=1相当のデフォルト
+        # 探索範囲の設定
+        x_range = np.linspace(cond_data.min(), cond_data.max(), 1000)
+        y_kde = kde(x_range)
+        mode_val = x_range[np.argmax(y_kde)]
+        peak_y = np.max(y_kde)
+
+        # 垂直線の描画
+        ax.axvline(mean_val, color=color, linestyle='-', linewidth=1.5, alpha=0.8)
+        ax.axvline(mode_val, color=color, linestyle='--', linewidth=1.5, alpha=0.8)
+
+        # テキストラベルの配置
+        text_y = peak_y * (0.8 - (i * 0.15))
+        ax.text(mean_val + 50, text_y, f"{cond}\nMean: {mean_val:.0f}ms\nMode: {mode_val:.0f}ms", 
+                color=color, fontweight='bold', fontsize=10, verticalalignment='top',
+                bbox=dict(facecolor='white', alpha=0.7, edgecolor='none', pad=2))
 
     # 学術的なタイトルと軸ラベル
     plt.title(f"Probability Density Function of Reaction Time estimated by KDE {title_suffix}", fontsize=13)
     plt.xlabel("Reaction Time (ms)", fontsize=12)
     plt.ylabel("Probability Density", fontsize=12)
     
-    # 軸の調整
-    plt.xlim(0, df_filtered["ReactionTimeMs"].quantile(0.99)) # 上位1%を除外して表示を見やすく
-    plt.ylim(bottom=0) # 下限値を0に固定
+    plt.xlim(0, df_filtered["ReactionTimeMs"].quantile(0.99))
+    plt.ylim(bottom=0) 
     
-    # 凡例の設定（右上に配置）
-    plt.legend(title="Condition", labels=["Controller", "HandyKey4VR"], 
-               title_fontsize='12', fontsize='11', loc='upper right')
+    # 凡例の設定
+    try:
+        sns.move_legend(ax, "upper right", title="Condition")
+    except:
+        leg = ax.get_legend()
+        if leg: leg.set_title("Condition")
     
     plt.grid(axis='x', linestyle='--', alpha=0.4)
     plt.tight_layout()
     save_plot("gesture_rt_distribution", output_dir)
 
 def plot_gesture_results(df, output_dir, title_suffix=""):
-    # ラベル変換
+    # 全てのグラフでラベルを統一
     df_plot = df.copy()
     df_plot["Condition"] = df_plot["Condition"].map(LABEL_MAP).fillna(df_plot["Condition"])
+    target_order = ["HandyKey4VR", "Controller"]
 
-    # Boxplot
+    # 1. Boxplot (FutureWarning対策でhueを指定)
     plt.figure(figsize=(8, 6))
-    sns.boxplot(data=df_plot, x="Condition", y="ReactionTimeMs", palette=PALETTE, order=["HandyKey4VR","Controller"])
-    # sns.stripplot(data=df_plot, x="Condition", y="ReactionTimeMs", color=".3", alpha=0.5, order=["HandyKey4VR", "Controller"])
+    sns.boxplot(data=df_plot, x="Condition", y="ReactionTimeMs", hue="Condition", 
+                palette=PALETTE, order=target_order, legend=False)
     plt.title(f"Gesture Reaction Time {title_suffix}")
     plt.ylabel("Time (ms)")
     save_plot("gesture_rt_boxplot", output_dir)
     
-    # Learning Curve
+    # 2. Learning Curve
     plt.figure(figsize=(10, 5))
-    sns.lineplot(data=df_plot, x="TrialID", y="ReactionTimeMs", hue="Condition", palette=PALETTE, marker='o')
+    sns.lineplot(data=df_plot, x="TrialID", y="ReactionTimeMs", hue="Condition", 
+                 palette=PALETTE, hue_order=target_order, marker='o')
     plt.title(f"Gesture Learning Curve {title_suffix}")
     plt.ylabel("Mean Time (ms)")
     plt.xlabel("Trial ID")
-    if not df.empty:
-        max_trial = int(df["TrialID"].max())
+    if not df_plot.empty:
+        max_trial = int(df_plot["TrialID"].max())
         step = max(1, max_trial // 10)
         plt.xticks(range(1, max_trial + 1, step))
     save_plot("gesture_learning_curve", output_dir)
     
-    # By Type
+    # 3. By Type
     plt.figure(figsize=(12, 6))
-    sns.boxplot(data=df_plot, x="TargetGesture", y="ReactionTimeMs", hue="Condition", palette=PALETTE)
+    sns.boxplot(data=df_plot, x="TargetGesture", y="ReactionTimeMs", hue="Condition", 
+                palette=PALETTE, hue_order=target_order)
     plt.title(f"Reaction Time by Gesture Type {title_suffix}")
     plt.xticks(rotation=45)
     plt.ylabel("Time (ms)")
@@ -139,7 +181,6 @@ def main():
         output_dir = os.path.join(base_output_dir, subdir)
         title_suffix = "(Practice)" if "practice" in subdir else ""
         
-        # 各種グラフの生成
         plot_gesture_results(df, output_dir, title_suffix)
         plot_gesture_distribution(df, output_dir, title_suffix)
 
