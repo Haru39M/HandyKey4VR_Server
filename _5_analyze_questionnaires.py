@@ -102,7 +102,7 @@ def plot_sus(df_sub, output_dir):
     present_order = [o for o in order if o in df_sub['Condition'].unique()]
     
     sns.boxplot(data=df_sub, x='Condition', y='SUS_Score', palette=PALETTE, order=present_order)
-    sns.stripplot(data=df_sub, x='Condition', y='SUS_Score', color=".3", alpha=0.5, order=present_order)
+    # sns.stripplot(data=df_sub, x='Condition', y='SUS_Score', color=".3", alpha=0.5, order=present_order)
     plt.title("System Usability Scale (SUS) Score")
     plt.ylabel("SUS Score (0-100)")
     plt.ylim(0, 105)
@@ -122,7 +122,7 @@ def plot_nasa_tlx(df_tlx, output_dir):
         if task == 'gesture':
             hue_order = ["VR Controller", "HandyKey4VR"]
         else:
-            hue_order = ["Keyboard", "VR Controller", "HandyKey4VR"]
+            hue_order = ["Keyboard", "HandyKey4VR", "VR Controller"]
         
         # 存在する条件のみにフィルタ
         df_task = df_task[df_task['Condition'].isin(hue_order)]

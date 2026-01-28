@@ -1,13 +1,12 @@
 .
-├── 1_organize_logs.py
-├── 2_analyze_gesture.py
-├── 2_analyze_typing.py
-├── 3_visualize_gesture.py
-├── 3_visualize_typing.py
-├── 4_stat_analysis.py
-├── 5_analyze_questionnaires.py
 ├── README.md
 ├── USAGE.md
+├── _1_organize_logs.py
+├── _2_analyze_gesture.py
+├── _2_analyze_typing.py
+├── _3_visualize_typing.py
+├── _4_stat_analysis.py
+├── _5_analyze_questionnaires.py
 ├── analysis_results
 │   ├── 20260127_184811
 │   │   ├── typing
@@ -72,11 +71,372 @@
 │   │       ├── gesture_items_report.txt
 │   │       ├── sus_report.txt
 │   │       └── typing_items_report.txt
-│   └── 20260127_193038
-│       └── questionnaire
-│           ├── gesture_items_report.txt
-│           ├── sus_report.txt
-│           └── typing_items_report.txt
+│   ├── 20260127_193038
+│   │   └── questionnaire
+│   │       ├── gesture_items_report.txt
+│   │       ├── sus_report.txt
+│   │       └── typing_items_report.txt
+│   ├── 20260127_194706
+│   │   └── questionnaire
+│   ├── 20260127_195004
+│   │   └── questionnaire
+│   │       ├── gesture_items_report.txt
+│   │       ├── gesture_test_items_bar.pdf
+│   │       ├── gesture_test_items_bar.png
+│   │       ├── gesture_test_items_bar.svg
+│   │       ├── nasa_tlx_gesture_profile.pdf
+│   │       ├── nasa_tlx_gesture_profile.png
+│   │       ├── nasa_tlx_gesture_profile.svg
+│   │       ├── nasa_tlx_typing_profile.pdf
+│   │       ├── nasa_tlx_typing_profile.png
+│   │       ├── nasa_tlx_typing_profile.svg
+│   │       ├── sus_boxplot.pdf
+│   │       ├── sus_boxplot.png
+│   │       ├── sus_boxplot.svg
+│   │       ├── sus_report.txt
+│   │       ├── typing_items_report.txt
+│   │       ├── typing_test_items_bar.pdf
+│   │       ├── typing_test_items_bar.png
+│   │       └── typing_test_items_bar.svg
+│   ├── 20260127_195533
+│   │   └── questionnaire
+│   │       ├── gesture_items_report.txt
+│   │       ├── gesture_test_items_bar.pdf
+│   │       ├── gesture_test_items_bar.png
+│   │       ├── gesture_test_items_bar.svg
+│   │       ├── sus_boxplot.pdf
+│   │       ├── sus_boxplot.png
+│   │       ├── sus_boxplot.svg
+│   │       ├── sus_report.txt
+│   │       ├── typing_items_report.txt
+│   │       ├── typing_test_items_bar.pdf
+│   │       ├── typing_test_items_bar.png
+│   │       └── typing_test_items_bar.svg
+│   ├── 20260127_200321
+│   │   └── questionnaire
+│   │       ├── gesture_items_report.txt
+│   │       ├── gesture_test_items_bar.pdf
+│   │       ├── gesture_test_items_bar.png
+│   │       ├── gesture_test_items_bar.svg
+│   │       ├── sus_boxplot.pdf
+│   │       ├── sus_boxplot.png
+│   │       ├── sus_boxplot.svg
+│   │       ├── sus_report.txt
+│   │       ├── typing_items_report.txt
+│   │       ├── typing_test_items_bar.pdf
+│   │       ├── typing_test_items_bar.png
+│   │       └── typing_test_items_bar.svg
+│   ├── 20260127_200406
+│   │   └── questionnaire
+│   │       ├── gesture_items_report.txt
+│   │       ├── gesture_test_items_bar.pdf
+│   │       ├── gesture_test_items_bar.png
+│   │       ├── gesture_test_items_bar.svg
+│   │       ├── sus_boxplot.pdf
+│   │       ├── sus_boxplot.png
+│   │       ├── sus_boxplot.svg
+│   │       ├── sus_report.txt
+│   │       ├── typing_items_report.txt
+│   │       ├── typing_test_items_bar.pdf
+│   │       ├── typing_test_items_bar.png
+│   │       └── typing_test_items_bar.svg
+│   ├── 20260127_200500
+│   │   └── questionnaire
+│   │       ├── gesture_items_report.txt
+│   │       ├── gesture_test_items_bar.pdf
+│   │       ├── gesture_test_items_bar.png
+│   │       ├── gesture_test_items_bar.svg
+│   │       ├── sus_boxplot.pdf
+│   │       ├── sus_boxplot.png
+│   │       ├── sus_boxplot.svg
+│   │       ├── sus_report.txt
+│   │       ├── typing_items_report.txt
+│   │       ├── typing_test_items_bar.pdf
+│   │       ├── typing_test_items_bar.png
+│   │       └── typing_test_items_bar.svg
+│   ├── 20260127_201223
+│   │   └── questionnaire
+│   │       ├── gesture_items_report.txt
+│   │       ├── gesture_test_items_bar.pdf
+│   │       ├── gesture_test_items_bar.png
+│   │       ├── gesture_test_items_bar.svg
+│   │       ├── sus_boxplot.pdf
+│   │       ├── sus_boxplot.png
+│   │       ├── sus_boxplot.svg
+│   │       ├── sus_report.txt
+│   │       ├── typing_items_report.txt
+│   │       ├── typing_test_items_bar.pdf
+│   │       ├── typing_test_items_bar.png
+│   │       └── typing_test_items_bar.svg
+│   ├── 20260127_201949
+│   │   └── questionnaire
+│   │       ├── gesture_items_report.txt
+│   │       ├── gesture_test_items_bar.pdf
+│   │       ├── gesture_test_items_bar.png
+│   │       ├── gesture_test_items_bar.svg
+│   │       ├── sus_boxplot.pdf
+│   │       ├── sus_boxplot.png
+│   │       ├── sus_boxplot.svg
+│   │       ├── sus_report.txt
+│   │       ├── typing_items_report.txt
+│   │       ├── typing_test_items_bar.pdf
+│   │       ├── typing_test_items_bar.png
+│   │       └── typing_test_items_bar.svg
+│   ├── 20260127_205045
+│   │   ├── typing
+│   │   │   ├── typing_cer_boxplot.pdf
+│   │   │   ├── typing_cer_boxplot.png
+│   │   │   ├── typing_cer_boxplot.svg
+│   │   │   ├── typing_kspc_boxplot.pdf
+│   │   │   ├── typing_kspc_boxplot.png
+│   │   │   ├── typing_kspc_boxplot.svg
+│   │   │   ├── typing_wpm_boxplot.pdf
+│   │   │   ├── typing_wpm_boxplot.png
+│   │   │   ├── typing_wpm_boxplot.svg
+│   │   │   ├── typing_wpm_learning_curve.pdf
+│   │   │   ├── typing_wpm_learning_curve.png
+│   │   │   └── typing_wpm_learning_curve.svg
+│   │   └── typing_practice
+│   │       ├── typing_cer_boxplot.pdf
+│   │       ├── typing_cer_boxplot.png
+│   │       ├── typing_cer_boxplot.svg
+│   │       ├── typing_kspc_boxplot.pdf
+│   │       ├── typing_kspc_boxplot.png
+│   │       ├── typing_kspc_boxplot.svg
+│   │       ├── typing_wpm_boxplot.pdf
+│   │       ├── typing_wpm_boxplot.png
+│   │       ├── typing_wpm_boxplot.svg
+│   │       ├── typing_wpm_learning_curve.pdf
+│   │       ├── typing_wpm_learning_curve.png
+│   │       └── typing_wpm_learning_curve.svg
+│   ├── 20260127_205152
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   └── gesture_rt_by_type.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       └── gesture_rt_by_type.svg
+│   ├── 20260128_123821
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   ├── gesture_rt_by_type.svg
+│   │   │   ├── gesture_rt_dist_fingerpoint.pdf
+│   │   │   ├── gesture_rt_dist_fingerpoint.png
+│   │   │   ├── gesture_rt_dist_fingerpoint.svg
+│   │   │   ├── gesture_rt_dist_fist.pdf
+│   │   │   ├── gesture_rt_dist_fist.png
+│   │   │   ├── gesture_rt_dist_fist.svg
+│   │   │   ├── gesture_rt_dist_gun.pdf
+│   │   │   ├── gesture_rt_dist_gun.png
+│   │   │   ├── gesture_rt_dist_gun.svg
+│   │   │   ├── gesture_rt_dist_neutral.pdf
+│   │   │   ├── gesture_rt_dist_neutral.png
+│   │   │   ├── gesture_rt_dist_neutral.svg
+│   │   │   ├── gesture_rt_dist_rocknroll.pdf
+│   │   │   ├── gesture_rt_dist_rocknroll.png
+│   │   │   ├── gesture_rt_dist_rocknroll.svg
+│   │   │   ├── gesture_rt_dist_thumbsup.pdf
+│   │   │   ├── gesture_rt_dist_thumbsup.png
+│   │   │   ├── gesture_rt_dist_thumbsup.svg
+│   │   │   ├── gesture_rt_dist_victory.pdf
+│   │   │   ├── gesture_rt_dist_victory.png
+│   │   │   ├── gesture_rt_dist_victory.svg
+│   │   │   ├── gesture_rt_distribution.pdf
+│   │   │   ├── gesture_rt_distribution.png
+│   │   │   └── gesture_rt_distribution.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       ├── gesture_rt_by_type.svg
+│   │       ├── gesture_rt_dist_fingerpoint.pdf
+│   │       ├── gesture_rt_dist_fingerpoint.png
+│   │       ├── gesture_rt_dist_fingerpoint.svg
+│   │       ├── gesture_rt_dist_fist.pdf
+│   │       ├── gesture_rt_dist_fist.png
+│   │       ├── gesture_rt_dist_fist.svg
+│   │       ├── gesture_rt_dist_gun.pdf
+│   │       ├── gesture_rt_dist_gun.png
+│   │       ├── gesture_rt_dist_gun.svg
+│   │       ├── gesture_rt_dist_neutral.pdf
+│   │       ├── gesture_rt_dist_neutral.png
+│   │       ├── gesture_rt_dist_neutral.svg
+│   │       ├── gesture_rt_dist_rocknroll.pdf
+│   │       ├── gesture_rt_dist_rocknroll.png
+│   │       ├── gesture_rt_dist_rocknroll.svg
+│   │       ├── gesture_rt_dist_thumbsup.pdf
+│   │       ├── gesture_rt_dist_thumbsup.png
+│   │       ├── gesture_rt_dist_thumbsup.svg
+│   │       ├── gesture_rt_dist_victory.pdf
+│   │       ├── gesture_rt_dist_victory.png
+│   │       ├── gesture_rt_dist_victory.svg
+│   │       ├── gesture_rt_distribution.pdf
+│   │       ├── gesture_rt_distribution.png
+│   │       └── gesture_rt_distribution.svg
+│   ├── 20260128_124205
+│   │   ├── gesture
+│   │   │   ├── gesture_learning_curve.pdf
+│   │   │   ├── gesture_learning_curve.png
+│   │   │   ├── gesture_learning_curve.svg
+│   │   │   ├── gesture_rt_boxplot.pdf
+│   │   │   ├── gesture_rt_boxplot.png
+│   │   │   ├── gesture_rt_boxplot.svg
+│   │   │   ├── gesture_rt_by_type.pdf
+│   │   │   ├── gesture_rt_by_type.png
+│   │   │   ├── gesture_rt_by_type.svg
+│   │   │   ├── gesture_rt_dist_fingerpoint.pdf
+│   │   │   ├── gesture_rt_dist_fingerpoint.png
+│   │   │   ├── gesture_rt_dist_fingerpoint.svg
+│   │   │   ├── gesture_rt_dist_fist.pdf
+│   │   │   ├── gesture_rt_dist_fist.png
+│   │   │   ├── gesture_rt_dist_fist.svg
+│   │   │   ├── gesture_rt_dist_gun.pdf
+│   │   │   ├── gesture_rt_dist_gun.png
+│   │   │   ├── gesture_rt_dist_gun.svg
+│   │   │   ├── gesture_rt_dist_neutral.pdf
+│   │   │   ├── gesture_rt_dist_neutral.png
+│   │   │   ├── gesture_rt_dist_neutral.svg
+│   │   │   ├── gesture_rt_dist_rocknroll.pdf
+│   │   │   ├── gesture_rt_dist_rocknroll.png
+│   │   │   ├── gesture_rt_dist_rocknroll.svg
+│   │   │   ├── gesture_rt_dist_thumbsup.pdf
+│   │   │   ├── gesture_rt_dist_thumbsup.png
+│   │   │   ├── gesture_rt_dist_thumbsup.svg
+│   │   │   ├── gesture_rt_dist_victory.pdf
+│   │   │   ├── gesture_rt_dist_victory.png
+│   │   │   ├── gesture_rt_dist_victory.svg
+│   │   │   ├── gesture_rt_distribution.pdf
+│   │   │   ├── gesture_rt_distribution.png
+│   │   │   └── gesture_rt_distribution.svg
+│   │   └── gesture_practice
+│   │       ├── gesture_learning_curve.pdf
+│   │       ├── gesture_learning_curve.png
+│   │       ├── gesture_learning_curve.svg
+│   │       ├── gesture_rt_boxplot.pdf
+│   │       ├── gesture_rt_boxplot.png
+│   │       ├── gesture_rt_boxplot.svg
+│   │       ├── gesture_rt_by_type.pdf
+│   │       ├── gesture_rt_by_type.png
+│   │       ├── gesture_rt_by_type.svg
+│   │       ├── gesture_rt_dist_fingerpoint.pdf
+│   │       ├── gesture_rt_dist_fingerpoint.png
+│   │       ├── gesture_rt_dist_fingerpoint.svg
+│   │       ├── gesture_rt_dist_fist.pdf
+│   │       ├── gesture_rt_dist_fist.png
+│   │       ├── gesture_rt_dist_fist.svg
+│   │       ├── gesture_rt_dist_gun.pdf
+│   │       ├── gesture_rt_dist_gun.png
+│   │       ├── gesture_rt_dist_gun.svg
+│   │       ├── gesture_rt_dist_neutral.pdf
+│   │       ├── gesture_rt_dist_neutral.png
+│   │       ├── gesture_rt_dist_neutral.svg
+│   │       ├── gesture_rt_dist_rocknroll.pdf
+│   │       ├── gesture_rt_dist_rocknroll.png
+│   │       ├── gesture_rt_dist_rocknroll.svg
+│   │       ├── gesture_rt_dist_thumbsup.pdf
+│   │       ├── gesture_rt_dist_thumbsup.png
+│   │       ├── gesture_rt_dist_thumbsup.svg
+│   │       ├── gesture_rt_dist_victory.pdf
+│   │       ├── gesture_rt_dist_victory.png
+│   │       ├── gesture_rt_dist_victory.svg
+│   │       ├── gesture_rt_distribution.pdf
+│   │       ├── gesture_rt_distribution.png
+│   │       └── gesture_rt_distribution.svg
+│   └── 20260128_124555
+│       ├── gesture
+│       │   ├── gesture_learning_curve.pdf
+│       │   ├── gesture_learning_curve.png
+│       │   ├── gesture_learning_curve.svg
+│       │   ├── gesture_rt_boxplot.pdf
+│       │   ├── gesture_rt_boxplot.png
+│       │   ├── gesture_rt_boxplot.svg
+│       │   ├── gesture_rt_by_type.pdf
+│       │   ├── gesture_rt_by_type.png
+│       │   ├── gesture_rt_by_type.svg
+│       │   ├── gesture_rt_dist_fingerpoint.pdf
+│       │   ├── gesture_rt_dist_fingerpoint.png
+│       │   ├── gesture_rt_dist_fingerpoint.svg
+│       │   ├── gesture_rt_dist_fist.pdf
+│       │   ├── gesture_rt_dist_fist.png
+│       │   ├── gesture_rt_dist_fist.svg
+│       │   ├── gesture_rt_dist_gun.pdf
+│       │   ├── gesture_rt_dist_gun.png
+│       │   ├── gesture_rt_dist_gun.svg
+│       │   ├── gesture_rt_dist_neutral.pdf
+│       │   ├── gesture_rt_dist_neutral.png
+│       │   ├── gesture_rt_dist_neutral.svg
+│       │   ├── gesture_rt_dist_rocknroll.pdf
+│       │   ├── gesture_rt_dist_rocknroll.png
+│       │   ├── gesture_rt_dist_rocknroll.svg
+│       │   ├── gesture_rt_dist_thumbsup.pdf
+│       │   ├── gesture_rt_dist_thumbsup.png
+│       │   ├── gesture_rt_dist_thumbsup.svg
+│       │   ├── gesture_rt_dist_victory.pdf
+│       │   ├── gesture_rt_dist_victory.png
+│       │   ├── gesture_rt_dist_victory.svg
+│       │   ├── gesture_rt_distribution.pdf
+│       │   ├── gesture_rt_distribution.png
+│       │   └── gesture_rt_distribution.svg
+│       └── gesture_practice
+│           ├── gesture_learning_curve.pdf
+│           ├── gesture_learning_curve.png
+│           ├── gesture_learning_curve.svg
+│           ├── gesture_rt_boxplot.pdf
+│           ├── gesture_rt_boxplot.png
+│           ├── gesture_rt_boxplot.svg
+│           ├── gesture_rt_by_type.pdf
+│           ├── gesture_rt_by_type.png
+│           ├── gesture_rt_by_type.svg
+│           ├── gesture_rt_dist_fingerpoint.pdf
+│           ├── gesture_rt_dist_fingerpoint.png
+│           ├── gesture_rt_dist_fingerpoint.svg
+│           ├── gesture_rt_dist_fist.pdf
+│           ├── gesture_rt_dist_fist.png
+│           ├── gesture_rt_dist_fist.svg
+│           ├── gesture_rt_dist_gun.pdf
+│           ├── gesture_rt_dist_gun.png
+│           ├── gesture_rt_dist_gun.svg
+│           ├── gesture_rt_dist_neutral.pdf
+│           ├── gesture_rt_dist_neutral.png
+│           ├── gesture_rt_dist_neutral.svg
+│           ├── gesture_rt_dist_rocknroll.pdf
+│           ├── gesture_rt_dist_rocknroll.png
+│           ├── gesture_rt_dist_rocknroll.svg
+│           ├── gesture_rt_dist_thumbsup.pdf
+│           ├── gesture_rt_dist_thumbsup.png
+│           ├── gesture_rt_dist_thumbsup.svg
+│           ├── gesture_rt_dist_victory.pdf
+│           ├── gesture_rt_dist_victory.png
+│           ├── gesture_rt_dist_victory.svg
+│           ├── gesture_rt_distribution.pdf
+│           ├── gesture_rt_distribution.png
+│           └── gesture_rt_distribution.svg
 ├── analyze
 │   ├── gesture_learning_curve.png
 │   ├── gesture_rt_boxplot.png
@@ -632,4 +992,4 @@
 ├── words.json
 └── wpm_analysis.png
 
-85 directories, 548 files
+116 directories, 877 files
