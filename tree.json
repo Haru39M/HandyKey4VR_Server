@@ -6,10 +6,41 @@
     {"type":"file","name":"3_visualize_gesture.py"},
     {"type":"file","name":"3_visualize_typing.py"},
     {"type":"file","name":"4_stat_analysis.py"},
+    {"type":"file","name":"5_analyze_questionnaires.py"},
     {"type":"file","name":"README.md"},
     {"type":"file","name":"USAGE.md"},
     {"type":"directory","name":"analysis_results","contents":[
-      {"type":"directory","name":"20260117_055320","contents":[
+      {"type":"directory","name":"20260127_184811","contents":[
+        {"type":"directory","name":"typing","contents":[
+          {"type":"file","name":"typing_cer_boxplot.pdf"},
+          {"type":"file","name":"typing_cer_boxplot.png"},
+          {"type":"file","name":"typing_cer_boxplot.svg"},
+          {"type":"file","name":"typing_kspc_boxplot.pdf"},
+          {"type":"file","name":"typing_kspc_boxplot.png"},
+          {"type":"file","name":"typing_kspc_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_boxplot.pdf"},
+          {"type":"file","name":"typing_wpm_boxplot.png"},
+          {"type":"file","name":"typing_wpm_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
+          {"type":"file","name":"typing_wpm_learning_curve.png"},
+          {"type":"file","name":"typing_wpm_learning_curve.svg"}
+        ]},
+        {"type":"directory","name":"typing_practice","contents":[
+          {"type":"file","name":"typing_cer_boxplot.pdf"},
+          {"type":"file","name":"typing_cer_boxplot.png"},
+          {"type":"file","name":"typing_cer_boxplot.svg"},
+          {"type":"file","name":"typing_kspc_boxplot.pdf"},
+          {"type":"file","name":"typing_kspc_boxplot.png"},
+          {"type":"file","name":"typing_kspc_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_boxplot.pdf"},
+          {"type":"file","name":"typing_wpm_boxplot.png"},
+          {"type":"file","name":"typing_wpm_boxplot.svg"},
+          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
+          {"type":"file","name":"typing_wpm_learning_curve.png"},
+          {"type":"file","name":"typing_wpm_learning_curve.svg"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260127_184835","contents":[
         {"type":"directory","name":"gesture","contents":[
           {"type":"file","name":"gesture_learning_curve.pdf"},
           {"type":"file","name":"gesture_learning_curve.png"},
@@ -33,444 +64,32 @@
           {"type":"file","name":"gesture_rt_by_type.svg"}
         ]}
       ]},
-      {"type":"directory","name":"20260117_055338","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260118_014642","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260118_220257","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260118_220514","contents":[
-        {"type":"directory","name":"gesture","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]},
-        {"type":"directory","name":"gesture_practice","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260119_012301","contents":[
-        {"type":"directory","name":"gesture","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]},
-        {"type":"directory","name":"gesture_practice","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260119_183547","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260119_224622","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260119_224658","contents":[
-        {"type":"directory","name":"gesture","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]},
-        {"type":"directory","name":"gesture_practice","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260120_222308","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260120_222338","contents":[
-        {"type":"directory","name":"gesture","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]},
-        {"type":"directory","name":"gesture_practice","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260122_202509","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260122_202722","contents":[
-        {"type":"directory","name":"gesture","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]},
-        {"type":"directory","name":"gesture_practice","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260124_001955","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260124_002055","contents":[
-        {"type":"directory","name":"gesture","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]},
-        {"type":"directory","name":"gesture_practice","contents":[
-          {"type":"file","name":"gesture_learning_curve.pdf"},
-          {"type":"file","name":"gesture_learning_curve.png"},
-          {"type":"file","name":"gesture_learning_curve.svg"},
-          {"type":"file","name":"gesture_rt_boxplot.pdf"},
-          {"type":"file","name":"gesture_rt_boxplot.png"},
-          {"type":"file","name":"gesture_rt_boxplot.svg"},
-          {"type":"file","name":"gesture_rt_by_type.pdf"},
-          {"type":"file","name":"gesture_rt_by_type.png"},
-          {"type":"file","name":"gesture_rt_by_type.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260127_050533","contents":[
-        {"type":"directory","name":"typing","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]},
-        {"type":"directory","name":"typing_practice","contents":[
-          {"type":"file","name":"typing_cer_boxplot.pdf"},
-          {"type":"file","name":"typing_cer_boxplot.png"},
-          {"type":"file","name":"typing_cer_boxplot.svg"},
-          {"type":"file","name":"typing_kspc_boxplot.pdf"},
-          {"type":"file","name":"typing_kspc_boxplot.png"},
-          {"type":"file","name":"typing_kspc_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_boxplot.pdf"},
-          {"type":"file","name":"typing_wpm_boxplot.png"},
-          {"type":"file","name":"typing_wpm_boxplot.svg"},
-          {"type":"file","name":"typing_wpm_learning_curve.pdf"},
-          {"type":"file","name":"typing_wpm_learning_curve.png"},
-          {"type":"file","name":"typing_wpm_learning_curve.svg"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260127_054231","contents":[
-        {"type":"directory","name":"stats","contents":[
-          {"type":"file","name":"typing_stats.txt"}
-        ]}
-      ]},
-      {"type":"directory","name":"20260127_054411","contents":[
+      {"type":"directory","name":"20260127_184935","contents":[
         {"type":"directory","name":"stats","contents":[
           {"type":"file","name":"gesture_stats_report.txt"},
           {"type":"file","name":"nasa_tlx_stats_report.txt"},
           {"type":"file","name":"typing_stats_report.txt"}
         ]}
       ]},
-      {"type":"directory","name":"20260127_055347","contents":[
+      {"type":"directory","name":"20260127_190252","contents":[
         {"type":"directory","name":"stats","contents":[
           {"type":"file","name":"gesture_stats_report.txt"},
           {"type":"file","name":"nasa_tlx_stats_report.txt"},
           {"type":"file","name":"typing_stats_report.txt"}
         ]}
       ]},
-      {"type":"directory","name":"20260127_055750","contents":[
-        {"type":"directory","name":"stats","contents":[
-          {"type":"file","name":"gesture_stats_report.txt"},
-          {"type":"file","name":"nasa_tlx_stats_report.txt"},
-          {"type":"file","name":"typing_stats_report.txt"}
+      {"type":"directory","name":"20260127_192314","contents":[
+        {"type":"directory","name":"questionnaire","contents":[
+          {"type":"file","name":"gesture_items_report.txt"},
+          {"type":"file","name":"sus_report.txt"},
+          {"type":"file","name":"typing_items_report.txt"}
+        ]}
+      ]},
+      {"type":"directory","name":"20260127_193038","contents":[
+        {"type":"directory","name":"questionnaire","contents":[
+          {"type":"file","name":"gesture_items_report.txt"},
+          {"type":"file","name":"sus_report.txt"},
+          {"type":"file","name":"typing_items_report.txt"}
         ]}
       ]}
     ]},
@@ -488,17 +107,17 @@
           {"type":"file","name":"log_AM04_2026-01-17-22-57-07_gesture_raw.csv"},
           {"type":"file","name":"log_AM04_2026-01-17-22-57-07_gesture_summary.csv"}
         ]},
+        {"type":"directory","name":"CS10","contents":[
+          {"type":"file","name":"log_CS10_2026-01-23-16-40-51_gesture_raw.csv"},
+          {"type":"file","name":"log_CS10_2026-01-23-16-40-51_gesture_summary.csv"},
+          {"type":"file","name":"log_CS10_2026-01-23-17-01-05_gesture_raw.csv"},
+          {"type":"file","name":"log_CS10_2026-01-23-17-01-05_gesture_summary.csv"}
+        ]},
         {"type":"directory","name":"EM09","contents":[
           {"type":"file","name":"log_EM09_2026-01-20-19-19-49_gesture_raw.csv"},
           {"type":"file","name":"log_EM09_2026-01-20-19-19-49_gesture_summary.csv"},
           {"type":"file","name":"log_EM09_2026-01-20-19-35-50_gesture_raw.csv"},
           {"type":"file","name":"log_EM09_2026-01-20-19-35-50_gesture_summary.csv"}
-        ]},
-        {"type":"directory","name":"HW04","contents":[
-          {"type":"file","name":"log_HW04_2026-01-16-21-30-28_gesture_raw.csv"},
-          {"type":"file","name":"log_HW04_2026-01-16-21-30-28_gesture_summary.csv"},
-          {"type":"file","name":"log_HW04_2026-01-16-23-37-38_gesture_raw.csv"},
-          {"type":"file","name":"log_HW04_2026-01-16-23-37-38_gesture_summary.csv"}
         ]},
         {"type":"directory","name":"HY07","contents":[
           {"type":"file","name":"log_HY07_2026-01-17-23-36-28_gesture_raw.csv"},
@@ -521,8 +140,6 @@
         {"type":"directory","name":"MT04","contents":[
           {"type":"file","name":"log_MT04_2026-01-20-14-27-06_gesture_raw.csv"},
           {"type":"file","name":"log_MT04_2026-01-20-14-27-06_gesture_summary.csv"},
-          {"type":"file","name":"log_MT04_2026-01-20-14-42-58_gesture_raw.csv"},
-          {"type":"file","name":"log_MT04_2026-01-20-14-42-58_gesture_summary.csv"},
           {"type":"file","name":"log_MT04_2026-01-20-14-44-53_gesture_raw.csv"},
           {"type":"file","name":"log_MT04_2026-01-20-14-44-53_gesture_summary.csv"}
         ]},
@@ -564,17 +181,17 @@
           {"type":"file","name":"log_debug-AM04_2026-01-17-22-54-13_gesture_raw.csv"},
           {"type":"file","name":"log_debug-AM04_2026-01-17-22-54-13_gesture_summary.csv"}
         ]},
+        {"type":"directory","name":"debug-CS10","contents":[
+          {"type":"file","name":"log_debug-CS10_2026-01-23-16-37-52_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-23-16-37-52_gesture_summary.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-23-16-59-04_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-23-16-59-04_gesture_summary.csv"}
+        ]},
         {"type":"directory","name":"debug-EM09","contents":[
           {"type":"file","name":"log_debug-EM09_2026-01-20-19-18-06_gesture_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-19-18-06_gesture_summary.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-19-34-08_gesture_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-19-34-08_gesture_summary.csv"}
-        ]},
-        {"type":"directory","name":"debug-HW04","contents":[
-          {"type":"file","name":"log_debug-HW04_2026-01-16-21-28-53_gesture_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-21-28-53_gesture_summary.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-23-36-05_gesture_summary.csv"}
         ]},
         {"type":"directory","name":"debug-HY07","contents":[
           {"type":"file","name":"log_debug-HY07_2026-01-17-23-31-35_gesture_raw.csv"},
@@ -596,7 +213,9 @@
         ]},
         {"type":"directory","name":"debug-MT04","contents":[
           {"type":"file","name":"log_debug-MT04_2026-01-20-14-25-30_gesture_raw.csv"},
-          {"type":"file","name":"log_debug-MT04_2026-01-20-14-25-30_gesture_summary.csv"}
+          {"type":"file","name":"log_debug-MT04_2026-01-20-14-25-30_gesture_summary.csv"},
+          {"type":"file","name":"log_debug-MT04_2026-01-20-14-42-58_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-MT04_2026-01-20-14-42-58_gesture_summary.csv"}
         ]},
         {"type":"directory","name":"debug-MT10","contents":[
           {"type":"file","name":"log_debug-MT10_2026-01-22-18-32-12_gesture_raw.csv"},
@@ -638,6 +257,14 @@
           {"type":"file","name":"log_AM04_2026-01-18-01-19-17_typing_raw.csv"},
           {"type":"file","name":"log_AM04_2026-01-18-01-19-17_typing_summary.csv"}
         ]},
+        {"type":"directory","name":"CS10","contents":[
+          {"type":"file","name":"log_CS10_2026-01-27-15-11-42_typing_raw.csv"},
+          {"type":"file","name":"log_CS10_2026-01-27-15-11-42_typing_summary.csv"},
+          {"type":"file","name":"log_CS10_2026-01-27-15-34-32_typing_raw.csv"},
+          {"type":"file","name":"log_CS10_2026-01-27-15-34-32_typing_summary.csv"},
+          {"type":"file","name":"log_CS10_2026-01-27-15-54-34_typing_raw.csv"},
+          {"type":"file","name":"log_CS10_2026-01-27-15-54-34_typing_summary.csv"}
+        ]},
         {"type":"directory","name":"EM09","contents":[
           {"type":"file","name":"log_EM09_2026-01-20-18-12-59_typing_raw.csv"},
           {"type":"file","name":"log_EM09_2026-01-20-18-12-59_typing_summary.csv"},
@@ -645,14 +272,6 @@
           {"type":"file","name":"log_EM09_2026-01-20-18-32-32_typing_summary.csv"},
           {"type":"file","name":"log_EM09_2026-01-20-18-55-14_typing_raw.csv"},
           {"type":"file","name":"log_EM09_2026-01-20-18-55-14_typing_summary.csv"}
-        ]},
-        {"type":"directory","name":"HW04","contents":[
-          {"type":"file","name":"log_HW04_2026-01-16-20-25-28_typing_raw.csv"},
-          {"type":"file","name":"log_HW04_2026-01-16-20-25-28_typing_summary.csv"},
-          {"type":"file","name":"log_HW04_2026-01-16-20-38-43_typing_raw.csv"},
-          {"type":"file","name":"log_HW04_2026-01-16-20-38-43_typing_summary.csv"},
-          {"type":"file","name":"log_HW04_2026-01-16-20-57-46_typing_raw.csv"},
-          {"type":"file","name":"log_HW04_2026-01-16-20-57-46_typing_summary.csv"}
         ]},
         {"type":"directory","name":"HY07","contents":[
           {"type":"file","name":"log_HY07_2026-01-19-21-47-21_typing_raw.csv"},
@@ -736,6 +355,14 @@
           {"type":"file","name":"log_debug-AM04_2026-01-18-01-13-35_typing_raw.csv"},
           {"type":"file","name":"log_debug-AM04_2026-01-18-01-13-35_typing_summary.csv"}
         ]},
+        {"type":"directory","name":"debug-CS10","contents":[
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-04-28_typing_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-04-28_typing_summary.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-32-08_typing_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-32-08_typing_summary.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-46-17_typing_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-46-17_typing_summary.csv"}
+        ]},
         {"type":"directory","name":"debug-EM09","contents":[
           {"type":"file","name":"log_debug-EM09_2026-01-20-18-08-18_typing_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-18-08-18_typing_summary.csv"},
@@ -743,14 +370,6 @@
           {"type":"file","name":"log_debug-EM09_2026-01-20-18-30-10_typing_summary.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-18-46-47_typing_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-18-46-47_typing_summary.csv"}
-        ]},
-        {"type":"directory","name":"debug-HW04","contents":[
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-23-57_typing_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-23-57_typing_summary.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-36-17_typing_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-36-17_typing_summary.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-54-35_typing_summary.csv"}
         ]},
         {"type":"directory","name":"debug-HY07","contents":[
           {"type":"file","name":"log_debug-HY07_2026-01-19-21-43-10_typing_raw.csv"},
@@ -865,10 +484,10 @@
         {"type":"directory","name":"debug","contents":[
           {"type":"file","name":"log_debug-AM04_2026-01-17-22-33-45_gesture_raw.csv"},
           {"type":"file","name":"log_debug-AM04_2026-01-17-22-54-13_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-23-16-37-52_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-23-16-59-04_gesture_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-19-18-06_gesture_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-19-34-08_gesture_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-21-28-53_gesture_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-23-36-05_gesture_raw.csv"},
           {"type":"file","name":"log_debug-HY07_2026-01-17-23-31-35_gesture_raw.csv"},
           {"type":"file","name":"log_debug-HY07_2026-01-17-23-53-12_gesture_raw.csv"},
           {"type":"file","name":"log_debug-KM02_2026-01-23-18-55-06_gesture_raw.csv"},
@@ -876,6 +495,7 @@
           {"type":"file","name":"log_debug-MK08_2026-01-22-17-36-34_gesture_raw.csv"},
           {"type":"file","name":"log_debug-MK08_2026-01-22-17-58-45_gesture_raw.csv"},
           {"type":"file","name":"log_debug-MT04_2026-01-20-14-25-30_gesture_raw.csv"},
+          {"type":"file","name":"log_debug-MT04_2026-01-20-14-42-58_gesture_raw.csv"},
           {"type":"file","name":"log_debug-MT10_2026-01-22-18-32-12_gesture_raw.csv"},
           {"type":"file","name":"log_debug-MT10_2026-01-22-18-53-26_gesture_raw.csv"},
           {"type":"file","name":"log_debug-MY05_2026-01-18-20-22-00_gesture_raw.csv"},
@@ -889,10 +509,10 @@
         ]},
         {"type":"file","name":"log_AM04_2026-01-17-22-35-35_gesture_raw.csv"},
         {"type":"file","name":"log_AM04_2026-01-17-22-57-07_gesture_raw.csv"},
+        {"type":"file","name":"log_CS10_2026-01-23-16-40-51_gesture_raw.csv"},
+        {"type":"file","name":"log_CS10_2026-01-23-17-01-05_gesture_raw.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-19-19-49_gesture_raw.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-19-35-50_gesture_raw.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-21-30-28_gesture_raw.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-23-37-38_gesture_raw.csv"},
         {"type":"file","name":"log_HY07_2026-01-17-23-36-28_gesture_raw.csv"},
         {"type":"file","name":"log_HY07_2026-01-17-23-55-02_gesture_raw.csv"},
         {"type":"file","name":"log_KM02_2026-01-23-18-56-44_gesture_raw.csv"},
@@ -900,7 +520,6 @@
         {"type":"file","name":"log_MK08_2026-01-22-17-38-41_gesture_raw.csv"},
         {"type":"file","name":"log_MK08_2026-01-22-18-01-18_gesture_raw.csv"},
         {"type":"file","name":"log_MT04_2026-01-20-14-27-06_gesture_raw.csv"},
-        {"type":"file","name":"log_MT04_2026-01-20-14-42-58_gesture_raw.csv"},
         {"type":"file","name":"log_MT04_2026-01-20-14-44-53_gesture_raw.csv"},
         {"type":"file","name":"log_MT10_2026-01-22-18-34-13_gesture_raw.csv"},
         {"type":"file","name":"log_MT10_2026-01-22-18-55-06_gesture_raw.csv"},
@@ -920,16 +539,16 @@
         {"type":"file","name":"log_AM04_2026-01-18-00-47-14_nasa_tlx_typing_Keyboard.csv"},
         {"type":"file","name":"log_AM04_2026-01-18-01-07-09_nasa_tlx_typing_Proposed.csv"},
         {"type":"file","name":"log_AM04_2026-01-18-01-34-27_nasa_tlx_typing_Controller.csv"},
+        {"type":"file","name":"log_CS10_2026-01-23-16-53-17_nasa_tlx_gesture_Controller.csv"},
+        {"type":"file","name":"log_CS10_2026-01-23-17-11-13_nasa_tlx_gesture_Proposed.csv"},
+        {"type":"file","name":"log_CS10_2026-01-27-15-27-36_nasa_tlx_typing_Controller.csv"},
+        {"type":"file","name":"log_CS10_2026-01-27-15-41-44_nasa_tlx_typing_Keyboard.csv"},
+        {"type":"file","name":"log_CS10_2026-01-27-16-09-52_nasa_tlx_typing_Proposed.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-18-25-51_nasa_tlx_typing_Controller.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-18-40-19_nasa_tlx_typing_Keyboard.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-19-09-59_nasa_tlx_typing_Proposed.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-19-30-40_nasa_tlx_gesture_Controller.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-19-45-53_nasa_tlx_gesture_Proposed.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-20-30-28_nasa_tlx_typing_Keyboard.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-20-46-09_nasa_tlx_typing_Proposed.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-21-11-34_nasa_tlx_typing_Controller.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-21-39-40_nasa_tlx_gesture_Proposed.csv"},
-        {"type":"file","name":"log_HW04_2026-01-17-00-03-02_nasa_tlx_gesture_Controller.csv"},
         {"type":"file","name":"log_HY07_2026-01-17-23-47-33_nasa_tlx_gesture_Controller.csv"},
         {"type":"file","name":"log_HY07_2026-01-18-00-03-49_nasa_tlx_gesture_Proposed.csv"},
         {"type":"file","name":"log_HY07_2026-01-19-21-53-53_nasa_tlx_typing_Keyboard.csv"},
@@ -976,17 +595,22 @@
         {"type":"file","name":"log_YM11_2026-01-23-23-16-25_nasa_tlx_typing_Keyboard.csv"},
         {"type":"file","name":"log_YM11_2026-01-24-00-06-00_nasa_tlx_typing_Proposed.csv"}
       ]},
+      {"type":"directory","name":"logs_questionnaire","contents":[
+        {"type":"file","name":"GestureTest_ans_forAnalyze.csv"},
+        {"type":"file","name":"SystemUsabilityScale_ans_forAnalyze.csv"},
+        {"type":"file","name":"TypingTest_ans_forAnalyze.csv"}
+      ]},
       {"type":"directory","name":"logs_typing","contents":[
         {"type":"directory","name":"debug","contents":[
           {"type":"file","name":"log_debug-AM04_2026-01-18-00-35-29_typing_raw.csv"},
           {"type":"file","name":"log_debug-AM04_2026-01-18-00-52-19_typing_raw.csv"},
           {"type":"file","name":"log_debug-AM04_2026-01-18-01-13-35_typing_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-04-28_typing_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-32-08_typing_raw.csv"},
+          {"type":"file","name":"log_debug-CS10_2026-01-27-15-46-17_typing_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-18-08-18_typing_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-18-30-10_typing_raw.csv"},
           {"type":"file","name":"log_debug-EM09_2026-01-20-18-46-47_typing_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-23-57_typing_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-36-17_typing_raw.csv"},
-          {"type":"file","name":"log_debug-HW04_2026-01-16-20-54-35_typing_raw.csv"},
           {"type":"file","name":"log_debug-HY07_2026-01-19-21-43-10_typing_raw.csv"},
           {"type":"file","name":"log_debug-HY07_2026-01-19-22-00-32_typing_raw.csv"},
           {"type":"file","name":"log_debug-HY07_2026-01-19-22-22-40_typing_raw.csv"},
@@ -1018,12 +642,12 @@
         {"type":"file","name":"log_AM04_2026-01-18-00-38-20_typing_raw.csv"},
         {"type":"file","name":"log_AM04_2026-01-18-00-57-33_typing_raw.csv"},
         {"type":"file","name":"log_AM04_2026-01-18-01-19-17_typing_raw.csv"},
+        {"type":"file","name":"log_CS10_2026-01-27-15-11-42_typing_raw.csv"},
+        {"type":"file","name":"log_CS10_2026-01-27-15-34-32_typing_raw.csv"},
+        {"type":"file","name":"log_CS10_2026-01-27-15-54-34_typing_raw.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-18-12-59_typing_raw.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-18-32-32_typing_raw.csv"},
         {"type":"file","name":"log_EM09_2026-01-20-18-55-14_typing_raw.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-20-25-28_typing_raw.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-20-38-43_typing_raw.csv"},
-        {"type":"file","name":"log_HW04_2026-01-16-20-57-46_typing_raw.csv"},
         {"type":"file","name":"log_HY07_2026-01-19-21-47-21_typing_raw.csv"},
         {"type":"file","name":"log_HY07_2026-01-19-22-06-16_typing_raw.csv"},
         {"type":"file","name":"log_HY07_2026-01-19-22-25-56_typing_raw.csv"},
@@ -1093,5 +717,5 @@
     {"type":"file","name":"wpm_analysis.png"}
   ]}
 ,
-  {"type":"report","directories":126,"files":842}
+  {"type":"report","directories":85,"files":548}
 ]
