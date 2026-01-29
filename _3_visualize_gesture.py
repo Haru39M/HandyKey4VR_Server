@@ -82,16 +82,16 @@ def add_sig_paired(ax, df, dv, order):
             if p_val < 0.01: stars = "**"
             if p_val < 0.001: stars = "***"
             
-            # 描画位置の計算 (現在の表示範囲の上端付近)
-            y_max = df[dv].quantile(0.95) # 外れ値を無視した最大値付近
+            # 描画位置の計算 (外れ値を除外した最大値付近)
+            y_max = df[dv].quantile(0.95)
             y_range = y_max * 0.1
             h = y_max + y_range * 0.5
             
-            # ブラケットの描画 (位置0と1)
+            # ブラケットの描画
             ax.plot([0, 0, 1, 1], [h, h + y_range*0.2, h + y_range*0.2, h], lw=1.5, color='black')
             ax.text(0.5, h + y_range*0.2, stars, ha='center', va='bottom', color='black', fontweight='bold', fontsize=14)
             
-            # ブラケットが収まるようにY軸を調整
+            # 軸の範囲を調整
             ax.set_ylim(0, h + y_range * 1.5)
     except Exception as e:
         print(f"      Significance labeling failed: {e}")
@@ -106,9 +106,6 @@ def plot_gesture_distribution(df, output_dir, title_suffix="", filename="gesture
     df_plot = df.copy()
     if target_gesture:
         df_plot = df_plot[df_plot["TargetGesture"] == target_gesture]
-        title_header = f"[{target_gesture}] "
-    else:
-        title_header = "Overall "
 
     target_conditions = ["HandyKey4VR", "Controller"]
     df_filtered = df_plot[df_plot["Condition"].isin(target_conditions)]
@@ -189,10 +186,8 @@ def generate_gesture_plots(df, output_dir, title_suffix=""):
     sns.boxplot(data=df, x="Condition", y="ReactionTimeMs", hue="Condition", 
                 palette=PALETTE, order=order, legend=False, ax=ax)
     # sns.stripplot(data=df, x="Condition", y="ReactionTimeMs", color=".3", alpha=0.3, order=order, ax=ax)
-    
     # 有意差の図示
     add_sig_paired(ax, df, "ReactionTimeMs", order)
-    
     plt.title(f"Gesture Reaction Time {title_suffix}")
     plt.ylabel("Time (ms)")
     save_plot("gesture_rt_boxplot", output_dir)
@@ -210,10 +205,10 @@ def generate_gesture_plots(df, output_dir, title_suffix=""):
         plt.xticks(range(1, max_trial + 1, step))
     save_plot("gesture_learning_curve", output_dir)
     
-    # 3. By Type Boxplot
+    # 3. By Type Boxplot (種類別の分布 - 外れ値を非表示にして潰れを防止)
     plt.figure(figsize=(12, 6))
     sns.boxplot(data=df, x="TargetGesture", y="ReactionTimeMs", hue="Condition", 
-                palette=PALETTE, hue_order=order)
+                palette=PALETTE, hue_order=order, showfliers=False) # 外れ値を非表示にしてスケールを最適化
     plt.title(f"Reaction Time by Gesture Type {title_suffix}")
     plt.xticks(rotation=45)
     plt.ylabel("Time (ms)")
@@ -235,13 +230,11 @@ def main():
         print(f"\nProcessing directory: {subdir}")
         full_path = os.path.join(DATA_ROOT_BASE, subdir)
         df = load_summaries(full_path)
-        
         if df is None or df.empty: continue
-        
         output_dir = os.path.join(base_output_dir, subdir)
         title_suffix = "(Practice)" if "practice" in subdir else ""
-
-        # --- 共通スケールの計算 (配布図比較用) ---
+        
+        # 共通スケールの計算
         common_xlim = df["ReactionTimeMs"].quantile(0.99)
         common_ylim = 0
         for gesture in df["TargetGesture"].unique():
@@ -252,15 +245,10 @@ def main():
                         kde = gaussian_kde(data)
                         common_ylim = max(common_ylim, np.max(kde(np.linspace(data.min(), data.max(), 200))))
                     except: pass
-        common_ylim *= 1.6 # ラベル用の余白
+        common_ylim *= 1.6
         
-        # 1. 箱ひげ図・学習曲線の生成
         generate_gesture_plots(df, output_dir, title_suffix)
-        
-        # 2. 全体分布図の生成
         plot_gesture_distribution(df, output_dir, title_suffix)
-        
-        # 3. ジェスチャ別分布図の生成 (共通スケール適用)
         gestures = sorted(df["TargetGesture"].unique())
         for gesture in gestures:
             filename = f"gesture_rt_dist_{gesture.lower().replace(' ', '_')}"
