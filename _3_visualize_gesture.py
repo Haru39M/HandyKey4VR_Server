@@ -106,7 +106,7 @@ def plot_gesture_distribution(df, output_dir, title_suffix="", filename="gesture
     df_plot = df.copy()
     if target_gesture:
         df_plot = df_plot[df_plot["TargetGesture"] == target_gesture]
-
+    
     target_conditions = ["HandyKey4VR", "Controller"]
     df_filtered = df_plot[df_plot["Condition"].isin(target_conditions)]
 
@@ -159,7 +159,7 @@ def plot_gesture_distribution(df, output_dir, title_suffix="", filename="gesture
 
         plt.text(text_x, text_y, f"{s['cond']}\nMean: {s['mean']:.0f}ms\nMode: {s['mode']:.0f}ms", 
                 color=color, fontweight='bold', fontsize=10, 
-                verticalalignment='center', horizontalalignment=ha,
+                verticalalignment='center', horizontalalignment='left',
                 bbox=dict(facecolor='white', alpha=0.8, edgecolor='none', pad=1))
 
     plt.title(f"Probability Density Function of Reaction Time (KDE) {title_suffix}", fontsize=13)
@@ -181,7 +181,7 @@ def plot_gesture_distribution(df, output_dir, title_suffix="", filename="gesture
 def generate_gesture_plots(df, output_dir, title_suffix=""):
     order = ["HandyKey4VR", "Controller"]
     
-    # 1. Boxplot (有意差ラベル付き)
+    # 1. Boxplot (全体の分布)
     fig, ax = plt.subplots(figsize=(8, 6))
     sns.boxplot(data=df, x="Condition", y="ReactionTimeMs", hue="Condition", 
                 palette=PALETTE, order=order, legend=False, ax=ax)
@@ -205,10 +205,35 @@ def generate_gesture_plots(df, output_dir, title_suffix=""):
         plt.xticks(range(1, max_trial + 1, step))
     save_plot("gesture_learning_curve", output_dir)
     
-    # 3. By Type Boxplot (種類別の分布 - 外れ値を非表示にして潰れを防止)
-    plt.figure(figsize=(12, 6))
-    sns.boxplot(data=df, x="TargetGesture", y="ReactionTimeMs", hue="Condition", 
-                palette=PALETTE, hue_order=order, showfliers=False) # 外れ値を非表示にしてスケールを最適化
+    # 3. By Type Boxplot (外れ値を非表示にして、条件間の有意差アスタリスクを表示)
+    plt.figure(figsize=(14, 7))
+    ax = sns.boxplot(data=df, x="TargetGesture", y="ReactionTimeMs", hue="Condition", 
+                palette=PALETTE, hue_order=order, showfliers=False) # 外れ値を非表示に
+    
+    # ジェスチャ種別ごとに検定を行い、有意差があればアスタリスクを描画
+    gestures = sorted(df["TargetGesture"].unique())
+    for i, gesture in enumerate(gestures):
+        df_sub = df[df["TargetGesture"] == gesture]
+        # 被験者ごとの平均値を算出（対応のあるt検定用）
+        df_stats = df_sub.groupby(['ParticipantID', 'Condition'])['ReactionTimeMs'].mean().reset_index()
+        
+        c1 = df_stats[df_stats['Condition'] == order[0]]['ReactionTimeMs']
+        c2 = df_stats[df_stats['Condition'] == order[1]]['ReactionTimeMs']
+        
+        if len(c1) == len(c2) and len(c1) > 1:
+            try:
+                res = pg.ttest(c1, c2, paired=True)
+                p_val = res['p-val'].values[0]
+                
+                if p_val < 0.05:
+                    # アスタリスクを決定
+                    stars = "*" if p_val >= 0.01 else ("**" if p_val >= 0.001 else "***")
+                    # 描画位置の計算（外れ値を除いた最大値付近）
+                    y_max = df_sub['ReactionTimeMs'].quantile(0.95)
+                    plt.text(i, y_max, stars, ha='center', va='bottom', color='black', 
+                             fontweight='bold', fontsize=14)
+            except: pass
+
     plt.title(f"Reaction Time by Gesture Type {title_suffix}")
     plt.xticks(rotation=45)
     plt.ylabel("Time (ms)")
