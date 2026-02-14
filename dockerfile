@@ -38,7 +38,6 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 # 起動スクリプトの作成
 RUN echo '#!/bin/bash\n\
-python system/OSCServer.py & \n\
 python app.py \n\
 ' > start.sh && chmod +x start.sh
 
