@@ -14,6 +14,7 @@ $ docker pull haru39m/handykey4vr-demo
 - 仮想環境を有効化
 ```bash
 $ source .venv/bin/activate
+$ python app.py
 ```
 
 ## 使い方(タイピング)
